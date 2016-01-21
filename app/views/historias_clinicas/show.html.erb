@@ -30,20 +30,121 @@ Licensed under MIT
 
 
 
+<style>
+.alert-message
+{
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+.alert-message h4
+{
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.alert-message p:last-child
+{
+    margin-bottom: 0;
+}
+.alert-message code
+{
+    background-color: #fff;
+    border-radius: 3px;
+}
+.alert-message-success
+{
+    background-color: #F4FDF0;
+    border-color: #3C763D;
+}
+.alert-message-success h4
+{
+    color: #3C763D;
+}
+.alert-message-danger
+{
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+.alert-message-danger h4
+{
+    color: #d9534f;
+}
+.alert-message-warning
+{
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+}
+.alert-message-warning h4
+{
+    color: #f0ad4e;
+}
+.alert-message-info
+{
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+}
+.alert-message-info h4
+{
+    color: #5bc0de;
+}
+.alert-message-default
+{
+    background-color: #EEE;
+    border-color: #B4B4B4;
+}
+.alert-message-default h4
+{
+    color: #000;
+}
+.alert-message-notice
+{
+    background-color: #FCFCDD;
+    border-color: #BDBD89;
+}
+.alert-message-notice h4
+{
+    color: #444;
+}
+
+  </style>
+
+
+
 
 
 
 
 
 <div class="container-fluid">
-    <div class="col-md-4 column col-md-offset-4">
+    <div class="row">
+
+
+
+
+
+
+ 
 
         <% if @historia_clinica.e_estado_historia_clinica == true %>
 
-            <button type="button" class="btn btn-success">La Historia Clinica esta cerrada</button>
+        <div class="col-sm-7 col-md-7 col-md-offset-2">
+            <div class="alert-message alert-message-success">
+                <h4>
+                    La Historia Clinica esta cerrada</h4>
+                    
+            </div>
+        </div>
 
         <% else %>
-            <%= link_to "La Historia Clinica no se ha cerrado aun", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>"btn btn-danger color_blanco" %>
+
+        <div class="col-sm-7 col-md-7 col-md-offset-2">
+            <div class="alert-message alert-message-danger">
+                <h4>
+                    La Historia Clinica no se ha cerrado aun.</h4>
+                <p>
+                    Para cerrar la historia clinica por favor sigue el siguiente enlace <strong>  <%= link_to "cerrar historia clinica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>"tn btn-xs btn-danger pull-right color_blanco" %></strong>.</p>
+            </div>
+        </div>
 
         <% end %>
 
@@ -51,34 +152,62 @@ Licensed under MIT
     </div>
 <br/>
 
-
 <div class="row">
 
 
 
-  <div class="col-md-3 ">
-
-  </div>
-
-  <div class="col-md-6  col-md-offset-1" style="margin-left: 35px;">
-
-    <%= link_to 'Volver a Historias Clinicas' , paciente_historias_clinicas_path(@paciente), :class => "btn btn-info color_blanco mrg" %> 
-
+  <div class="col-md-2 " >
+    
     <%= link_to image_tag("pdf-64.png"), paciente_historia_clinica_path(@paciente,@historia_clinica, :format => "pdf"), target: '_blank',  :rel => "tooltip", :title => "Pdf", :class => 'btn btn-link' %>
 
+  </div>
 
 
 
-    <%= link_to 'Crear Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn btn-info color_blanco mrg" %>
+<style>
+
+
+
+.ui-group-buttons .or{position:relative;float:left;width:.3em;height:1.3em;z-index:3;font-size:12px}
+.ui-group-buttons .or:before{position:absolute;top:50%;left:50%;content:'  ';background-color:#2E353D;margin-top:-.1em;margin-left:-.9em;width:1.8em;height:1.8em;line-height:1.55;color:#fff;font-style:normal;font-weight:400;text-align:center;border-radius:500px;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,0.1);box-shadow:0 0 0 1px rgba(0,0,0,0.1);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
+.ui-group-buttons .or:after{position:absolute;top:0;left:0;content:' ';width:.3em;height:2.84em;background-color:rgba(0,0,0,0);border-top:.6em solid #2E353D;border-bottom:.6em solid #2E353D}
+.ui-group-buttons .or.or-lg{height:1.3em;font-size:16px}
+.ui-group-buttons .or.or-lg:after{height:2.85em}
+.ui-group-buttons .or.or-sm{height:1em}
+.ui-group-buttons .or.or-sm:after{height:2.5em}
+.ui-group-buttons .or.or-xs{height:.25em}
+.ui-group-buttons .or.or-xs:after{height:1.84em;z-index:-1000}
+.ui-group-buttons{display:inline-block;vertical-align:middle}
+.ui-group-buttons:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.ui-group-buttons .btn{float:left;border-radius:0}
+.ui-group-buttons .btn:first-child{margin-left:0;border-top-left-radius:.25em;border-bottom-left-radius:.25em;padding-right:15px}
+.ui-group-buttons .btn:last-child{border-top-right-radius:.25em;border-bottom-right-radius:.25em;padding-left:15px}
+
+
+  </style>
+
+
+  <div class="col-md-6  col-md-offset-1">
+
+
+
+            <div class="ui-group-buttons">
+                 <%= link_to 'Volver a Historias Clinicas' , paciente_historias_clinicas_path(@paciente), :class => "btn btn-success color_blanco mrg" %> 
+                <div class="or"></div>
+    <%= link_to 'Crear Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn btn-primary color_blanco mrg" %>
+            </div>
+
+
+
+
 
   </div>
 
-  <div class="col-md-2" style="margin-left: 50px; margin-top: -20px;">
+  <div class="col-md-4" style="margin-left: 50px; margin-top: -20px;">
 
 
   </div>
 </div>
-<br/>
 
 
 
