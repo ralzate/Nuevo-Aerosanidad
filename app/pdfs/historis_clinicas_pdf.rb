@@ -31,95 +31,156 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #1 #################################################################################################
-      total1 = "#{HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Pasajero").count}"
+      total1 = "#{
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Otro").count
+      }"
 
-      acumulado1 = "#{HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Pasajero").count}"
+      acumulado1 = "#{
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "A.A.A").where(:a_condicion => "Otro").count
+      }"
 
 
       #2 #################################################################################################
-      total2 = "#{HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Pasajero").count}"
+      total2 = "#{
+      HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "ACA").where(:a_condicion => "Otro").count
+      }"
+
 
       acumulado2 = total1.to_i + total2.to_i
 
 
       #3 #################################################################################################
-      total3 = "#{HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Pasajero").count}"
+      total3 = "#{
+      HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "ADA").where(:a_condicion => "Otro").count
+      }"
+
 
       acumulado3 = total1.to_i + total2.to_i + total3.to_i
 
 
 
       #4 #################################################################################################
-      total4 = "#{HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Pasajero").count}"
+      total4 = "#{
+      HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AEROCIVIL").where(:a_condicion => "Otro").count
+      }"
+
+
 
       acumulado4 = total1.to_i + total2.to_i + total3.to_i + total4.to_i
 
 
 
       #5 #################################################################################################
-      total5 = "#{HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Pasajero").count}"
+      total5 = "#{
+      HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AEROGAL").where(:a_condicion => "Otro").count}"
 
       acumulado5 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i
 
 
 
       #6 #################################################################################################
-      total6 = "#{HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Pasajero").count}"
+      total6 = "#{HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AEROPOSTAL").where(:a_condicion => "Otro").count}"
 
       acumulado6 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i
 
 
 
       #7 #################################################################################################
-      total7 = "#{HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Pasajero").count}"
+      total7 = "#{HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AEROREPUBLICA").where(:a_condicion => "Otro").count}"
 
       acumulado7 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i
 
 
       #8 #################################################################################################
-      total8 = "#{HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Pasajero").count}"
+      total8 = "#{HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AEROSANIDAD").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado8 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i
 
 
       #9 #################################################################################################
-      total9 = "#{HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Pasajero").count}"
+      total9 = "#{HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AEXPA").where(:a_condicion => "Otro").count}"
+
 
       acumulado9 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i
 
 
       #10 #################################################################################################
-      total10 = "#{HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Pasajero").count}"
+      total10 = "#{HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AIR PLAN").where(:a_condicion => "Otro").count}"
+
 
       acumulado10 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i
 
 
       #11 #################################################################################################
-      total11 = "#{HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Pasajero").count}"
+      total11 = "#{HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AIRES").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado11 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i
 
 
       #12 #################################################################################################
-      total12 = "#{HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Pasajero").count}"
+      total12 = "#{HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AMERICAN AIRLINES").where(:a_condicion => "Otro").count}"
+
 
       acumulado12 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i
@@ -127,16 +188,26 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #13 #################################################################################################
-      total13 = "#{HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Pasajero").count}"
+      total13 = "#{HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "AVIANCA").where(:a_condicion => "Otro").count}"
+
 
       acumulado13 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i
 
 
       #14 #################################################################################################
-      total14 = "#{HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Pasajero").count}"
+      total14 = "#{HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "BOMBEROS").where(:a_condicion => "Otro").count}"
+
+
+
 
       acumulado14 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -144,8 +215,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #15 #################################################################################################
-      total15 = "#{HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Pasajero").count}"
+      total15 = "#{HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "COMERCIO").where(:a_condicion => "Otro").count}"
+
 
       acumulado15 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + 
@@ -153,8 +228,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #16 #################################################################################################
-      total16 = "#{HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Pasajero").count}"
+      total16 = "#{HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "CONSTRUCTORA").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado16 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + 
@@ -162,8 +242,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #17 #################################################################################################
-      total17 = "#{HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Pasajero").count}"
+      total17 = "#{HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "COPA").where(:a_condicion => "Otro").count}"
+
 
       acumulado17 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -171,8 +255,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #18 #################################################################################################
-      total18 = "#{HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Pasajero").count}"
+      total18 = "#{HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "DEPRISA CARGA").where(:a_condicion => "Otro").count}"
+
 
       acumulado18 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -180,8 +268,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #19 #################################################################################################
-      total19 = "#{HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Pasajero").count}"
+      total19 = "#{HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "DESACOL").where(:a_condicion => "Otro").count}"
+
 
       acumulado19 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -189,8 +281,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #20 #################################################################################################
-      total20 = "#{HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Pasajero").count}"
+      total20 = "#{HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "EASY FLY").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado20 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -199,8 +296,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #21 #################################################################################################
-      total21 = "#{HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Pasajero").count}"
+      total21 = "#{HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE ASEO").where(:a_condicion => "Otro").count}"
+
 
       acumulado21 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -208,10 +309,13 @@ class HistorisClinicasPdf < Prawn::Document
       total20.to_i + total21.to_i
 
 
-
       #22 #################################################################################################
-      total22 = "#{HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Pasajero").count}"
+      total22 = "#{HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "EMPRESAS DE VIGILANCIA").where(:a_condicion => "Otro").count}"
+
 
       acumulado22 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -219,8 +323,12 @@ class HistorisClinicasPdf < Prawn::Document
       total21.to_i + total22.to_i
 
       #23 #################################################################################################
-      total23 = "#{HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Pasajero").count}"
+      total23 = "#{HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "ENERGIZAR").where(:a_condicion => "Otro").count}"
+
 
       acumulado23 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -228,8 +336,12 @@ class HistorisClinicasPdf < Prawn::Document
       total21.to_i + total22.to_i + total23.to_i
 
       #24 #################################################################################################
-      total24 = "#{HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Pasajero").count}"
+      total24 = "#{HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "EQUIPAJEROS").where(:a_condicion => "Otro").count}"
+
 
       acumulado24 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -237,8 +349,12 @@ class HistorisClinicasPdf < Prawn::Document
       total21.to_i + total22.to_i + total23.to_i + total24.to_i
 
       #25 #################################################################################################
-      total25 = "#{HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Pasajero").count}"
+      total25 = "#{HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "IDEAM").where(:a_condicion => "Otro").count}"
+
 
       acumulado25 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -246,8 +362,12 @@ class HistorisClinicasPdf < Prawn::Document
       total21.to_i + total22.to_i + total23.to_i + total24.to_i + total25.to_i
 
       #26 #################################################################################################
-      total26 = "#{HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Pasajero").count}"
+      total26 = "#{HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "INMIGRACION - DIAN").where(:a_condicion => "Otro").count}"
+
 
       acumulado26 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -256,8 +376,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #27 #################################################################################################
-      total27 = "#{HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Pasajero").count}"
+      total27 = "#{HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "LAN").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado27 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -266,8 +391,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #28 #################################################################################################
-      total28 = "#{HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Pasajero").count}"
+      total28 = "#{HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "LAS LOMAS").where(:a_condicion => "Otro").count}"
+
 
       acumulado28 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -278,8 +407,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #29 #################################################################################################
-      total29 = "#{HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Pasajero").count}"
+      total29 = "#{HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "LASA").where(:a_condicion => "Otro").count}"
+
 
       acumulado29 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -290,8 +423,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #30 #################################################################################################
-      total30 = "#{HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Pasajero").count}"
+      total30 = "#{HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "PANTURISMO").where(:a_condicion => "Otro").count}"
+
 
       acumulado30 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -302,8 +439,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #31 #################################################################################################
-      total31 = "#{HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Pasajero").count}"
+      total31 = "#{HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "PARTICULAR").where(:a_condicion => "Otro").count}"
+
 
       acumulado31 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -315,8 +456,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #32 #################################################################################################
-      total32 = "#{HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Pasajero").count}"
+      total32 = "#{HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "POLICIA").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado32 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -326,10 +472,15 @@ class HistorisClinicasPdf < Prawn::Document
 
 
 
-      #33 #################################################################################################
-      total33 = "#{HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Pasajero").count}"
-     
+      #33 #################################################################################################     
+      total33 = "#{HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "RESTAURANTES").where(:a_condicion => "Otro").count}"
+
+
+
       acumulado33 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
       total14.to_i + total15.to_i + total16.to_i + total17.to_i + total18.to_i + total19.to_i + total20.to_i + 
@@ -338,8 +489,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #34 #################################################################################################
-      total34 = "#{HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Pasajero").count}"
+      total34 = "#{HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "SAI").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado34 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -349,8 +505,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #35 #################################################################################################
-      total35 = "#{HistoriaClinica.where(:a_empresa => "SANIDAD").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "SANIDAD").where(:a_condicion => "Pasajero").count}"
+      total35 = "#{HistoriaClinica.where(:a_empresa => "total35").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "total35").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "total35").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "total35").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "total35").where(:a_condicion => "Otro").count}"
+
 
       acumulado35 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -361,8 +521,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #36 #################################################################################################
-      total36 = "#{HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Pasajero").count}"
+      total36 = "#{HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "SATENA - FAC").where(:a_condicion => "Otro").count}"
+
 
       acumulado36 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -373,8 +537,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #37 #################################################################################################
-      total37 = "#{HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Pasajero").count}"
+      total37 = "#{HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "SIALAS").where(:a_condicion => "Otro").count}"
+
 
       acumulado37 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -385,8 +553,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #38 #################################################################################################
-      total38 = "#{HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Pasajero").count}"
+      total38 = "#{HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "SPIRIT").where(:a_condicion => "Otro").count}"
+
+
 
       acumulado38 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -397,8 +570,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #39 #################################################################################################
-      total39 = "#{HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Pasajero").count}"
+      total39 = "#{HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "TACA").where(:a_condicion => "Otro").count}"
+
 
       acumulado39 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -409,8 +586,11 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #40 #################################################################################################
-      total40 = "#{HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Pasajero").count}"
+      total40 = "#{HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "TAMPA").where(:a_condicion => "Otro").count}"
 
       acumulado40 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -422,9 +602,14 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #41 #################################################################################################
-      total41 = "#{HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Pasajero").count}"
       
+      total41 = "#{HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "TERPEL").where(:a_condicion => "Otro").count}"
+
+
       acumulado41 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
       total14.to_i + total15.to_i + total16.to_i + total17.to_i + total18.to_i + total19.to_i + total20.to_i + 
@@ -434,8 +619,13 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #42 #################################################################################################
-      total42 = "#{HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Pasajero").count}"
+
+      total42 = "#{HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "TRANSPORTADORES").where(:a_condicion => "Otro").count}"
+
 
       acumulado42 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -447,8 +637,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #43 #################################################################################################
-      total43 = "#{HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Pasajero").count}"
+      total43 = "#{HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "VIVA COLOMBIA").where(:a_condicion => "Otro").count}"
+
 
 
       acumulado43 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
@@ -461,8 +655,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #44 #################################################################################################
-      total44 = "#{HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Pasajero").count}"
+      total44 = "#{HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "VUELOS AMBULANCIA").where(:a_condicion => "Otro").count}"
+
 
       acumulado44 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -473,8 +671,12 @@ class HistorisClinicasPdf < Prawn::Document
       total42.to_i + total43.to_i +  total44.to_i 
 
       #45 #################################################################################################
-      total45 = "#{HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Pasajero").count}"
+      total45 = "#{HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "VUELOS PARTICULARES").where(:a_condicion => "Otro").count}"
+
 
       acumulado45 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
@@ -486,8 +688,12 @@ class HistorisClinicasPdf < Prawn::Document
 
 
       #46 #################################################################################################
-      total46 = "#{HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Empleado").count + 
-      HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Pasajero").count}"
+      total46 = "#{HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Pasajero").count + 
+      HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Tripulante").count +
+      HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Empleado").count +
+      HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Visitante").count +
+      HistoriaClinica.where(:a_empresa => "ZONA DE CARGA").where(:a_condicion => "Otro").count}"
+
 
       acumulado46 = total1.to_i + total2.to_i + total3.to_i + total4.to_i + total5.to_i + total6.to_i + 
       total7.to_i + total8.to_i + total9.to_i + total10.to_i + total11.to_i + total12.to_i + total13.to_i + 
