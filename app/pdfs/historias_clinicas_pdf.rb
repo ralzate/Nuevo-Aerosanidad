@@ -122,10 +122,13 @@ end
 
   @historias_clinicas.map do |historia_clinica|
       table([
-        [{:content =>  'Movil/Servicio:                 ' +  historia_clinica.a_movil_servicio.to_s,  size: 9 } , 
-         {:content => 'Conductor/Comandante:         ' + historia_clinica.a_cove.to_s,  size: 9}]
-      ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+        [{:content =>  'Movil/Servicio:            ' +  historia_clinica.a_movil_servicio.to_s,  size: 8} , 
+         {:content => 'Conductor/Comandante:    ' + historia_clinica.a_cove.to_s,  size: 8},
+         {:content =>  'Ciudad:                   ' +  historia_clinica.p_ciudad.to_s.capitalize,  size: 8 }
+        ]
+      ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
      t.cells.border_width = 0
+
       end
     end 
   end
@@ -136,9 +139,11 @@ end
        @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Ciudad:                            ' +  historia_clinica.p_ciudad.to_s.capitalize,  size: 9 } , 
-       {:content => 'Aeropuerto:                             ' + historia_clinica.aeropuerto.nombre.to_s.capitalize + ' - ' + historia_clinica.aeropuerto.ciudad.nombre.to_s.capitalize,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content => 'Aeropuerto:                ' + historia_clinica.aeropuerto.nombre.to_s.capitalize + ' - ' + historia_clinica.aeropuerto.ciudad.nombre.to_s.capitalize,  size: 8},
+       {:content =>  'Medico De Turno:               ' +  historia_clinica.user.nombre_usuario.to_s,  size: 8},
+       {:content => 'Registro Medico:                     ' + historia_clinica.user.registro_medico.to_s,  size: 8}
+      ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
   end 
@@ -148,12 +153,14 @@ end
 
   def datos_generales3
 
-       @historias_clinicas.map do |historia_clinica|
+    @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Medico De Turno:            ' +  historia_clinica.user.nombre_usuario.to_s,  size: 9 } , 
-       {:content => 'Registro Medico:                     ' + historia_clinica.user.registro_medico.to_s,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content =>  'Empresa:                   ' +  historia_clinica.a_empresa.to_s.capitalize,  size: 8 } , 
+       {:content => 'Auxiliar De Enfermería:      ' + historia_clinica.a_auxiliar.to_s,  size: 8},
+       {:content =>  'Tipo De Servicio:   ' +  historia_clinica.a_tipo_servicio.to_s.capitalize,  size: 8}
+      ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
   end 
@@ -165,18 +172,6 @@ end
 
   def datos_generales4
 
-
-       @historias_clinicas.map do |historia_clinica|
-
-    table([
-      [{:content =>  'Empresa:                         ' +  historia_clinica.a_empresa.to_s.capitalize,  size: 9 } , 
-       {:content => 'Auxiliar De Enfermería:           ' + historia_clinica.a_auxiliar.to_s,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
-   t.cells.border_width = 0
-    end
-  end 
-
-     
   end
 
   def datos_generales5
@@ -185,9 +180,8 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Tipo De Servicio:             ' +  historia_clinica.a_tipo_servicio.to_s.capitalize,  size: 9 } , 
-       {:content => 'Lugar De Atención:                 ' + historia_clinica.a_lugar_de_atencion.to_s,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content => 'Lugar De Atención:    ' + historia_clinica.a_lugar_de_atencion.to_s,  size: 8}]
+    ], :width => bounds.width, :column_widths => [540]) do |t|
    t.cells.border_width = 0
     end
 
@@ -206,9 +200,11 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Nombres:                            ' +  historia_clinica.p_primer_nombre.to_s + ' ' + historia_clinica.p_segundo_nombre,  size: 9 } , 
-       {:content => 'Apellidos:                               ' + historia_clinica.p_primer_apellido.to_s + ' ' + historia_clinica.p_segundo_apellido,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content =>  'Nombres:                      ' +  historia_clinica.p_primer_nombre.to_s + ' ' + historia_clinica.p_segundo_nombre,  size: 8} , 
+       {:content => 'Apellidos:              ' + historia_clinica.p_primer_apellido.to_s + ' ' + historia_clinica.p_segundo_apellido,  size: 8},
+       {:content =>  'Email:                         ' +  historia_clinica.p_email.to_s,  size: 8}
+     ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
 
@@ -227,9 +223,10 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Email:                                ' +  historia_clinica.p_email.to_s,  size: 9 } , 
-       {:content => 'Tipo De Documento:             ' + historia_clinica.p_tipo_documento.to_s,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content => 'Tipo De Documento:    ' + historia_clinica.p_tipo_documento.to_s,  size: 8},
+        {:content =>  'Documento:          ' +  historia_clinica.p_documento.to_s,  size: 8},
+        {:content => 'Fecha Nacimiento:     ' + historia_clinica.p_fecha_nacimiento.to_s,  size: 8} ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
    end
@@ -238,19 +235,7 @@ end
 
 
   def experiencias_laborales_3
-      move_down 0.5
 
-
-
- @historias_clinicas.map do |historia_clinica|
-
-    table([
-      [{:content =>  'Documento:                       ' +  historia_clinica.p_documento.to_s,  size: 9 } , 
-       {:content => 'Fecha Nacimiento:                ' + historia_clinica.p_fecha_nacimiento.to_s,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
-   t.cells.border_width = 0
-    end
-   end
 
   end
 
@@ -264,9 +249,11 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Genero:                              ' +  historia_clinica.p_genero.to_s,  size: 9 } , 
-       {:content => 'Profesión:                              ' + historia_clinica.p_profesion.to_s,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content =>  'Genero:                        ' +  historia_clinica.p_genero.to_s,  size: 8 } , 
+       {:content => 'Profesión:             ' + historia_clinica.p_profesion.to_s,  size: 8},
+       {:content =>  'Tipo De Sangre:         ' +  historia_clinica.p_tipo_sangre.to_s,  size: 8 }
+      ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
    end
@@ -283,9 +270,11 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Tipo De Sangre:                 ' +  historia_clinica.p_tipo_sangre.to_s,  size: 9 } , 
-       {:content => 'Nacionalidad:                        ' + historia_clinica.p_nacionalidad,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content => 'Nacionalidad:              ' + historia_clinica.p_nacionalidad,  size: 8},
+       {:content => 'Dirección:             ' + historia_clinica.p_direccion,  size: 8},
+       {:content => 'Nombre Usuario:        ' + historia_clinica.user.nombre_usuario,  size: 8}
+     ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
    end
@@ -299,18 +288,6 @@ end
       move_down 0.5
 
 
- @historias_clinicas.map do |historia_clinica|
-
-    table([
-      [{:content =>  'Dirección:                           ' +  historia_clinica.p_direccion,  size: 9 } , 
-       {:content => 'Nombre Usuario:                  ' + historia_clinica.user.nombre_usuario,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
-   t.cells.border_width = 0
-    end
-   end
-
-
-      
   end
 
 
@@ -324,9 +301,11 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Condición:                          ' + historia_clinica.a_condicion,  size: 9}, 
-        {:content => 'Origen:                                 ' + historia_clinica.a_origen.capitalize,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content => 'Condición:                        ' + historia_clinica.a_condicion,  size: 8}, 
+        {:content => 'Origen:                                 ' + historia_clinica.a_origen.capitalize,  size: 8},
+        {:content => 'Destino:                              ' + historia_clinica.a_destino,  size: 8}
+      ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
    end
@@ -344,9 +323,11 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Destino:                              ' + historia_clinica.a_destino,  size: 9}, 
-        {:content => 'Nombre Acompañante:        ' + historia_clinica.a_nombre_acompañante,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [ {:content => 'Nombre Acompañante:     ' + historia_clinica.a_nombre_acompañante,  size: 8},
+        {:content => 'Parentesco Acompañante:   ' + historia_clinica.a_parentesco,  size: 8},
+        {:content => 'Telefono Acompañante:      ' + historia_clinica.a_telefono,  size: 8}
+      ]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
    end
@@ -356,22 +337,6 @@ end
 
 
   def experiencias_laborales_10
-      move_down 0.5
-
-
-
- @historias_clinicas.map do |historia_clinica|
-
-    table([
-      [{:content => 'Parentesco Acompañante: ' + historia_clinica.a_parentesco,  size: 9}, 
-        {:content => 'Telefono Acompañante:       ' + historia_clinica.a_telefono,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
-   t.cells.border_width = 0
-    end
-   end
-
-
-
      
   end
 
@@ -386,16 +351,13 @@ end
 
 
     table([
-      [{:content => 'Arl:                                      ' + historia_clinica.arl,  size: 9}, 
-        {:content => 'Eps:                                     ' + historia_clinica.a_parentesco,  size: 9}]
-    ], :width => bounds.width, :column_widths => [240, 300]) do |t|
+      [{:content => 'Arl:                  ' + historia_clinica.arl,  size: 8}, 
+        {:content => 'Eps:                  ' + historia_clinica.a_parentesco,  size: 8},
+      {:content => 'Edad:                                  ' + historia_clinica.p_edad.to_s + ' ' + historia_clinica.p_tipo_edad,  size: 8}]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
    end
-
-
-
-
 
   end
 
@@ -407,15 +369,6 @@ end
 
       move_down 0.5
 
- @historias_clinicas.map do |historia_clinica|
-
-
-    table([
-      [{:content => 'Edad:                                  ' + historia_clinica.p_edad.to_s + ' ' + historia_clinica.p_tipo_edad,  size: 9}]
-    ], :width => bounds.width, :column_widths => [540]) do |t|
-   t.cells.border_width = 0
-    end
-   end
 
 
   end
@@ -460,11 +413,11 @@ end
       move_down 30
       text "IV. ANTECEDENTES PERSONALES", size: 15, style: :bold, :color => "22BDC8"
    
-      table(experiencias_laborales_rows13_5, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows13_5, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9}) do |t|
           t.row(0).font_style = :bold
           t.cells.border_width = 0
     end
-      table(experiencias_laborales_rows13, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows13, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
 
@@ -494,7 +447,7 @@ end
 
   def experiencias_laborales_14
       move_down 0.5
-      table(experiencias_laborales_rows14, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows14, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -511,7 +464,7 @@ end
     
   def experiencias_laborales_15
       move_down 0.5
-      table(experiencias_laborales_rows15, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows15, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -528,7 +481,7 @@ end
     
   def experiencias_laborales_16
       move_down 0.5
-      table(experiencias_laborales_rows16, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows16, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0      
     end
   end
@@ -545,7 +498,7 @@ end
     
   def experiencias_laborales_17
       move_down 0.5
-      table(experiencias_laborales_rows17, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows17, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0      
     end
   end
@@ -562,7 +515,7 @@ end
 
   def experiencias_laborales_18
       move_down 0.5
-      table(experiencias_laborales_rows18, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows18, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0      
     end
   end
@@ -579,7 +532,7 @@ end
     
   def experiencias_laborales_19
       move_down 0.5
-      table(experiencias_laborales_rows19, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows19, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0 
     end
   end
@@ -596,7 +549,7 @@ end
 
   def experiencias_laborales_20
       move_down 0.5
-      table(experiencias_laborales_rows20, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows20, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0 
     end
   end
@@ -613,7 +566,7 @@ end
    
   def experiencias_laborales_21
       move_down 0.5
-      table(experiencias_laborales_rows21, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows21, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -630,7 +583,7 @@ end
 
   def experiencias_laborales_22
       move_down 0.5
-      table(experiencias_laborales_rows22, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows22, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -647,7 +600,7 @@ end
     
   def experiencias_laborales_23
       move_down 0.5
-      table(experiencias_laborales_rows23, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows23, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -663,7 +616,7 @@ end
     
   def experiencias_laborales_24
       move_down 0.5
-      table(experiencias_laborales_rows24, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows24, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -680,7 +633,7 @@ end
     
   def experiencias_laborales_25
       move_down 0.5
-      table(experiencias_laborales_rows25, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows25, :column_widths => [120, 35, 385], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
   end
@@ -699,53 +652,56 @@ end
   def experiencias_laborales_26
       move_down 30
       text "GINECO-OBSTÉTRICOS", size: 15, style: :bold, :color => "22BDC8"
-      table(experiencias_laborales_rows26, :column_widths => [130, 115, 125, 170], :cell_style => {position: :absulte,  size: 8}) do |t|
-        t.cells.border_width = 0
+
+ @historias_clinicas.map do |historia_clinica|
+
+
+    table([
+      [{:content => 'Ciclo Menstrual:                        ' + historia_clinica.b_ciclo_menstrual.to_s,  size: 8}, 
+        {:content => 'FUM:                                             ' + historia_clinica.b_fum.to_s,  size: 8},
+      {:content => 'Menarquia:                        ' + historia_clinica.b_menarquia.to_s,  size: 8}]
+    ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
+   t.cells.border_width = 0
     end
+   end
+
+
   end
 
   def experiencias_laborales_rows26
-          @historias_clinicas.map do |historia_clinica|
 
-        [
-          'Ciclo Menstrual:', historia_clinica.b_ciclo_menstrual, 
-          'FUM:', historia_clinica.b_fum
-        ]
-    end
   end
 
   def experiencias_laborales_27
       move_down 0.5
-      table(experiencias_laborales_rows27, :column_widths => [130, 115, 125, 170], :cell_style => {position: :absulte,  size: 8}) do |t|
-        t.cells.border_width = 0
-    end
+
+
+     @historias_clinicas.map do |historia_clinica|
+
+
+        table([
+          [{:content => 'Fecha de la Ultima Citología:    ' + historia_clinica.b_fecha_ultima_citologia.to_s,  size: 8}, 
+            {:content => 'Fecha de la Ultima Mamografia:   ' + historia_clinica.b_fecha_ultima_mamografia.to_s,  size: 8},
+          {:content => 'Esta en Embarazo:            ' + historia_clinica.b_embarazo.to_s,  size: 8}]
+        ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
+       t.cells.border_width = 0
+        end
+       end
+
   end
 
   def experiencias_laborales_rows27
-          @historias_clinicas.map do |historia_clinica|
 
-        [
-          'Menarquia:'   ,  historia_clinica.b_menarquia, 
-          'Fecha de la Ultima Citología:', historia_clinica.b_fecha_ultima_citologia
-        ]
-    end
+    
   end
 
   def experiencias_laborales_28
       move_down 0.5
-      table(experiencias_laborales_rows28, :column_widths => [130, 115, 125, 170], :cell_style => {position: :absulte,  size: 8}) do |t|
-        t.cells.border_width = 0
-    end
+      
   end
 
   def experiencias_laborales_rows28
-          @historias_clinicas.map do |historia_clinica|
 
-        [
-          'Fecha de la Ultima Mamografia:',  historia_clinica.b_fecha_ultima_mamografia, 
-          'Esta en Embarazo:', historia_clinica.b_embarazo
-        ]
-    end
   end
 
 
@@ -777,7 +733,7 @@ end
   def experiencias_laborales_30
       move_down 30
       text "V. REVISIÓN POR SISTEMAS", size: 15, style: :bold, :color => "22BDC8"
-      table(experiencias_laborales_rows30_5, :column_widths => [120, 80, 340], :cell_style => {position: :absulte,  size: 8}) do |t|
+      table(experiencias_laborales_rows30_5, :column_widths => [120, 80, 340], :cell_style => {position: :absulte,  size: 9}) do |t|
         t.cells.border_width = 0
         t.row(0).font_style = :bold
     end
@@ -1068,11 +1024,11 @@ end
   def experiencias_laborales_44
       move_down 30
    
-      table(experiencias_laborales_rows44_5, :column_widths => [100, 85, 355], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows44_5, :column_widths => [100, 85, 355], :cell_style => {position: :absulte,  size: 9}) do |t|
         t.cells.border_width = 0
         t.row(0).font_style = :bold
     end
-      table(experiencias_laborales_rows44, :column_widths => [100, 85, 355], :cell_style => {position: :absulte,  size: 9,  size: 9}) do |t|
+      table(experiencias_laborales_rows44, :column_widths => [100, 85, 355], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end
 
@@ -1539,7 +1495,7 @@ end
 
   def experiencias_laborales_64
       move_down 25
-      table(experiencias_laborales_rows64, :column_widths => [100, 170, 100, 170], :cell_style => {position: :absulte,  size: 8}) do |t|
+      table(experiencias_laborales_rows64, :column_widths => [67.5, 67.5, 67.5, 67.5, 67.5 ,67.5, 67.5, 67.5], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end 
   end
@@ -1549,7 +1505,9 @@ end
           @historias_clinicas.map do |historia_clinica|
         [
           'Glucometria 1:', historia_clinica.e_glucometria1,
-          'Hora 1:', historia_clinica.e_hora1        ]
+          'Hora 1:', historia_clinica.e_hora1,
+          'Glucometria 2:', historia_clinica.e_glucometria2,
+          'Hora 2:', historia_clinica.e_hora2        ]
       end
   end
 
@@ -1557,25 +1515,18 @@ end
 
   def experiencias_laborales_65
       move_down 0.5
-      table(experiencias_laborales_rows65, :column_widths => [100, 170, 100, 170], :cell_style => {position: :absulte,  size: 8}) do |t|
-        t.cells.border_width = 0
-    end 
+
   end
 
   def experiencias_laborales_rows65
-          @historias_clinicas.map do |historia_clinica|
-        [
-          'Glucometria 2:', historia_clinica.e_glucometria2,
-          'Hora 2:', historia_clinica.e_hora2        
-        ]
-      end
+
   end
 
 
 
   def experiencias_laborales_66
       move_down 0.5
-      table(experiencias_laborales_rows66, :column_widths => [100,440], :cell_style => {position: :absulte,  size: 8}) do |t|
+      table(experiencias_laborales_rows66, :column_widths => [80,460], :cell_style => {position: :absulte,  size: 8}) do |t|
         t.cells.border_width = 0
     end 
   end
@@ -1687,13 +1638,13 @@ end
 
 
   def pie_de_pagina 
-    move_down 120
-    text "www.aerosanidadvirtual.com", size: 9, :align => :center, :style => :bold
-    text "Aeropuerto Bogotá: (57)(1) 2205674 / 3002221245", size: 9, :align => :center
-    text "Aeropuerto Medellín: (57)(4) 3656171 / 3007042683", size: 9, :align => :center
-    text "Aeropuerto Rionegro: 3002214168", size: 9, :align => :center
-    text "------------------------------------------------", size: 9, :align => :center
-    text "info@aerosanidadsas.com",  size: 9, :align => :center
+    move_down 480
+    text "www.aerosanidadvirtual.com", size: 8, :align => :center, :style => :bold
+    text "Aeropuerto Bogotá: (57)(1) 2205674 / 3002221245", size: 8, :align => :center
+    text "Aeropuerto Medellín: (57)(4) 3656171 / 3007042683", size: 8, :align => :center
+    text "Aeropuerto Rionegro: 3002214168", size: 8, :align => :center
+    text "------------------------------------------------", size: 8, :align => :center
+    text "info@aerosanidadsas.com",  size: 8, :align => :center
   end
 
 end 

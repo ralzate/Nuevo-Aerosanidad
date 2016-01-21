@@ -67,6 +67,8 @@ Licensed under MIT
     <%= link_to image_tag("pdf-64.png"), paciente_historia_clinica_path(@paciente,@historia_clinica, :format => "pdf"), target: '_blank',  :rel => "tooltip", :title => "Pdf", :class => 'btn btn-link' %>
 
 
+
+
     <%= link_to 'Crear Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn btn-info color_blanco mrg" %>
 
   </div>

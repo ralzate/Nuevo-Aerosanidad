@@ -15,28 +15,44 @@
 <body>
   <div>
 
-
-
-
-
-
-
  <% if current_user? %>
 
     <%= render 'layouts/header' %>
 
-   
-    <div>
-     
-
+    <div>     
       <%= yield %>
       
-    </div>
-  </div>
 
-    <% if logged_in? %>
-    <%= render 'shared/current_users' %>
-    <% end %>
+              </div>
+              <!-- /.row -->
+
+
+
+
+              <!-- /.row -->
+
+              <div class="row">
+
+              </div>
+              <!-- /.row -->
+
+          </div>
+          <!-- /.container-fluid -->
+
+      </div>
+      <!-- /#page-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- jQuery -->
+
+  </div>
+</div>
+
+  <% if logged_in? %>
+  <%= render 'shared/current_users' %>
+  <% end %>
 
 <% if  current_user %>
 

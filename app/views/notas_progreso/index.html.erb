@@ -1,41 +1,5 @@
-<br/><br/><br/><br/>
-
-<div class="row">
-<div class="full col-sm-9 full2">
-
-
-
-<div class="container" style="margin-top:10px; margin-bottom:-8px; text-align: left;
-    margin-left: 0px!important;">
-        <div class="centered title"><h1 style=" font-size:25px; text-align: left;color: #22BDC8;">  <%= link_to "Regresar", paciente_historias_clinicas_path(@paciente), :class=>"btn btn-info color_blanco mrg" %><br><br></h1></div>
-     </div>
-     <hr class="featurette-divider"></hr>
-
-
-
-
-    <span  class="btn btn-link btn-xs  pull-left pagination pagination"><h1 class="title">Listado de  <span>Notas de Evolución</span>  de <%= @paciente.primer_nombre %></h1></span>
-
-
-
-    <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @notas_progreso, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
-
-    
-</span>
-
-
-
-
-    <span  class="btn btn-link btn-xs  pagination pagination pull-right"><%= link_to 'Nueva Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn  principal" %></span>
-
-<div class="row new_blog">
-<div class="col-md-6" id="task-form" style="display:none;"></div>
-</div>
-
-
-
-
-
+<br/>
+<br/>
 
 
 <div class="row">

@@ -1,7 +1,11 @@
 PetThing::Application.routes.draw do
 
 
+  get 'pdf_views',    to: 'informes#alejo', as: "hola"
 
+  get 'informes/index',  to: 'informes#index', as: "info_link"
+
+  get 'informes/show'
 
   resources :paises
   resources :cie10s, :defaults => { :format => :json }
@@ -17,7 +21,6 @@ PetThing::Application.routes.draw do
       get :autocomplete_ciudad_nombre
     end
   end
-
 
 
   resources :arles, :path => "arl" do

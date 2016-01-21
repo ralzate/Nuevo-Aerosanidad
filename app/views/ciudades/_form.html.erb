@@ -36,16 +36,31 @@
 
   <div class="row">
     <div class="col-md-4">
-      Nombre:
+      Pais:
     </div>
     <div class="col-md-8">
-    <%= f.country_select :pais_codigo, {object: f.object, prompt: 'Selecciona un Pais'}, html_options = {:class => "form-control"} %>
+      <%= f.select :pais_codigo, Pais.all.map { |u| ["#{u.nombre}", u.nombre] }, { include_blank: true },  { class: 'chosen-select', :date => {:placeholder => 'Choose a Country...'} } %>
     </div>
   </div>
 
 <br/>
 
 
+<script type="text/javascript">
+  $(function() {
+  return $('.chosen-select').chosen({
+    allow_single_deselect: true,
+    no_results_text: 'No hay resultados',
+    width: '175px',
+    height: '30px'
+  });
+});
+
+</script>
+
+<script>
+$( ".chosen-default" ).text( "Selecciona un Pais." );
+</script>
 
 
  

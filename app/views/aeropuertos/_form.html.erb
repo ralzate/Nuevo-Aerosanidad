@@ -44,29 +44,50 @@
                               prompt:       'Campo Obligatorio',
                               collection: @aeropuerto.select_departamento.sort,
                               error: false, label: false, 
-                              input_html:   {class: 'form-control', placeholder: 'Campo Obligatorio'} %>
+                              input_html:   {class: 'chosen-select', placeholder: 'Campo Obligatorio'} %>
+
+
+
+
 
     </div>
   </div>
 
 <br/>
 
+<script type="text/javascript">
+  $(function() {
+  return $('.chosen-select').chosen({
+    allow_single_deselect: true,
+    no_results_text: 'No hay resultados',
+    width: '200px',
+    height: '30px'
+  });
+});
+
+</script>
+
+<script>
+$( ".chosen-default" ).text( "Selecciona una Ciudad." );
+</script>
+
+
   <div class="row">
     <div class="col-md-4">
       Ciudad:
     </div>
     <div class="col-md-8">
-      <%= f.collection_select :ciudad_id, Ciudad.all, :id, :nombre, {prompt: "Campo Obligatorio"}, {class: "form-control"} %>
+
+          <%= f.select :ciudad_id, Ciudad.all.map { |u| ["#{u.nombre.capitalize}", u.id] }, { include_blank: true }, { class: 'chosen-select' } %>
+
+
 
     </div>
   </div>
 
-
-
-
- 
-
 </div>
+<br/>
+
 <div class="modal-footer">
   <%= f.submit "Guardar", :class => 'btn btn-info color_blanco custom' %>
   <a href="#" class="btn btn-default" onclick="$.lazybox.close()">Cerrar</a>

@@ -10,10 +10,7 @@
 
 
 <style type="text/css">
-      body {background: #ccc;
-    font-family: sans-serif;
-      padding:7%;
-    }
+
      
 input {margin-bottom: 10px;}
 #signup label.error {
@@ -196,21 +193,32 @@ $(document).ready(function() {
 
 
 
+<script type="text/javascript">
+
+	
+$(document).on("ready page:load",function(){
+
+$('.chosen-single.chosen-default span').text("Seleccionar");
+	
+
+
+});
+</script>
+
 
 <div class="container-fluid">
-    <div class="row">
 <br/>
 	<%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %>
 
     <h3 style = "color: #22BDC8;">DATOS GENERALES</h3>
-    <hr class="featurette-divider"></hr>
+
     <div class="row">
 
           <div class="col-md-3">
 
               <label>Aeropuerto:</label> <br/>
 
-          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre}, #{u.nombre}", u.id] }, { include_blank: true },  { class: 'chosen-select2', :date => {:placeholder => 'Choose a Country...'} } %>
+          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.id] }, { include_blank: true },  { class: 'chosen-select2', :date => {:placeholder => 'Choose a Country...'} } %>
 
 
 
@@ -246,43 +254,12 @@ $(document).ready(function() {
 
         </div>
 
-<br/>
-
-   
-
-
-
-
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-<div class="container-fluid">
-    <div class="row">
 
     <h3 style = "color: #22BDC8;">I. IDENTIFICACIÓN DEL PACIENTE</h3>
+
+    <div class="row ">
+
+
 
     <hr class="featurette-divider"></hr>
 
@@ -426,7 +403,7 @@ $(function() {
 
  <label>Origen:</label> <br/>
 
-          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre}, #{u.nombre}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
+          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
 
 
                   </div>
@@ -434,7 +411,7 @@ $(function() {
           <div class="col-md-4">
               <label>Destino:</label>  <br/>
 
-          <%= f.select :a_destino, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre}, #{u.nombre}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
+          <%= f.select :a_destino, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
 
 
 

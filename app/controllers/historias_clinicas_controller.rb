@@ -35,6 +35,8 @@ class HistoriasClinicasController < ApplicationController
 
   end
 
+
+
   # GET /countries/1/edit
   def edit
     #@diagnosticos = Diagnostico.where("historia_clinica_id = @historia_clinica")

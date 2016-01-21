@@ -67,7 +67,7 @@ class ApplicationController < ActionController::Base
   end
   
   def not_found
-    flash[:danger] = "#{params[:controller].chop.capitalize } not found."
+    flash[:danger] = "#{params[:controller].chop.capitalize } no se encotro."
     redirect_back_or_to controller: params[:controller]
   end
 

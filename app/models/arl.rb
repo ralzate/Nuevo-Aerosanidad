@@ -20,6 +20,9 @@ class Arl < ActiveRecord::Base
 
 	
   def self.search(search)
-    where("nombre like '%#{search}%'")
+    where("nombre like '%#{search}%'").order(:id)
   end
+
+
+  
 end

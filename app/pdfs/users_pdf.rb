@@ -7,9 +7,9 @@ NO usar (draw text)!! este metodo no se acomoda a los otros
 
 
 class UsersPdf < Prawn::Document
-  def initialize(users)
+  def initialize(usuarios)
     super()
-    @users = users
+    @usuarios = usuarios
     logo_1
     usuarios_parte_1
     pie_de_pagina
@@ -36,7 +36,7 @@ class UsersPdf < Prawn::Document
   def usuarios_titulo
       [['Nombres', 'Apellidos', 'Tipo Documento', 'Documento']] +
 
-          @users.map do |user|
+          @usuarios.map do |usuario|
         [
 
         ]
@@ -45,12 +45,12 @@ class UsersPdf < Prawn::Document
 
 
   def usuarios_rows
-          @users.map do |user|
+          @usuarios.map do |usuario|
         [
-          user.nombres , 
-          user.apellidos ,
-          user.tipo_documento ,
-          user.documento
+          usuario.nombres , 
+          usuario.apellidos ,
+          usuario.tipo_documento ,
+          usuario.documento
         ]
     end
   end

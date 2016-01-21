@@ -1,4 +1,7 @@
 
+<script>
+$( ".chosen-default" ).text( "Selecciona una Ciudad." );
+</script>
 
 <div class="col-md-12" style = "margin:25px!important">
 <% if current_user %>
@@ -126,7 +129,7 @@
                               prompt:       'Seleccionar un Documento',
                               collection: @user.select_document.sort,
                               error: false, label: false, 
-                              input_html:   {class: 'form-control '},
+                              input_html:   {class: 'chosen-select'},
                               required: true, :selected => '1'   %>
                     </div>
                   </div>
@@ -148,13 +151,36 @@
                   <div class="col-md-3">
                     <label class="label">Rol</label>
                     <div class="form-group" id="tagtype">
-                      <%= f.collection_select :rol_id, Rol.all, :id, :nombre, {prompt: "Campo Obligatorio"}, {class: "form-control"} %>
+    
+
+
+
+      <%= f.select :rol_id, Rol.all.map { |u| ["#{u.nombre}", u.id] }, { include_blank: true },  { class: 'chosen-select', :date => {:placeholder => 'Choose a Country...'} } %>
+
+
                     </div>
-                  </div>
 
                   
+  </div>
+
+<br/>
 
 
+<script type="text/javascript">
+  $(function() {
+  return $('.chosen-select').chosen({
+    allow_single_deselect: true,
+    no_results_text: 'No hay resultados',
+    width: '215px',
+    height: '30px'
+  });
+});
+
+</script>
+
+<script>
+$( ".chosen-default" ).text( "Selecciona una Opción." );
+</script>
 
 
 

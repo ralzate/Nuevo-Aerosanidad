@@ -1,16 +1,39 @@
-<div>
-
-<div>
-    <div>
-    <table class="table table-bordered">
-    <thead>
 
 
 
 
-<table class="table table-bordered" style="margin-top:-30px;">
-  
+<div class="container-fluid">
 
+  <div class="row">
+
+    <div class="col-lg-12">
+
+
+
+
+    <span  class="btn btn-link btn-xs  pull-left pagination pagination"><h1 class="title">Notas de Evolución</h1></span>
+
+
+
+    <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @notas_progreso, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
+
+    
+</span>
+<% if current_user.rol_id != 3 %>
+    <span  class="pagination pull-right"><%= link_to 'Nueva Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), remote: true, :class => "btn   btn-info color_blanco" %></span>
+<% end %>
+
+
+
+
+
+
+
+<table class="table table-bordered table-hover">
+
+
+
+  <thead>
 <tr>
       <th  colspan="7">
         
@@ -99,3 +122,9 @@
 body{margin-top:20px;}
 .fa-fw {width: 2em;}
 </style>
+
+
+
+
+
+

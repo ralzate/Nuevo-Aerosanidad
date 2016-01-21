@@ -8,11 +8,10 @@ class ArlesController < ApplicationController
   respond_to :html
 
   def index
-     @arles = Arl.search(params[:search]).page(params[:page]).per_page(10)
-    respond_to do |format|
-      format.html
-      format.json
-    end
+
+    @arles = Arl.search(params[:search]).page(params[:page]).per_page(8)
+
+    
   end
   # GET /blogs/1
   # GET /blogs/1.json

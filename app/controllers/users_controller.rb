@@ -7,13 +7,14 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     
-    @users = User.paginate(page: params[:page], per_page: 10)
+    @users = User.paginate(page: params[:page], per_page: 2)
+    @usuarios = User.all
     
     respond_to do |format|
       format.html
       format.pdf do 
         pdf = UsersPdf.new(
-          @users)
+          @usuarios)
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition => "inline"
       end
     end

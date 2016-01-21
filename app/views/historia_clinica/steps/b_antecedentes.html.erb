@@ -173,8 +173,20 @@
             <td class="item">
                 <%= f.radio_button(:b_neonatales, "No", class: 'no_requerido', :id => "myRadio13" )%>
             </td>
+
+            <style>
+
+            .descripcion{
+            	height: 30px !important;
+            }
+			.item{
+				text-align: center;
+			}
+            </style>
             <td >
-              <%= f.text_area :b_neonatales_descripcion, class: 'form-control descripcion', :id => "text_requerido", :title => "Es un Campo Obligatorio" %>
+
+                <%= f.text_area :b_neonatales_descripcion, class: 'form-control descripcion', :id => "text_requerido", :title => "Es un Campo Obligatorio" %>
+
             </td>
           </tr>
 
@@ -322,6 +334,8 @@
             </td>
             <td>
               <%= f.text_area :b_familiar_descripcion, class: 'form-control descripcion', :id => "text_requerido10", :title => "Es un Campo Obligatorio" %>
+
+
             </td>
           </tr>
 
@@ -1641,10 +1655,7 @@ if(this.checked){
 
 
 <style type="text/css">
-      body {background: #ccc;
-    font-family: sans-serif;
-      padding:7%;
-    }
+
      
 input {margin-bottom: 10px;}
 #signup label.error {

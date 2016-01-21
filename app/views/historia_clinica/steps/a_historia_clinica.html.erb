@@ -10,11 +10,7 @@
 
 
 <style type="text/css">
-      body {background: #ccc;
-    font-family: sans-serif;
-      padding:7%;
-    }
-     
+
 input {margin-bottom: 10px;}
 #signup label.error {
   font-size: 0.8em;
@@ -234,15 +230,6 @@ $(document).ready(function() {
 
 
 
-         
-<div class="container-fluid">
-    <div class="row">
-<br/>
-	<%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %>
-
-    <h3 style = "color: #22BDC8;">DATOS GENERALES</h3>
-    <hr class="featurette-divider"></hr>
-
 
 <script type="text/javascript">
 
@@ -256,13 +243,20 @@ $('.chosen-single.chosen-default span').text("Seleccionar");
 });
 </script>
 
+
+<div class="container-fluid">
+<br/>
+	<%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %>
+
+    <h3 style = "color: #22BDC8;">DATOS GENERALES</h3>
+
     <div class="row">
 
           <div class="col-md-3">
 
               <label>Aeropuerto:</label> <br/>
 
-          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre}, #{u.nombre}", u.id] }, { include_blank: true },  { class: 'chosen-select2', :date => {:placeholder => 'Choose a Country...'} } %>
+          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.id] }, { include_blank: true },  { class: 'chosen-select2', :date => {:placeholder => 'Choose a Country...'} } %>
 
 
 
@@ -298,34 +292,11 @@ $('.chosen-single.chosen-default span').text("Seleccionar");
 
         </div>
 
-        <br/>
 
-
-
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-<div class="container-fluid">
-
-
+    <h3 style = "color: #22BDC8;">I. IDENTIFICACIÓN DEL PACIENTE</h3>
 
     <div class="row ">
 
-    <h3 style = "color: #22BDC8;">I. IDENTIFICACIÓN DEL PACIENTE</h3>
 
     <hr class="featurette-divider"></hr>
 
@@ -481,7 +452,7 @@ $(function() {
  <label>Origen:</label> <br/>
 
 
-          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre}, #{u.nombre}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
+          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
 
 
                   </div>
@@ -489,7 +460,7 @@ $(function() {
           <div class="col-md-4">
               <label>Destino:</label>  <br/>
 
-          <%= f.select :a_destino, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre}, #{u.nombre}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
+          <%= f.select :a_destino, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { include_blank: true }, { class: 'chosen-select' } %>
 
 
 
@@ -533,7 +504,7 @@ function edValueKeyPress()
 
           <div class="col-md-4">
               <label>Nombre Acompañante:</label> 
-                <%= f.input :a_nombre_acompañante, as: :text,  :input_html => { :class => 'form-control required', id: "acompañante", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
+                <%= f.input :a_nombre_acompañante, :input_html => { :class => 'form-control required', id: "acompañante", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
           </div>
           <div class="col-md-4">
               <label>Parentesco:</label> 
@@ -632,7 +603,7 @@ function edValueKeyPress()
         <div class="col-md-12">
 
 
-                <%= f.text_area :a_motivo_de_consulta, :class => 'form-control required', id: "reason_for_consultation"  , placeholder: 'Campo Obligatorio', label: false, title: "Campo Obligatorio"  %>
+                <%= f.text_area :a_motivo_de_consulta, :class => 'form-control required'  , placeholder: 'Campo Obligatorio', label: false, title: "Campo Obligatorio"  %>
         </div>
         <br/>
         <br/>        <br/>
@@ -655,7 +626,7 @@ function edValueKeyPress()
 
 
 
-                <%= f.input :a_enfermedad_actual, as: :text,  :input_html => { :class => 'form-control required', id: "current_illness", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
+                <%= f.input :a_enfermedad_actual, as: :text,  :input_html => { :class => 'form-control required', title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
 
               
         </div>
@@ -760,12 +731,7 @@ function edValueKeyPress()
        
 
 
-        #current_illness{
-          width: 870px !important;
-        }
-        #reason_for_consultation{
-          width: 870px !important;
-        }
+   
 
         .panel-heading {
             background-image: none;
