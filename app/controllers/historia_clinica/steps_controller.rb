@@ -167,7 +167,7 @@ class HistoriaClinica::StepsController < ApplicationController
            :d_apertura_ocular,
            :d_respuesta_verbal,
            :d_respuesta_motora,
-           :d_escala_de_glasgow, d_alteracion:[], d_otros_signos:[]
+           :d_escala_de_glasgow, d_otros_signos:[],  d_alteracion:[]
           ] 
 
        when "e_impresion_diagnostica"
@@ -175,6 +175,7 @@ class HistoriaClinica::StepsController < ApplicationController
            :e_analisis,
            :e_impresion_diagnostica,
            :e_plan_y_tratamiento,
+           :cie10_id,
            :e_observaciones_recomendaciones,
            :e_evento_adverso,
             :e_estado_historia_clinica,

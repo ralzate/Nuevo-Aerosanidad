@@ -17,12 +17,17 @@ class Aeropuerto < ActiveRecord::Base
   #has_many :historias_clinicas, :class_name => "HistoriaClinica", :foreign_key => "a_origen"
 
 
+  has_many :historias_clinicas, :class_name => "HistoriaClinica", :foreign_key => "cie10_id"
 
 
 
-validates :nombre, :presence => {:message => 'Name cannot be blank, Task not saved'}
-#validates :ciudad_id, :presence => {:message => 'Name cannot be blank, Task not saved'}
-#validates :departamento, :presence => {:message => 'Name cannot be blank, Task not saved'}
+
+
+	#validates :nombre, :presence => {:message => 'Name cannot be blank, Task not saved'}
+	
+
+  #validates :ciudad_id, :presence => {:message => 'Name cannot be blank, Task not saved'}
+	#validates :departamento, :presence => {:message => 'Name cannot be blank, Task not saved'}
 
 
 

@@ -295,7 +295,7 @@ Licensed under MIT
 
                                   <tr class="gradeA even" role="row">
                                       <td class="sorting_1"><b>Ciudad:</b></td>
-                                      <td><%= @historia_clinica.aeropuerto.ciudad.nombre.capitalize %></td>
+                                      <td><%= @historia_clinica.aeropuerto.ciudad.nombre %></td>
                                       <td><b>Departamento:</b></td>
                                       <td class="center"><%= @historia_clinica.aeropuerto.departamento  %></td>
                                   </tr>
@@ -304,11 +304,11 @@ Licensed under MIT
                                       <td class="sorting_1"><b>Medico de Turno:</b></td>
                                       <td><%=  @historia_clinica.user.nombres %> <%=  @historia_clinica.user.apellidos %></td>
                                       <td><b>Aeropuerto:</b></td>
-                                      <td class="center"><%=  @historia_clinica.aeropuerto.nombre.capitalize %> - <%=  @historia_clinica.aeropuerto.ciudad.nombre.capitalize %></td>
+                                      <td class="center"><%=  @historia_clinica.aeropuerto.nombre %> - <%=  @historia_clinica.aeropuerto.ciudad.nombre %></td>
                                   </tr>
                                   <tr class="gradeA even" role="row">
                                       <td class="sorting_1"><b>Empresa:</b></td>
-                                      <td><%=  @historia_clinica.a_empresa.capitalize %></td>
+                                      <td><%=  @historia_clinica.a_empresa %></td>
                                       <td><b> Auxiliar de Enfermería: </b></td>
                                       <td class="center"><%=  @historia_clinica.a_auxiliar %></td>
                                   </tr>
@@ -384,7 +384,7 @@ Licensed under MIT
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Origen:</b></td>
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
-                                    <%= @historia_clinica.a_origen.capitalize %>
+                                    <%= @historia_clinica.a_origen %>
 
                                   </td>
 
@@ -392,7 +392,7 @@ Licensed under MIT
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
 
-                                    <%= @historia_clinica.a_destino.capitalize %> 
+                                    <%= @historia_clinica.a_destino %> 
 
                                   </td>
 
@@ -474,7 +474,7 @@ Licensed under MIT
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Nacionalidad:</b></td>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
-                                      <%= @historia_clinica.p_nacionalidad %>
+                                      <%= to_country_code(@historia_clinica.p_nacionalidad) %>
                                     </td>
 
 
@@ -501,39 +501,36 @@ Licensed under MIT
                                       <%= @historia_clinica.p_direccion %>
                                     </td>
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Fecha de nacimiento:</b></td>
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Fecha de nacimiento:Edad:</b></td>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_fecha_nacimiento.strftime("%d-%m-%Y") %>
-                                     
+                                    
+                                      <%= @historia_clinica.p_edad %> <%= @historia_clinica.p_tipo_edad %> 
                                     </td>
 
                                   </tr>
                                   <tr class="gradeA odd" role="row">
                                       <td class="sorting_1"><b>Condición:</b></td>
                                       <td><%=  @historia_clinica.a_condicion %></td>
-                                      <td class="sorting_1"><b>Edad:</b></td>
-                                      <td><%= @historia_clinica.p_edad %> <%= @historia_clinica.p_tipo_edad %></td>
+                                      <td class="sorting_1"><b>Acompañante:</b></td>
+                                      <td><%=  @historia_clinica.a_nombre_acompañante %></td>
 
                                   </tr>
                                   <tr class="gradeA odd" role="row">
-
-                                  <td class="sorting_1"><b>Acompañante:</b></td>
-                                      <td><%=  @historia_clinica.a_nombre_acompañante %></td>
                                       <td class="sorting_1"><b>Parentesco:</b></td>
                                       <td><%=  @historia_clinica.a_parentesco %></td>
-                                  </tr>
-
-                                  <tr class="gradeA odd" role="row">
                                       <td class="sorting_1"><b>Telefono Acompañante:</b></td>
                                       <td><%=  @historia_clinica.a_telefono %></td>
-                                      <td class="sorting_1"><b>Arl:</b></td>
-                                      <td><%=  @historia_clinica.arl %></td>
+
                                   </tr>
 
                                   <tr class="gradeA odd" role="row">
+                                      <td class="sorting_1"><b>Arl:</b></td>
+                                      <td><%=  @historia_clinica.arl %></td>
                                       <td class="sorting_1"><b>Eps:</b></td>
                                       <td><%=  @historia_clinica.eps %></td>
+
                                   </tr>
 
                                 </tbody>

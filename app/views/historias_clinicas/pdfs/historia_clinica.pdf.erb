@@ -15,6 +15,8 @@
 <% # end %>
 <% #end %>
 
+
+
 </h2>
 
 <% #@alejo  %>
@@ -22,11 +24,6 @@
 
 
 
-<!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
--->
 
 
 
@@ -115,101 +112,7 @@ Licensed under MIT
 
 
 
-<div class="container-fluid">
-    <div class="row">
 
-
-
-
-
-
- 
-
-        <% if @historia_clinica.e_estado_historia_clinica == true %>
-
-        <div class="col-sm-7 col-md-7 col-md-offset-2">
-            <div class="alert-message alert-message-success">
-                <h4>
-                    La Historia Clinica esta cerrada</h4>
-                    
-            </div>
-        </div>
-
-        <% else %>
-
-        <div class="col-sm-7 col-md-7 col-md-offset-2">
-            <div class="alert-message alert-message-danger">
-                <h4>
-                    La Historia Clinica no se ha cerrado aun.</h4>
-                <p>
-                    Para cerrar la historia clinica por favor sigue el siguiente enlace <strong>  <%= link_to "cerrar historia clinica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>"tn btn-xs btn-danger pull-right color_blanco" %></strong>.</p>
-            </div>
-        </div>
-
-        <% end %>
-
-</div>
-    </div>
-<br/>
-
-<div class="row">
-
-
-
-  <div class="col-md-2 " >
-    
-    <%= link_to image_tag("pdf-64.png"), paciente_historia_clinica_path(@paciente,@historia_clinica, :format => "pdf"), target: '_blank',  :rel => "tooltip", :title => "Pdf", :class => 'btn btn-link' %>
-
-
-
-  </div>
-
-
-
-<style>
-
-
-
-.ui-group-buttons .or{position:relative;float:left;width:.3em;height:1.3em;z-index:3;font-size:12px}
-.ui-group-buttons .or:before{position:absolute;top:50%;left:50%;content:'  ';background-color:#2E353D;margin-top:-.1em;margin-left:-.9em;width:1.8em;height:1.8em;line-height:1.55;color:#fff;font-style:normal;font-weight:400;text-align:center;border-radius:500px;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,0.1);box-shadow:0 0 0 1px rgba(0,0,0,0.1);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
-.ui-group-buttons .or:after{position:absolute;top:0;left:0;content:' ';width:.3em;height:2.84em;background-color:rgba(0,0,0,0);border-top:.6em solid #2E353D;border-bottom:.6em solid #2E353D}
-.ui-group-buttons .or.or-lg{height:1.3em;font-size:16px}
-.ui-group-buttons .or.or-lg:after{height:2.85em}
-.ui-group-buttons .or.or-sm{height:1em}
-.ui-group-buttons .or.or-sm:after{height:2.5em}
-.ui-group-buttons .or.or-xs{height:.25em}
-.ui-group-buttons .or.or-xs:after{height:1.84em;z-index:-1000}
-.ui-group-buttons{display:inline-block;vertical-align:middle}
-.ui-group-buttons:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-.ui-group-buttons .btn{float:left;border-radius:0}
-.ui-group-buttons .btn:first-child{margin-left:0;border-top-left-radius:.25em;border-bottom-left-radius:.25em;padding-right:15px}
-.ui-group-buttons .btn:last-child{border-top-right-radius:.25em;border-bottom-right-radius:.25em;padding-left:15px}
-
-
-  </style>
-
-
-  <div class="col-md-6  col-md-offset-1">
-
-
-
-            <div class="ui-group-buttons">
-                 <%= link_to 'Volver a Historias Clinicas' , paciente_historias_clinicas_path(@paciente), :class => "btn btn-success color_blanco mrg" %> 
-                <div class="or"></div>
-    <%= link_to 'Crear Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn btn-primary color_blanco mrg" %>
-            </div>
-
-
-
-
-
-  </div>
-
-  <div class="col-md-4" style="margin-left: 50px; margin-top: -20px;">
-
-
-  </div>
-</div>
 
 
 
@@ -232,9 +135,9 @@ Licensed under MIT
                       <div class="dataTable_wrapper">
                           <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
                               <thead>
-                                  <tr role="row">
-                                  <th  rowspan = "4" style="width:20%;">
-                                    <%= link_to image_tag('Logo/logo.png',:size => "190x100", :class =>"ember-view "), root_path %>
+                                  <tr role="row" >
+                                  <th  rowspan = "4" style="width:20%; height:3px !important;">
+                                  <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width: 140px;" alt="">
                                   </th>
                                   <th  colspan="2">
                                     HISTORIA CLINICA             
@@ -251,7 +154,7 @@ Licensed under MIT
                                     <th style="width:20%;">
                                       HORA MILITAR: <%= @historia_clinica.created_at.strftime("%H:%M") %>
                                     </th>
-                                     <th style="width:30%; text-align:center; font-size:12px">
+                                     <th style="width:20%; text-align:center; font-size:12px">
                                       Revisión 11 - 13           
                                     </th>
                                   </tr>
@@ -308,7 +211,7 @@ Licensed under MIT
                                   </tr>
                                   <tr class="gradeA even" role="row">
                                       <td class="sorting_1"><b>Empresa:</b></td>
-                                      <td><%=  @historia_clinica.a_empresa.capitalize %></td>
+                                      <td><%=  @historia_clinica.a_empresa %></td>
                                       <td><b> Auxiliar de Enfermería: </b></td>
                                       <td class="center"><%=  @historia_clinica.a_auxiliar %></td>
                                   </tr>
@@ -384,7 +287,7 @@ Licensed under MIT
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Origen:</b></td>
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
-                                    <%= @historia_clinica.a_origen.capitalize %>
+                                    <%= @historia_clinica.a_origen %>
 
                                   </td>
 
@@ -392,7 +295,7 @@ Licensed under MIT
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
 
-                                    <%= @historia_clinica.a_destino.capitalize %> 
+                                    <%= @historia_clinica.a_destino %> 
 
                                   </td>
 
@@ -474,7 +377,7 @@ Licensed under MIT
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Nacionalidad:</b></td>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
-                                      <%= @historia_clinica.p_nacionalidad %>
+                                      <%= to_country_code(@historia_clinica.p_nacionalidad) %>
                                     </td>
 
 
@@ -501,39 +404,36 @@ Licensed under MIT
                                       <%= @historia_clinica.p_direccion %>
                                     </td>
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Fecha de nacimiento:</b></td>
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Fecha de nacimiento:Edad:</b></td>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_fecha_nacimiento.strftime("%d-%m-%Y") %>
-                                     
+                                    
+                                      <%= @historia_clinica.p_edad %> <%= @historia_clinica.p_tipo_edad %> 
                                     </td>
 
                                   </tr>
                                   <tr class="gradeA odd" role="row">
                                       <td class="sorting_1"><b>Condición:</b></td>
                                       <td><%=  @historia_clinica.a_condicion %></td>
-                                      <td class="sorting_1"><b>Edad:</b></td>
-                                      <td><%= @historia_clinica.p_edad %> <%= @historia_clinica.p_tipo_edad %></td>
+                                      <td class="sorting_1"><b>Acompañante:</b></td>
+                                      <td><%=  @historia_clinica.a_nombre_acompañante %></td>
 
                                   </tr>
                                   <tr class="gradeA odd" role="row">
-
-                                  <td class="sorting_1"><b>Acompañante:</b></td>
-                                      <td><%=  @historia_clinica.a_nombre_acompañante %></td>
                                       <td class="sorting_1"><b>Parentesco:</b></td>
                                       <td><%=  @historia_clinica.a_parentesco %></td>
-                                  </tr>
-
-                                  <tr class="gradeA odd" role="row">
                                       <td class="sorting_1"><b>Telefono Acompañante:</b></td>
                                       <td><%=  @historia_clinica.a_telefono %></td>
-                                      <td class="sorting_1"><b>Arl:</b></td>
-                                      <td><%=  @historia_clinica.arl %></td>
+
                                   </tr>
 
                                   <tr class="gradeA odd" role="row">
+                                      <td class="sorting_1"><b>Arl:</b></td>
+                                      <td><%=  @historia_clinica.arl %></td>
                                       <td class="sorting_1"><b>Eps:</b></td>
                                       <td><%=  @historia_clinica.eps %></td>
+
                                   </tr>
 
                                 </tbody>
@@ -552,7 +452,6 @@ Licensed under MIT
           <!-- /.col-lg-12 -->
       </div>
 
-      <br/>
 
 
 
@@ -582,7 +481,6 @@ Licensed under MIT
       
 
 
-      <br/>
       <div class="row">
           <div class="col-lg-12">
               <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">   III. ENFERMEDAD ACTUAL</h2></div>

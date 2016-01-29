@@ -68,8 +68,13 @@ gem 'jasny_bootstrap_extension_rails'
 gem 'carmen-rails', '~> 1.0.0'
 gem 'sextant'
 gem 'chosen-rails'
+gem "select2-rails"
+
 gem 'rails4-autocomplete'
 gem 'wicked'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 gem 'time_difference'
 
 # Use ActiveModel has_secure_password

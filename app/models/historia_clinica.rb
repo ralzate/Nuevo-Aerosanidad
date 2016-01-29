@@ -11,10 +11,10 @@ class HistoriaClinica < ActiveRecord::Base
 
 
 
-
   #belongs_to :origen_aeropuertos,  :primary_key => "id", :foreign_key => "a_orgien", :class_name  => "Aeropuerto"
   #belongs_to :destino_aeropuertos,  :primary_key => "id", :foreign_key => "a_destino", :class_name => "Aeropuerto"
 
+  belongs_to :cie10_principal, :class_name => 'Cie10', :foreign_key => 'cie10_id'
 
 
   has_many :cie10s
@@ -25,6 +25,10 @@ class HistoriaClinica < ActiveRecord::Base
   
   accepts_nested_attributes_for :diagnosticos, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :procedimientos, reject_if: :all_blank, allow_destroy: true
+
+
+
+
 
 
   cattr_accessor :form_steps do

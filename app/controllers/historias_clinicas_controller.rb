@@ -8,8 +8,9 @@ class HistoriasClinicasController < ApplicationController
 
   end
 
-  # GET /pets/1
-  # GET /pets/1.json
+
+
+  
   def show
     @cie10s = Cie10.all
     @alejo = 0
@@ -22,17 +23,14 @@ class HistoriasClinicasController < ApplicationController
     @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(2)
     respond_to do |format|
       format.html
-      format.pdf do 
-        pdf = HistoriasClinicasPdf.new(
-          @historias_clinicas, 
-          @diagnosticos, 
-          @cie10s, 
-          @procedimientos,
-          @notas_progreso)
-        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition => "inline"
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'historias_clinicas/pdfs/historia_clinica.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
       end
     end
-
+    
   end
 
 

@@ -62,7 +62,7 @@ class UsersPdf < Prawn::Document
     text "Aeropuerto Medellín: (57)(4) 3656171 / 3007042683", size: 9, :align => :center
     text "Aeropuerto Rionegro: 3002214168", size: 9, :align => :center
     text "------------------------------------------------", size: 9, :align => :center
-    text "info@aerosanidadsas.com",  size: 9, :align => :center
+    text "comunicaciones@aerosanidadsas.com",  size: 9, :align => :center
   end
 
 end

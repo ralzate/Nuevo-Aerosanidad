@@ -1,11 +1,13 @@
 PetThing::Application.routes.draw do
 
 
-  get 'pdf_views',    to: 'informes#alejo', as: "hola"
+
 
   get 'informes/index',  to: 'informes#index', as: "info_link"
 
-  get 'informes/show'
+
+  get 'informes/mensual_actividades_medicas',    to: 'informes#mensual_actividades_medicas', as: "mensual_actividades_medicas"
+
 
   resources :paises
   resources :cie10s, :defaults => { :format => :json }

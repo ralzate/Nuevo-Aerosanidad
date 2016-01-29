@@ -1,16 +1,16 @@
-<br/>
+
 <div class="nested-fields">
   <div class="">
-      <div class="well clearfix inicio">
+      <div class=" clearfix inicio">
       <div class="row">
-        <div class="col-md-9 ">
+        <div class="col-md-11">
 <%= f.select :cie10_id,
   Cie10.all.map { |u| ["#{u.descripcion}, #{u.codigo}", u.id] },
                { include_blank: true },
                { class: 'chosen-select' } %>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-1">
           <%= link_to_remove_association 'Eliminar', f, :class => "btn btn-danger color_blanco custom  pull-right btn-sm" %>
         </div>
       </div>
@@ -23,12 +23,12 @@
 
 
 .chosen-container-single .chosen-single {
-  width: 290% !important;
-  margin-left: 30px;
+  width: 320% !important;
+  margin-left: 0px;
 }  
 .chosen-drop{
-  width: 290% !important;
-  margin-left: 30px;  
+  width: 320% !important;
+  margin-left: 0px;  
 }
 .inicio
 {
@@ -45,7 +45,7 @@ $(function() {
   return $('.chosen-select').chosen({
     allow_single_deselect: true,
     no_results_text: 'No results matched',
-    width: '200px'
+    width: '232px'
   });
 });
 
@@ -54,6 +54,5 @@ $(function() {
 
 
 </script>
-
 
 

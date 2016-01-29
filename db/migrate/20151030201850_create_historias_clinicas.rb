@@ -21,7 +21,9 @@ class CreateHistoriasClinicas < ActiveRecord::Migration
           t.string   :p_departamento
           t.integer  :paciente_id
           t.string   :a_auxiliar
-          t.integer   :aeropuerto_id
+          t.integer  :aeropuerto_id
+          t.integer  :cie10_id
+          t.string   :tipo_de_vuelo
           t.string   :a_cove    
           t.string   :a_movil_servicio
           t.string   :a_condicion
@@ -139,8 +141,12 @@ class CreateHistoriasClinicas < ActiveRecord::Migration
           t.text     :e_analisis
           t.text     :e_observaciones_recomendaciones
           t.text     :e_evento_adverso
-         t.boolean  :e_estado_historia_clinica
-         t.string  :e_estado_paciente
+          t.string   :patologias
+          t.string   :otras_patologias
+          t.string   :accidentes_especiales
+          t.string   :notificacion_obligatoria
+          t.boolean  :e_estado_historia_clinica
+          t.string  :e_estado_paciente
           t.string  :e_glucometria1
           t.string   :e_hora1
           t.string  :e_glucometria2
@@ -148,6 +154,7 @@ class CreateHistoriasClinicas < ActiveRecord::Migration
           t.text     :e_electrocardiograma
           t.references :aeropuerto, index: true, foreign_key: true
           t.references :user, index: true, foreign_key: true
+          t.references :cie10, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -116,21 +116,39 @@ table([
 ], :width => bounds.width, :column_widths => [65, 40, 100, 150]) do |t|
    t.cells.border_width = 0
 
+  
+      t.before_rendering_page do |page|
+      page.row(0).border_top_width          = 1
+      page.row(-1).border_bottom_width      = 1
+      page.column(0).border_left_width      = 1
+      page.column(-1).border_right_width    = 1
+      end
+
 end
  end
 
 
   @historias_clinicas.map do |historia_clinica|
       table([
-        [{:content =>  'Movil/Servicio:            ' +  historia_clinica.a_movil_servicio.to_s,  size: 8} , 
-         {:content => 'Conductor/Comandante:    ' + historia_clinica.a_cove.to_s,  size: 8},
-         {:content =>  'Ciudad:                   ' +  historia_clinica.p_ciudad.to_s.capitalize,  size: 8 }
+        [{:content =>  'Movil/Servicio:            ' +  historia_clinica.a_movil_servicio.to_s,  size: 9} , 
+         {:content => 'Conductor/Comandante:       ' + historia_clinica.a_cove.to_s,  size: 9},
+         {:content =>  'Ciudad:                    ' +  historia_clinica.p_ciudad.to_s.capitalize,  size: 9}
         ]
       ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
      t.cells.border_width = 0
 
+      t.before_rendering_page do |page|
+      page.row(0).border_top_width          = 1
+      page.row(-1).border_bottom_width      = 0
+      page.column(0).border_left_width      = 1
+      page.column(-1).border_right_width    = 1
       end
-    end 
+
+      end
+    end
+
+
+
   end
 
 
@@ -139,14 +157,29 @@ end
        @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Aeropuerto:                ' + historia_clinica.aeropuerto.nombre.to_s.capitalize + ' - ' + historia_clinica.aeropuerto.ciudad.nombre.to_s.capitalize,  size: 8},
+      [{:content => 'Aeropuerto:                ' + historia_clinica.aeropuerto.nombre.to_s.capitalize + ' - ' + historia_clinica.aeropuerto.ciudad.nombre.to_s.capitalize,  size: 9},
        {:content =>  'Medico De Turno:               ' +  historia_clinica.user.nombre_usuario.to_s,  size: 8},
        {:content => 'Registro Medico:                     ' + historia_clinica.user.registro_medico.to_s,  size: 8}
       ]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
+
+      t.before_rendering_page do |page|
+      page.row(0).border_top_width          = 0
+      page.row(-1).border_bottom_width      = 0
+      page.column(0).border_left_width      = 1
+      page.column(-1).border_right_width    = 1
+      end
+
+
     end
+
   end 
+
+
+
+
+
   end
 
 
@@ -156,12 +189,20 @@ end
     @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Empresa:                   ' +  historia_clinica.a_empresa.to_s.capitalize,  size: 8 } , 
+      [{:content =>  'Empresa:            ' +  historia_clinica.a_empresa.to_s.capitalize,  size: 8 } , 
        {:content => 'Auxiliar De Enfermería:      ' + historia_clinica.a_auxiliar.to_s,  size: 8},
        {:content =>  'Tipo De Servicio:   ' +  historia_clinica.a_tipo_servicio.to_s.capitalize,  size: 8}
       ]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
+
+      t.before_rendering_page do |page|
+      page.row(0).border_top_width          = 0
+      page.row(-1).border_bottom_width      = 0
+      page.column(0).border_left_width      = 1
+      page.column(-1).border_right_width    = 1
+      end
+
     end
   end 
 
@@ -180,9 +221,17 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Lugar De Atención:    ' + historia_clinica.a_lugar_de_atencion.to_s,  size: 8}]
+      [{:content => 'Lugar De Atención:    ' + historia_clinica.a_lugar_de_atencion.to_s,  size: 7}]
     ], :width => bounds.width, :column_widths => [540]) do |t|
    t.cells.border_width = 0
+  
+      t.before_rendering_page do |page|
+      page.row(0).border_top_width          = 0
+      page.row(-1).border_bottom_width      = 1
+      page.column(0).border_left_width      = 1
+      page.column(-1).border_right_width    = 1
+      end
+
     end
 
 end
@@ -200,12 +249,20 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content =>  'Nombres:                      ' +  historia_clinica.p_primer_nombre.to_s + ' ' + historia_clinica.p_segundo_nombre,  size: 8} , 
-       {:content => 'Apellidos:              ' + historia_clinica.p_primer_apellido.to_s + ' ' + historia_clinica.p_segundo_apellido,  size: 8},
-       {:content =>  'Email:                         ' +  historia_clinica.p_email.to_s,  size: 8}
+      [{:content =>  'Nombres:                      ' +  historia_clinica.p_primer_nombre.to_s + ' ' + historia_clinica.p_segundo_nombre,  size: 7} , 
+       {:content => 'Apellidos:              ' + historia_clinica.p_primer_apellido.to_s + ' ' + historia_clinica.p_segundo_apellido,  size: 7},
+       {:content =>  'Email:                         ' +  historia_clinica.p_email.to_s,  size: 7}
      ]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
+
+
+      t.before_rendering_page do |page|
+      page.row(0).border_top_width          = 1
+      page.row(-1).border_bottom_width      = 0
+      page.column(0).border_left_width      = 1
+      page.column(-1).border_right_width    = 1
+      end
     end
 
 end
@@ -223,9 +280,9 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Tipo De Documento:    ' + historia_clinica.p_tipo_documento.to_s,  size: 8},
-        {:content =>  'Documento:          ' +  historia_clinica.p_documento.to_s,  size: 8},
-        {:content => 'Fecha Nacimiento:     ' + historia_clinica.p_fecha_nacimiento.to_s,  size: 8} ]
+      [{:content => 'Tipo De Documento:    ' + historia_clinica.p_tipo_documento.to_s,  size: 7},
+        {:content =>  'Documento:          ' +  historia_clinica.p_documento.to_s,  size: 7},
+        {:content => 'Fecha Nacimiento:     ' + historia_clinica.p_fecha_nacimiento.to_s,  size: 7} ]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
     end
@@ -270,9 +327,9 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Nacionalidad:              ' + historia_clinica.p_nacionalidad,  size: 8},
+      [{:content => 'Nacionalidad:                ' + historia_clinica.p_nacionalidad,  size: 8},
        {:content => 'Dirección:             ' + historia_clinica.p_direccion,  size: 8},
-       {:content => 'Nombre Usuario:        ' + historia_clinica.user.nombre_usuario,  size: 8}
+       {:content => 'Nombre De Medico:  ' + historia_clinica.user.nombres + ' ' + historia_clinica.user.apellidos,  size: 8}
      ]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
@@ -301,9 +358,9 @@ end
  @historias_clinicas.map do |historia_clinica|
 
     table([
-      [{:content => 'Condición:                        ' + historia_clinica.a_condicion,  size: 8}, 
-        {:content => 'Origen:                                 ' + historia_clinica.a_origen.capitalize,  size: 8},
-        {:content => 'Destino:                              ' + historia_clinica.a_destino,  size: 8}
+      [{:content => 'Condición:                     ' + historia_clinica.a_condicion.capitalize,  size: 8}, 
+        {:content => 'Origen:                 ' + historia_clinica.a_origen.capitalize,  size: 8},
+        {:content => 'Destino:                    ' + historia_clinica.a_destino.capitalize,  size: 8}
       ]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
@@ -352,7 +409,7 @@ end
 
     table([
       [{:content => 'Arl:                  ' + historia_clinica.arl,  size: 8}, 
-        {:content => 'Eps:                  ' + historia_clinica.a_parentesco,  size: 8},
+        {:content => 'Eps:                  ' + historia_clinica.eps,  size: 8},
       {:content => 'Edad:                                  ' + historia_clinica.p_edad.to_s + ' ' + historia_clinica.p_tipo_edad,  size: 8}]
     ], :width => bounds.width, :column_widths => [180, 180, 180]) do |t|
    t.cells.border_width = 0
@@ -1636,15 +1693,12 @@ end
 
 
 
-
+  # Nombre del Medico responsable de la Historia Clinica
   def pie_de_pagina 
     move_down 480
-    text "www.aerosanidadvirtual.com", size: 8, :align => :center, :style => :bold
-    text "Aeropuerto Bogotá: (57)(1) 2205674 / 3002221245", size: 8, :align => :center
-    text "Aeropuerto Medellín: (57)(4) 3656171 / 3007042683", size: 8, :align => :center
-    text "Aeropuerto Rionegro: 3002214168", size: 8, :align => :center
-    text "------------------------------------------------", size: 8, :align => :center
-    text "info@aerosanidadsas.com",  size: 8, :align => :center
+    text "Aerodanidad Teléfono: (57) (4) 448 84 10", size: 8, :align => :center, :style => :bold
+    text "Email: comunicaciones@aerosanidadsas.com",  size: 9, :align => :center
+    text "www.aerosanidadsas.com",  size: 9, :align => :center
   end
 
 end 

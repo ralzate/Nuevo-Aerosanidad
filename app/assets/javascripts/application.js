@@ -18,6 +18,8 @@
 //= require turbolinks
 //= require cocoon
 //= require chosen-jquery
+//= require select2
+//= require select2_locale_"es"
 //= require autocomplete-rails
 //= require lazybox
 //= require turbolinks

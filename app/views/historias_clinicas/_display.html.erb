@@ -14,7 +14,9 @@
 
 
 
-    <span  class="btn btn-link btn-xs  pull-left pagination pagination"><h1 class="title">Listado de  <span>Historias Clinicas</span> de <%= @paciente.primer_nombre %></h1></span>
+    <span  class="btn btn-link btn-xs  pull-left pagination pagination">
+      <h2 class="title" style="color:#22BDC8;">Listado de  <span>Historias Clinicas</span> de <%= @paciente.primer_nombre %></h2>
+      </span>
 
 
     <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @historias_clinicas, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
@@ -30,7 +32,7 @@
 
 <% if current_user.rol_id != 3 %>
 
-    <span  class="btn btn-link btn-xs pull-right"><%= link_to 'Nueva Historia Clinica', new_paciente_historia_clinica_path(@paciente), :class => "btn btn-info color_blanco" %></span>
+    <span  class="btn btn-link btn-xs pull-right" style="margin-top: 18px;"><%= link_to 'Nueva Historia Clinica', new_paciente_historia_clinica_path(@paciente), :class => "btn btn-info color_blanco" %></span>
 
     
 <% end %>

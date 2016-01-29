@@ -371,7 +371,7 @@ function edValueKeyPress()
                   <div class="form-group">
                   <label class="label">Nacionalidad</label>
 
-           <%= f.select :nacionalidad, Pais.all.map { |u| ["#{u.nombre}", u.nombre] }, { include_blank: true },  { class: 'chosen-select', :date => {:placeholder => 'Choose a Country...'} } %>
+           <%= f.select :nacionalidad, Pais.all.map { |u| ["#{u.nombre}", u.nombre] }, { include_blank: true },  { class: 'chosen-select required', :date => {:placeholder => 'Choose a Country...'} } %>
 
 
 

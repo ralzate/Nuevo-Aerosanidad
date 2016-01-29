@@ -12,12 +12,12 @@
            
             <div class="panel-body">
             <div class="row">
-              <div class="col-md-5">
-                <strong>Nombre: </strong> <%= @aeropuerto.nombre %>
+              <div class="col-md-6">
+                <strong>Nombre: </strong> <%= @aeropuerto.nombre.capitalize %>
               </div><!-- .col-md-3 -->
 
-              <div class="col-md-7">
-                <strong>Departamento: </strong> <%= @aeropuerto.departamento %>
+              <div class="col-md-6">
+                <strong>Departamento: </strong> <%= @aeropuerto.departamento.capitalize %>
               </div><!-- .col-md-3 -->
               </div>
 
@@ -25,7 +25,7 @@
             <div class="row">
 
               <div class="col-md-6">
-                <strong>Ciudad: </strong> <%= @aeropuerto.ciudad.nombre %>
+                <strong>Ciudad: </strong> <%= @aeropuerto.ciudad.nombre.capitalize %>
               </div><!-- .col-md-3 -->
               </div>
 

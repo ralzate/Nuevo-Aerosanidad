@@ -710,16 +710,6 @@ class HistorisClinicasPdf < Prawn::Document
 
       image = "#{Rails.root}/app/assets/images/Logo/LogoPdf.png"
 
-      #text "HISTORIA CLINICA", size: 15, style: :bold, :color => "22BDC8", :align => :center
-
-
-      #table([
-      # [{:image => image, :fit => [95, 190], :colspan => 2, :rowspan => 3}, {:content => "AEROPUERTO:", :colspan => 2,  size: 11, :align => :center}, {:content => 'HC N" ',  size: 9, :align => :center}],
-      #  [{:content => 'FECHA: ',  size: 9},{:content => 'HORA MILITAR: ',  size: 9, :align => :right} , {:content => 'Revisión 11 - 13',  size: 9, :align => :center}],
-      # [{:content => "DATOS GENERALES", :colspan => 2,  size: 9, :align => :center}, {:content => "F GS 033",  size: 9, :align => :center}]
-      #], :width => bounds.width, :column_widths => [65, 40, 100, 150]) do |t|
-      #   t.cells.border_width = 0
-      # end
        
 
       table([
@@ -1544,7 +1534,7 @@ end
     text "Aeropuerto Medellín: (57)(4) 3656171 / 3007042683", size: 9, :align => :center
     text "Aeropuerto Rionegro: 3002214168", size: 9, :align => :center
     text "------------------------------------------------", size: 9, :align => :center
-    text "info@aerosanidadsas.com",  size: 9, :align => :center
+    text "comunicaciones@aerosanidadsas.com",  size: 9, :align => :center
   end
 
 end

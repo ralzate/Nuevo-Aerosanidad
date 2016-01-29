@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(version: 20160115180054) do
     t.integer  "paciente_id"
     t.string   "a_auxiliar"
     t.integer  "aeropuerto_id"
+    t.integer  "cie10_id"
+    t.string   "tipo_de_vuelo"
     t.string   "a_cove"
     t.string   "a_movil_servicio"
     t.string   "a_condicion"
@@ -223,6 +225,10 @@ ActiveRecord::Schema.define(version: 20160115180054) do
     t.text     "e_analisis"
     t.text     "e_observaciones_recomendaciones"
     t.text     "e_evento_adverso"
+    t.string   "patologias"
+    t.string   "otras_patologias"
+    t.string   "accidentes_especiales"
+    t.string   "notificacion_obligatoria"
     t.boolean  "e_estado_historia_clinica"
     t.string   "e_estado_paciente"
     t.string   "e_glucometria1"
@@ -237,6 +243,7 @@ ActiveRecord::Schema.define(version: 20160115180054) do
   end
 
   add_index "historias_clinicas", ["aeropuerto_id"], name: "index_historias_clinicas_on_aeropuerto_id", using: :btree
+  add_index "historias_clinicas", ["cie10_id"], name: "index_historias_clinicas_on_cie10_id", using: :btree
   add_index "historias_clinicas", ["user_id"], name: "index_historias_clinicas_on_user_id", using: :btree
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -296,11 +303,12 @@ ActiveRecord::Schema.define(version: 20160115180054) do
     t.string   "nombre_paciente"
     t.string   "documento_paciente"
     t.string   "tipo_documento"
+    t.string   "procedimientos_medicos_y_de_enfermeria"
     t.text     "descripcion"
     t.integer  "historia_clinica_id"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "notas_progreso", ["historia_clinica_id"], name: "index_notas_progreso_on_historia_clinica_id", using: :btree
@@ -414,6 +422,7 @@ ActiveRecord::Schema.define(version: 20160115180054) do
   add_foreign_key "diagnosticos", "cie10s"
   add_foreign_key "diagnosticos", "historias_clinicas"
   add_foreign_key "historias_clinicas", "aeropuertos"
+  add_foreign_key "historias_clinicas", "cie10s"
   add_foreign_key "historias_clinicas", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
