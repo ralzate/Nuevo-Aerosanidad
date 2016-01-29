@@ -145,6 +145,7 @@ class CreateHistoriasClinicas < ActiveRecord::Migration
           t.string   :otras_patologias
           t.string   :accidentes_especiales
           t.string   :notificacion_obligatoria
+          t.string   :emergencias
           t.boolean  :e_estado_historia_clinica
           t.string  :e_estado_paciente
           t.string  :e_glucometria1

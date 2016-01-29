@@ -357,6 +357,7 @@ ul.alert-dropdown {
                     </li>
                     <li>
 
+<% if current_user.rol_id == 1 %>
                       <%= link_to  epses_path, class: "color-negro" do %>
                           <i class="fa fa-fw fa-building-o"></i> Eps
                       <% end %>
@@ -403,6 +404,7 @@ ul.alert-dropdown {
                     </li>
 
 
+<% end %>                    
 
 
                     <li>
@@ -411,7 +413,16 @@ ul.alert-dropdown {
                           <i class="fa fa-fw fa-wheelchair"></i> Pacientes
                       <% end %>
                     </li>
+                <% if current_user.rol_id == 1 %>
 
+                        <li class="color-negro">
+ 
+                       <%= link_to  info_link_path, class: "color-negro" do %>
+                           <i class="fa fa-fw fa-bar-chart"></i> Informes
+                       <% end %>
+ 
+                     </li>
+                <% end %>                    
 
                     <li class="my-logo"><%= link_to image_tag('Logo/logo.png',:size => "160x80", :class =>"ember-view"), root_path %></li>
                 </ul>

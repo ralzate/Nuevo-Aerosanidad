@@ -591,7 +591,7 @@ $(function() {
                   <div class="col-md-3">
                   <label class="label"><b>Otras Patologias</b></label>
                     <div class="form-group">
-                      <%= f.input :patologias,
+                      <%= f.input :otras_patologias,
                               prompt:       'Seleccionar una Opción',
                               collection: @historia_clinica.select_otras_patologias,
                               error: false, label: false, 
@@ -606,7 +606,7 @@ $(function() {
                   <div class="col-md-3">
                   <label class="label"><b>Accidentes Especiales</b></label>
                     <div class="form-group">
-                      <%= f.input :patologias,
+                      <%= f.input :accidentes_especiales,
                               prompt:       'Seleccionar una Opción',
                               collection: @historia_clinica.select_accidentes_especiales,
                               error: false, label: false, 
@@ -620,7 +620,7 @@ $(function() {
                   <div class="col-md-3">
                   <label class="label"><b>Notificación Obligatoria</b></label>
                     <div class="form-group">
-                      <%= f.input :patologias,
+                      <%= f.input :notificacion_obligatoria,
                               prompt:       'Seleccionar una Opción',
                               collection: @historia_clinica.select_notificacion_obligatoria,
                               error: false, label: false, 
@@ -650,7 +650,7 @@ $(function() {
                   <div class="col-md-3">
                   <label class="label"><b>Emergencias</b></label>
                     <div class="form-group">
-                      <%= f.input :patologias,
+                      <%= f.input :emergencias,
                               prompt:       'Seleccionar una Opción',
                               collection: @historia_clinica.select_emergencias,
                               error: false, label: false, 
