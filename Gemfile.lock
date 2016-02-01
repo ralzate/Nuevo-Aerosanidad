@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/mileszs/wicked_pdf.git
+  revision: faa3c0d5f21be4e54293fecde930244288c69802
+  specs:
+    wicked_pdf (1.0.4)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: c6893c3db02108bcdee7f8f333531b99806779ac
   specs:
@@ -365,11 +371,10 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
     wicked (1.2.1)
       railties (>= 3.0.7)
-    wicked_pdf (1.0.3)
     will_paginate (3.0.7)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
-    wkhtmltopdf-binary (0.9.9.3)
+    wkhtmltopdf-binary-edge (0.12.2.1)
 
 PLATFORMS
   ruby
@@ -428,10 +433,10 @@ DEPENDENCIES
   validates_email_format_of
   web-console (~> 2.0)
   wicked
-  wicked_pdf
+  wicked_pdf!
   will_paginate
   will_paginate-bootstrap
-  wkhtmltopdf-binary
+  wkhtmltopdf-binary-edge (~> 0.12.2.1)
 
 BUNDLED WITH
    1.10.6

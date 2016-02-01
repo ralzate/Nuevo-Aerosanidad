@@ -39,6 +39,25 @@ class InformesController < ApplicationController
 
   end
 
+
+  def aerocivil
+
+    @historias_clinicas = HistoriaClinica.all
+    @users = User.all
+    @empresas = Empresa.all
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'historias_clinicas/pdfs/aerocivil.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+
+  end
+
   def informe_mensual
      @historias_clinicas = HistoriaClinica.all
 

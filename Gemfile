@@ -72,12 +72,12 @@ gem "select2-rails"
 
 gem 'rails4-autocomplete'
 gem 'wicked'
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
 
 gem 'time_difference'
 
-# Use ActiveModel has_secure_password
+# Use ActiveModel has_secure_passwordx
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server

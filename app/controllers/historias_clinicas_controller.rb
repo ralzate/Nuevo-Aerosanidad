@@ -21,6 +21,7 @@ class HistoriasClinicasController < ApplicationController
     @notas_progreso = @historia_clinica.notas_progreso
 
     @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(2)
+    
     respond_to do |format|
       format.html
       format.pdf do
@@ -30,6 +31,7 @@ class HistoriasClinicasController < ApplicationController
         :show_as_html => params[:debug].present?
       end
     end
+
     
   end
 

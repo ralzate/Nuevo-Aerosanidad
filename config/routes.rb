@@ -9,6 +9,11 @@ PetThing::Application.routes.draw do
   get 'informes/mensual_actividades_medicas',    to: 'informes#mensual_actividades_medicas', as: "mensual_actividades_medicas"
 
 
+  get 'informes/aerocivil',    to: 'informes#aerocivil', as: "aerocivil"
+
+
+
+
   resources :paises
   resources :cie10s, :defaults => { :format => :json }
 
@@ -75,7 +80,7 @@ PetThing::Application.routes.draw do
 
   get       'login',  to:   'sessions#new',       as: :login
   post      'login',  to:   'sessions#create'
-  delete    'logout', to:   'sessions#destroy',   as: :logout
+  get "logout" => "sessions#destroy", :as => "logout"
 
 
 

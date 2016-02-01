@@ -160,7 +160,7 @@ $(document).ready(function() {
 
 <div class="container-fluid navbar navbar-default" style = "margin-bottom:0px!important">
   <div class="row">
-<%= simple_form_for([@paciente, @historia_clinica], :html => { :id => "signup" }) do |f| %>
+<%= simple_form_for([@paciente, @historia_clinica], method: :put, url: wizard_path, :html => { :class => 'block multistep pf_form w_normal horizontal_center shadow', :id => "signup" }) do |f| %>
 
 
 

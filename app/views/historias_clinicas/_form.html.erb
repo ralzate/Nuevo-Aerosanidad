@@ -311,7 +311,10 @@ div .help-block{
 			
 	        <div class="col-md-4 aeropuerto" style="margin-top: 3px;">
 	          <label>Aeropuerto:</label> 
-	          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.id] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_aeropuerto", :date => {:placeholder => 'Choose a Country...', label: false} } %>
+	          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.id] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_aeropuerto" } %>
+
+
+	          
 
 	        </div>
 
