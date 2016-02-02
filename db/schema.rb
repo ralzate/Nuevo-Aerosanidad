@@ -377,6 +377,7 @@ ActiveRecord::Schema.define(version: 20160115180054) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "aprobado_login"
     t.string   "email",                                       null: false
     t.string   "nombre_usuario"
     t.string   "nombres"

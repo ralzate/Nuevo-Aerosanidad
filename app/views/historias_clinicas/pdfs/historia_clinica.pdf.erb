@@ -113,20 +113,34 @@
 
 
 
+<br/>
 
 
 
+<style type="text/css" media="screen">
+  th{
+    font-size: 10px;
+  }  
+
+  td{
+    font-size: 9px;
+  }
+  .aaa{
+    margin-top: 20px;
+    width: 700px;
+    margin-left: -20px;
+  }
+
+</style>
 
 
 
-
-
-<div id="page-wrapper" style="min-height: 343px;">
+<div id="page-wrapper" style="min-height: 343px;" class="aaa">
       
 
 
       <!-- /.row -->
-      <div class="row">
+      <div class="row ">
           <div class="col-lg-12">
               <div class="panel panel-default">
 
@@ -134,47 +148,54 @@
                   <div class="panel-body">
                       <div class="dataTable_wrapper">
                           <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
-                              <thead>
-                                  <tr role="row" >
-                                  <th  rowspan = "4" style="width:20%; height:3px !important;">
-                                  <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width: 140px;" alt="">
+
+                              <tbody>
+
+
+
+
+
+                                  <tr role="row">
+                                  <th  rowspan = "3" style="width:20%; height: 2% !important;">
+                                  <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width:118px;" alt="">
                                   </th>
-                                  <th  colspan="2">
-                                    HISTORIA CLINICA             
+                                  <th  colspan="2" style="text-align: center;">
+                                    Historia Clinica             
                                   </th>
                                   <th style="text-align: center;">
-                                    HC N" <%= @historia_clinica.id %>
+                                    Hc n" <%= @historia_clinica.id %>
                                   </th>
                                   </tr>
 
                                   <tr>
                                      <th style="width:20%; ">
-                                     FECHA:  <%= @historia_clinica.created_at.strftime("%d-%m-%y") %>
+                                     Fecha:  <%= @historia_clinica.created_at.strftime("%d-%m-%y") %>
                                     </th>
                                     <th style="width:20%;">
-                                      HORA MILITAR: <%= @historia_clinica.created_at.strftime("%H:%M") %>
+                                      Hora Militar: <%= @historia_clinica.created_at.strftime("%H:%M") %>
                                     </th>
-                                     <th style="width:20%; text-align:center; font-size:12px">
+                                     <th style="width:30%; text-align:center; ">
                                       Revisión 11 - 13           
                                     </th>
                                   </tr>
 
-                                  <tr>
+                                  <tr style="height:230% !important;">
                                       
                                      <th colspan = "2" style="width:85%;text-align:center;" rowspan="1">
-                                     DATOS GENERALES          
+                                     Datos Generales          
                                     </th>
 
 
-                                     <th style="width:20%;text-align:center;font-size:12px">
+                                     <th style="width:20%;text-align:center;">
                                       F GS 033           
                                     </th> 
                                      
                                   </tr>
 
 
-                              </thead>
-                              <tbody>
+
+
+
 
 
              
@@ -182,13 +203,13 @@
 
                               
                               <tr class="gradeA odd" role="row">
-                                      <td class="sorting_1" >
-                                        <b>Movil/Servicio:</b>        
-                                      </td>
+                                      <th class="sorting_1" >
+                                        Movil/Servicio:    
+                                      </th>
                                       <td><%= @historia_clinica.a_movil_servicio %></td>
-                                      <td>
-                                        <b>Conductor/Comandante:</b> 
-                                      </td>
+                                      <th>
+                                        Conductor/Comandante:
+                                      </th>
                                       <td class="center"><%= @historia_clinica.a_cove  %></td>
                                   </tr>
 
@@ -197,28 +218,28 @@
 
 
                                   <tr class="gradeA even" role="row">
-                                      <td class="sorting_1"><b>Ciudad:</b></td>
+                                      <th class="sorting_1">Ciudad:</th>
                                       <td><%= @historia_clinica.aeropuerto.ciudad.nombre.capitalize %></td>
-                                      <td><b>Departamento:</b></td>
+                                      <th>Departamento:</th>
                                       <td class="center"><%= @historia_clinica.aeropuerto.departamento  %></td>
                                   </tr>
 
                                   <tr class="gradeA odd" role="row">
-                                      <td class="sorting_1"><b>Medico de Turno:</b></td>
+                                      <th class="sorting_1">Medico de Turno:</th>
                                       <td><%=  @historia_clinica.user.nombres %> <%=  @historia_clinica.user.apellidos %></td>
-                                      <td><b>Aeropuerto:</b></td>
+                                      <th>Aeropuerto:</th>
                                       <td class="center"><%=  @historia_clinica.aeropuerto.nombre.capitalize %> - <%=  @historia_clinica.aeropuerto.ciudad.nombre.capitalize %></td>
                                   </tr>
                                   <tr class="gradeA even" role="row">
-                                      <td class="sorting_1"><b>Empresa:</b></td>
-                                      <td><%=  @historia_clinica.a_empresa %></td>
-                                      <td><b> Auxiliar de Enfermería: </b></td>
+                                      <th class="sorting_1">Empresa:</th>
+                                      <td><%=  @historia_clinica.a_empresa.capitalize %></td>
+                                      <th>Auxiliar de Enfermería: </th>
                                       <td class="center"><%=  @historia_clinica.a_auxiliar %></td>
                                   </tr>
                                   <tr class="gradeA odd" role="row">
-                                      <td class="sorting_1"><b>Tipo de Servicio Solicitado:</b></td>
+                                      <th class="sorting_1">Tipo de Servicio Solicitado:</th>
                                       <td><%=  @historia_clinica.a_tipo_servicio %></td>
-                                      <td class="sorting_1"><b>Lugar te atención:</b></td>
+                                      <th class="sorting_1">Lugar te atención:</th>
                                       <td><%=  @historia_clinica.a_lugar_de_atencion %></td>
 
                                   </tr>
@@ -239,14 +260,7 @@
 
 
 
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">  I. IDENTIFICACIÓN DEL PACIENTE</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
-          <!-- /.col-lg-12 -->
-      </div>
+
       
 
       <!-- /.row -->
@@ -256,19 +270,22 @@
 
                   <!-- /.panel-heading -->
                   <div class="panel-body">
+                    <h4 style="text-align: left;color: #22BDC8;">  I. IDENTIFICACIÓN DEL PACIENTE</h4>
                       <div class="dataTable_wrapper">
                           <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
-                              <thead>
+
+
+                              <tbody>
 
                                 <tr role="row">
               
 
-                                  <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Nombres:</b></td>
+                                  <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Nombres:</th>
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><%= @historia_clinica.p_primer_nombre %> <%= @historia_clinica.p_segundo_nombre %></td>
 
 
-                                  <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Apellidos:</b></td>
+                                  <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Apellidos:</th>
 
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
@@ -278,24 +295,21 @@
                     
                                 </tr>                             
 
-                              </thead>
 
 
-                              <tbody>
 
                                   <tr role="row">
-                                  <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Origen:</b></td>
+                                  <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Origen:</tthh>
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
-                                    <%= @historia_clinica.a_origen %>
-
+                                    <%= @historia_clinica.a_origen.capitalize %>
                                   </td>
 
-                                  <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Destino:</b></td>
+                                  <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Destino:</th>
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
 
-                                    <%= @historia_clinica.a_destino %> 
+                                    <%= @historia_clinica.a_destino.capitalize %> 
 
                                   </td>
 
@@ -308,13 +322,13 @@
 
 
                                   <tr role="row">
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Tipo de Documento:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Tipo de Documento:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_tipo_documento %>
                                     </td>
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Documento:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Documento:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_documento %>
@@ -330,13 +344,13 @@
 
 
                                   <tr role="row">
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Email:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Email:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_email %>
                                     </td>
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Genero:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Genero:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_genero %>
@@ -353,14 +367,14 @@
 
 
                                   <tr role="row">
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Profesion:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Profesion:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_profesion %>
                                     </td>
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Tipo de Sangre:</b>
-                                    </td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Tipo de Sangre:
+                                    </th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_tipo_sangre %>
@@ -374,16 +388,16 @@
 
 
                                   <tr role="row">
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Nacionalidad:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Nacionalidad:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
-                                      <%= to_country_code(@historia_clinica.p_nacionalidad) %>
+                                      <%= @historia_clinica.p_nacionalidad %>
                                     </td>
 
 
 
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Ciudad:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Ciudad:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_ciudad %>
@@ -398,41 +412,68 @@
                                     
 
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Dirección</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Dirección</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_direccion %>
                                     </td>
 
-                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Fecha de nacimiento:Edad:</b></td>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Fecha de nacimiento:</th>
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_fecha_nacimiento.strftime("%d-%m-%Y") %>
                                     
-                                      <%= @historia_clinica.p_edad %> <%= @historia_clinica.p_tipo_edad %> 
                                     </td>
 
                                   </tr>
-                                  <tr class="gradeA odd" role="row">
-                                      <td class="sorting_1"><b>Condición:</b></td>
-                                      <td><%=  @historia_clinica.a_condicion %></td>
-                                      <td class="sorting_1"><b>Acompañante:</b></td>
-                                      <td><%=  @historia_clinica.a_nombre_acompañante %></td>
+
+
+                                  <tr>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Edad:</th>
+
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
+                                      <%= @historia_clinica.p_edad %> <%= @historia_clinica.p_tipo_edad %> 
+                                    </td>
+                                
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Condición:</th>
+
+
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
+                                      <%=  @historia_clinica.a_condicion %>
+                                    </td>
+                                
+                                  </tr>
+
+
+                                  <tr>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Acompañante:</th>
+
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><%=  @historia_clinica.a_nombre_acompañante %></td>
+
+
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Parentesco:</th>
+
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><%=  @historia_clinica.a_parentesco %></td>
+
 
                                   </tr>
-                                  <tr class="gradeA odd" role="row">
-                                      <td class="sorting_1"><b>Parentesco:</b></td>
-                                      <td><%=  @historia_clinica.a_parentesco %></td>
-                                      <td class="sorting_1"><b>Telefono Acompañante:</b></td>
-                                      <td><%=  @historia_clinica.a_telefono %></td>
+
+                                  <tr>
+
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Telefono Acompañante:</th>
+
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><%=  @historia_clinica.a_telefono %></td>
+
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Arl:</th>
+
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><%=  @historia_clinica.arl %></td>
 
                                   </tr>
+                                  <tr>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">Eps:</th>
 
-                                  <tr class="gradeA odd" role="row">
-                                      <td class="sorting_1"><b>Arl:</b></td>
-                                      <td><%=  @historia_clinica.arl %></td>
-                                      <td class="sorting_1"><b>Eps:</b></td>
-                                      <td><%=  @historia_clinica.eps %></td>
+                                    <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><%=  @historia_clinica.eps %></td>
+
 
                                   </tr>
 
@@ -456,225 +497,180 @@
 
 
 
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">   II. MOTIVO DE CONSULTA</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
-          <!-- /.col-lg-12 -->
-      </div>
 
-      <div class="container-fluid">   
-        <div class="widget-content">
-          <table class="table table-striped table-bordered">
+
+      <!-- /.row -->
+      <div class="row">
+
+          <div class="col-lg-12">
+
+              <div class="panel panel-default">
+
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                                 <h4 style="text-align: left;color: #22BDC8;">   II. MOTIVO DE CONSULTA</h4>
+
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+                           <table class="table table-striped table-bordered">
             <tbody>
               <tr>
                 <td><%= @historia_clinica.a_motivo_de_consulta %></td>
               </tr>
             </tbody>
           </table>
-        </div> <!-- /widget-content -->
-      </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
 
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
 
 
       
 
 
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">   III. ENFERMEDAD ACTUAL</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
-          <!-- /.col-lg-12 -->
-      </div>
 
-      <div class="container-fluid">   
-        <div class="widget-content">
-          <table class="table table-striped table-bordered">
+      <!-- /.row -->
+      <div class="row">
+
+          <div class="col-lg-12">
+
+              <div class="panel panel-default">
+
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                                 <h4 style="text-align: left;color: #22BDC8;">   III. ENFERMEDAD ACTUAL</h4>
+
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+                           <table class="table table-striped table-bordered">
             <tbody>
               <tr>
                 <td><%= @historia_clinica.a_enfermedad_actual %></td>
               </tr>
             </tbody>
           </table>
-        </div> <!-- /widget-content -->
-      </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
 
 
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">   IV. ANTECEDENTES PERSONALES</h2></div>
-              <hr class="featurette-divider"></hr>
+              </div>
+              <!-- /.panel -->
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
 
 
-      
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              <thead>
+                    <h4 style="text-align: left;color: #22BDC8;">  IV. ANTECEDENTES PERSONALES</h4>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+                              <tbody>
+
+
                                   <tr>
                                       <th style="width:20%;">Antecedentes</th>
                                       <th style="width:5%;">Si/No</th>
                                       <th style="width:75%;">Ampliar Información</th>
                                   </tr>
-                              </thead>
-                              <tbody>
                                   <tr>
-                                      <td>Neonatales</td>
+                                      <th>Neonatales</th>
                                       <td><%= @historia_clinica.b_neonatales %></td>
                                       <td><%= @historia_clinica.b_neonatales_descripcion %></td>
                                   </tr>
                                   <tr>
-                                      <td>Patologicos</td>
+                                      <th>Patologicos</th>
                                       <td><%= @historia_clinica.b_patologicos %></td>
                                       <td><%= @historia_clinica.b_patologicos_descripcion %></td>
                                   </tr>
                                   <tr>
-                                      <td>Quirurgicos</td>
+                                      <th>Quirurgicos</th>
                                       <td><%= @historia_clinica.b_quirurgicos %></td>
                                       <td><%= @historia_clinica.b_quirurgicos_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Farmacologicos</td>
+                                      <th>Farmacologicos</th>
                                       <td><%= @historia_clinica.b_farmacologicos %></td>
                                       <td><%= @historia_clinica.b_farmacologicos_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Alergicos</td>
+                                      <th>Alergicos</th>
                                       <td><%= @historia_clinica.b_alergicos %></td>
                                       <td><%= @historia_clinica.b_alergicos_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Toxicos</td>
+                                      <th>Toxicos</th>
                                       <td><%= @historia_clinica.b_toxicos %></td>
                                       <td><%= @historia_clinica.b_toxicos_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Traumaticos</td>
+                                      <th>Traumaticos</th>
                                       <td><%= @historia_clinica.b_traumaticos %></td>
                                       <td><%= @historia_clinica.b_traumaticos_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Hospitalarios</td>
+                                      <th>Hospitalarios</th>
                                       <td><%= @historia_clinica.b_hospitalarios %></td>
                                       <td><%= @historia_clinica.b_hospitalarios_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Atep Laboral</td>
+                                      <th>Atep Laboral</th>
                                       <td><%= @historia_clinica.b_atep_laboral %></td>
                                       <td><%= @historia_clinica.b_atep_laboral_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Familiares</td>
+                                      <th>Familiares</th>
                                       <td><%= @historia_clinica.b_familiares %></td>
                                       <td><%= @historia_clinica.b_familiar_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Inmunologicos</td>
+                                      <th>Inmunologicos</th>
                                       <td><%= @historia_clinica.b_inmunologicos %></td>
                                       <td><%= @historia_clinica.b_inmunologios_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Asociado Viajes De Vuelo</td>
+                                      <th>Asociado Viajes De Vuelo</th>
                                       <td><%= @historia_clinica.b_asociado_viajes_de_vuelo %></td>
                                       <td><%= @historia_clinica.b_asociado_viajes_de_vuelo_descripcion %></td>
                                   </tr>
 
 
                               </tbody>
-                          </table>
+                          </table></div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
-
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              <tbody>
-                                  <tr>
-                                    <td style="width:20%;"><b>Ciclo Menstrual</b></td>
-                                      <td style="width:25%;"><%= @historia_clinica.b_ciclo_menstrual %></td>
-
-                                      <td style="width:20%;"><b>Eco</b></td>
-                                      <td  style="width:35%;"><%= @historia_clinica.b_eco %></td>
-                                  </tr>
-
-                                  <tr>
-                                    <td><b>Menarquia</b></td>
-                                      <td><%= @historia_clinica.b_menarquia %></td>
-                                      <td><b>Fum</b></td>
-                                      <td><%= @historia_clinica.b_fum %></td>
-                                  </tr>
-
-                                  <tr>
-                                    <td><b>Fecha Ultima Citología</b></td>
-                                      <td><%= @historia_clinica.b_fecha_ultima_citologia %></td>
-                                      <td><b>Fecha Ultima Mamografía</b></td>
-                                      <td><%= @historia_clinica.b_fecha_ultima_mamografia %></td>
-                                  </tr>
-
-                              </tbody>
-      
-                          </table>
-                      </div>
-
-
-                  </div>
-                  <!-- /.panel-body -->
-
-
-                  <!-- /.panel-heading -->
-                  <div class="panel-body">
-
-
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              <tbody>
-                                  <tr>
-                                      <td style="width:15%;"><b>Esta en Embarazo?</b></td>
-                                      <td style="width:10%;"><%= @historia_clinica.b_embarazo %></td>
-                                      <td style="width:10%;"><b>G</b></td>
-                                      <td style="width:10%;"><%= @historia_clinica.b_g %></td>
-                                      <td style="width:10%;"><b>P</b></td>
-                                      <td style="width:10%;"><%= @historia_clinica.b_p %></td>
-                                      <td style="width:10%;"><b>C</b></td>
-                                      <td style="width:10%;"><%= @historia_clinica.b_c %></td>
-                                  </tr>
-                                  <tr>
-                                    <td><b>A</b></td>
-                                      <td><%= @historia_clinica.b_a %></td>
-                                      <td><b>M</b></td>
-                                      <td><%= @historia_clinica.b_m %></td>
-                                      <td><b>V</b></td>
-                                      <td><%= @historia_clinica.b_v %></td>
-                                      <td><b>E</b></td>
-                                      <td><%= @historia_clinica.b_e %></td>
-                                  </tr>
-                              </tbody>
-      
-                          </table>
-                      </div>
-
-
+                      
                   </div>
                   <!-- /.panel-body -->
 
@@ -684,19 +680,16 @@
               </div>
               <!-- /.panel -->
           </div>
-      </div>
-      <!-- /.row -->
-
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">  V. REVISIÓN POR SISTEMAS</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
           <!-- /.col-lg-12 -->
       </div>
+
+
+
+
+
+
+
+
 
       <!-- /.row -->
       <div class="row">
@@ -705,64 +698,170 @@
 
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              <thead>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+
+                                <tbody>
+                                  <tr>
+                                    <th style="width:20%;">Ciclo Menstrual</th>
+                                      <td style="width:25%;"><%= @historia_clinica.b_ciclo_menstrual %></td>
+
+                                      <th style="width:25%;">Eco</th>
+                                      <td  style="width:30%;"><%= @historia_clinica.b_eco %></td>
+                                  </tr>
+
+                                  <tr>
+                                    <th>Menarquia</th>
+                                      <td><%= @historia_clinica.b_menarquia %></td>
+                                      <th>Fum</th>
+                                      <td><%= @historia_clinica.b_fum %></td>
+                                  </tr>
+
+                                  <tr>
+                                    <th>Fecha Ultima Citología</th>
+                                      <td><%= @historia_clinica.b_fecha_ultima_citologia %></td>
+                                      <th>Fecha Ultima Mamografía</th>
+                                      <td><%= @historia_clinica.b_fecha_ultima_mamografia %></td>
+                                  </tr>
+
+                              </tbody>
+                          </table></div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
+
+
+
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+<tbody>
+                                  <tr>
+                                      <th style="width:15%;">Esta en Embarazo?</th>
+                                      <td style="width:10%;"><%= @historia_clinica.b_embarazo %></td>
+                                      <th style="width:10%;">G</th>
+                                      <td style="width:10%;"><%= @historia_clinica.b_g %></td>
+                                      <th style="width:10%;">P</th>
+                                      <td style="width:10%;"><%= @historia_clinica.b_p %></td>
+                                      <th style="width:10%;">C</th>
+                                      <td style="width:10%;"><%= @historia_clinica.b_c %></td>
+                                  </tr>
+                                  <tr>
+                                    <th>A</th>
+                                      <td><%= @historia_clinica.b_a %></td>
+                                      <th>M</th>
+                                      <td><%= @historia_clinica.b_m %></td>
+                                      <th>V</th>
+                                      <td><%= @historia_clinica.b_v %></td>
+                                      <th>E</th>
+                                      <td><%= @historia_clinica.b_e %></td>
+                                  </tr>
+                              </tbody>
+                          </table></div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
+
+
+
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                  <h4 style="text-align: left;color: #22BDC8;">  V. REVISIÓN POR SISTEMAS</h4>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+                              <tbody>
+
                                   <tr>
                                       <th style="width:20%;">Antecedentes</th>
                                       <th style="width:12%;">Anormal/Normal</th>
                                       <th style="width:68%;">Ampliar Información</th>
                                   </tr>
-                              </thead>
-                              <tbody>
                                   <tr>
-                                      <td>Cardiovascular</td>
+                                      <th>Cardiovascular</th>
                                       <td><%= @historia_clinica.c_cardiovascular %></td>
                                       <td><%= @historia_clinica.c_cardiovascular_descripcion %></td>
                                   </tr>
                                   <tr>
-                                      <td>Respiratorio</td>
+                                      <th>Respiratorio</th>
                                       <td><%= @historia_clinica.c_respiratorio %></td>
                                       <td><%= @historia_clinica.c_respiratorio_descripcion %></td>
                                   </tr>
                                   <tr>
-                                      <td>Abdominal</td>
+                                      <th>Abdominal</th>
                                       <td><%= @historia_clinica.c_abdominal %></td>
                                       <td><%= @historia_clinica.c_abdominal_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Genito Urinario</td>
+                                      <th>Genito Urinario</th>
                                       <td><%= @historia_clinica.c_genito_urinario %></td>
                                       <td><%= @historia_clinica.c_genito_urinario_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Neurologico</td>
+                                      <th>Neurologico</th>
                                       <td><%= @historia_clinica.c_neurologico %></td>
                                       <td><%= @historia_clinica.c_neurologico_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Mental</td>
+                                      <th>Mental</th>
                                       <td><%= @historia_clinica.c_mental %></td>
                                       <td><%= @historia_clinica.c_mental_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Organo de los Sentidos</td>
+                                      <th>Organo de los Sentidos</th>
                                       <td><%= @historia_clinica.c_organo_de_los_sentidos %></td>
                                       <td><%= @historia_clinica.c_organo_de_los_sentidos_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Musculo esqueletico</td>
+                                      <th>Musculo esqueletico</th>
                                       <td><%= @historia_clinica.c_musculo_esqueletico %></td>
                                       <td><%= @historia_clinica.c_musculo_esqueletico_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Piel y Faneras</td>
+                                      <th>Piel y Faneras</th>
                                       <td><%= @historia_clinica.c_piel_y_faneras %></td>
                                       <td><%= @historia_clinica.c_piel_y_faneras_descripcion %></td>
                                   </tr>
@@ -770,52 +869,58 @@
 
 
                               </tbody>
-                          </table>
+                          </table></div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
           </div>
-      </div>
-      <!-- /.row -->
-
-
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">  VI.  EXAMEN FISICO</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
           <!-- /.col-lg-12 -->
       </div>
+      
+
+
 
       
+
+
+
+
+
+
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              
+                  <h4 style="text-align: left;color: #22BDC8;">  VI.  EXAMEN FISICO</h4>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+<tbody>
                               <tr>
-                                <td  style="width:20%;">
-                                <b>TA mm/Hg:</b>             
-                                </td>
-                                <td  style="width:30%;">
+                                <th  style="width:25%;">
+                                TA mm/Hg:            
+                                </th>
+                                <td  style="width:25%;">
                                   <%= @historia_clinica.d_ta_mmgh_diastole %> - Mm / <%= @historia_clinica.d_ta_mmgh_sistole %> - Hg
                                 </td>
                                
 
-                                <td  >
-                                <b>Frecuencia Cardiaca:</b>             
-                                </td>
-                                <td >
+                                <th   style="width:25%;">
+                                Frecuencia Cardiaca:            
+                                </th>
+                                <td  style="width:25%;">
                                   <%= @historia_clinica.d_frecuencia_cardiaca %>
                                 </td>
 
@@ -825,32 +930,32 @@
                               <tr>
 
                                
-                                <td >
-                                <b>Frecuencia Respiratoria:</b>             
-                                </td>
+                                <th >
+                                Frecuencia Respiratoria:   
+                                </th>
                                 <td  >
                                 <%= @historia_clinica.d_frecuencia_respiratoria %>
                                 </td>
 
-                                <td >
-                                <b>% SAT. de O2 Ambiente:</b>             
-                                </td>
+                                <th >
+                                % SAT. de O2 Ambiente:           
+                                </th>
                                 <td >
                                   <%= @historia_clinica.d_sat_of_o_ambiente %>
                                 </td>
 
                               <tr>
 
-                                <td >
-                                <b>% SAT. de O2 Suplementario:</b>             
-                                </td>
+                                <th >
+                                % SAT. de O2 Suplementario:     
+                                </th>
                                 <td  >
                                 <%= @historia_clinica.d_sat_of_o_suplementario %>
                                 </td>
 
-                                <td >
-                                <b>Temperatura:</b>             
-                                </td>
+                                <th >
+                                  Temperatura:         
+                                </th>
                                 <td >
                                   <%= @historia_clinica.d_temperatura %> (Centigrados)
                                 </td>
@@ -858,9 +963,9 @@
 
                               <tr>
 
-                                <td>
-                                <b>Peso:</b>             
-                                </td>
+                                <th>
+                                Peso:        
+                                </th>
                                 <td  >
                                 <%= @historia_clinica.d_peso_en_kilogramos %> (Kilogramos)
                                 </td>
@@ -868,121 +973,186 @@
 
 
 
-                                <td >
-                                <b>Talla:</b>             
-                                </td>
+                                <th >
+                                  Talla:         
+                                </th>
                                 <td >
                                   <%= @historia_clinica.d_talla_en_centimetros %> (Centimetros)
                                 </td>
                               <tr>
 
-                                <td >
-                                <b>Glucometria:</b>             
-                                </td>
+                                <th >
+                                 Glucometria:           
+                                </th>
                                 <td  >
                                 <%= @historia_clinica.d_glucometria %>
                                 </td>
                               </tr>
 
-
+                              </tbody>
                           </table>
-                          <br/>
 
-                          <table class="table table-striped table-bordered table-hover">
-                              <thead>
-                                  <tr>
+
+</table></div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
+
+
+
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      
+
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+<tbody>
+<tr>
                                       <th style="width:20%;">Antecedentes</th>
                                       <th style="width:12%;">Anormal/Normal</th>
                                       <th style="width:68%;">Ampliar Información</th>
                                   </tr>
-                              </thead>
-                              <tbody>
+
+
                                   <tr>
-                                      <td>Cabeza</td>
+                                      <th>Cabeza</th>
                                       <td><%= @historia_clinica.d_cabeza %></td>
                                       <td><%= @historia_clinica.d_cabeza_descripcion %></td>
                                   </tr>
                                   <tr>
-                                      <td>Cuello</td>
+                                      <th>Cuello</th>
                                       <td><%= @historia_clinica.d_cuello %></td>
                                       <td><%= @historia_clinica.d_cuello_descripcion %></td>
                                   </tr>
                                   <tr>
-                                      <td>Caja Toracica</td>
+                                      <th>Caja Toracica</th>
                                       <td><%= @historia_clinica.d_caja_toracica %></td>
                                       <td><%= @historia_clinica.d_caja_toracica_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Corazón</td>
+                                      <th>Corazón</th>
                                       <td><%= @historia_clinica.d_corazon %></td>
                                       <td><%= @historia_clinica.d_corazon_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Pulmones</td>
+                                      <th>Pulmones</th>
                                       <td><%= @historia_clinica.d_pulmones %></td>
                                       <td><%= @historia_clinica.d_pulmones_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Abdomen</td>
+                                      <th>Abdomen</th>
                                       <td><%= @historia_clinica.d_abdomen %></td>
                                       <td><%= @historia_clinica.d_abdomen_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Genito Urinario</td>
+                                      <th>Genito Urinarioa</th>
                                       <td><%= @historia_clinica.d_genito_urinario %></td>
                                       <td><%= @historia_clinica.d_genito_urinario_descripcion %></td>
                                   </tr>
 
                                   <tr>
-                                      <td>Recto</td>
+                                      <th>Recto</th>
                                       <td><%= @historia_clinica.d_recto %></td>
                                       <td><%= @historia_clinica.d_recto_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Extremidades</td>
+                                      <th>Extremidades</th>
                                       <td><%= @historia_clinica.d_extremidades %></td>
                                       <td><%= @historia_clinica.d_extremidades_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Piel Y Faneras</td>
+                                      <th>Piel Y Faneras</th>
                                       <td><%= @historia_clinica.d_piel_y_faneras %></td>
                                       <td><%= @historia_clinica.d_piel_y_faneras_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Musculo Esqueletico</td>
+                                      <th>Musculo Esqueletico</th>
                                       <td><%= @historia_clinica.d_musculo_esqueletico %></td>
                                       <td><%= @historia_clinica.d_musculo_esqueletico_descripcion %></td>
                                   </tr>
                                   
                                   <tr>
-                                      <td>Mental</td>
+                                      <th>Mental</th>
                                       <td><%= @historia_clinica.d_mental %></td>
                                       <td><%= @historia_clinica.d_mental_descripcion %></td>
                                   </tr>
 
                                   
                                   <tr>
-                                      <td>Neurologico</td>
+                                      <th>Neurologico</th>
                                       <td><%= @historia_clinica.d_neurologico %></td>
                                       <td><%= @historia_clinica.d_neurologico_descripcion %></td>
                                   </tr>
-                                  
+
+
 
                               </tbody>
-                          </table>
+                          </table></div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
 
-                          <table class="table table-striped table-bordered table-hover">
+
+
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      
+
+
+
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+<tbody>
+
                               <tr>
-                                <td  style="width:20%;">
-                                <b>Apertura Ocular:</b>             
-                                </td>
+                                <th  style="width:20%;">
+                                Apertura Ocular:             
+                                </th>
                                 <td  style="width:30%;">
                                 <% if @historia_clinica.d_apertura_ocular == 4 %>
                                   4 - Espontanea
@@ -995,9 +1165,9 @@
                                 <% end %>  
                                 </td>
                                
-                                <td  style="width:20%;">
-                                <b>Respuesta Verbal:</b>             
-                                </td>
+                                <th  style="width:20%;">
+                                Respuesta Verbal:            
+                                </th>
                                 <td  style="width:30%;">
                                 <% if @historia_clinica.d_respuesta_verbal == 5 %>
                                   5 - Orientada
@@ -1015,9 +1185,9 @@
 
 
                               <tr>
-                                <td>
-                                <b>Respuesta Motora:</b>             
-                                </td>
+                                <th>
+                                Respuesta Motora:          
+                                </th>
                                 <td >
 
                                 <% if @historia_clinica.d_respuesta_motora == 6 %>
@@ -1037,9 +1207,9 @@
 
                                 </td>
                                
-                                <td >
-                                <b>Escala de Glasgow:</b>             
-                                </td>
+                                <th >
+                                 Escala de Glasgow:            
+                                </th>
                                 <td  >
                                 <%= @historia_clinica.d_escala_de_glasgow %> / 15
                                 </td>
@@ -1047,114 +1217,146 @@
 
 
                               <tr>
-                                <td >
-                                <b>Alteración:</b>             
-                                </td>
+                                <th >
+                                Alteración:             
+                                </th>
                                 <td >
                                   <%= @historia_clinica.d_alteracion %>
                                 </td>
                                
-                                <td >
-                                <b>Otros Signos</b>             
-                                </td>
+                                <th >
+                                Otros Signos:            
+                                </th>
                                 <td  >
                                 <%= @historia_clinica.d_otros_signos %>
                                 </td>
                               </tr>
-
-
-
-
+                              </tbody>
                           </table>
 
+
+                          </div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
           </div>
-      </div>
-      <!-- /.row -->
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;">  VI.  ANALISIS</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
           <!-- /.col-lg-12 -->
       </div>
       
-      <div class="container-fluid">   
-        <div class="widget-content">
-          <table class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                <td><%= @historia_clinica.e_analisis %></td>
-              </tr>
-            </tbody>
-          </table>
-        </div> <!-- /widget-content -->
-      </div>
-
-      
 
 
 
 
 
-
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;"> VI.  IMPRESIÓN DIAGNOSTICA</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
-          <!-- /.col-lg-12 -->
-      </div>
-      
 
 
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                  <h4>Diagnostico Principal</h4>
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-
-                              <thead>
-                                  <tr>
-                                      <th  style="width:42%;"><b>Familia</b></td>
-                                      <td  style="width:8%;"><b>Codigo</b></td>
-                                      <td  colspan="2"  style="width:50%;"><b>Descripción</b></td>
-                                  </tr>
-                              </thead>
 
 
+                  <h4 style="text-align: left;color: #22BDC8;">  VI.  ANALISIS</h4>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+            <tbody>
+              <tr>
+                <td><%= @historia_clinica.e_analisis %></td>
+              </tr>
+            </tbody>
+                          </table></div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
+
+
+
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+
+
+                  <h4 style="text-align: left;color: #22BDC8;">  VI.  IMPRESIÓN DIAGNOSTICA</h4>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+
+<h4>Diagnostico Principal</h4>
                               <tbody>
+
+                                  <tr>
+                                      <th  style="width:42%;">Familia</th>
+                                      <th  style="width:8%;">Codigo</th>
+                                      <th  colspan="2"  style="width:50%;">Descripción</th>
+                                  </tr>
+
+
+
+
+
+
                                   <tr>
                                     <td><%= @historia_clinica.cie10_principal.familia %></td>
                                     <td><%= @historia_clinica.cie10_principal.codigo %></td>
                                     <td><%= @historia_clinica.cie10_principal.descripcion.capitalize %></td>
                                   </tr>
                               </tbody>
-                          </table>
+
+                          </table></div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
           </div>
+          <!-- /.col-lg-12 -->
       </div>
-      <!-- /.row -->
+      
+
+
+
+
+
 
 
 
@@ -1162,22 +1364,29 @@
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                    <h4>Diagnosticos Secundarios</h4>
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
 
 
-                              <thead>
+                      <div class="dataTable_wrapper">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+
+<h4>Diagnosticos Secundarios</h4>
+  <tbody>
+
                                   <tr>
-                                      <th  style="width:42%;"><b>Familia</b></td>
-                                      <td  style="width:8%;"><b>Codigo</b></td>
-                                      <td  colspan="2"  style="width:50%;"><b>Descripción</b></td>
+                                      <th  style="width:42%;">Familia</th>
+                                      <th  style="width:8%;">Codigo</th>
+                                      <th  colspan="2"  style="width:50%;">Descripción></th>
                                   </tr>
-                              </thead>
 
-                              <tbody>
+
+
+
+
+
                                 <% @diagnosticos.each do |diagnostico| %>
                                   <tr>
                                     <td><%= diagnostico.cie10.familia %></td>
@@ -1186,55 +1395,63 @@
                                   </tr>
                                 <% end %>
                               </tbody>
-                          </table>
+
+                          </table></div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
-          </div>
-      </div>
-      <!-- /.row -->
-
-
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;"> PROCEDIMIENTOS</h2></div>
-              <hr class="featurette-divider"></hr>
           </div>
           <!-- /.col-lg-12 -->
       </div>
       
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              
+
+
+                      <div class="dataTable_wrapper">
+                      
+                  <h4 style="text-align: left;color: #22BDC8;">  PROCEDIMIENTOS</h4>
+
+
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+                           <tbody>
 
 
 
-
-
-
-                              <thead>
                                   <tr>
-                                      <th  style="width:15%;"><b>Tratamiento</b></td>
-                                      <td  style="width:25%;"><b>Via de Acceso</b></td>
-                                      <td  colspan="2"  style="width:50%;"><b>Descripción</b></td>
+                                      <th  style="width:15%;">Tratamiento</th>
+                                      <th  style="width:25%;">Via de Acceso</th>
+                                      <th  colspan="2"  style="width:50%;">Descripción</th>
                                   </tr>
-                              </thead>
-                              
-                              <tbody>
+
+
+
+
                                 <% @procedimientos.each do |procedimiento| %>
                                   <tr>
                                     <td><%= procedimiento.tratamiento %></td>
@@ -1243,16 +1460,26 @@
                                   </tr>
                                 <% end %>
                               </tbody>
+
+
                           </table>
+
+
+                          </div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
           </div>
+          <!-- /.col-lg-12 -->
       </div>
-      <!-- /.row -->
+      
 
 
 
@@ -1260,94 +1487,118 @@
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              
 
 
+                      <div class="dataTable_wrapper">
+                      
 
-                              <tbody>
+
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+ <tbody>
                                   <tr>
-                                      <td style="width:15%;"><b>Glucometria</b></td>
+                                      <th style="width:15%;">Glucometria</th>
                                       <td><%= @historia_clinica.e_glucometria1 %></td>
-                                      <td  style="width:15%;"><b>Hora 1</b></td>
+                                      <th  style="width:15%;">Hora 1</th>
                                       <td><%= @historia_clinica.e_hora1 %></td>
 
                                   </tr>
                                   <tr>
                                       
-                                      <td><b>Glucometria 2</b></td>
+                                      <th>Glucometria </th>
                                       <td><%= @historia_clinica.e_glucometria2 %></td>
-                                      <td><b>Hora 2</b></td>
+                                      <th>Hora </th>
                                       <td><%= @historia_clinica.e_hora2 %></td>
                                   </tr>
                                   <tr>
                                       
-                                      <td><b>Electrocardiograma</b></td>
+                                      <th>Electrocardiograma</th>
                                       <td  colspan="3"><%= @historia_clinica.e_electrocardiograma %></td>
                                   </tr>
 
 
                               </tbody>
+                            </table>
 
 
-                          </table>
+
+
+                          </div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
           </div>
-      </div>
-      <!-- /.row -->
-
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;"> VI.  OBSERVACIONES</h2></div>
-              <hr class="featurette-divider"></hr>
-          </div>
           <!-- /.col-lg-12 -->
       </div>
-
       
 
-      
-      <div class="container-fluid">   
-        <div class="widget-content">
-          <table class="table table-striped table-bordered">
+
+
+
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+
+
+                  <h4 style="text-align: left;color: #22BDC8;">  VI.  OBSERVACIONES</h4>
+
+                      <div class="dataTable_wrapper">
+                      
+
+
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
             <tbody>
               <tr>
                 <td><%= @historia_clinica.e_observaciones_recomendaciones %></td>
               </tr>
             </tbody>
-          </table>
-        </div> <!-- /widget-content -->
-      </div>
-
-      
+                            </table>
 
 
 
 
+                          </div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
 
 
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;"> VI.  DESENLACE</h2></div>
-              <hr class="featurette-divider"></hr>
+
+
+              </div>
+              <!-- /.panel -->
           </div>
           <!-- /.col-lg-12 -->
       </div>
       
 
-      
+
+
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
@@ -1355,65 +1606,98 @@
 
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              <thead>
-                                  <tr>
-                                      <td  style="width:5%;"><b>Evento Adverso</b></td>
+
+
+                  <h4 style="text-align: left;color: #22BDC8;">  VI.  DESENLACE</h4>
+
+                      <div class="dataTable_wrapper">
+                      
+
+
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+
+
+
+<tr>
+                                      <th  style="width:5%;">Evento Adverso</th>
                                       <td  style="width:45%;"><%= @historia_clinica.e_evento_adverso %></td>
 
                                     
                                   </tr>
                                   <tr>
-                                      <td  style="width:5%;"><b>Estado Paciente</b></td>
+                                      <th  style="width:5%;">Estado Paciente</th>
                                       <td  style="width:45%;"><%= @historia_clinica.e_estado_paciente %></td>
                                   </tr>
-     
-                                     
-                              </thead>
 
-                          </table>
+
+
+
+                            </table>
+
+
+
+
+                          </div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
-          </div>
-      </div>
-      <!-- /.row -->
-
-
-
-      <br/>
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="centered title"><h2 style=" font-size:25px; text-align: left;color: #22BDC8;"> VI.  NOTAS DE EVOLUCIÓN</h2></div>
-              <hr class="featurette-divider"></hr>
           </div>
           <!-- /.col-lg-12 -->
       </div>
       
 
+
+
+
+
+
+
+
+
+
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
               <div class="panel panel-default">
+
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <div class="table-responsive">
-                          <table class="table table-striped table-bordered table-hover">
-                              <thead>
-                                  <tr>
-                                      <td><b>Fecha</b></td>
-                                      <td><b>Hora</b></td>
-                                      <td><b>Descripción</b></td>
-                                      <td><b>Responsable</b></td>
-                                      <td><b>Cargo</b></td>
-                                  </tr>
-                              </thead>
-                              
+
+
+                  <h4 style="text-align: left;color: #22BDC8;">  VI.  NOTAS DE EVOLUCIÓN</h4>
+
+                      <div class="dataTable_wrapper">
+                      
+
+
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+
+
+
                               <tbody>
+                                  <tr>
+                                      <th>Fecha</th>
+                                      <th>Hora</th>
+                                      <th>Descripción</th>
+                                      <th>Responsable</th>
+                                      <th>Cargo</th>
+                                  </tr>
+                              
                                 <% notas_progreso = @historia_clinica.notas_progreso.each do |nota_progreso| %>
                                   <tr>
                                     <td><%= nota_progreso.created_at.strftime("%d-%m-%y") %></td>
@@ -1425,16 +1709,35 @@
                                 <% end %>
                               </tbody>
 
-                          </table>
+
+
+                            </table>
+
+
+
+
+                          </div></div></div>
                       </div>
-                      <!-- /.table-responsive -->
+                      
                   </div>
                   <!-- /.panel-body -->
+
+
+
+
               </div>
               <!-- /.panel -->
           </div>
+          <!-- /.col-lg-12 -->
       </div>
-      <!-- /.row -->
+      
+
+
+
+
+
+
+
 
 
 

@@ -6,8 +6,13 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:nombre_usuario], params[:password], params[:remember_me])
-      flash[:success] = "Bienvenido, #{current_user.nombres} #{current_user.apellidos}!"
-      redirect_back_or_to root_path
+      if  @user.aprobado_login != true
+        logout
+        redirect_to root_url
+      else
+        flash[:success] = "Bienvenido, #{current_user.nombres} #{current_user.apellidos}!"
+        redirect_back_or_to root_path
+      end 
     else
       flash.now[:danger] = "¡Error de inicio de sesion! Por favor, consultar su correo electrónico y contraseña."
       render 'new'

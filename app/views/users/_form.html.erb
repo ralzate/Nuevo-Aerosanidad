@@ -315,15 +315,32 @@ $(function() {
 
 
 
+        <div class="col-md-3">
+          <label class="label">Confirmar Contraseña</label>
+            <%= f.password_field :password_confirmation, class: 'form-control', :id => 'password4' %>
+            <div class="row">
+              <div class="col-sm-12">
+                <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Las Contraseñas Concuerdan
+              </div>
+            </div>
+        </div>
+
+
+
+
+
                   <div class="col-md-3">
-                    <label class="label">Confirmar Contraseña</label>
-      <%= f.password_field :password_confirmation, class: 'form-control', :id => 'password4' %>
-      <div class="row">
-<div class="col-sm-12">
-<span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Las Contraseñas Concuerdan
-</div>
-</div>
+                    <label class="label">Autorizado Para Ingresar</label><br/>
+               
+                Si <%= f.radio_button(:aprobado_login, "Si", class: "required requerido", :title => "Debes Seleccionar una Opción", id: 'myRadio' )%>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                No <%= f.radio_button(:aprobado_login, "No", class: "required requerido", :title => "Debes Seleccionar una Opción", id: 'myRadio' )%>
+
+
     </div>
+
+
+
     </div>
 
 
