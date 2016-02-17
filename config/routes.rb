@@ -6,10 +6,6 @@ PetThing::Application.routes.draw do
 
   get 'dashboard1/graficas',  to: 'dashboard1#graficas', as: "graficas"
 
-
-
-  get 'dashboard/index',  to: 'dashboard#index', as: "dashboard"
-
   get 'informes/index',  to: 'informes#index', as: "info_link"
 
   get 'informes/mensual_actividades_medicas',    to: 'informes#mensual_actividades_medicas', as: "mensual_actividades_medicas"

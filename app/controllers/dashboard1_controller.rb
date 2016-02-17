@@ -1,12 +1,12 @@
 class Dashboard1Controller < ApplicationController
-  def grafcas
+  def graficas
   @historias_clinicas = HistoriaClinica.all
   @aeropuertos = Aeropuerto.all
 
 	@nombre_aeropuerto = HistoriaClinica.joins(:aeropuerto)
 	.group("aeropuertos.nombre").count
 
-	@genero = HistoriaClinica.group("p_genero").count
+	@aaa = HistoriaClinica.group("id").count
 
 	@edad0 = HistoriaClinica.where(:p_tipo_edad => [" meses", " mes"]).count
 	@edad1 = HistoriaClinica.where(:p_edad => 1..5).count
