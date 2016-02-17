@@ -42,6 +42,7 @@ class HistoriaClinica::StepsController < ApplicationController
            :a_aeropuerto,
            :a_cove,
            :a_movil_servicio,
+           :tipo_de_vuelo,
            :a_condicion,
            :a_tipo_servicio,
            :a_empresa,
@@ -57,6 +58,8 @@ class HistoriaClinica::StepsController < ApplicationController
            :a_enfermedad_actual,
            :p_tipo_edad,
            :p_edad,
+           :latitude,
+           :longitude
           ]
 
        when "b_antecedentes"
@@ -168,7 +171,7 @@ class HistoriaClinica::StepsController < ApplicationController
            :d_respuesta_verbal,
            :d_respuesta_motora,
            :d_escala_de_glasgow, d_otros_signos:[],  d_alteracion:[]
-          ] 
+          ]
 
        when "e_impresion_diagnostica"
           [
@@ -193,10 +196,9 @@ class HistoriaClinica::StepsController < ApplicationController
        end
 
 
- 
+
 
     params.require(:historia_clinica).permit(permitted_attributes).merge(form_step: step)
   end
 
 end
-

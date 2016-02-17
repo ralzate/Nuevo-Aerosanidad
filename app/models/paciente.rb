@@ -38,21 +38,24 @@ class Paciente < ActiveRecord::Base
 
 
   
-  #validates :primer_nombre, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :primer_apellido, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :tipo_documento, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :documento, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :genero, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :fecha_nacimiento, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :tipo_sangre, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :profesion, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :direccion, :presence => { :message => " es un Campo Obligatorio"}
-  #validates :nacionalidad, :presence => { :message => " es un Campo Obligatorio"}
+  validates :primer_nombre, :presence => { :message => " es un Campo Obligatorio"}
+  validates :primer_apellido, :presence => { :message => " es un Campo Obligatorio"}
+  validates :tipo_documento, :presence => { :message => " es un Campo Obligatorio"}
+  validates :documento, :presence => { :message => " es un Campo Obligatorio"}
+  validates :genero, :presence => { :message => " es un Campo Obligatorio"}
+  validates :fecha_nacimiento, :presence => { :message => " es un Campo Obligatorio"}
+  validates :tipo_sangre, :presence => { :message => " es un Campo Obligatorio"}
+  validates :profesion, :presence => { :message => " es un Campo Obligatorio"}
+  validates :direccion, :presence => { :message => " es un Campo Obligatorio"}
+  validates :nacionalidad, :presence => { :message => " es un Campo Obligatorio"}
+  validates :documento, :uniqueness =>  { message: "  Ya Fue registrado" }
+  validates :email, :uniqueness =>  { message: " Ya Fue registrado" }, :if => :condition_testing?
 
 
 
-
-
+def condition_testing?
+    !(email == "N/A")
+end
 
 
 
@@ -66,4 +69,7 @@ class Paciente < ActiveRecord::Base
 
 
   end
+
+
+
 end

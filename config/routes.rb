@@ -2,15 +2,25 @@ PetThing::Application.routes.draw do
 
 
 
+  get 'dashboard1/mapa',  to: 'dashboard1#mapa', as: "mapa"
+
+  get 'dashboard1/graficas',  to: 'dashboard1#graficas', as: "graficas"
+
+
+
+  get 'dashboard/index',  to: 'dashboard#index', as: "dashboard"
 
   get 'informes/index',  to: 'informes#index', as: "info_link"
 
-
   get 'informes/mensual_actividades_medicas',    to: 'informes#mensual_actividades_medicas', as: "mensual_actividades_medicas"
-
 
   get 'informes/aerocivil',    to: 'informes#aerocivil', as: "aerocivil"
 
+  get 'informes/procedimientos_medicos_enfermeria',    to: 'informes#procedimientos_medicos_enfermeria', as: "procedimientos_medicos_enfermeria"
+
+  get 'informes/pacientes_atendidos_por_empresas',    to: 'informes#pacientes_atendidos_por_empresas', as: "pacientes_atendidos_por_empresas"
+
+  get 'informes/usuarios',    to: 'informes#usuarios', as: "usuarios"
 
 
 
@@ -44,7 +54,7 @@ PetThing::Application.routes.draw do
 
   resources :users, :path => "usuarios"
   resources :roles, :path => "roles"
-  
+
   resources :sheets
   resources :material_sheets
 
@@ -55,7 +65,7 @@ PetThing::Application.routes.draw do
   get 'pages/home'
   get 'pages/contact'
   get 'pages/help'
-  
+
   resources :sessions
   resources :reset_passwords, only: [:new, :create, :update, :edit]
 

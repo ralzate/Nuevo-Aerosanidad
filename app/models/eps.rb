@@ -16,7 +16,8 @@ class Eps < ActiveRecord::Base
 
 
 
-	#validates :nombre, :on => :create, :presence => { :message => " es un Campo Obligatorio"}
+   #validates :nombre, :on => :create, :presence => { :message => " es un Campo Obligatorio"}
+   
 
 
    def self.search(search)

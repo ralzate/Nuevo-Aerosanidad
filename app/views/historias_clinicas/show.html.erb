@@ -1239,6 +1239,7 @@ Licensed under MIT
                                   </tr>
                               </thead>
 
+                              <%  unless @diagnosticos.blank? %>  
 
                               <tbody>
                                   <tr>
@@ -1247,6 +1248,7 @@ Licensed under MIT
                                     <td><%= @historia_clinica.cie10_principal.descripcion.capitalize %></td>
                                   </tr>
                               </tbody>
+                              <% end %>
                           </table>
                       </div>
                       <!-- /.table-responsive -->
@@ -1280,6 +1282,7 @@ Licensed under MIT
                               </thead>
 
                               <tbody>
+                              <%  unless @diagnosticos.blank? %>  
                                 <% @diagnosticos.each do |diagnostico| %>
                                   <tr>
                                     <td><%= diagnostico.cie10.familia %></td>
@@ -1287,6 +1290,7 @@ Licensed under MIT
                                     <td><%= diagnostico.cie10.descripcion.capitalize %></td>
                                   </tr>
                                 <% end %>
+                              <% end %>  
                               </tbody>
                           </table>
                       </div>

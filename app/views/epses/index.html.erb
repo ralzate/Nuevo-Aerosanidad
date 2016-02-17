@@ -20,10 +20,10 @@
 
 
     <span class="btn btn-link btn-sm pull-right " style="margin-top:-6px;">
-      
+
        <%= will_paginate @epses, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
 
-    
+
 </span>
 <% if admin? %>
     <span  class="pagination pull-right"><%= link_to 'Nueva Eps', new_eps_path, remote: true, :class => "btn   btn-info color_blanco btn-sm" %></span>
@@ -39,7 +39,7 @@
   <thead>
 <tr>
       <th  colspan="5">
-        
+
                             <%= form_tag request.path, :method => 'get', :class => '' do %>
 
 <div>
@@ -58,7 +58,10 @@
 
              </span>
              </div><!-- /input-group -->
+
         </div>
+
+
   </div>
 </div>
                     <% end %>
@@ -71,9 +74,9 @@
 
 
     <tr>
-      <th width="4% !important;">Id</th>
-      <th width="82% !important;">Nombre</th>
-      <th width="14% !important;">Opciones</th>
+      <th width="4% !important;" class="active" style="text-align: center;">Id</th>
+      <th width="82% !important;" class="active">Nombre</th>
+      <th width="14% !important;" class="active">Opciones</th>
     </tr>
   </thead>
   <tbody>

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:nombre_usuario], params[:password], params[:remember_me])
-      if  @user.aprobado_login != true
+      if  @user.aprobado_login != "Si"
         logout
         redirect_to root_url
       else

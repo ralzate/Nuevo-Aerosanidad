@@ -15,7 +15,7 @@
 
 
     <span  class="btn btn-link btn-xs  pull-left pagination pagination">
-      <h2 class="title" style="color:#22BDC8;">Listado de  <span>Historias Clinicas</span> de <%= @paciente.primer_nombre %></h2>
+      <h2 class="title" style="color:#22BDC8;"><span>Historias Clinicas</span> de <%= @paciente.primer_nombre %></h2>
       </span>
 
 
@@ -27,14 +27,14 @@
 
 
 
-    
+
 </span>
 
 <% if current_user.rol_id != 3 %>
 
     <span  class="btn btn-link btn-xs pull-right" style="margin-top: 18px;"><%= link_to 'Nueva Historia Clinica', new_paciente_historia_clinica_path(@paciente), :class => "btn btn-info color_blanco" %></span>
 
-    
+
 <% end %>
 
 
@@ -42,11 +42,11 @@
 
 
 <table class="table table-bordered" style="margin-top:-30px;">
-  
+
 
 <tr>
       <th  colspan="5">
-        
+
                             <%= form_tag request.path, :method => 'get', :class => '' do %>
 
 <div>
@@ -81,10 +81,10 @@
     <th>Id</th>
     <th>Nombre</th>
     <th>Identificación</th>
-    <th>Fecha</th>
+    <th>Fecha y Hora</th>
     <th>Opciones</th>
   </tr>
-  
+
 <% @historias_clinicas.each do |historia_clinica| %>
 
   <tr>
@@ -93,7 +93,7 @@
     <td><%= historia_clinica.id %></td>
     <td><%= historia_clinica.p_primer_nombre %></td>
     <td><%= historia_clinica.p_documento %></td>
-    <td><%= historia_clinica.created_at.strftime("%d-%m-%y") %></td>
+    <td><%= historia_clinica.created_at.strftime("%d-%m-%y") %> <%= historia_clinica.created_at.strftime("%X") %></td>
     <td><%= link_to 'Ver Historia Clinica', paciente_historia_clinica_path(@paciente,historia_clinica), :class => "btn btn-info blanco btn-sm" %>
 
 
@@ -111,7 +111,7 @@
 
 
   </tr>
-  
+
 <% end %>
 
 </table>

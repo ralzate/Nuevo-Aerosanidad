@@ -22,7 +22,7 @@ class HistoriaClinica < ActiveRecord::Base
   has_many :procedimientos
   has_many :notas_progreso
 
-  
+
   accepts_nested_attributes_for :diagnosticos, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :procedimientos, reject_if: :all_blank, allow_destroy: true
 
@@ -41,10 +41,8 @@ class HistoriaClinica < ActiveRecord::Base
 
 
 
-
-
-
-
+    reverse_geocoded_by :latitude, :longitude
+    after_validation :reverse_geocode
 
 
 
@@ -53,9 +51,9 @@ class HistoriaClinica < ActiveRecord::Base
     return true if self.form_steps.index(step.to_s) <= self.form_steps.index(form_step)
   end
    def self.search(search)
-    where("p_primer_nombre like '%#{search}%'  or p_segundo_nombre like '%#{search}%' 
-    or p_primer_apellido like '%#{search}%'  or p_segundo_apellido like '%#{search}%' 
-    or p_email like '%#{search}%' or p_documento like '%#{search}%' or p_direccion like 
+    where("p_primer_nombre like '%#{search}%'  or p_segundo_nombre like '%#{search}%'
+    or p_primer_apellido like '%#{search}%'  or p_segundo_apellido like '%#{search}%'
+    or p_email like '%#{search}%' or p_documento like '%#{search}%' or p_direccion like
     '%#{search}%'")
   end
 

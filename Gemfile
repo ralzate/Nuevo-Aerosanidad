@@ -77,6 +77,11 @@ gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
 
 gem 'time_difference'
 
+
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
 # Use ActiveModel has_secure_passwordx
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -133,4 +138,3 @@ group :development do
   gem 'rspec-rails', '~> 3.0'
   # https://github.com/railsbp/rails_best_practices
 end
-

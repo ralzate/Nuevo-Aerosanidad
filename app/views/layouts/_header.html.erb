@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Aerosanidad</title>
 
     <!-- Bootstrap Core CSS -->
 
@@ -294,8 +294,7 @@ ul.alert-dropdown {
 
 
 
-  </style>      
-
+  </style>
 
 
 
@@ -330,7 +329,16 @@ ul.alert-dropdown {
                     <ul class="dropdown-menu">
 
                         <li class="divider"></li>
-                        <li>
+
+                      <li>
+
+                      <%= link_to  edit_user_path(current_user) do %>
+                          <i class="fa fa-fw fa-user-plus"></i>Actualizar mi información
+                      <% end %>
+                      </li>
+
+
+                      <li>
 
                       <%= link_to  logout_path do %>
                           <i class="fa fa-fw fa-power-off"></i>Cerrar Sesión
@@ -349,19 +357,35 @@ ul.alert-dropdown {
               color:  #fff !important;
 
             }
+.navbar-nav li a{
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+}
+
+
+
             </style>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
+
                     <li class="active">
+                      <%= link_to  graficas_path, class: "color-negro" do %>
+                          <i class="fa fa-fw fa-home"></i> Dashboard
+                      <% end %>
+                    </li>
+
+
+              
+                    <li>
 
                       <%= link_to  root_path, class: "color-negro" do %>
                           <i class="fa fa-fw fa-home"></i> Inicio
                       <% end %>
                     </li>
-                    <li>
 
-<% if current_user.rol_id == 1 %>
+                    <li>
+                      <% if current_user.rol_id == 1 %>
                       <%= link_to  epses_path, class: "color-negro" do %>
                           <i class="fa fa-fw fa-building-o"></i> Eps
                       <% end %>
@@ -408,7 +432,7 @@ ul.alert-dropdown {
                     </li>
 
 
-<% end %>                    
+<% end %>
 
 
                     <li>
@@ -420,19 +444,19 @@ ul.alert-dropdown {
                 <% if current_user.rol_id == 1 %>
 
                         <li class="color-negro">
- 
+
                        <%= link_to  info_link_path, class: "color-negro" do %>
                            <i class="fa fa-fw fa-bar-chart"></i> Informes
                        <% end %>
- 
-                     </li>
-                <% end %>                    
 
-                    <li class="my-logo"><%= link_to image_tag('Logo/logo.png',:size => "160x80", :class =>"ember-view"), root_path %></li>
+                     </li>
+                <% end %>
+
+                    <li class="my-logo"><%= link_to image_tag('Logo/logo.png',:size => "140x70", :class =>"ember-view"), root_path %></li>
                 </ul>
 
 
-               
+
 
             </div>
             <!-- /.navbar-collapse -->

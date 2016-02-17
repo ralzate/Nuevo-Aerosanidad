@@ -25,7 +25,9 @@
 </span>
 
 <% if current_user.rol_id != 3 %>
-    <span  class="btn btn-link btn-xs pull-right"><%= link_to 'Nuevo Paciente', new_paciente_path, :class => "btn btn-info color_blanco" %></span>
+    <span  class="btn btn-link btn-xs pull-right" style="margin-top: 20px !important;">
+      <%= link_to 'Nuevo Paciente', new_paciente_path, :class => "btn btn-info color_blanco" %>
+    </span>
 <% end %>
 
 
@@ -45,7 +47,7 @@
 <div>
   <div class="row">
 
-    <div class="col-lg-5 ">
+    <div class="col-lg-8">
 
             <div class="input-group custom-search-form">
               <%= text_field_tag :search, params[:search], :placeholder => "Busca por el Nombre", :class => 'form-control' %>
@@ -59,6 +61,14 @@
              </span>
              </div><!-- /input-group -->
         </div>
+
+    <div class="col-lg-4">
+
+        <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon glyphicon-user img-circle text-primary"></span>Numero de Pacientes registrados <%= Paciente.count %></a>
+
+    </div>
+
+
   </div>
 </div>
                     <% end %>
@@ -72,9 +82,10 @@
 
     <tr>
       <th width="4% !important;">Id</th>
-      <th width="30% !important;">Nombre</th>
-      <th width="30% !important;">Descripción</th>
-      <th width="46% !important;">Opciones</th>
+      <th width="20% !important;">Nombre</th>
+      <th width="20% !important;">Documento</th>
+      <th width="15% !important;">Fecha y Hora</th>
+      <th width="29% !important;">Opciones</th>
     </tr>
   </thead>
   <tbody>
@@ -85,8 +96,9 @@
 
 
     <td><%= paciente.id %></td>
-    <td><%= paciente.primer_nombre %> <%= paciente.primer_apellido %></td>
+    <td><%= paciente.primer_nombre.capitalize %> <%= paciente.primer_apellido.capitalize %></td>
     <td><%= paciente.documento %></td>
+    <td><%= paciente.created_at.strftime "%d-%m-%Y" %> <%= paciente.created_at.strftime("%X") %></td>
 
 <td>
 
@@ -115,4 +127,14 @@
     @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 body{margin-top:20px;}
 .fa-fw {width: 2em;}
+</style>
+
+
+
+
+
+
+<style type="text/css" media="screen">
+ .btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
+.icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;} 
 </style>

@@ -147,7 +147,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 
                 <div class="row">
 
-
+<% if current_user.rol_id == 1 %>
                   <div class="col-md-3">
                     <label class="label">Rol</label>
                     <div class="form-group" id="tagtype">
@@ -155,10 +155,8 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
                       <%= f.collection_select :rol_id, Rol.all, :id, :nombre, {prompt: "Campo Obligatorio"}, {class: "form-control"} %>
 
                     </div>
-
-                  
-  </div>
-
+                  </div>
+<% end %>
 
 
 

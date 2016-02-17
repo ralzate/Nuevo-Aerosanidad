@@ -147,7 +147,7 @@
                   <!-- /.panel-heading -->
                   <div class="panel-body">
                       <div class="dataTable_wrapper">
-                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table  table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
 
                               <tbody>
 
@@ -1316,7 +1316,7 @@
                           <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
 
 
-<h4>Diagnostico Principal</h4>
+              <h4>Diagnostico Principal</h4>
                               <tbody>
 
                                   <tr>
@@ -1329,12 +1329,15 @@
 
 
 
+                              <%  unless @diagnosticos.blank? %>  
 
                                   <tr>
                                     <td><%= @historia_clinica.cie10_principal.familia %></td>
                                     <td><%= @historia_clinica.cie10_principal.codigo %></td>
                                     <td><%= @historia_clinica.cie10_principal.descripcion.capitalize %></td>
                                   </tr>
+                              <% end %> 
+                                 
                               </tbody>
 
                           </table></div></div></div>
@@ -1386,6 +1389,7 @@
 
 
 
+                              <%  unless @diagnosticos.blank? %>  
 
                                 <% @diagnosticos.each do |diagnostico| %>
                                   <tr>
@@ -1394,6 +1398,8 @@
                                     <td><%= diagnostico.cie10.descripcion.capitalize %></td>
                                   </tr>
                                 <% end %>
+                              <% end %>
+                                
                               </tbody>
 
                           </table></div></div></div>
@@ -1622,8 +1628,8 @@
 
 
 <tr>
-                                      <th  style="width:5%;">Evento Adverso</th>
-                                      <td  style="width:45%;"><%= @historia_clinica.e_evento_adverso %></td>
+                                      <th  style="width:10%;">Evento Adverso</th>
+                                      <td  style="width:40%;"><%= @historia_clinica.e_evento_adverso %></td>
 
                                     
                                   </tr>
@@ -1656,6 +1662,61 @@
       </div>
       
 
+
+
+
+
+
+
+
+
+      <!-- /.row -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+
+
+                  <h4 style="text-align: left;color: #22BDC8;"> XII. CONSENTIMIENTO INFORMADO</h4>
+
+                      <div class="dataTable_wrapper">
+                      
+
+
+                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
+
+
+
+
+                                <tr>
+                                  <td>Por medio del presente documento, yo <b><u><%= @historia_clinica.p_primer_nombre.capitalize %> <%= @historia_clinica.p_segundo_nombre.capitalize %> <%= @historia_clinica.p_primer_apellido.capitalize %> <%= @historia_clinica.p_segundo_apellido.capitalize %></u></b> con documento de identificación tipo <b><u><%= @historia_clinica.p_tipo_documento %></u></b> número <b><u><%= @historia_clinica.p_documento %></u></b>, certifico que he recibido y entendido toda la información coorespondiente al diagnóstico, al tratamiento y medidas adicionales que se derivan de la atención recibida en materia de salud por parte del Médico tratante de AEROSANIDAD SAS y/o su equipo de trabajo. Acepto y entiendo que el tratamiento(s) recibido(s) puede(n) ocasionar efectos adversos no predecibles por el personal de salud que intervienen en mi proceso de atención y que he sido informado de esta situación y que en ningún momento tomaré medidas legales en contra de AEROSANIDAD DAD o sus empleados por cuanto entiendo y acepto que no obra de mala fe.</td>
+                                </tr>
+  
+
+                            </table>
+
+
+
+
+                          </div></div></div>
+                      </div>
+                      
+                  </div>
+                  <!-- /.panel-body -->
+
+
+
+
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      
 
 
 
