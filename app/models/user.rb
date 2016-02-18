@@ -58,22 +58,6 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "220x220>" }, default_url: "/images/:style/missing.png"
 
 
-  validates :nombres, :presence => {:message => ' es un Campo Obligatorio'}
-  validates :apellidos, :presence => {:message => ' es un Campo Obligatorio'}
-  validates :documento, :presence => {:message => ' es un Campo Obligatorio'}
-  validates :rol_id, :presence => {:message => ' es un Campo Obligatorio'}
-  validates :email, :presence => { :message => " es un Campo Obligatorio" }
-  validates :password, :presence  => { :message => " es un Campo Obligatorio" }, :confirmation => true, :on => :update, :on => :create
-  validates :password, :presence => { :message => " es un Campo Obligatorio" }, :on => :create
-  validates :password,  length: { minimum: 3, :message => " no es una contraseña valida" }, :on => :create
-  validates :password, confirmation: true, if: :new_user?, :on => :create
-  validates :email, email_format: { message: "  No es valido" }
-  validates :email, :uniqueness =>  { message: "  No es valido" }
-  validates :nombre_usuario, :presence => {:message => ' es un Campo Obligatorio'}
-  validates :nombre_usuario, :uniqueness => { message: "  No es valido" }
-  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-
-
 
    def self.search(search)
     where("primer_nombre like '%#{search}%'  or second_name like '%#{search}%'

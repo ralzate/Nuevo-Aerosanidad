@@ -32,7 +32,7 @@
 
 <% if current_user.rol_id != 3 %>
 
-    <span  class="btn btn-link btn-xs pull-right" style="margin-top: 18px;"><%= link_to 'Nueva Historia Clinica', new_paciente_historia_clinica_path(@paciente), :class => "btn btn-info color_blanco" %></span>
+    <span  class="btn btn-link btn-xs pull-right" style="margin-top: 18px;"><%= link_to 'Nueva Historia Clinica', new_paciente_historia_clinica_path(@paciente), :class => "btn btn-info color_blanco " %></span>
 
 
 <% end %>
@@ -91,20 +91,20 @@
 
 
     <td><%= historia_clinica.id %></td>
-    <td><%= historia_clinica.p_primer_nombre %></td>
+    <td><%= historia_clinica.p_primer_nombre.capitalize %></td>
     <td><%= historia_clinica.p_documento %></td>
     <td><%= historia_clinica.created_at.strftime("%d-%m-%y") %> <%= historia_clinica.created_at.strftime("%X") %></td>
-    <td><%= link_to 'Ver Historia Clinica', paciente_historia_clinica_path(@paciente,historia_clinica), :class => "btn btn-info blanco btn-sm" %>
+    <td><%= link_to 'Ver Historia Clinica', paciente_historia_clinica_path(@paciente,historia_clinica), :class => "btn btn-info blanco btn-xs" %>
 
 
 
 <% if historia_clinica.e_estado_historia_clinica != true %>
 <% if current_user.rol_id != 3 %>
-     &nbsp;  <%= link_to 'Editar Historia Clinica', paciente_historia_clinica_steps_path(@paciente, historia_clinica, HistoriaClinica.form_steps.first), :class => "btn btn-success blanco btn-sm" %>
+     &nbsp;  <%= link_to 'Editar Historia Clinica', paciente_historia_clinica_steps_path(@paciente, historia_clinica, HistoriaClinica.form_steps.first), :class => "btn btn-success blanco  btn-xs" %>
 <% end %>
 <% end %>
 
-     &nbsp; <%= link_to 'Notas de Evolución', paciente_historia_clinica_notas_progreso_path(@paciente,historia_clinica), :class => "btn btn-primary blanco btn-sm" %></td>
+     &nbsp; <%= link_to 'Notas de Evolución', paciente_historia_clinica_notas_progreso_path(@paciente,historia_clinica), :class => "btn btn-primary blanco  btn-xs" %></td>
 
 
     </td>

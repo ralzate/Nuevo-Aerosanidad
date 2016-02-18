@@ -37,7 +37,7 @@ class Paciente < ActiveRecord::Base
   # accepts_nested_attributes_for :ciudad, :reject_if => lambda {|a| a[:nombre].blank?}
 
 
-  
+
   validates :primer_nombre, :presence => { :message => " es un Campo Obligatorio"}
   validates :primer_apellido, :presence => { :message => " es un Campo Obligatorio"}
   validates :tipo_documento, :presence => { :message => " es un Campo Obligatorio"}
@@ -62,9 +62,9 @@ end
 
 
    def self.search(search)
-    where("primer_nombre like '%#{search}%'  or segundo_nombre like '%#{search}%' 
-    or primer_apellido like '%#{search}%'  or segundo_apellido like '%#{search}%' 
-    or email like '%#{search}%' or documento like '%#{search}%' or direccion like 
+    where("primer_nombre like '%#{search}%'  or segundo_nombre like '%#{search}%'
+    or primer_apellido like '%#{search}%'  or segundo_apellido like '%#{search}%'
+    or email like '%#{search}%' or documento like '%#{search}%' or direccion like
     '%#{search}%'").order(:id)
 
 

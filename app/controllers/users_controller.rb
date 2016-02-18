@@ -7,19 +7,19 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    
+
     @users = User.paginate(page: params[:page], per_page: 10)
     @usuarios = User.all
-    
+
     respond_to do |format|
       format.html
-      format.pdf do 
+      format.pdf do
         pdf = UsersPdf.new(
           @usuarios)
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition => "inline"
       end
     end
-    
+
 
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.pdf do 
+      format.pdf do
         pdf = UsersPdf.new(
           @users)
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition => "inline"
@@ -92,6 +92,7 @@ class UsersController < ApplicationController
     end
   end
 
+=begin
   def activate
     if @user = User.load_from_activation_token(params[:id])
       @user.activate!
@@ -102,6 +103,8 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+=end
+
 
   private
     def set_user

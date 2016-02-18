@@ -182,48 +182,6 @@ $(document).ready(function() {
 
 
 
-<% a =  @paciente.fecha_nacimiento.strftime("%Y-%m-%d") %>
-<% t0 = Time.new.strftime("%Y-%m-%d") %>
-
-<% b =  TimeDifference.between(a, t0).in_years %>
-<% z = TimeDifference.between(a, t0).in_months %>
-<% d = TimeDifference.between(a, t0).in_days %>
-
-<% if d >= 365 %>
-<% r = b.to_i %>
-
-<% if d >= 730 %>
-<%= f.hidden_field :p_tipo_edad, :value => " años" %>
-<% elsif d < 730 %>
-<%= f.hidden_field :p_tipo_edad, :value => " año" %>
-<% end %>
-
-
-<% elsif d < 365 and d > 30 %>
-<% r =  z.to_i %>
-
-<% if d >= 60 %>
-<%= f.hidden_field :p_tipo_edad, :value => " meses" %>
-<% elsif d < 60 %>
-<%= f.hidden_field :p_tipo_edad, :value => " mes" %>
-<% end %>
-
-
-<% elsif d > 0.31 %>
-<% r = d.to_i %>
-
-
-<% if d >= 2 %>
-<%= f.hidden_field :p_tipo_edad, :value => " dias" %>
-<% elsif d < 2 %>
-<%= f.hidden_field :p_tipo_edad, :value => " dia" %>
-<% end %>
-
-
-<% end %>
-
-<%= f.hidden_field :p_edad, :value => r %>
-
 
 
 <script type="text/javascript">
@@ -715,7 +673,7 @@ function edValueKeyPress()
       <%= f.hidden_field :p_email, :value => @paciente.email %>
       <%= f.hidden_field :p_tipo_documento, :value => @paciente.tipo_documento %>
       <%= f.hidden_field :p_documento, :value => @paciente.documento %>
-      <%= f.hidden_field :p_fecha_nacimiento, :value => @paciente.fecha_nacimiento %>
+      <%= f.hidden_field :p_fecha_nacimiento, :value => @paciente.fecha_nacimiento.strftime("%Y-%m-%d") %>
       <%= f.hidden_field :p_genero, :value => @paciente.genero %>
       <%= f.hidden_field :p_profesion, :value => @paciente.profesion %>
       <%= f.hidden_field :p_tipo_sangre, :value => @paciente.tipo_sangre %>
@@ -723,18 +681,11 @@ function edValueKeyPress()
       <%= f.hidden_field :p_direccion, :value => @paciente.direccion %>
       <%= f.hidden_field :p_ciudad, :value => @paciente.ciudad %>
       <%= f.hidden_field :registro_medico, :value => current_user.registro_medico %>
+      <%= f.hidden_field :latitude, class: 'lat'  %>
+      <%= f.hidden_field :longitude, class: 'lon' %>
 
 
 
-
-            <div class="field">
-              <%= f.label :latitude %><br>
-              <%= f.text_field :latitude, class: 'lat'  %>
-            </div>
-            <div class="field">
-              <%= f.label :longitude %><br>
-              <%= f.text_field :longitude, class: 'lon' %>
-            </div>
 
 
             <script type="text/javascript">

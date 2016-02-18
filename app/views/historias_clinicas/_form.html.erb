@@ -686,7 +686,7 @@ function edValueKeyPress()
       <%= f.hidden_field :p_email, :value => @paciente.email %>
       <%= f.hidden_field :p_tipo_documento, :value => @paciente.tipo_documento %>
       <%= f.hidden_field :p_documento, :value => @paciente.documento %>
-      <%= f.hidden_field :p_fecha_nacimiento, :value => @paciente.fecha_nacimiento %>
+      <%= f.hidden_field :p_fecha_nacimiento, :value => @paciente.fecha_nacimiento.strftime("%Y-%m-%d") %>
       <%= f.hidden_field :p_genero, :value => @paciente.genero %>
       <%= f.hidden_field :p_profesion, :value => @paciente.profesion %>
       <%= f.hidden_field :p_tipo_sangre, :value => @paciente.tipo_sangre %>
@@ -694,18 +694,8 @@ function edValueKeyPress()
       <%= f.hidden_field :p_direccion, :value => @paciente.direccion %>
       <%= f.hidden_field :p_ciudad, :value => @paciente.ciudad %>
       <%= f.hidden_field :registro_medico, :value => current_user.registro_medico %>
-
-
-
-
-            <div class="field">
-              <%= f.label :latitude %><br>
-              <%= f.text_field :latitude, class: 'lat'  %>
-            </div>
-            <div class="field">
-              <%= f.label :longitude %><br>
-              <%= f.text_field :longitude, class: 'lon' %>
-            </div>
+      <%= f.hidden_field :latitude, class: 'lat'  %>
+      <%= f.hidden_field :longitude, class: 'lon' %>
 
 
             <script type="text/javascript">

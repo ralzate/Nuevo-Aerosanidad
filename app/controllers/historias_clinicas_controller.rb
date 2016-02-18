@@ -3,14 +3,14 @@ class HistoriasClinicasController < ApplicationController
   before_action :set_historia_clinica
 
   def index
-    @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(2)
+    @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(10)
 
 
   end
 
 
 
-  
+
   def show
     @cie10s = Cie10.all
     @alejo = 0
@@ -21,7 +21,7 @@ class HistoriasClinicasController < ApplicationController
     @notas_progreso = @historia_clinica.notas_progreso
 
     @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(2)
-    
+
     respond_to do |format|
       format.html
       format.pdf do
@@ -32,7 +32,7 @@ class HistoriasClinicasController < ApplicationController
       end
     end
 
-    
+
   end
 
 
@@ -45,7 +45,7 @@ class HistoriasClinicasController < ApplicationController
 
 
 
-  
+
 
 
   # GET /pets/new
@@ -79,7 +79,7 @@ class HistoriasClinicasController < ApplicationController
 
   # PATCH/PUT /diagnosticos/1
   # PATCH/PUT /diagnosticos/1.json
-  
+
 
 
 
@@ -114,7 +114,7 @@ class HistoriasClinicasController < ApplicationController
 
     end
 
-   
+
     # Never trust parameters from the scary internet, only allow the white list through.
     # Never trust parameters from the scary internet, only allow the white list through.
     def historia_clinica_params
