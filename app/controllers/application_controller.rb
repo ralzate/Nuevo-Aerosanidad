@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protected
   # Permisos Admin
   def admin?
-    if current_user.rol_id === 1
+    if current_user && current_user.rol_id === 1
      flash[:notice] = "Bienvenido #{current_user.email}"
     end
   end
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   # Permisos Medico
   def admin2?
-    if current_user.rol_id === 2
+    if current_user && current_user.rol_id === 2
      flash[:notice] = "Bienvenido #{current_user.email}"
     end
   end
@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
 
   # Permisos Auxiliar
   def admin3?
-    if current_user.rol_id === 3
+    if  current_user && current_user.rol_id === 3
      flash[:notice] = "Bienvenido #{current_user.email}"
     end
   end
@@ -61,11 +61,21 @@ class ApplicationController < ActionController::Base
 
 
   private
+
+
+
+
+  def notfound
+    flash[:danger] = "No Tienes Permiso para esto"
+    redirect_to root_path
+  end
+
+
   def not_authenticated
     flash[:danger] = "No Tienes Permiso para esto"
     redirect_to root_path
   end
-  
+
   def not_found
     flash[:danger] = "#{params[:controller].chop.capitalize } no se encotro."
     redirect_back_or_to controller: params[:controller]
@@ -77,6 +87,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_users
 
-  
+
 
 end

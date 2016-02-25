@@ -8,18 +8,18 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 
     <%= link_to "Listado de Usuarios",  users_path, :class => "btn btn-info color_blanco  pull-left" %>
 <% end %>
-    
+
   </div>
 
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
-<div class="container-fluid">    
-        
-    <div id="loginbox" class="mainbox col-md-12 col-sm-12"> 
-        
+<div class="container-fluid">
 
-        
+    <div id="loginbox" class="mainbox col-md-12 col-sm-12">
+
+
+
 
       <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Roboto);
@@ -32,12 +32,12 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
       }
 
         .panel-title{
-          font-size: 30px;   
+          font-size: 30px;
         }
         .pie_form{
           background-image: none;
           background-color: #ECECEC;
-          color: white;   
+          color: white;
         }
         .line1
         {
@@ -58,10 +58,10 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 
 
         <div class="panel-heading">
-            <div class="panel-title">  
+            <div class="panel-title">
             <span style = "margin-right:10px;"class="glyphicon glyphicon-user"></span>Datos Usuario
             </div>
-        </div>   
+        </div>
 
 
 
@@ -103,32 +103,32 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 
 
 
-     
+
 
                   <div class="col-md-3">
                     <label class="label">Nombres</label>
                     <div class="form-group">
                         <%= f.text_field :nombres, class: "form-control ", placeholder: 'Nombres',  id: 'document'  %>
                     </div>
-                  </div>  
+                  </div>
 
 <div class="col-md-3">
                     <label class="label">Apellidos</label>
                     <div class="form-group">
                         <%= f.text_field :apellidos, class: "form-control ", placeholder: 'Apellidos',  id: 'document'  %>
                     </div>
-                  </div>  
+                  </div>
 
 
 
- 
+
                   <div class="col-md-3">
                     <label class="label">Tipo Documento</label>
                     <div class="form-group">
                       <%= f.input :tipo_documento,
                               prompt:       'Seleccionar un Documento',
                               collection: @user.select_document.sort,
-                              error: false, label: false, 
+                              error: false, label: false,
                               input_html:   {class: 'form-control'},
                               required: true, :selected => '1'   %>
                     </div>
@@ -141,7 +141,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
                     <div class="form-group">
                         <%= f.number_field :documento, class: "form-control ", placeholder: 'Documento',  id: 'document'  %>
                     </div>
-                  </div>  
+                  </div>
 
 </div>
 
@@ -176,7 +176,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
                     </div>
                   </div>
 
-            
+
 
                 <div class="col-md-3" style="margin-top:16px;">
 
@@ -195,7 +195,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
                                   <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
                               </div>
                           </span>
-                      </div><!-- /input-group image-preview [TO HERE]--> 
+                      </div><!-- /input-group image-preview [TO HERE]-->
 
                 </div>
 
@@ -207,10 +207,10 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 .image-preview-input {
     position: relative;
   overflow: hidden;
-  margin: 0px;    
+  margin: 0px;
     color: #333;
     background-color: #fff;
-    border-color: #ccc;    
+    border-color: #ccc;
 }
 .image-preview-input input[type=file] {
   position: absolute;
@@ -229,17 +229,17 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
   </style>
 
 <script type="text/javascript">
-  $(document).on('click', '#close-preview', function(){ 
+  $(document).on('click', '#close-preview', function(){
     $('.image-preview').popover('hide');
     // Hover befor close the preview
     $('.image-preview').hover(
         function () {
            $('.image-preview').popover('show');
-        }, 
+        },
          function () {
            $('.image-preview').popover('hide');
         }
-    );    
+    );
 });
 
 $(function() {
@@ -265,27 +265,27 @@ $(function() {
         $('.image-preview-filename').val("");
         $('.image-preview-clear').hide();
         $('.image-preview-input input:file').val("");
-        $(".image-preview-input-title").text("Browse"); 
-    }); 
+        $(".image-preview-input-title").text("Browse");
+    });
     // Create the preview image
-    $(".image-preview-input input:file").change(function (){     
+    $(".image-preview-input input:file").change(function (){
         var img = $('<img/>', {
             id: 'dynamic',
             width:100,
             height:120
-        });      
+        });
         var file = this.files[0];
         var reader = new FileReader();
         // Set preview image into the popover data-content
         reader.onload = function (e) {
             $(".image-preview-input-title").text("Cambiar");
             $(".image-preview-clear").show();
-            $(".image-preview-filename").val(file.name);            
+            $(".image-preview-filename").val(file.name);
             img.attr('src', e.target.result);
             $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
-        }        
+        }
         reader.readAsDataURL(file);
-    });  
+    });
 });
 </script>
 
@@ -303,12 +303,27 @@ $(function() {
                     <div class="form-group">
                         <%= f.text_field :nombre_usuario, class: "form-control ", placeholder: 'Nombre de Usuario',  id: 'document'  %>
                     </div>
-                  </div>  
+                  </div>
 
 
                   <div class="col-md-3">
                     <label class="label">Contraseña</label>
       <%= f.password_field :password, class: 'form-control', :id => 'password3', :autocomplete => :yes %>
+
+      <div class="row">
+      <div class="col-sm-12">
+      <span id="8char" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Minimo 8 Caracteres<br>
+      <span id="ucase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Una Letra en Mayuscula
+      </div>
+      <div class="col-sm-12">
+      <span id="lcase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Una Letra en Minuscula<br>
+</div>
+
+      <div class="col-sm-12">
+      <span id="num" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Un Numero
+      </div>
+      </div>
+
     </div>
 
 
@@ -321,6 +336,10 @@ $(function() {
                 <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Las Contraseñas Concuerdan
               </div>
             </div>
+
+
+
+
         </div>
 
 
@@ -329,7 +348,7 @@ $(function() {
 
                   <div class="col-md-3">
                     <label class="label">Autorizado Para Ingresar</label><br/>
-               
+
                 Si <%= f.radio_button(:aprobado_login, "Si", class: "required requerido", :title => "Debes Seleccionar una Opción", id: 'myRadio' )%>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 No <%= f.radio_button(:aprobado_login, "No", class: "required requerido", :title => "Debes Seleccionar una Opción", id: 'myRadio' )%>
@@ -346,10 +365,12 @@ $(function() {
 
 
 
+
+
                 <div class="well pie_form">
                   <% if not @user.errors.any? %>
 
-                      <div class="form-actions"  style = "text-align:center!important"> 
+                      <div class="form-actions"  style = "text-align:center!important">
 
                         <%= link_to "Regresar", users_path, :class=>"btn btn-info color_blanco custom" %>
 
@@ -358,13 +379,13 @@ $(function() {
 
                       <button type="reset" class="btn btn btn-info custom" style = "margin-right:20px;margin-left:20px;">Borrar</button>
                       <%= f.submit "Guardar", :class => 'btn btn btn-info  custom' %>
-                    
+
                 </div>
-              </div>  
+              </div>
 
 
 
-  
+
 
 
 
@@ -376,14 +397,14 @@ $(function() {
 
       </div>
 
- 
 
 
 
 
-          
-       
-       
+
+
+
+
 
         </fieldset>
     </div>
@@ -392,12 +413,12 @@ $(function() {
 
 
 
-   
 
 
 
 
-<script type="text/javascript"> 
+
+<script type="text/javascript">
 jQuery(document).ready(function() {
    jQuery("#tagtype").change(function() {
       if(jQuery(this).find("option:selected").val() == "1" ) {
@@ -420,7 +441,7 @@ jQuery(document).ready(function() {
       if(jQuery(this).find("option:selected").val() == "2" ) {
          jQuery(".multiples").prop('disabled', false);
          jQuery('.multiples').val('');
-         
+
       }
    });
 
@@ -447,5 +468,59 @@ jQuery(document).ready(function() {
     $("#pwmatch").addClass("glyphicon-remove");
     $("#pwmatch").css("color","#FF0004");
   }
+});
+</script>
+
+
+
+
+
+<script>
+$("input[type=password]").keyup(function(){
+    var ucase = new RegExp("[A-Z]+");
+	var lcase = new RegExp("[a-z]+");
+	var num = new RegExp("[0-9]+");
+
+	if($("#password3").val().length >= 8){
+		$("#8char").removeClass("glyphicon-remove");
+		$("#8char").addClass("glyphicon-ok");
+		$("#8char").css("color","#00A41E");
+	}else{
+		$("#8char").removeClass("glyphicon-ok");
+		$("#8char").addClass("glyphicon-remove");
+		$("#8char").css("color","#FF0004");
+	}
+
+	if(ucase.test($("#password3").val())){
+		$("#ucase").removeClass("glyphicon-remove");
+		$("#ucase").addClass("glyphicon-ok");
+		$("#ucase").css("color","#00A41E");
+	}else{
+		$("#ucase").removeClass("glyphicon-ok");
+		$("#ucase").addClass("glyphicon-remove");
+		$("#ucase").css("color","#FF0004");
+	}
+
+	if(lcase.test($("#password3").val())){
+		$("#lcase").removeClass("glyphicon-remove");
+		$("#lcase").addClass("glyphicon-ok");
+		$("#lcase").css("color","#00A41E");
+	}else{
+		$("#lcase").removeClass("glyphicon-ok");
+		$("#lcase").addClass("glyphicon-remove");
+		$("#lcase").css("color","#FF0004");
+	}
+
+	if(num.test($("#password3").val())){
+		$("#num").removeClass("glyphicon-remove");
+		$("#num").addClass("glyphicon-ok");
+		$("#num").css("color","#00A41E");
+	}else{
+		$("#num").removeClass("glyphicon-ok");
+		$("#num").addClass("glyphicon-remove");
+		$("#num").css("color","#FF0004");
+	}
+
+
 });
 </script>

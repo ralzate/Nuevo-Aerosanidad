@@ -1,4 +1,6 @@
 class Dashboard1Controller < ApplicationController
+  before_action :authorize
+
   def graficas
   @historias_clinicas = HistoriaClinica.all
   @aeropuertos = Aeropuerto.all

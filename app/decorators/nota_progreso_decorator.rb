@@ -32,4 +32,17 @@ module NotaProgresoDecorator
     	]
   	end
 
+
+  	def select_procedimientos_medicos_y_de_enfermeria2
+    	[
+	        ['Inyecciones', 'Inyecciones'],
+	        ['Curaciones', 'Curaciones'],
+	        ['Silla De Ruedas', 'Silla De Ruedas'],
+	        ['Ambulancia', 'Ambulancia'],
+	  
+
+    	]
+  	end
+
+
 end

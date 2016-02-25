@@ -6,7 +6,7 @@
 <% #Diagnostico.where(:cie10_id => 2).count %>
 
 <% #@diagnosticos.each do |f|  %>
-  
+
   <% # if f.cie10.familia == "Enfermedades infecciosas y parasitarias." %>
 <% #@alejo = @alejo + 1  %>
 
@@ -123,7 +123,7 @@ Licensed under MIT
 
 
 
- 
+
 
         <% if @historia_clinica.e_estado_historia_clinica == true %>
 
@@ -131,7 +131,7 @@ Licensed under MIT
             <div class="alert-message alert-message-success">
                 <h4>
                     La Historia Clinica esta cerrada</h4>
-                    
+
             </div>
         </div>
 
@@ -157,7 +157,7 @@ Licensed under MIT
 
 
   <div class="col-md-2 " >
-    
+
     <%= link_to image_tag("pdf-64.png"), paciente_historia_clinica_path(@paciente,@historia_clinica, :format => "pdf"), target: '_blank',  :rel => "tooltip", :title => "Pdf", :class => 'btn btn-link' %>
 
 
@@ -194,7 +194,7 @@ Licensed under MIT
 
 
             <div class="ui-group-buttons">
-                 <%= link_to 'Volver a Historias Clinicas' , paciente_historias_clinicas_path(@paciente), :class => "btn btn-success color_blanco mrg" %> 
+                 <%= link_to 'Volver a Historias Clinicas' , paciente_historias_clinicas_path(@paciente), :class => "btn btn-success color_blanco mrg" %>
                 <div class="or"></div>
     <%= link_to 'Crear Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn btn-primary color_blanco mrg" %>
             </div>
@@ -219,7 +219,7 @@ Licensed under MIT
 
 
 <div id="page-wrapper" style="min-height: 343px;">
-      
+
 
 
       <!-- /.row -->
@@ -237,7 +237,7 @@ Licensed under MIT
                                     <%= link_to image_tag('Logo/logo.png',:size => "190x100", :class =>"ember-view "), root_path %>
                                   </th>
                                   <th  colspan="2">
-                                    HISTORIA CLINICA             
+                                    HISTORIA CLINICA
                                   </th>
                                   <th style="text-align: center;">
                                     HC N" <%= @historia_clinica.id %>
@@ -252,21 +252,21 @@ Licensed under MIT
                                       HORA MILITAR: <%= @historia_clinica.created_at.strftime("%H:%M") %>
                                     </th>
                                      <th style="width:30%; text-align:center; font-size:12px">
-                                      Revisión 11 - 13           
+                                      Revisión 11 - 13
                                     </th>
                                   </tr>
 
                                   <tr>
-                                      
+
                                      <th colspan = "2" style="width:85%;text-align:center;" rowspan="1">
-                                     DATOS GENERALES          
+                                     DATOS GENERALES
                                     </th>
 
 
                                      <th style="width:20%;text-align:center;font-size:12px">
-                                      F GS 033           
-                                    </th> 
-                                     
+                                      F GS 033
+                                    </th>
+
                                   </tr>
 
 
@@ -274,22 +274,22 @@ Licensed under MIT
                               <tbody>
 
 
-             
 
 
-                              
+
+
                               <tr class="gradeA odd" role="row">
                                       <td class="sorting_1" >
-                                        <b>Movil/Servicio:</b>        
+                                        <b>Movil/Servicio:</b>
                                       </td>
                                       <td><%= @historia_clinica.a_movil_servicio %></td>
                                       <td>
-                                        <b>Conductor/Comandante:</b> 
+                                        <b>Conductor/Comandante:</b>
                                       </td>
                                       <td class="center"><%= @historia_clinica.a_cove  %></td>
                                   </tr>
 
-                        
+
 
 
 
@@ -317,15 +317,17 @@ Licensed under MIT
                                       <td><%=  @historia_clinica.a_tipo_servicio %></td>
                                       <td class="sorting_1"><b>Lugar te atención:</b></td>
                                       <td><%=  @historia_clinica.a_lugar_de_atencion %></td>
-
                                   </tr>
 
-
+                                  <tr class="gradeA odd" role="row">
+                                      <td class="sorting_1"><b>Tipo de Vuelo:</b></td>
+                                      <td><%=  @historia_clinica.tipo_de_vuelo %></td>
+                                  </tr>
 
                                   </tbody>
                           </table></div></div></div>
                       </div>
-                      
+
                   </div>
                   <!-- /.panel-body -->
               </div>
@@ -344,7 +346,7 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
+
 
       <!-- /.row -->
       <div class="row">
@@ -358,7 +360,7 @@ Licensed under MIT
                               <thead>
 
                                 <tr role="row">
-              
+
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Nombres:</b></td>
 
@@ -370,10 +372,10 @@ Licensed under MIT
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                     <%= @historia_clinica.p_primer_apellido %> <%= @historia_clinica.p_segundo_apellido %>
-                                  </td>                                   
-                        
-                    
-                                </tr>                             
+                                  </td>
+
+
+                                </tr>
 
                               </thead>
 
@@ -392,15 +394,15 @@ Licensed under MIT
 
                                   <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
 
-                                    <%= @historia_clinica.a_destino.capitalize %> 
+                                    <%= @historia_clinica.a_destino.capitalize %>
 
                                   </td>
 
 
-    
+
 
                                   </tr>
-                              
+
 
 
 
@@ -440,7 +442,7 @@ Licensed under MIT
                                     </td>
 
 
-                                 
+
 
                                   </tr>
 
@@ -461,9 +463,9 @@ Licensed under MIT
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_tipo_sangre %>
-                                    </td>   
+                                    </td>
 
-                                 
+
 
                                   </tr>
 
@@ -484,7 +486,7 @@ Licensed under MIT
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_ciudad %>
-                                      
+
                                     </td>
 
 
@@ -492,7 +494,7 @@ Licensed under MIT
                                   </tr>
 
                                   <tr>
-                                    
+
 
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;"><b>Dirección</b></td>
@@ -505,7 +507,7 @@ Licensed under MIT
 
                                     <td class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 158px;">
                                       <%= @historia_clinica.p_fecha_nacimiento.strftime("%d-%m-%Y") %>
-                                     
+
                                     </td>
 
                                   </tr>
@@ -539,7 +541,7 @@ Licensed under MIT
                                 </tbody>
                           </table></div></div></div>
                       </div>
-                      
+
                   </div>
                   <!-- /.panel-body -->
 
@@ -565,7 +567,7 @@ Licensed under MIT
           <!-- /.col-lg-12 -->
       </div>
 
-      <div class="container-fluid">   
+      <div class="container-fluid">
         <div class="widget-content">
           <table class="table table-striped table-bordered">
             <tbody>
@@ -579,7 +581,7 @@ Licensed under MIT
 
 
 
-      
+
 
 
       <br/>
@@ -591,7 +593,7 @@ Licensed under MIT
           <!-- /.col-lg-12 -->
       </div>
 
-      <div class="container-fluid">   
+      <div class="container-fluid">
         <div class="widget-content">
           <table class="table table-striped table-bordered">
             <tbody>
@@ -613,10 +615,10 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
 
 
-      
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
@@ -678,13 +680,13 @@ Licensed under MIT
                                       <td><%= @historia_clinica.b_hospitalarios %></td>
                                       <td><%= @historia_clinica.b_hospitalarios_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Atep Laboral</td>
                                       <td><%= @historia_clinica.b_atep_laboral %></td>
                                       <td><%= @historia_clinica.b_atep_laboral_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Familiares</td>
                                       <td><%= @historia_clinica.b_familiares %></td>
@@ -735,7 +737,7 @@ Licensed under MIT
                                   </tr>
 
                               </tbody>
-      
+
                           </table>
                       </div>
 
@@ -772,7 +774,7 @@ Licensed under MIT
                                       <td><%= @historia_clinica.b_e %></td>
                                   </tr>
                               </tbody>
-      
+
                           </table>
                       </div>
 
@@ -862,13 +864,13 @@ Licensed under MIT
                                       <td><%= @historia_clinica.c_musculo_esqueletico %></td>
                                       <td><%= @historia_clinica.c_musculo_esqueletico_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Piel y Faneras</td>
                                       <td><%= @historia_clinica.c_piel_y_faneras %></td>
                                       <td><%= @historia_clinica.c_piel_y_faneras_descripcion %></td>
                                   </tr>
-                                  
+
 
 
                               </tbody>
@@ -895,7 +897,7 @@ Licensed under MIT
           <!-- /.col-lg-12 -->
       </div>
 
-      
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
@@ -904,18 +906,18 @@ Licensed under MIT
                   <div class="panel-body">
                       <div class="table-responsive">
                           <table class="table table-striped table-bordered table-hover">
-                              
+
                               <tr>
                                 <td  style="width:20%;">
-                                <b>TA mm/Hg:</b>             
+                                <b>TA mm/Hg:</b>
                                 </td>
                                 <td  style="width:30%;">
                                   <%= @historia_clinica.d_ta_mmgh_diastole %> - Mm / <%= @historia_clinica.d_ta_mmgh_sistole %> - Hg
                                 </td>
-                               
+
 
                                 <td  >
-                                <b>Frecuencia Cardiaca:</b>             
+                                <b>Frecuencia Cardiaca:</b>
                                 </td>
                                 <td >
                                   <%= @historia_clinica.d_frecuencia_cardiaca %>
@@ -926,16 +928,16 @@ Licensed under MIT
 
                               <tr>
 
-                               
+
                                 <td >
-                                <b>Frecuencia Respiratoria:</b>             
+                                <b>Frecuencia Respiratoria:</b>
                                 </td>
                                 <td  >
                                 <%= @historia_clinica.d_frecuencia_respiratoria %>
                                 </td>
 
                                 <td >
-                                <b>% SAT. de O2 Ambiente:</b>             
+                                <b>% SAT. de O2 Ambiente:</b>
                                 </td>
                                 <td >
                                   <%= @historia_clinica.d_sat_of_o_ambiente %>
@@ -944,14 +946,14 @@ Licensed under MIT
                               <tr>
 
                                 <td >
-                                <b>% SAT. de O2 Suplementario:</b>             
+                                <b>% SAT. de O2 Suplementario:</b>
                                 </td>
                                 <td  >
                                 <%= @historia_clinica.d_sat_of_o_suplementario %>
                                 </td>
 
                                 <td >
-                                <b>Temperatura:</b>             
+                                <b>Temperatura:</b>
                                 </td>
                                 <td >
                                   <%= @historia_clinica.d_temperatura %> (Centigrados)
@@ -961,17 +963,17 @@ Licensed under MIT
                               <tr>
 
                                 <td>
-                                <b>Peso:</b>             
+                                <b>Peso:</b>
                                 </td>
                                 <td  >
                                 <%= @historia_clinica.d_peso_en_kilogramos %> (Kilogramos)
                                 </td>
-                              
+
 
 
 
                                 <td >
-                                <b>Talla:</b>             
+                                <b>Talla:</b>
                                 </td>
                                 <td >
                                   <%= @historia_clinica.d_talla_en_centimetros %> (Centimetros)
@@ -979,7 +981,7 @@ Licensed under MIT
                               <tr>
 
                                 <td >
-                                <b>Glucometria:</b>             
+                                <b>Glucometria:</b>
                                 </td>
                                 <td  >
                                 <%= @historia_clinica.d_glucometria %>
@@ -1044,38 +1046,38 @@ Licensed under MIT
                                       <td><%= @historia_clinica.d_recto %></td>
                                       <td><%= @historia_clinica.d_recto_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Extremidades</td>
                                       <td><%= @historia_clinica.d_extremidades %></td>
                                       <td><%= @historia_clinica.d_extremidades_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Piel Y Faneras</td>
                                       <td><%= @historia_clinica.d_piel_y_faneras %></td>
                                       <td><%= @historia_clinica.d_piel_y_faneras_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Musculo Esqueletico</td>
                                       <td><%= @historia_clinica.d_musculo_esqueletico %></td>
                                       <td><%= @historia_clinica.d_musculo_esqueletico_descripcion %></td>
                                   </tr>
-                                  
+
                                   <tr>
                                       <td>Mental</td>
                                       <td><%= @historia_clinica.d_mental %></td>
                                       <td><%= @historia_clinica.d_mental_descripcion %></td>
                                   </tr>
 
-                                  
+
                                   <tr>
                                       <td>Neurologico</td>
                                       <td><%= @historia_clinica.d_neurologico %></td>
                                       <td><%= @historia_clinica.d_neurologico_descripcion %></td>
                                   </tr>
-                                  
+
 
                               </tbody>
                           </table>
@@ -1083,7 +1085,7 @@ Licensed under MIT
                           <table class="table table-striped table-bordered table-hover">
                               <tr>
                                 <td  style="width:20%;">
-                                <b>Apertura Ocular:</b>             
+                                <b>Apertura Ocular:</b>
                                 </td>
                                 <td  style="width:30%;">
                                 <% if @historia_clinica.d_apertura_ocular == 4 %>
@@ -1091,14 +1093,14 @@ Licensed under MIT
                                 <% elsif @historia_clinica.d_apertura_ocular == 3 %>
                                   3 - Al Llamado
                                 <% elsif @historia_clinica.d_apertura_ocular == 2 %>
-                                  2 - Al Dolor   
+                                  2 - Al Dolor
                                 <% elsif @historia_clinica.d_apertura_ocular == 1 %>
                                   1 - No Apertura
-                                <% end %>  
+                                <% end %>
                                 </td>
-                               
+
                                 <td  style="width:20%;">
-                                <b>Respuesta Verbal:</b>             
+                                <b>Respuesta Verbal:</b>
                                 </td>
                                 <td  style="width:30%;">
                                 <% if @historia_clinica.d_respuesta_verbal == 5 %>
@@ -1108,17 +1110,17 @@ Licensed under MIT
                                 <% elsif @historia_clinica.d_respuesta_verbal == 3 %>
                                   3 - Palabras
                                 <% elsif @historia_clinica.d_respuesta_verbal == 2 %>
-                                  2- Sonidos   
+                                  2- Sonidos
                                 <% elsif @historia_clinica.d_respuesta_verbal == 1 %>
                                   1- Ninguna
-                                <% end %> 
+                                <% end %>
                                 </td>
                               </tr>
 
 
                               <tr>
                                 <td>
-                                <b>Respuesta Motora:</b>             
+                                <b>Respuesta Motora:</b>
                                 </td>
                                 <td >
 
@@ -1129,7 +1131,7 @@ Licensed under MIT
                                 <% elsif @historia_clinica.d_respuesta_motora == 4 %>
                                   4 - Retira El Dolor
                                 <% elsif @historia_clinica.d_respuesta_motora == 3 %>
-                                  3 - Retira En Flexión  
+                                  3 - Retira En Flexión
                                 <% elsif @historia_clinica.d_respuesta_motora == 2 %>
                                   2- Retira En Extensión
                                 <% elsif @historia_clinica.d_respuesta_motora == 1 %>
@@ -1138,9 +1140,9 @@ Licensed under MIT
 
 
                                 </td>
-                               
+
                                 <td >
-                                <b>Escala de Glasgow:</b>             
+                                <b>Escala de Glasgow:</b>
                                 </td>
                                 <td  >
                                 <%= @historia_clinica.d_escala_de_glasgow %> / 15
@@ -1150,14 +1152,14 @@ Licensed under MIT
 
                               <tr>
                                 <td >
-                                <b>Alteración:</b>             
+                                <b>Alteración:</b>
                                 </td>
                                 <td >
                                   <%= @historia_clinica.d_alteracion %>
                                 </td>
-                               
+
                                 <td >
-                                <b>Otros Signos</b>             
+                                <b>Otros Signos</b>
                                 </td>
                                 <td  >
                                 <%= @historia_clinica.d_otros_signos %>
@@ -1188,8 +1190,8 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
-      <div class="container-fluid">   
+
+      <div class="container-fluid">
         <div class="widget-content">
           <table class="table table-striped table-bordered">
             <tbody>
@@ -1201,7 +1203,7 @@ Licensed under MIT
         </div> <!-- /widget-content -->
       </div>
 
-      
+
 
 
 
@@ -1218,7 +1220,7 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
+
 
 
       <!-- /.row -->
@@ -1239,7 +1241,7 @@ Licensed under MIT
                                   </tr>
                               </thead>
 
-                              <%  unless @diagnosticos.blank? %>  
+                              <%  unless @diagnosticos.blank? %>
 
                               <tbody>
                                   <tr>
@@ -1282,7 +1284,7 @@ Licensed under MIT
                               </thead>
 
                               <tbody>
-                              <%  unless @diagnosticos.blank? %>  
+                              <%  unless @diagnosticos.blank? %>
                                 <% @diagnosticos.each do |diagnostico| %>
                                   <tr>
                                     <td><%= diagnostico.cie10.familia %></td>
@@ -1290,7 +1292,7 @@ Licensed under MIT
                                     <td><%= diagnostico.cie10.descripcion.capitalize %></td>
                                   </tr>
                                 <% end %>
-                              <% end %>  
+                              <% end %>
                               </tbody>
                           </table>
                       </div>
@@ -1316,9 +1318,9 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
 
-      
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
@@ -1327,7 +1329,7 @@ Licensed under MIT
                   <div class="panel-body">
                       <div class="table-responsive">
                           <table class="table table-striped table-bordered table-hover">
-                              
+
 
 
 
@@ -1341,7 +1343,7 @@ Licensed under MIT
                                       <td  colspan="2"  style="width:50%;"><b>Descripción</b></td>
                                   </tr>
                               </thead>
-                              
+
                               <tbody>
                                 <% @procedimientos.each do |procedimiento| %>
                                   <tr>
@@ -1372,7 +1374,7 @@ Licensed under MIT
                   <div class="panel-body">
                       <div class="table-responsive">
                           <table class="table table-striped table-bordered table-hover">
-                              
+
 
 
 
@@ -1385,14 +1387,14 @@ Licensed under MIT
 
                                   </tr>
                                   <tr>
-                                      
+
                                       <td><b>Glucometria 2</b></td>
                                       <td><%= @historia_clinica.e_glucometria2 %></td>
                                       <td><b>Hora 2</b></td>
                                       <td><%= @historia_clinica.e_hora2 %></td>
                                   </tr>
                                   <tr>
-                                      
+
                                       <td><b>Electrocardiograma</b></td>
                                       <td  colspan="3"><%= @historia_clinica.e_electrocardiograma %></td>
                                   </tr>
@@ -1423,10 +1425,10 @@ Licensed under MIT
           <!-- /.col-lg-12 -->
       </div>
 
-      
 
-      
-      <div class="container-fluid">   
+
+
+      <div class="container-fluid">
         <div class="widget-content">
           <table class="table table-striped table-bordered">
             <tbody>
@@ -1438,7 +1440,7 @@ Licensed under MIT
         </div> <!-- /widget-content -->
       </div>
 
-      
+
 
 
 
@@ -1453,9 +1455,9 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
 
-      
+
+
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">
@@ -1470,14 +1472,14 @@ Licensed under MIT
                                       <td  style="width:5%;"><b>Evento Adverso</b></td>
                                       <td  style="width:45%;"><%= @historia_clinica.e_evento_adverso %></td>
 
-                                    
+
                                   </tr>
                                   <tr>
                                       <td  style="width:5%;"><b>Estado Paciente</b></td>
                                       <td  style="width:45%;"><%= @historia_clinica.e_estado_paciente %></td>
                                   </tr>
-     
-                                     
+
+
                               </thead>
 
                           </table>
@@ -1501,7 +1503,7 @@ Licensed under MIT
           </div>
           <!-- /.col-lg-12 -->
       </div>
-      
+
 
       <!-- /.row -->
       <div class="row">
@@ -1520,7 +1522,7 @@ Licensed under MIT
                                       <td><b>Cargo</b></td>
                                   </tr>
                               </thead>
-                              
+
                               <tbody>
                                 <% notas_progreso = @historia_clinica.notas_progreso.each do |nota_progreso| %>
                                   <tr>
@@ -1647,7 +1649,7 @@ Licensed under MIT
 .profile-userbuttons .btn:last-child {
   margin-right: 0px;
 }
-    
+
 .profile-usermenu {
   margin-top: 30px;
 }
@@ -1694,19 +1696,3 @@ Licensed under MIT
   min-height: 460px;
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

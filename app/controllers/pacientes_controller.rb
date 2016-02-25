@@ -5,7 +5,7 @@ class PacientesController < ApplicationController
   # GET /pacientes
   # GET /pacientes.json
   def index
-    @pacientes = Paciente.search(params[:search]).page(params[:page]).per_page(8)
+    @pacientes = Paciente.search(params[:search]).page(params[:page]).per_page(10)
   end
 
   # GET /pacientes/1
@@ -18,11 +18,11 @@ class PacientesController < ApplicationController
     @paciente = Paciente.new
    # @paciente.build_ciudad
 
-  end 
+  end
 
   # GET /pacientes/1/edit
   def edit
-    
+
   end
 
   # POST /pacientes
@@ -31,7 +31,7 @@ class PacientesController < ApplicationController
     @paciente = Paciente.new(paciente_params)
     if @paciente.email.blank?
       @paciente.email = "N/A"
-    end  
+    end
     respond_to do |format|
       if @paciente.save
         format.html { redirect_to new_paciente_historia_clinica_path(@paciente), notice: 'Paciente creado Satisfactoriamente.' }
@@ -46,7 +46,7 @@ class PacientesController < ApplicationController
   # PATCH/PUT /pacientes/1
   # PATCH/PUT /pacientes/1.json
   def update
- 
+
     respond_to do |format|
       if @paciente.update(paciente_params)
 

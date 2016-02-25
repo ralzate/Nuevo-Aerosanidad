@@ -4,8 +4,6 @@ class HistoriasClinicasController < ApplicationController
 
   def index
     @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(10)
-
-
   end
 
 

@@ -1,7 +1,7 @@
 module HistoriasClinicasHelper
 
 	def checked(area)
-		@historia_clinica.d_alteracion.nil? ? false : @historia_clinica.d_alteracion.match(area)
+		@historia_clinica.d_alteracion2.nil? ? false : @historia_clinica.d_alteracion2.match(area)
 	end
 
 	def checked(area)

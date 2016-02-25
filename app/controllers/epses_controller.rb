@@ -43,7 +43,7 @@ class EpsesController < ApplicationController
     @eps = Eps.find(params[:id])
     render :action => :edit unless @eps.update_attributes(eps_params)
   end
- 
+
 
   def update
     @eps = Eps.find(params[:id])
@@ -54,7 +54,7 @@ class EpsesController < ApplicationController
     @eps = eps.find(params[:id])
     @eps.destroy
   end
-  
+
 
   private
   def set_eps

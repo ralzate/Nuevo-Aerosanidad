@@ -9,9 +9,9 @@ class ArlesController < ApplicationController
 
   def index
 
-    @arles = Arl.search(params[:search]).page(params[:page]).per_page(8)
+    @arles = Arl.search(params[:search]).page(params[:page]).per_page(10)
 
-    
+
   end
   # GET /blogs/1
   # GET /blogs/1.json
@@ -42,7 +42,7 @@ class ArlesController < ApplicationController
     @arl = Arl.find(params[:id])
     render :action => :edit unless @arl.update_attributes(arl_params)
   end
- 
+
 
   def update
     @arl = Arl.find(params[:id])
@@ -53,7 +53,7 @@ class ArlesController < ApplicationController
     @arl = Arl.find(params[:id])
     @arl.destroy
   end
-  
+
 
   private
   def set_arl

@@ -1,8 +1,12 @@
 
 
-
-<tr id=<%= "eps_#{eps.id}" %>>
-	<td style="text-align: center;"><%= link_to eps.id, edit_eps_path(eps), :remote => true %></td>
+<style>
+.ids{
+	color:gray;
+}
+</style>
+<tr class="x" id=<%= "eps_#{eps.id}" %>>
+	<td style="text-align: center;"><%= link_to eps.id, edit_eps_path(eps), :remote => true, :class => "ids" %> </td>
 	<td><%= eps.nombre.capitalize %></td>
 
 	<td>

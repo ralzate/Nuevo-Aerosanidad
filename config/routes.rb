@@ -2,6 +2,10 @@ PetThing::Application.routes.draw do
 
 
 
+  #get 'error/index', :path => "pagina_no_disponible"
+
+  # get 'error/contact'
+
   get 'dashboard1/mapa',  to: 'dashboard1#mapa', as: "mapa"
 
   get 'dashboard1/graficas',  to: 'dashboard1#graficas', as: "graficas"

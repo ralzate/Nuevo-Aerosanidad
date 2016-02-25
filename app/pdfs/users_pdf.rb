@@ -1,8 +1,8 @@
 =begin
-  
+
 NO usar (draw text)!! este metodo no se acomoda a los otros
 (Text) siiiii :)
-  
+
 =end
 
 
@@ -12,7 +12,6 @@ class UsersPdf < Prawn::Document
     @usuarios = usuarios
     logo_1
     usuarios_parte_1
-    pie_de_pagina
   end
 
   def logo_1
@@ -47,7 +46,7 @@ class UsersPdf < Prawn::Document
   def usuarios_rows
           @usuarios.map do |usuario|
         [
-          usuario.nombres , 
+          usuario.nombres ,
           usuario.apellidos ,
           usuario.tipo_documento ,
           usuario.documento
@@ -55,14 +54,5 @@ class UsersPdf < Prawn::Document
     end
   end
 
-  def pie_de_pagina 
-    move_down 120
-    text "www.aerosanidadvirtual.com", size: 9, :align => :center, :style => :bold
-    text "Aeropuerto Bogotá: (57)(1) 2205674 / 3002221245", size: 9, :align => :center
-    text "Aeropuerto Medellín: (57)(4) 3656171 / 3007042683", size: 9, :align => :center
-    text "Aeropuerto Rionegro: 3002214168", size: 9, :align => :center
-    text "------------------------------------------------", size: 9, :align => :center
-    text "comunicaciones@aerosanidadsas.com",  size: 9, :align => :center
-  end
 
 end

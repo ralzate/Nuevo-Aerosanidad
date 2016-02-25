@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217160948) do
+ActiveRecord::Schema.define(version: 20160225152143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -244,6 +244,7 @@ ActiveRecord::Schema.define(version: 20160217160948) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.string   "d_alteracion2"
   end
 
   add_index "historias_clinicas", ["aeropuerto_id"], name: "index_historias_clinicas_on_aeropuerto_id", using: :btree
@@ -311,8 +312,10 @@ ActiveRecord::Schema.define(version: 20160217160948) do
     t.text     "descripcion"
     t.integer  "historia_clinica_id"
     t.integer  "user_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "procedimientos_medicos_y_de_enfermeria2"
+    t.string   "cantidad_procedimientos"
   end
 
   add_index "notas_progreso", ["historia_clinica_id"], name: "index_notas_progreso_on_historia_clinica_id", using: :btree
@@ -417,7 +420,6 @@ ActiveRecord::Schema.define(version: 20160217160948) do
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["last_logout_at", "last_activity_at"], name: "index_users_on_last_logout_at_and_last_activity_at", using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree

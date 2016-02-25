@@ -3,13 +3,14 @@
 # Table name: users
 #
 #  id                              :integer          not null, primary key
+#  aprobado_login                  :string
 #  email                           :string           not null
 #  nombre_usuario                  :string
-#  names                           :string
-#  surnames                        :string
-#  type_document                   :integer
-#  document                        :string
-#  medical_record                  :string
+#  nombres                         :string
+#  apellidos                       :string
+#  tipo_documento                  :string
+#  documento                       :string
+#  registro_medico                 :string
 #  rol_id                          :integer
 #  crypted_password                :string
 #  salt                            :string
@@ -32,6 +33,10 @@
 #  last_logout_at                  :datetime
 #  last_activity_at                :datetime
 #  last_login_from_ip_address      :string
+#  avatar_file_name                :string
+#  avatar_content_type             :string
+#  avatar_file_size                :integer
+#  avatar_updated_at               :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

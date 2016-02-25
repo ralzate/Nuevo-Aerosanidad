@@ -3,13 +3,14 @@
 # Table name: users
 #
 #  id                              :integer          not null, primary key
+#  aprobado_login                  :string
 #  email                           :string           not null
 #  nombre_usuario                  :string
-#  names                           :string
-#  surnames                        :string
-#  type_document                   :integer
-#  document                        :string
-#  medical_record                  :string
+#  nombres                         :string
+#  apellidos                       :string
+#  tipo_documento                  :string
+#  documento                       :string
+#  registro_medico                 :string
 #  rol_id                          :integer
 #  crypted_password                :string
 #  salt                            :string
@@ -32,9 +33,11 @@
 #  last_logout_at                  :datetime
 #  last_activity_at                :datetime
 #  last_login_from_ip_address      :string
+#  avatar_file_name                :string
+#  avatar_content_type             :string
+#  avatar_file_size                :integer
+#  avatar_updated_at               :datetime
 #
-
-
 
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
@@ -56,6 +59,24 @@ class User < ActiveRecord::Base
 
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "220x220>" }, default_url: "/images/:style/missing.png"
+
+
+  validates :nombres, :presence => {:message => ' es un Campo Obligatorio'}
+  validates :apellidos, :presence => {:message => ' es un Campo Obligatorio'}
+  validates :documento, :presence => {:message => ' es un Campo Obligatorio'}
+  validates :rol_id, :presence => {:message => ' es un Campo Obligatorio'}
+  validates :email, :presence => { :message => " es un Campo Obligatorio" }
+
+  validates :password, :presence  => { :message => " es un Campo Obligatorio" }, :confirmation => true, :on => :update, :on => :create
+  validates :password, :presence => { :message => " es un Campo Obligatorio" }, :on => :create
+  validates :password,  length: { minimum: 8, :message => " no es una contraseña valida" }, :on => :create
+  validates :password, confirmation: true, if: :new_user?, :on => :create
+
+  validates :email, email_format: { message: "  No es valido" }
+  validates :email, :uniqueness =>  { message: "  No es valido" }
+  validates :nombre_usuario, :presence => {:message => ' es un Campo Obligatorio'}
+  validates :nombre_usuario, :uniqueness => { message: "  No es valido" }
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
 

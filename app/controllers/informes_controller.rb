@@ -24,7 +24,7 @@ class InformesController < ApplicationController
       end
     end
 
-    
+
   end
 
   def  mensual_actividades_medicas
@@ -46,6 +46,7 @@ class InformesController < ApplicationController
         render :pdf => 'file_name',
         :template => 'historias_clinicas/pdfs/actividades_clinicas.pdf.erb',
         :layout => 'pdf.html.erb',
+        orientation:                    'Landscape',                  # default Portrait
         :show_as_html => params[:debug].present?
       end
     end
@@ -62,8 +63,101 @@ class InformesController < ApplicationController
 
     $varAerocivil = params[:searchbox]
     $varAerocivil2 = params[:searchbox2]
-    aeropuertoAerocivil = params[:nombre]
-    $aeropuertoAerocivil = aeropuertoAerocivil[:id]
+    $aeropuertoAerocivil2 = params[:nombre]
+    $aeropuertoAerocivil = $aeropuertoAerocivil2[:nombre]
+
+
+    fecha1 = $varAerocivil.to_date 
+    fecha0 = fecha1.strftime("%B") 
+    fecha0.to_s 
+    if fecha0 == "January" 
+    $mes = "Enero"
+    elsif fecha0 == "February" 
+    $mes = "Febrero"
+    elsif fecha0 == "March" 
+    $mes ="Marzo"
+    elsif fecha0 == "March" 
+    $mes = "April"
+    elsif fecha0 == "May" 
+    $mes = "Mayo"
+    elsif fecha0 == "June" 
+    $mes = "Junio"
+    elsif fecha0 == "July" 
+    $mes = "Julio"
+    elsif fecha0 == "August" 
+    $mes = "Agosto"
+    elsif fecha0 == "September" 
+    $mes = "Septiembre"
+    elsif fecha0 == "October" 
+    $mes = "Octubre"
+    elsif fecha0 == "November" 
+    $mes = "Noviembre"
+    elsif fecha0 == "December" 
+    $mes = "Diciembre"
+    end
+
+
+
+    fecha2 = $varAerocivil2.to_date 
+    fecha3 = fecha2.strftime("%B") 
+    fecha3.to_s 
+    if fecha3 == "January" 
+    $mes2 = "Enero"
+    elsif fecha3 == "February" 
+    $mes2 = "Febrero"
+    elsif fecha3 == "March" 
+    $mes2 ="Marzo"
+    elsif fecha3 == "March" 
+    $mes2 = "April"
+    elsif fecha3 == "May" 
+    $mes2 = "Mayo"
+    elsif fecha3 == "June" 
+    $mes2 = "Junio"
+    elsif fecha3 == "July" 
+    $mes2 = "Julio"
+    elsif fecha3 == "August" 
+    $mes2 = "Agosto"
+    elsif fecha3 == "September" 
+    $mes2 = "Septiembre"
+    elsif fecha3 == "October" 
+    $mes2 = "Octubre"
+    elsif fecha3 == "November" 
+    $mes2 = "Noviembre"
+    elsif fecha3 == "December" 
+    $mes2 = "Diciembre"
+    end
+
+
+
+
+    mi_fecha =  Time.now
+      $mi_mes = mi_fecha.strftime("%B") 
+      if $mi_mes == "January" 
+      $month = "Enero"
+      elsif $mi_mes == "February" 
+      $month = "Febrero"
+      elsif $mi_mes == "March" 
+      $month ="Marzo"
+      elsif $mi_mes == "March" 
+      $month = "April"
+      elsif $mi_mes == "May" 
+      $month = "Mayo"
+      elsif $mi_mes == "June" 
+      $month = "Junio"
+      elsif $mi_mes == "July" 
+      $month = "Julio"
+      elsif $mi_mes == "August" 
+      $month = "Agosto"
+      elsif $mi_mes == "September" 
+      $month = "Septiembre"
+      elsif $mi_mes == "October" 
+      $month = "Octubre"
+      elsif $mi_mes == "November" 
+      $month = "Noviembre"
+      elsif $mi_mes == "December" 
+      $month = "Diciembre"
+    end
+
 
 
     respond_to do |format|
@@ -72,6 +166,7 @@ class InformesController < ApplicationController
         render :pdf => 'file_name',
         :template => 'historias_clinicas/pdfs/aerocivil.pdf.erb',
         :layout => 'pdf.html.erb',
+        orientation:                    'Landscape',                  # default Portrait
         :show_as_html => params[:debug].present?
       end
     end
@@ -81,7 +176,7 @@ class InformesController < ApplicationController
 
 
   def procedimientos_medicos_enfermeria
-    
+
     @historias_clinicas = HistoriaClinica.all
     @users = User.all
     @empresas = Empresa.all
@@ -107,7 +202,7 @@ class InformesController < ApplicationController
 
 
   def pacientes_atendidos_por_empresas
-    
+
     @historias_clinicas = HistoriaClinica.all
     @users = User.all
     @empresas = Empresa.all
@@ -138,7 +233,7 @@ class InformesController < ApplicationController
 
     end
 
-   
+
     # Never trust parameters from the scary internet, only allow the white list through.
     # Never trust parameters from the scary internet, only allow the white list through.
     def historia_clinica_params
@@ -150,6 +245,6 @@ class InformesController < ApplicationController
 
 
 
-  
+
 
 end

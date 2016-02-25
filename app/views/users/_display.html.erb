@@ -17,7 +17,7 @@
 
     <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @users, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
 
-    
+
 </span>
 
 <% if current_user.rol_id != 3 %>
@@ -35,7 +35,7 @@
   <thead>
 <tr>
       <th  colspan="3">
-        
+
                             <%= form_tag request.path, :method => 'get', :class => '' do %>
 
 <div>
@@ -71,7 +71,7 @@
 </tr>
 
 
-    <tr>
+    <tr class="x1">
       <th width="4% !important;">Id</th>
       <th width="35% !important;">Nombre</th>
       <th width="35% !important;">Documento</th>
@@ -82,7 +82,7 @@
 
 <% @users.each do |user| %>
 
-  <tr>
+  <tr class="x">
 
 
     <td><%= user.id %></td>
@@ -101,7 +101,7 @@
 </td>
 
   </tr>
-  
+
 <% end %>
 
 </table>
@@ -113,4 +113,21 @@
     @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 body{margin-top:20px;}
 .fa-fw {width: 2em;}
+</style>
+
+
+<style>
+
+.x td
+{
+padding: 5px 10px !important;
+background-color: #FBFBFB;
+color: #828282;
+}
+.x1 th
+{
+color: #67B0C7!important;
+background: #EFEFEF;
+font-size: 15px;      }
+
 </style>

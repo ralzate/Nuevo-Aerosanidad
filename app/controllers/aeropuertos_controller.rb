@@ -20,7 +20,7 @@ class AeropuertosController < ApplicationController
   # GET /Ciudads/new
   def new
     @aeropuerto = Aeropuerto.new
-    @aeropuerto.historias_clinicas.build    
+    @aeropuerto.historias_clinicas.build
   end
 
   # GET /aeropuertos/1/edit
@@ -41,7 +41,7 @@ class AeropuertosController < ApplicationController
     @aeropuerto = Aeropuerto.find(params[:id])
     render :action => :edit unless @aeropuerto.update_attributes(aeropuerto_params)
   end
- 
+
 
   def update
     @aeropuerto = Aeropuerto.find(params[:id])
@@ -52,7 +52,7 @@ class AeropuertosController < ApplicationController
     @aeropuerto = Aeropuerto.find(params[:id])
     @aeropuerto.destroy
   end
-  
+
 
   private
   def set_aeropuerto

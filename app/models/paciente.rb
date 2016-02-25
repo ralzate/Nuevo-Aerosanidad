@@ -3,11 +3,12 @@
 # Table name: pacientes
 #
 #  id               :integer          not null, primary key
-#  ciudad_id        :integer
+#  ciudad           :string
 #  primer_nombre    :string
 #  segundo_nombre   :string
 #  primer_apellido  :string
 #  segundo_apellido :string
+#  nombre_completo  :text
 #  email            :string
 #  tipo_documento   :string
 #  documento        :string
@@ -23,8 +24,6 @@
 #  updated_at       :datetime         not null
 #  pais_codigo      :string
 #
-
-
 
 class Paciente < ActiveRecord::Base
   belongs_to :eps

@@ -88,6 +88,6 @@ class NotasProgresoController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nota_progreso_params
-      params.require(:nota_progreso).permit(:nombre_paciente, :documento_paciente, :procedimientos_medicos_y_de_enfermeria, :tipo_documento, :descripcion, :historia_clinica_id, :user_id)
+      params.require(:nota_progreso).permit(:nombre_paciente, :documento_paciente, :procedimientos_medicos_y_de_enfermeria, :procedimientos_medicos_y_de_enfermeria2, :cantidad_procedimientos, :tipo_documento, :descripcion, :historia_clinica_id, :user_id)
     end
 end

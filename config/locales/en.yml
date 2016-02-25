@@ -24,5 +24,7 @@ en:
     messages:
       confirmation: " no concuerdan"
 
-
+es:
+   jan: "Enero"
+   February: "Febrero"
       

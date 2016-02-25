@@ -1,11 +1,15 @@
 
+<style>
+.ids{
+	color: gray;
+}
+</style>
 
-
-<tr id=<%= "rol_#{rol.id}" %>>
-	<td><%= link_to rol.id, edit_rol_path(rol), :remote => true %></td>
+<tr class="x" id=<%= "rol_#{rol.id}" %>>
+	<td><%= link_to rol.id, edit_rol_path(rol), :remote => true, :class => "ids" %></td>
 	<td><%= rol.nombre.capitalize %></td>
 	<td><%= rol.descripcion.capitalize %></td>
-	
+
 	<td>
 
 
@@ -19,3 +23,20 @@
 
 	</td>
 </tr>
+
+
+<style>
+
+.x td
+{
+padding: 5px 10px !important;
+background-color: #FBFBFB;
+color: #828282;
+}
+.x1 th
+{
+color: #67B0C7!important;
+background: #EFEFEF;
+font-size: 15px;      }
+
+</style>

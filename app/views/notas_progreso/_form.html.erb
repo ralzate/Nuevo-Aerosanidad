@@ -69,10 +69,8 @@
 
 
 
-      <div class="col-md-12">
+      <div class="col-md-4">
         <label class="control-label">Procedimientos Medicos Y De Enfermería:</label>
-
-
 
               <%= f.input :procedimientos_medicos_y_de_enfermeria,
                       prompt:       'Seleccionar un Documento',
@@ -82,8 +80,19 @@
                       required: true, :selected => '1'   %>
 
       </div>
+      <div class="col-md-4" style="margin-top: 24px;">
 
+              <%= f.input :procedimientos_medicos_y_de_enfermeria2,
+                      prompt:       'Seleccionar un Documento',
+                      collection: @nota_progreso.select_procedimientos_medicos_y_de_enfermeria2,
+                      error: false, label: false, 
+                      input_html:   {class: 'form-control'},
+                      required: true, :selected => '1'   %>
+      </div>
 
+      <div class="col-md-4" style="margin-top: 24px;">
+        <%= f.number_field :cantidad_procedimientos, class: "form-control", placeholder: 'Cantidad de Procedimientos', rows: "5" %>
+      </div>
 
 <br/>
 <br/>

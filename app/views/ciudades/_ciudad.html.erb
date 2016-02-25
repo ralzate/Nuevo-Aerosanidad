@@ -1,11 +1,16 @@
 
 
+<style>
+.ids{
+	color:gray;
+}
 
-<tr id=<%= "ciudad_#{ciudad.id}" %>>
-	<td><%= link_to ciudad.id, edit_ciudad_path(ciudad), :remote => true %></td>
+</style>
+<tr class="x" id=<%= "ciudad_#{ciudad.id}" %>>
+	<td><%= link_to ciudad.id, edit_ciudad_path(ciudad), :remote => true, :class => "ids" %></td>
 	<td><%= ciudad.nombre.capitalize %></td>
 	<td><%= ciudad.pais_codigo.capitalize %></td>
-	
+
 	<td>
 
 

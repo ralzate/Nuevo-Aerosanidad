@@ -370,8 +370,10 @@ ul.alert-dropdown {
                 <ul class="nav navbar-nav side-nav">
 
                     <li class="active">
-                      <%= link_to  graficas_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-home"></i> Dashboard
+                      <% if current_user.rol_id == 1 %>                    
+                        <%= link_to  graficas_path, class: "color-negro" do %>
+                            <i class="fa fa-fw fa-home"></i> Dashboard
+                        <% end %>
                       <% end %>
                     </li>
 

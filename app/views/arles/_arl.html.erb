@@ -1,10 +1,15 @@
 
 
+<style>
+.ids{
+	color:gray;
+}
 
-<tr id=<%= "arl_#{arl.id}" %>>
-	<td><%= link_to arl.id, edit_arl_path(arl), :remote => true %></td>
+</style>
+<tr  class = "x" id=<%= "arl_#{arl.id}" %>>
+	<td><%= link_to arl.id, edit_arl_path(arl), :remote => true, :class => "ids" %></td>
 	<td><%= arl.nombre.capitalize %></td>
-	
+
 	<td>
 
 

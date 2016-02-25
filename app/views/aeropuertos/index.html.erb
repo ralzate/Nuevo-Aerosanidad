@@ -21,7 +21,7 @@
 
     <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @aeropuertos, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
 
-    
+
 </span>
 <% if admin? %>
     <span  class="pagination pull-right"><%= link_to 'Nuevo Aeropuerto', new_aeropuerto_path, remote: true, :class => "btn   btn-info color_blanco" %></span>
@@ -37,7 +37,7 @@
   <thead>
 <tr>
       <th  colspan="5">
-        
+
                             <%= form_tag request.path, :method => 'get', :class => '' do %>
 
 <div>
@@ -68,7 +68,7 @@
 </tr>
 
 
-    <tr>
+    <tr class = "x1">
       <th width="4% !important;">Id</th>
       <th width="27% !important;">Nombre</th>
       <th width="27% !important;">Ciudad</th>
@@ -83,5 +83,16 @@
 
 
 </div>
+<style>.x td
+{
+   padding: 5px 10px !important;
+    background-color: #FBFBFB;
+    color: #828282;
+  }
+    .x1 th
+    {
+      color: #67B0C7!important;
+      background: #EFEFEF;
+      font-size: 15px;      }
 
-
+      </style>

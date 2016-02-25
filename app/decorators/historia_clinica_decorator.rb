@@ -104,7 +104,8 @@ module HistoriaClinicaDecorator
 	        ['Quemaduras', 'Quemaduras'],
 	        ['Recien Nacidos', 'Recien Nacidos'],
 	        ['Rinofaringitis', 'Rinofaringitis'],
-	        ['Vertigo', 'Vertigo'],
+          ['Vertigo', 'Vertigo'],
+          ['Ninguno', 'Ninguno'],
 
     	]
   	end
@@ -130,15 +131,67 @@ module HistoriaClinicaDecorator
 
   	def select_notificacion_obligatoria
     	[
-	        ['Dengue', 'Dengue'],
-	        ['Paludismo', 'Paludismo'],
-	        ['Tuberculosis', 'Tuberculosis'],
-	        ['Otras', 'Otras'],
-	        ['Ninguno', 'Ninguno'],
-	        ['No Aplica', 'No Aplica'],
-
+        ['ACCIDENTE OFÍDICO - 100', 'ACCIDENTE OFÍDICO - 100'],
+        ['BAJO PESO AL NACER - 110', 'BAJO PESO AL NACER - 110'],
+        ['MORBILIDAD POR EDA  - 998', 'MORBILIDAD POR EDA  - 998'],
+        ['VARICELA COLECTIVO - 830', 'VARICELA COLECTIVO - 830'],
+        ['EVENTO SIN ESTABLECER - 900', 'EVENTO SIN ESTABLECER - 900'],
+        ['CHIKUNGUÑA - 910', 'CHIKUNGUÑA - 910'],
+        ['CA MAMA Y CUELLO UTERINO - 155', 'CA MAMA Y CUELLO UTERINO - 155'],
+        ['CÁNCER EN MENORES DE 18 - 115', 'CÁNCER EN MENORES DE 18 - 115'],
+        ['CHAGAS - 205', 'CHAGAS - 205'],
+        ['CHIKUNGUNYA - 217', 'CHIKUNGUNYA - 217'],
+        ['COLERA - 200', 'COLERA - 200'],
+        ['CONSUMO SUSTANCIAS PSICOATIVAS - 202', 'CONSUMO SUSTANCIAS PSICOATIVAS - 202'],
+        ['DEFECTOS CONGENITOS 215', 'DEFECTOS CONGENITOS 215'],
+        ['DENGUE - 210-220-580', 'DENGUE - 210-220-580'],
+        ['DESNUTRICIÓN EN MENORES - 113', 'DESNUTRICIÓN EN MENORES - 113'],
+        ['DIFTERIA - 230', 'DIFTERIA - 230'],
+        ['EDA POR ROTAVIRUS - 605', 'EDA POR ROTAVIRUS - 605'],
+        ['ENFERMEDADES HUERFANAS - 342', 'ENFERMEDADES HUERFANAS - 342'],
+        ['ESAVI - 298', 'ESAVI - 298'],
+        ['ESI-IRAG - 345', 'ESI-IRAG - 345'],
+        ['ETA - 355' , 'ETA - 355'],
+        ['ETA COLECTIVO - 350' , 'ETA COLECTIVO - 350'],
+        ['EXPOSICION A FLUOR - 228', 'EXPOSICION A FLUOR - 228'],
+        ['FIEBRE AMARILLA -310', 'FIEBRE AMARILLA -310'],
+        ['HEPATITIS B C Y DELTA - 340', 'HEPATITIS B C Y DELTA - 340'],
+        ['INTENTO-SUICIDIO - 356', 'INTENTO-SUICIDIO - 356'],
+        ['INTOXICACIONES - 365', 'INTOXICACIONES - 365'],
+        ['IRAG INUSITADO - 348', 'IRAG INUSITADO - 348'],
+        ['LEISHMANIASIS 420-430-440', 'LEISHMANIASIS 420-430-440'],
+        ['LEPRA - 450', 'LEPRA - 450'],
+        ['LEPTOSPIROSIS - 455', 'LEPTOSPIROSIS - 455'],
+        ['LESIONES DE CAUSA EXTERNA - 453', 'LESIONES DE CAUSA EXTERNA - 453'],
+        ['LESIONES POR ARTEFACTOS EXPLOSIVOS - 452', 'LESIONES POR ARTEFACTOS EXPLOSIVOS - 452'],
+        ['MALARIA - 465', 'MALARIA - 465'],
+        ['MENINGITIS F510 - 535', 'MENINGITIS F510 - 535'],
+        ['MORBILIDAD MATERNA EXTREMA - 549', 'MORBILIDAD MATERNA EXTREMA - 549'],
+        ['MORBILIDAD POR IRA - 995', 'MORBILIDAD POR IRA - 995'],
+        ['MORTALIDAD MATERNA - 550', 'MORTALIDAD MATERNA - 550'],
+        ['MORTALIDAD PERINATAL Y NEONATAL - 560', 'MORTALIDAD PERINATAL Y NEONATAL - 560'],
+        ['MORTALIDAD POR DESNUTRICION - 112', 'MORTALIDAD POR DESNUTRICION - 112'],
+        ['MORTALIDAD POR EDA - 590', 'MORTALIDAD POR EDA - 590'],
+        ['MORTALIDAD POR IRA - 600', 'MORTALIDAD POR IRA - 600'],
+        ['PARALISIS FLACIDA A. -610',  'PARALISIS FLACIDA A. -610'],
+        ['PREVENCION Y CONTROL DE RABIA -680', 'PREVENCION Y CONTROL DE RABIA -680'],
+        ['RABIA ANIMAL 650-652', 'RABIA ANIMAL 650-652'],
+        ['SARAMPION  - 730', 'SARAMPION  - 730'],
+        ['RUBEOLA - 710', 'RUBEOLA - 710'],
+        ['SÍFILIS GESTACIONAL - 750', 'SÍFILIS GESTACIONAL - 750'],
+        ['SÍFILIS CONGÉNITA - 740', 'SÍFILIS CONGÉNITA - 740'],
+        ['SINDROME FEBRIL ICTÉRICO - 222', 'SINDROME FEBRIL ICTÉRICO - 222'],
+        ['SINDROME RUBEOLA CONGENITA - 720', 'SINDROME RUBEOLA CONGENITA - 720'],
+        ['TB FARMACORRESISTENTE - 825', 'TB FARMACORRESISTENTE - 825'],
+        ['TETANOS ACCIDENTAL - 760', 'TETANOS ACCIDENTAL - 760'],
+        ['TETANOS NEONATAL - 770', 'TETANOS NEONATAL - 770'],
+        ['TOSFERINA - 800', 'TOSFERINA - 800'],
+        ['TRACOMA - 305', 'TRACOMA - 305'],
+        ['TUBERCULOSIS - 815', 'TUBERCULOSIS - 815'],
+        ['VIGILANCIA INTEGRADA RABIA HUMANA - 307', 'VIGILANCIA INTEGRADA RABIA HUMANA - 307']
     	]
   	end
+
 
 
   	def select_emergencias
@@ -164,8 +217,8 @@ module HistoriaClinicaDecorator
     	]
   	end
 
-  	
-  	
+
+
 
 
 end
