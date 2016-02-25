@@ -3,7 +3,7 @@ class HistoriasClinicasController < ApplicationController
   before_action :set_historia_clinica
 
   def index
-    @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(10)
+    @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(20)
   end
 
 

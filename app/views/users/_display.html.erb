@@ -15,15 +15,17 @@
 
 
 
-    <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @users, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
-
-
-</span>
 
 <% if current_user.rol_id != 3 %>
     <span  class="btn btn-link btn-xs pull-right" style="margin-top:18px;"><%= link_to 'Nuevo Usuario', new_user_path, :class => "btn btn-info color_blanco" %></span>
 <% end %>
 
+
+<div class="row" >
+  <div class="col-lg-12 col-md-offset-4" style="margin-top: -50px;">
+     <%= will_paginate @users, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
+   </div>
+</div>   
 
 
 

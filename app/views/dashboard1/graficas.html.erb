@@ -99,7 +99,7 @@
                 <div class="col-md-5">
                         <a class="btn icon-btn btn-info" style="margin-top:15px; margin-left:20px; position:absolute; z-index:1;"><span class="glyphicon btn-glyphicon glyphicon glyphicon-user img-circle text-primary"></span>Genero</a>
 
-                    <%= pie_chart HistoriaClinica.group("id").count, colors: ["#22BDC8", "#333", "#A4A4A4"] %>
+                    <%= pie_chart HistoriaClinica.group("p_genero").count, colors: ["#22BDC8", "#333", "#A4A4A4"] %>
                 </div>
 
 

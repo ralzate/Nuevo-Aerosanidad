@@ -8,7 +8,7 @@ class NotasProgresoController < ApplicationController
     # Normally you'd have more complex requirements about
     # when not to show rows, but we don't show any records that don't have a name
 
-    @notas_progreso = @historia_clinica.notas_progreso.search(params[:search]).page(params[:page]).per_page(2)
+    @notas_progreso = @historia_clinica.notas_progreso.search(params[:search]).page(params[:page]).per_page(20)
 
   end
 

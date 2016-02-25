@@ -25,7 +25,7 @@ PetThing::Application.routes.draw do
 
 
   resources :paises
-  resources :cie10s, :defaults => { :format => :json }
+  #resources :cie10s, :defaults => { :format => :json }
 
   resources :empresas, :path => "empresas"
   resources :procedimientos, :path => "procedimientos"

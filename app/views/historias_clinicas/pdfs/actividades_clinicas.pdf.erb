@@ -306,104 +306,129 @@ td{
 <%
 
 accidente_cerebrales = HistoriaClinica.where(:otras_patologias => "Accidente Cerebral")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 sistema_muscular = HistoriaClinica.where(:patologias => "E. Sistema Muscular")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 intoxicacion = HistoriaClinica.where(:otras_patologias => "Intoxicacion")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 aparato_circulatorio = HistoriaClinica.where(:patologias => "Aparato Circulatorio")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 sistema_oseo = HistoriaClinica.where(:patologias => "E. Sistema Oseo")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 neumonia = HistoriaClinica.where(:otras_patologias => "Neumonia")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 aparato_respiratorio = HistoriaClinica.where(:patologias => "Aparato Respiratorio Alto")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 embarazo_coomplicado = HistoriaClinica.where(:patologias => "Embarazo Complicado")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 otalgias = HistoriaClinica.where(:otras_patologias => "Otalgias Odontalgias")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 cancer = HistoriaClinica.where(:otras_patologias => "Cancer")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 embarazo_sin_complicaciones = HistoriaClinica.where(:patologias => "Embarazo Sin Complicaciones")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 post_operatorios = HistoriaClinica.where(:otras_patologias => "Post Operatorios Varios")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 diabetes = HistoriaClinica.where(:otras_patologias => "Diabetes Mellitus")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 congenitas = HistoriaClinica.where(:patologias => "E. Congenitas")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 quemaduras = HistoriaClinica.where(:otras_patologias => "Quemaduras")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 dolor_abdominal = HistoriaClinica.where(:otras_patologias => "Dolor Abdominal")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 diarreica = HistoriaClinica.where(:otras_patologias => "Enf. Diarreica Aguda")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 recien_nacidos = HistoriaClinica.where(:otras_patologias => "Recien Nacidos")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 dolor_precordial = HistoriaClinica.where(:otras_patologias => "Dolor Precordial/ Angina")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 infecciosas = HistoriaClinica.where(:patologias => "Enf. Infecciosas")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 rinofaringitis = HistoriaClinica.where(:otras_patologias => "Rinofaringitis")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 aparato_digestivo = HistoriaClinica.where(:patologias => "E. Aparato Digestivo")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 perinatal = HistoriaClinica.where(:patologias => "Enf. Perinatal")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).where("date(created_at) >= ?", $varMensuales)
 .where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
 signos_sintomas = HistoriaClinica.where(:patologias => "Signos Y Sintomas Mal Definidos")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 genital = HistoriaClinica.where(:patologias => "E. Aparato Genital")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 sistema_nervioso = HistoriaClinica.where(:patologias => "Enf. Sist. Nervioso")
@@ -411,62 +436,83 @@ sistema_nervioso = HistoriaClinica.where(:patologias => "Enf. Sist. Nervioso")
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 transtornos = HistoriaClinica.where(:patologias => "Transtornos Mentales")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 aparato_urinario = HistoriaClinica.where(:patologias => "E. Aparato Urinario")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 envenenamiento = HistoriaClinica.where(:patologias => "Envenenamiento")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
-traumas = HistoriaClinica.where(:patologias => "Traumas").where("date(created_at) >= ?", $varMensuales)
-.where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+traumas = HistoriaClinica.where(:patologias => "Traumas")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 endocr = HistoriaClinica.where(:patologias => "E. Endocr. Nutr Metab")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
-epoc =  HistoriaClinica.where(:otras_patologias => "Epoc").where("date(created_at) >= ?", $varMensuales)
-.where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+epoc =  HistoriaClinica.where(:otras_patologias => "Epoc")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
-tumorales = HistoriaClinica.where(:patologias => "Tumorales").where("date(created_at) >= ?", $varMensuales)
-.where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+tumorales = HistoriaClinica.where(:patologias => "Tumorales")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 fiel_y_tos = HistoriaClinica.where(:patologias => "E. Fiel Y T.O.S")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 fracturas = HistoriaClinica.where(:otras_patologias => "Fracturas")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 vertigo =  HistoriaClinica.where(:otras_patologias => "Vertigo")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 sentidos = HistoriaClinica.where(:patologias => "E. Organos De Los Sentidos")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 corto_punzante = HistoriaClinica.where(:otras_patologias => "Heridas Por Corto Punzante")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
-otros = HistoriaClinica.where(:patologias => "Otros").where("date(created_at) >= ?", $varMensuales)
-.where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+otros = HistoriaClinica.where(:patologias => "Otros")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
-parasit = HistoriaClinica.where(:patologias => "E. Parasit").where("date(created_at) >= ?", $varMensuales)
-.where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+parasit = HistoriaClinica.where(:patologias => "E. Parasit")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 hipertension = HistoriaClinica.where(:otras_patologias => "Hipertension Arterial")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 sangre_organ = HistoriaClinica.where(:patologias => "E. Sangre Organ H")
-.where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
 .where(:aeropuerto_id => $aeropuertoMensuales).count
 
 total_patologias = accidente_cerebrales.to_i + sistema_muscular.to_i + intoxicacion.to_i + aparato_circulatorio.to_i + neumonia.to_i + aparato_respiratorio.to_i + embarazo_coomplicado.to_i + otalgias.to_i +  cancer.to_i + embarazo_sin_complicaciones.to_i + post_operatorios.to_i + diabetes.to_i + congenitas.to_i + quemaduras.to_i + dolor_abdominal.to_i + diarreica.to_i + recien_nacidos.to_i + dolor_precordial.to_i + infecciosas.to_i + rinofaringitis.to_i + aparato_digestivo.to_i + perinatal.to_i + signos_sintomas.to_i + genital.to_i + sistema_nervioso.to_i + transtornos.to_i + aparato_urinario.to_i + envenenamiento.to_i + traumas.to_i + endocr.to_i + epoc.to_i + tumorales.to_i + fiel_y_tos.to_i + fracturas.to_i + vertigo.to_i + sentidos.to_i + corto_punzante.to_i + otros.to_i + parasit.to_i + hipertension.to_i + sangre_organ.to_i
@@ -682,35 +728,66 @@ total_patologias = accidente_cerebrales.to_i + sistema_muscular.to_i + intoxicac
 <%
 
 rabico_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Rabico").count
+.where(:accidentes_especiales => "Rabico")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ofidico_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Ofidico").count
+.where(:accidentes_especiales => "Ofidico")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 mordedura_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Mordedura Otro Tipo").count
+.where(:accidentes_especiales => "Mordedura Otro Tipo")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 accidente_laboral_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Accidente Laboral").count
+.where(:accidentes_especiales => "Accidente Laboral")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ninguno_hombres_accidentes = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Ninguno").count
-
+.where(:accidentes_especiales => "Ninguno")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 rabico_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Rabico").count
+.where(:accidentes_especiales => "Rabico")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 ofidico_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Ofidico").count
+.where(:accidentes_especiales => "Ofidico")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 mordedura_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Mordedura Otro Tipo").count
+.where(:accidentes_especiales => "Mordedura Otro Tipo")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 accidente_laboral_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Accidente Laboral").count
+.where(:accidentes_especiales => "Accidente Laboral")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ninguno_mujeres_accidentes = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Ninguno").count
+.where(:accidentes_especiales => "Ninguno")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 total_rabicos = rabico_hombres.to_i + rabico_mujeres.to_i
 total_ofidicos = ofidico_hombres.to_i + ofidico_mujeres.to_i
@@ -779,34 +856,66 @@ total_ninguno_accidentes = ninguno_hombres_accidentes.to_i + ninguno_mujeres_acc
 <%
 
 paludismo_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Paludismo").count
+.where(:accidentes_especiales => "Paludismo")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 tbc_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Tuberculosis").count
+.where(:accidentes_especiales => "Tuberculosis")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 dengue_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Dengue").count
+.where(:accidentes_especiales => "Dengue")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 otras_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Otras").count
+.where(:accidentes_especiales => "Otras")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ninguno_hombres_notificacion = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Ninguno").count
+.where(:accidentes_especiales => "Ninguno")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 paludismo_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Paludismo").count
+.where(:accidentes_especiales => "Paludismo")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 tbc_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Tuberculosis").count
+.where(:accidentes_especiales => "Tuberculosis")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 dengue_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Dengue").count
+.where(:accidentes_especiales => "Dengue")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 otras_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Otras").count
+.where(:accidentes_especiales => "Otras")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ninguno_mujeres_notificacion = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Ninguno").count
+.where(:accidentes_especiales => "Ninguno")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 total_paludismos = paludismo_hombres.to_i + paludismo_mujeres.to_i
 total_tbcs = tbc_hombres.to_i + tbc_mujeres.to_i
@@ -884,35 +993,68 @@ total_ninguno_notificacion = ninguno_hombres_notificacion.to_i + ninguno_mujeres
 <%
 
 alistamientos_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Alistamientos").count
+.where(:accidentes_especiales => "Alistamientos")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 accidentes_aereos_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Accidentes Aereos").count
+.where(:accidentes_especiales => "Accidentes Aereos")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 contingencias_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Contingencias").count
+.where(:accidentes_especiales => "Contingencias")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 salud_publica_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Emergencia Salud Publica").count
+.where(:accidentes_especiales => "Emergencia Salud Publica")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ninguno_hombres_emergencias = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Ninguno").count
+.where(:accidentes_especiales => "Ninguno")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 
 alistamientos_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Alistamientos").count
+.where(:accidentes_especiales => "Alistamientos")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 accidentes_aereos_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Accidentes Aereos").count
+.where(:accidentes_especiales => "Accidentes Aereos")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 contingencias_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Contingencias").count
+.where(:accidentes_especiales => "Contingencias")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 salud_publica_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Emergencia Salud Publica").count
+.where(:accidentes_especiales => "Emergencia Salud Publica")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ninguno_mujeres_emergencias = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Ninguno").count
+.where(:accidentes_especiales => "Ninguno")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 
 
@@ -980,16 +1122,28 @@ total_ninguno_emergencias = ninguno_hombres_emergencias.to_i + ninguno_mujeres_e
 <%
 
 vuelos_comerciales_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Tuberculosis").count
+.where(:accidentes_especiales => "Tuberculosis")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ambulancia_hombres = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:accidentes_especiales => "Dengue").count
+.where(:accidentes_especiales => "Dengue")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 vuelos_comerciales_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Tuberculosis").count
+.where(:accidentes_especiales => "Tuberculosis")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 ambulancia_mujeres = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:accidentes_especiales => "Dengue").count
+.where(:accidentes_especiales => "Dengue")
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 total_vuelos_comerciales = vuelos_comerciales_hombres.to_i + vuelos_comerciales_mujeres.to_i
 total_ambulancias = ambulancia_hombres.to_i + ambulancia_mujeres.to_i
@@ -1046,46 +1200,91 @@ total_ambulancias = ambulancia_hombres.to_i + ambulancia_mujeres.to_i
 <%
 
 menor_1_masculino = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_tipo_edad => [" meses", " mes"]).count
+.where(:p_tipo_edad => [" meses", " mes"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_1_a_5_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_edad => 1..5).where(:p_tipo_edad => [" años", " año"]).count
+.where(:p_edad => 1..5).where(:p_tipo_edad => [" años", " año"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_6_a_11_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_edad => 6..11).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 6..11).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_12_a_29_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_edad => 12..29).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 12..29).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 de_30_a_44_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_edad => 30..44).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 30..44).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 de_45_a_60_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_edad => 45..60).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 45..60).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 mayor_a_60_masculino = HistoriaClinica.where(:p_genero => "Masculino")
-.where("p_edad > ?", 60).where(:p_tipo_edad => [" años"]).count
+.where("p_edad > ?", 60).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
+
 
 menor_1_femenino = HistoriaClinica.where(:p_genero => "Femenino")
-.where(:p_tipo_edad => [" meses", " mes"]).count
+.where(:p_tipo_edad => [" meses", " mes"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_1_a_5_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
-.where(:p_edad => 1..5).where(:p_tipo_edad => [" años", " año"]).count
+.where(:p_edad => 1..5).where(:p_tipo_edad => [" años", " año"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_6_a_11_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
-.where(:p_edad => 6..11).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 6..11).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_12_a_29_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
-.where(:p_edad => 12..29).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 12..29).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_30_a_44_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
-.where(:p_edad => 30..44).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 30..44).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 de_45_a_60_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
-.where(:p_edad => 45..60).where(:p_tipo_edad => [" años"]).count
+.where(:p_edad => 45..60).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 mayor_a_60_femenino = HistoriaClinica.where(:p_genero => "Femenino")
-.where("p_edad > ?", 60).where(:p_tipo_edad => [" años"]).count
+.where("p_edad > ?", 60).where(:p_tipo_edad => [" años"])
+.where("date(created_at) >= ?", $varMensuales)
+.where("date(created_at) <= ?", $varMensuales2)
+.where(:aeropuerto_id => $aeropuertoMensuales).count
 
 total_edades_masculinas =  menor_1_masculino.to_i + de_1_a_5_masculino.to_i + de_6_a_11_masculino.to_i + de_12_a_29_masculino.to_i + de_30_a_44_masculino.to_i + de_45_a_60_masculino.to_i + mayor_a_60_masculino.to_i
 

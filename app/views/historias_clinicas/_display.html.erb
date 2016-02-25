@@ -37,6 +37,13 @@
 <% end %>
 
 
+<div class="row">
+  <div class="col-md-12 col-md-offset-2" style="margin-top: -20px;">
+    <span class="btn btn-link btn-xs">  
+      <%= will_paginate @historias_clinicas, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
+    </span>
+  </div>
+</div>    
 
 
 
@@ -118,13 +125,6 @@
 
 </table>
 
-<div class="row">
-  <div class="col-md-12 col-md-offset-2">
-    <span class="btn btn-link btn-xs">  
-      <%= will_paginate @historias_clinicas, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
-    </span>
-  </div>
-</div>    
 
 
 

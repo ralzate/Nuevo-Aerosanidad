@@ -9,7 +9,7 @@ class ArlesController < ApplicationController
 
   def index
 
-    @arles = Arl.search(params[:search]).page(params[:page]).per_page(10)
+    @arles = Arl.search(params[:search]).page(params[:page]).per_page(20)
 
 
   end

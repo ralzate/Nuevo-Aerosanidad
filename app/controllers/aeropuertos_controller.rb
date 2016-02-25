@@ -5,7 +5,7 @@ class AeropuertosController < ApplicationController
   respond_to :html
 
   def index
-     @aeropuertos = Aeropuerto.search(params[:search]).page(params[:page]).per_page(10)
+     @aeropuertos = Aeropuerto.search(params[:search]).page(params[:page]).per_page(20)
     respond_to do |format|
       format.html
       format.json

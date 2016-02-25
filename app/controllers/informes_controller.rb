@@ -63,8 +63,9 @@ class InformesController < ApplicationController
 
     $varAerocivil = params[:searchbox]
     $varAerocivil2 = params[:searchbox2]
-    $aeropuertoAerocivil2 = params[:nombre]
-    $aeropuertoAerocivil = $aeropuertoAerocivil2[:nombre]
+
+    $nombre_aeropuerto_aerocivil = params[:nombre]
+    $id_aeropuerto_aerocivil = $nombre_aeropuerto_aerocivil[:id]
 
 
     fecha1 = $varAerocivil.to_date 

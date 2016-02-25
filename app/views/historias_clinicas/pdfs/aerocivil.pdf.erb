@@ -89,26 +89,18 @@ otros =  HistoriaClinica.where(:patologias => "Otros").where("date(created_at) >
           </tr>
 
 
-            <tr >
-
-                <th class="text-center" >
-
-                    <span style="margin-left: 380px;"><b>AEROPUERTO: </b><%= $aeropuertoAerocivil.upcase %></span>
-
-                </th>
-
-            </tr>
 
               <tr>
-      <th  style="width:10%; text-align: center;">
-                <span style="margin-left: 200px;">TOTAL PACIENTES:   &nbsp;&nbsp;&nbsp;                
+      <th  style=" text-align: center;">
+                <span style="margin-left: -80px;">TOTAL PACIENTES:   &nbsp;&nbsp;&nbsp;                
                  <%= Paciente.count %></span>
-                   <span style="margin-left: 40px;">PERIODO:  &nbsp;&nbsp;&nbsp; <%= $mes.upcase %> - <%= $mes2.upcase %></span>
+
+                   <span style="margin-left: 50px;">PERIODO:  &nbsp;&nbsp;&nbsp; <%= $mes.upcase %> - <%= $mes2.upcase %></span>
                 </th >
 
 
-                <th  style="width:20%; text-align: center;" colspan="2">
-                    <span style="margin-left: -240px;">        
+                <th  style="text-align: center;" colspan="2">
+                    <span style="margin-left: -500px;">        
                     AÑO: &nbsp;&nbsp;&nbsp;                   <% t = Time.now %>
                     <%= t.strftime "%Y" %></span>
                 </th>
@@ -443,87 +435,80 @@ totalAmbulancia = ambulanciaMasculino.to_i + ambulanciaFemenino.to_i
 <%
 
 menor_1_masculino = HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_tipo_edad => [" meses", " mes"])
-.where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:p_tipo_edad => [" meses", " mes"]).count
 
 de_1_a_5_masculino =  HistoriaClinica.where(:p_genero => "Masculino").where(:p_edad => 1..5)
-.where(:p_tipo_edad => [" años", " año"])
-.where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:p_tipo_edad => [" años", " año"]).count
 
 de_6_a_11_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
-.where(:p_edad => 6..11).where(:p_tipo_edad => [" años"])
-.where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:p_edad => 6..11).where(:p_tipo_edad => [" años"]).count
 
 de_12_a_29_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
 .where(:p_edad => 12..29).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_30_a_44_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
 .where(:p_edad => 30..44).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_45_a_60_masculino =  HistoriaClinica.where(:p_genero => "Masculino")
 .where(:p_edad => 45..60).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
 
 mayor_a_60_masculino = HistoriaClinica.where(:p_genero => "Masculino")
 .where("p_edad > ?", 60).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 menor_1_femenino = HistoriaClinica.where(:p_genero => "Femenino")
 .where(:p_tipo_edad => [" meses", " mes"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_1_a_5_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
 .where(:p_edad => 1..5).where(:p_tipo_edad => [" años", " año"])
 .where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where("date(created_at) <= ?", $varAerocivil2)
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_6_a_11_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
 .where(:p_edad => 6..11).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_12_a_29_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
 .where(:p_edad => 12..29).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_30_a_44_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
 .where(:p_edad => 30..44).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 de_45_a_60_femenino =  HistoriaClinica.where(:p_genero => "Femenino")
 .where(:p_edad => 45..60).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 mayor_a_60_femenino = HistoriaClinica.where(:p_genero => "Femenino")
 .where("p_edad > ?", 60).where(:p_tipo_edad => [" años"])
 .where("date(created_at) >= ?", $varAerocivil)
 .where("date(created_at) <= ?", $varAerocivil2)
-.where(:aeropuerto_id => $aeropuertoAerocivil).count
+.where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
 
 total_edades_masculinas =  menor_1_masculino.to_i + de_1_a_5_masculino.to_i + de_6_a_11_masculino.to_i + de_12_a_29_masculino.to_i + de_30_a_44_masculino.to_i + de_45_a_60_masculino.to_i + mayor_a_60_masculino.to_i
 

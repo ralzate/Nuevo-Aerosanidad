@@ -15,16 +15,20 @@
 
 
 
-    <span class="btn btn-link btn-xs pull-right ">  <%= will_paginate @notas_progreso, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
-
-    
-</span>
+  
 <% if current_user.rol_id != 3 %>
     <span  class="pagination pull-right"><%= link_to 'Nueva Nota de Evolución', new_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,@nota_progreso), :class => "btn   btn-info color_blanco" %></span>
 <% end %>
 
 
 
+<div class="row">
+  <div class="col-md-12 col-md-offset-2" style="margin-top: -20px;">
+    <span class="btn btn-link btn-xs">  
+      <%= will_paginate @notas_progreso, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
+    </span>
+  </div>
+</div>    
 
 
 

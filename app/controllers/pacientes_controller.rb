@@ -5,7 +5,7 @@ class PacientesController < ApplicationController
   # GET /pacientes
   # GET /pacientes.json
   def index
-    @pacientes = Paciente.search(params[:search]).page(params[:page]).per_page(10)
+    @pacientes = Paciente.search(params[:search]).page(params[:page]).per_page(20)
   end
 
   # GET /pacientes/1
