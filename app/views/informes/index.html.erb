@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+    <script>
+      $(function() {
+        $('.chosen-select').chosen();
+        $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+      });
+    </script>
+
+
 
 <style type="text/css">
 
@@ -289,6 +299,8 @@ $(document).ready(function(){
 
 
 
+
+
                   <div class="well clearfix mar">
                   <div class="row">
                     <div class="col-md-12">
@@ -544,41 +556,6 @@ $(document).ready(function(){
 .lead { font-size: 33px;margin-bottom:0px; }
 </style>
 
-
-
-
-
-
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-<script>
-
- jQuery.datepicker.regional['eu'] = {
- closeText: 'Egina',
- prevText: '<Aur',
- nextText: 'Hur>',
- currentText: 'Gaur',
- monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
- 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
- monthNamesShort: ['Ene','Febr','Mar','Abr','May','Jun',
- 'Jul','Agos','Sept','Oct','Nov','Dic'],
- dayNames: ['Domingo', 'Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'],
- dayNamesShort: ['Domin', 'Lun','Mart','Mierc','Juev','Viern','Saba'],
- dayNamesMin: ['Do', 'Lu','Ma','Mi','Ju','Vi','Sa'],
- dateFormat: 'yy/mm/dd', firstDay: 1,
- isRTL: false};
- $.datepicker.setDefaults($.datepicker.regional['eu']);
-$(function () {
-$("#fecha3").datepicker();
-$("#fecha4").datepicker();
-$("#fecha5").datepicker();
-$("#fecha6").datepicker();
-$("#fecha7").datepicker();
-$("#fecha8").datepicker();
-$("#fecha9").datepicker();
-$("#fecha10").datepicker();
-});
-</script>
 
 
 
