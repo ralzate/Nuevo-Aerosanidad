@@ -28,7 +28,7 @@
 
 
 <div class="row" >
-  <div class="col-lg-12 col-md-offset-2" style="margin-top: -40px;">
+  <div class="col-lg-12" style="margin-top: -40px;">
      <%= will_paginate @roles, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
    </div>
 </div>   
@@ -81,11 +81,11 @@
 
 
     <tr class ="x1" >
-      <th width="4% !important;">Id</th>
-      <th width="20% !important;">Nombre</th>
-      <th width="20% !important;">Documento</th>
+      <th width="5% !important;">Id</th>
+      <th width="30% !important;">Nombres y Apellidos</th>
+      <th width="15% !important;">Documento</th>
       <th width="15% !important;">Fecha y Hora</th>
-      <th width="29% !important;">Opciones</th>
+      <th width="20% !important;">Opciones</th>
     </tr>
   </thead>
   <tbody>
@@ -96,20 +96,37 @@
 
 
     <td><%= paciente.id %></td>
-    <td><%= paciente.primer_nombre.capitalize %> <%= paciente.primer_apellido.capitalize %></td>
+    <td><%= paciente.primer_nombre.capitalize %> <%= paciente.segundo_nombre.capitalize %> <%= paciente.primer_apellido.capitalize %> <%= paciente.segundo_apellido.capitalize %></td>
     <td><%= paciente.documento %></td>
     <td><%= paciente.created_at.strftime "%d-%m-%Y" %> <%= paciente.created_at.strftime("%X") %></td>
 
 <td>
 
-    <%= link_to 'Mostrar',  paciente,  :rel => "tooltip", :title => "Mostrar", :class => 'btn btn-primary btn-xs color_blanco principal'%>
 
-<% if current_user.rol_id != 3 %>
-    <%= link_to 'Editar', edit_paciente_path(paciente),  :rel => "tooltip", :title => "Editar", :class => 'btn btn-primary btn-xs color_blanco principal' %>
+<style type="text/css" media="screen">
+.icono {
+    font-size: 16px;
+    color: #848484;
+}
+.ver_notas{
+color: #666;
+}
+</style>
+
+<%= link_to paciente, class: "btn btn-link btn-xs", title: "Ver Paciente" do %>
+    <i class="glyphicon glyphicon-eye-open icono"></i>
 <% end %>
 
-        <%= link_to 'Ver Historias Clinicas(' + paciente.historias_clinicas.count.to_s + ')' , paciente_historias_clinicas_path(paciente), :class => 'btn btn-primary btn-xs color_blanco principal' %>
 
+<% if current_user.rol_id != 3 %>
+
+  <%= link_to edit_paciente_path(paciente), class: "btn btn-link btn-xs", title: "Editar Paciente" do %>
+      <i class="glyphicon glyphicon-pencil icono"></i>
+  <% end %>
+
+<% end %>
+
+<%= link_to 'Ver Historias Clinicas(' + paciente.historias_clinicas.count.to_s + ')' , paciente_historias_clinicas_path(paciente), :class => 'btn btn-link btn-xs ver_notas' %>
 
 
 

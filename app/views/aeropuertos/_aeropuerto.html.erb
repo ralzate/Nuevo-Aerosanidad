@@ -9,13 +9,25 @@
 	<td>
 
 
-    <%= link_to 'Mostrar',  aeropuerto, :remote => true,  :rel => "tooltip", :title => "Mostrar", :class => 'btn btn-primary btn-xs color_blanco principal'%>
 
 
+<style type="text/css" media="screen">
+.icono {
+    font-size: 16px;
+    color: #848484;
+}
+.ver_notas{
+color: #666;
+}
+</style>
 
-    <%= link_to 'Editar', edit_aeropuerto_path(aeropuerto),  :rel => "tooltip", :title => "Editar", :class => 'btn btn-primary btn-xs color_blanco principal',  :remote => true %>
+<%= link_to aeropuerto, class: "btn btn-link btn-xs", title: "Ver Aeropuerto" do %>
+    <i class="glyphicon glyphicon-eye-open icono"></i>
+<% end %>
 
-
+  <%= link_to edit_aeropuerto_path(aeropuerto), class: "btn btn-link btn-xs", title: "Editar Aeropuerto" do %>
+      <i class="glyphicon glyphicon-pencil icono"></i>
+  <% end %>
 
 	</td>
 </tr>

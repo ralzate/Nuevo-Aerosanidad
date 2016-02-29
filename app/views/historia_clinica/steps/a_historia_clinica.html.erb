@@ -70,6 +70,14 @@ $(document).ready(function() {
 
 
 
+<% @campo2 = @historia_clinica.s2_validation %>
+<% @campo3 = @historia_clinica.s3_validation %>
+<% @campo4 = @historia_clinica.s4_validation %>
+<% @campo5 = @historia_clinica.s5_validation %>
+
+
+
+
 
 
 
@@ -78,17 +86,40 @@ $(document).ready(function() {
         <div class="panel panel-default modal-dialog">
             <div class="panel-body">
 
+
      <%= link_to "1. Informacion General", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.first), :class=>"btn btn-default  mrg" %>
 
+
+
+
+
+<% if @campo2 == true %>
     <%= link_to "2. Antecedentes Personales", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.second), :class=>"btn btn-info color_blanco mrg" %>
+<% elsif @campo2 == false %>
+<a class="btn btn-info color_blanco mrg" disabled="disabled">2. Antecedentes Personales</a>
+<% end %>
 
+<% if @campo3 == true %>
     <%= link_to "3. Revisión por Sistemas", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.third), :class=>"btn btn-info color_blanco mrg" %>
+<% elsif @campo3 == false %>
+<a class="btn btn-info color_blanco mrg" disabled="disabled">3. Revisión por Sistemas</a>
 
+<% end %>
+
+<% if @campo4 == true %>
     <%= link_to "4. Examen Fisico", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fourth), :class=>"btn btn-info color_blanco mrg" %>
+<% elsif @campo4 == false %>
+<a class="btn btn-info color_blanco mrg" disabled="disabled">4. Examen Fisico</a>
 
+
+<% end %>
+
+<% if @campo5 == true %>
     <%= link_to "5. Impresión Diagnostica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>"btn btn-info color_blanco mrg" %>
+<% elsif @campo5 == false %>
+<a class="btn btn-info color_blanco mrg" disabled="disabled">5. Impresión Diagnostica</a>
 
-
+<% end %>
 
             </div>
         </div>
@@ -228,6 +259,8 @@ $('.chosen-single.chosen-default span').text("Debes Seleccionar una Opción");
 	<%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %>
 
     <h3 style = "color: #22BDC8;">DATOS GENERALES</h3>
+
+
 
     <div class="row">
 
@@ -688,24 +721,30 @@ function edValueKeyPress()
 
 
 
-            <script type="text/javascript">
-            function obtainGeolocation(){
-             //obtener la posición actual y llamar a la función  "localitation" cuando tiene éxito
-             window.navigator.geolocation.getCurrentPosition(localitation);
-             }
-             function localitation(geo){
-             // En consola nos devuelve el Geoposition object con los datos nuestros
-             var latitude = geo.coords.latitude;
-             var longitude = geo.coords.longitude;
-             $('.lat').val(latitude);
-              $('.lon').val(longitude);
-             }
-             //llamando la funcion inicial para ver trabajar la API
-             obtainGeolocation();
 
 
 
-             </script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $('#yes').click(function(){
+      if($(this).prop("checked") == true){
+        alert("assdasdas");
+      }
+  });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
 
 
 

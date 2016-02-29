@@ -287,10 +287,34 @@ $(document).ready(function(){
 </script>
 
 
+
+
                   <div class="well clearfix mar">
                   <div class="row">
                     <div class="col-md-12">
                       <%= collection_select(:nombre, :id, Aeropuerto.all, :id, :nombre, {}, {class: "form-control required", id: "aeropuerto", title: "Campo Obligatorio", :selected => 'SHARANA'}) %>
+
+
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#fecha3" ).datepicker();
+    $( "#fecha4" ).datepicker();
+    $( "#fecha5" ).datepicker();
+    $( "#fecha6" ).datepicker();
+    $( "#fecha7" ).datepicker();
+    $( "#fecha8" ).datepicker();
+    $( "#fecha9" ).datepicker();
+    $( "#fecha10" ).datepicker();
+
+  });
+  </script>
+ 
+
 
 
 
@@ -555,3 +579,6 @@ $("#fecha9").datepicker();
 $("#fecha10").datepicker();
 });
 </script>
+
+
+

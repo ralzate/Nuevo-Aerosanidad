@@ -23,7 +23,7 @@
 
 
 <div class="row">
-  <div class="col-md-12 col-md-offset-2" style="margin-top: -20px;">
+  <div class="col-md-12" style="margin-top: -20px;">
     <span class="btn btn-link btn-xs">  
       <%= will_paginate @notas_progreso, renderer: BootstrapPagination::Rails, :previous_label => 'Atras', :next_label => 'Siguiente' %>
     </span>
@@ -71,12 +71,12 @@
 
 
     <tr class="x1">
-      <th width="3% !important;">Id</th>
+      <th width="5% !important;">Id</th>
       <th width="15% !important;">Fecha y Hora</th>
       <th width="30% !important;">Descripción</th>
-      <th width="20% !important;">Responsable</th>
-      <th width="15% !important;">Cargo</th>
-      <th width="15% !important;">Opciones</th>
+      <th width="25% !important;">Responsable</th>
+      <th width="10% !important;">Cargo</th>
+      <th width="10% !important;">Opciones</th>
     </tr>
 
 <% @notas_progreso.each do |nota_progreso| %>
@@ -92,13 +92,25 @@
 
 <td>
 
-    <%= link_to 'Mostrar',  paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,nota_progreso),  :rel => "tooltip", :title => "Mostrar", :class => 'btn btn-primary btn-xs color_blanco principal'%>
+
+<style type="text/css" media="screen">
+.icono {
+    font-size: 16px;
+    color: #848484;
+}
+  
+</style>
+
+<%= link_to paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,nota_progreso), class: "btn btn-link btn-xs", title: "Ver nota de evolución" do %>
+    <i class="glyphicon glyphicon-eye-open icono"></i>
+<% end %>
 
 
 
+<%= link_to edit_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,nota_progreso), class: "btn btn-link btn-xs", title: "Editar nota de evolución" do %>
+    <i class="glyphicon glyphicon-pencil icono"></i>
+<% end %>
 
-
-    <%= link_to 'Editar', edit_paciente_historia_clinica_nota_progreso_path(@paciente,@historia_clinica,nota_progreso),  :rel => "tooltip", :title => "Editar", :class => 'btn btn-primary btn-xs color_blanco principal' %>
 </td>
 
   </tr>

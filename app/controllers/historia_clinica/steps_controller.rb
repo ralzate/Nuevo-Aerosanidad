@@ -6,6 +6,7 @@ class HistoriaClinica::StepsController < ApplicationController
     @historia_clinica = HistoriaClinica.find(params[:historia_clinica_id])
     @paciente = Paciente.find(params[:paciente_id])
     render_wizard
+
   end
 
   def update
@@ -17,6 +18,7 @@ class HistoriaClinica::StepsController < ApplicationController
   private
 
   def historia_clinica_params(step)
+
     permitted_attributes = case step
        when "a_historia_clinica"
           [
@@ -103,7 +105,8 @@ class HistoriaClinica::StepsController < ApplicationController
            :b_a,
            :b_m,
            :b_v,
-           :b_e
+           :b_e,
+           :s2_validation
           ]
 
        when "c_revision_sistemas"
@@ -125,7 +128,8 @@ class HistoriaClinica::StepsController < ApplicationController
            :c_musculo_esqueletico,
            :c_musculo_esqueletico_descripcion,
            :c_piel_y_faneras,
-           :c_piel_y_faneras_descripcion
+           :c_piel_y_faneras_descripcion,
+           :s3_validation
           ]
        when "d_examen_fisico"
 
@@ -170,6 +174,7 @@ class HistoriaClinica::StepsController < ApplicationController
            :d_apertura_ocular,
            :d_respuesta_verbal,
            :d_respuesta_motora,
+           :s4_validation,
            :d_escala_de_glasgow, d_otros_signos:[],  d_alteracion:[]
           ]
 
@@ -191,7 +196,8 @@ class HistoriaClinica::StepsController < ApplicationController
            :e_hora1,
            :e_glucometria2,
            :e_hora2,
-           :e_electrocardiograma
+           :e_electrocardiograma,
+           :s5_validation
           ]
        end
 

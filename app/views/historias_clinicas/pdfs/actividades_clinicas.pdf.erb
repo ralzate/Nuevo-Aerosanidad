@@ -139,43 +139,33 @@ margin-left: -500px;
 <br/>
 <div class="container-fluid  ">
   <div>
-
     <div class="row col-md-6 col-md-offset-2 custyle" >
-    <table cellspacing="0" cellpadding="0"  class="aaa table table-bordered table-hover dataTable no-footer" >
-
+    <table cellspacing="0" cellpadding="0" class="aaa table table-bordered table-hover dataTable no-footer" >
     <tbody>
-
-      <tr >
-          <th  style="width:0.1% !important;" rowspan="3">
-            <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width: 150px;" alt="">
-          </th>
-
-          <th class="text-center"  style="width:38%;"  colspan="3">
+        <tr>
+            <th  style="width:0.1% !important;" rowspan="3">
+                <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width: 150px;" alt="">
+            </th>
+            <th class="text-center"  style="width:38%;"  colspan="3">
             INFORME MENSUAL DE ACTIVIDADES MEDICAS
-          </th>
-      </tr>
-
+            </th>
+        </tr>
         <tr>
             <th  style="width:20%; text-align: center;" colspan="2">
               FECHA:  <% t = Time.now %>
                 <%= t.strftime "%d-%m-%Y" %>
             </th>
         </tr>
-
-          <tr>
+        <tr>
             <th  style="width:10%; text-align: center;">
             <b>PACIENTES ATENDIDOS: </b>
                <%= Paciente.count %>
             </th >
-
         </tr>
-
-
-
     </tbody>
-
     </table>
     </div>
+  </div>
 </div>
 
 
@@ -980,7 +970,6 @@ total_ninguno_notificacion = ninguno_hombres_notificacion.to_i + ninguno_mujeres
 
             </tr>
     	</tbody>
-
     </table>
     </div>
 </div>
@@ -1378,7 +1367,7 @@ total_mayores_60_años = mayor_a_60_masculino.to_i + mayor_a_60_femenino.to_i
             	<th>Total</th>
             	<td><%= total_edades_masculinas %></td>
                 <td><%= total_edades_femeninas %></td>
-                <td><%= total_ninguno_emergencias %></td>
+                <td><%= total_edades %></td>
 
             </tr>
 

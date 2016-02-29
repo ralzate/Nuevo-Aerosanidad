@@ -676,6 +676,10 @@ function edValueKeyPress()
 </div>
 
 
+      <%= f.hidden_field :s2_validation, :value => "FALSE" %>
+      <%= f.hidden_field :s3_validation, :value => "FALSE" %>
+      <%= f.hidden_field :s4_validation, :value => "FALSE" %>
+      <%= f.hidden_field :s5_validation, :value => "FALSE" %>
 
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :paciente_id, :value => @paciente.id %>

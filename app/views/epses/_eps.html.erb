@@ -12,12 +12,24 @@
 	<td>
 
 
-    <%= link_to 'Mostrar',  eps, :remote => true,  :rel => "tooltip", :title => "Mostrar", :class => 'btn btn-primary btn-xs color_blanco principal'%>
 
+<style type="text/css" media="screen">
+.icono {
+    font-size: 16px;
+    color: #848484;
+}
+.ver_notas{
+color: #666;
+}
+</style>
 
+<%= link_to eps, class: "btn btn-link btn-xs", title: "Ver Arl" do %>
+    <i class="glyphicon glyphicon-eye-open icono"></i>
+<% end %>
 
-    <%= link_to 'Editar', edit_eps_path(eps),  :rel => "tooltip", :title => "Editar", :class => 'btn btn-primary btn-xs color_blanco principal',  :remote => true %>
-
+  <%= link_to edit_eps_path(eps), class: "btn btn-link btn-xs", title: "Editar Arl" do %>
+      <i class="glyphicon glyphicon-pencil icono"></i>
+  <% end %>
 
 
 	</td>
