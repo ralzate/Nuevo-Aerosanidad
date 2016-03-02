@@ -11,7 +11,8 @@
 #
 
 class Cie10 < ActiveRecord::Base
-		  belongs_to :historia_clinica
-		  has_many :diagnosticos 
+
+  has_many :historias_clinicas
+	has_many :diagnosticos 
 
 end

@@ -171,6 +171,8 @@ class HistoriaClinica < ActiveRecord::Base
   belongs_to :user
   belongs_to :paciente
   belongs_to :aeropuerto
+  belongs_to :cie102
+  belongs_to :cie10
 
 
 
@@ -179,11 +181,7 @@ class HistoriaClinica < ActiveRecord::Base
   #belongs_to :origen_aeropuertos,  :primary_key => "id", :foreign_key => "a_orgien", :class_name  => "Aeropuerto"
   #belongs_to :destino_aeropuertos,  :primary_key => "id", :foreign_key => "a_destino", :class_name => "Aeropuerto"
 
-  belongs_to :cie10_principal, :class_name => 'Cie10', :foreign_key => 'cie10_id'
-  belongs_to :diagnostico_secundario, :class_name => 'Cie10', :foreign_key => 'cie10_id'
 
-
-  has_many :cie10s
   has_many :diagnosticos
   has_many :procedimientos
   has_many :notas_progreso

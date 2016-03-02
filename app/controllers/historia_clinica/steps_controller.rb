@@ -184,6 +184,7 @@ class HistoriaClinica::StepsController < ApplicationController
            :e_impresion_diagnostica,
            :e_plan_y_tratamiento,
            :cie10_id,
+           :cie102_id,
            :diagnostico_id,
            :patologias,
            :otras_patologias,
