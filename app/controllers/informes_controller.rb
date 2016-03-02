@@ -97,36 +97,38 @@ class InformesController < ApplicationController
     $mes = "Diciembre"
     end
 
-
-
-    fecha2 = $varAerocivil2.to_date 
-    fecha3 = fecha2.strftime("%B") 
-    fecha3.to_s 
-    if fecha3 == "January" 
+    fecha2 = $varAerocivil.to_date 
+    fecha0 = fecha2.strftime("%B") 
+    fecha0.to_s 
+    if fecha0 == "January" 
     $mes2 = "Enero"
-    elsif fecha3 == "February" 
+    elsif fecha0 == "February" 
     $mes2 = "Febrero"
-    elsif fecha3 == "March" 
+    elsif fecha0 == "March" 
     $mes2 ="Marzo"
-    elsif fecha3 == "March" 
+    elsif fecha0 == "March" 
     $mes2 = "April"
-    elsif fecha3 == "May" 
+    elsif fecha0 == "May" 
     $mes2 = "Mayo"
-    elsif fecha3 == "June" 
+    elsif fecha0 == "June" 
     $mes2 = "Junio"
-    elsif fecha3 == "July" 
+    elsif fecha0 == "July" 
     $mes2 = "Julio"
-    elsif fecha3 == "August" 
+    elsif fecha0 == "August" 
     $mes2 = "Agosto"
-    elsif fecha3 == "September" 
+    elsif fecha0 == "September" 
     $mes2 = "Septiembre"
-    elsif fecha3 == "October" 
+    elsif fecha0 == "October" 
     $mes2 = "Octubre"
-    elsif fecha3 == "November" 
+    elsif fecha0 == "November" 
     $mes2 = "Noviembre"
-    elsif fecha3 == "December" 
+    elsif fecha0 == "December" 
     $mes2 = "Diciembre"
     end
+
+ 
+
+
 
 
 

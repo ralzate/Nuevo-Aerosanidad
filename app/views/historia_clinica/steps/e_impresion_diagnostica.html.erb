@@ -454,26 +454,9 @@ $.validator.setDefaults({ ignore: ":hidden:not(select)" });
 
 
 
-
-
-
-
                    	<div class="modal-footer">
 
-
 						<h1 style=" font-size:25px; text-align: left;color: #22BDC8;">    VIII. IMPRESIÓN DIAGNOSTICA</h1>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
               <div class="well col-sm-12 col-md-12" style="text-align: left; margin-left: -20px;">
@@ -482,11 +465,8 @@ $.validator.setDefaults({ ignore: ":hidden:not(select)" });
 
 
 
-				<%= f.select :cie10_id, Cie10.all.map { |u| ["#{u.descripcion}, #{u.codigo}", u.id] }, { include_blank: true },
+				<%= f.select :diagnostico_id, Cie10.all.map { |u| ["#{u.descripcion}, #{u.codigo}", u.id] }, { include_blank: true },
 				    { class: 'chosen-select required', id: 'id_tipo_equipo', :required => true } %>
-
-
-
 
 
 
@@ -531,12 +511,6 @@ $(function() {
 </script>
 
 
-
-
-
-
-
-
                   	</div>
 
      				<hr class="featurette-divider"></hr>
@@ -570,7 +544,6 @@ $(function() {
 					<div class="col-sm-2 col-md-2" >
 
                     	<%= link_to_add_association 'Agregar', f, :diagnosticos, {data: {'association-insertion-method' => 'after'}, :class => "btn btn-default add  custom" } %>
-
 
 
         		</div>

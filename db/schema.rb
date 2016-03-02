@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229150634) do
+ActiveRecord::Schema.define(version: 20160302122448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -248,6 +248,7 @@ ActiveRecord::Schema.define(version: 20160229150634) do
     t.boolean  "s3_validation"
     t.boolean  "s4_validation"
     t.boolean  "s5_validation"
+    t.integer  "diagnostico_id"
   end
 
   add_index "historias_clinicas", ["aeropuerto_id"], name: "index_historias_clinicas_on_aeropuerto_id", using: :btree
