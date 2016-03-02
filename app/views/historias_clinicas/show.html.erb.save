@@ -1240,15 +1240,14 @@ Licensed under MIT
                                       <td  colspan="2"  style="width:50%;"><b>Descripción</b></td>
                                   </tr>
                               </thead>
-
-
                               <tbody>
                                   <tr>
-                                    <td><%= @historia_clinica.cie10_principal.familia %></td>
-                                    <td><%= @historia_clinica.cie10_principal.codigo %></td>
-                                    <td><%= @historia_clinica.cie10_principal.descripcion.capitalize %></td>
+                                    <td><%= @historia_clinica.diagnostico_secundario.familia %></td>
+                                    <td><%= @historia_clinica.diagnostico_secundario.codigo %></td>
+                                    <td><%= @historia_clinica.diagnostico_secundario.descripcion.capitalize %></td>
                                   </tr>
                               </tbody>
+
                           </table>
                       </div>
                       <!-- /.table-responsive -->
@@ -1282,15 +1281,9 @@ Licensed under MIT
                               </thead>
 
                               <tbody>
-                              <%  unless @diagnosticos.blank? %>
                                 <% @diagnosticos.each do |diagnostico| %>
-                                  <tr>
-                                    <td><%= @historia_clinica.diagnostico_secundario.familia %></td>
-                                    <td><%= @historia_clinica.diagnostico_secundario.codigo %></td>
-                                    <td><%= @historia_clinica.diagnostico_secundario.descripcion.capitalize %></td>
-                                  </tr>
-                                <% end %>
-                              <% end %>
+
+                
                               </tbody>
                           </table>
                       </div>

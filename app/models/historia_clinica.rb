@@ -180,6 +180,7 @@ class HistoriaClinica < ActiveRecord::Base
   #belongs_to :destino_aeropuertos,  :primary_key => "id", :foreign_key => "a_destino", :class_name => "Aeropuerto"
 
   belongs_to :cie10_principal, :class_name => 'Cie10', :foreign_key => 'cie10_id'
+  belongs_to :diagnostico_secundario, :class_name => 'Cie10', :foreign_key => 'cie10_id'
 
 
   has_many :cie10s
