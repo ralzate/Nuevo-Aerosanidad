@@ -1,11 +1,7 @@
 PetThing::Application.routes.draw do
 
-
-
-  #get 'error/index', :path => "pagina_no_disponible"
-
-  # get 'error/contact'
-
+  
+  # Rutas para acceder a los informes
   get 'dashboard1/mapa',  to: 'dashboard1#mapa', as: "mapa"
 
   get 'dashboard1/graficas',  to: 'dashboard1#graficas', as: "graficas"
@@ -18,10 +14,11 @@ PetThing::Application.routes.draw do
 
   get 'informes/procedimientos_medicos_enfermeria',    to: 'informes#procedimientos_medicos_enfermeria', as: "procedimientos_medicos_enfermeria"
 
-  get 'informes/pacientes_atendidos_por_empresas',    to: 'informes#pacientes_atendidos_por_empresas', as: "pacientes_atendidos_por_empresas"
+  get 'informes/pacientes_atendidos_por_empresas',  to: 'informes#pacientes_atendidos_por_empresas', as: "pacientes_atendidos_por_empresas"
 
-  get 'informes/usuarios',    to: 'informes#usuarios', as: "usuarios"
+  get 'informes/usuarios',  to: 'informes#usuarios', as: "usuarios"
 
+  get 'informes/doctores',  to: 'informes#doctores', as: "doctores"
 
 
   resources :paises

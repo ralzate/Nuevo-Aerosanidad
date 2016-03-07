@@ -42,11 +42,9 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   acts_as_messageable
-  has_many :products, dependent: :destroy
+  
   has_many :notas_progreso, dependent: :destroy
-
-  has_many :clinic_histories, dependent: :destroy
-  has_many :clinic_histories
+  has_many :historias_clinicas, dependent: :destroy
 
   before_save { self.email = email.downcase }
   mount_uploader :picture, PictureUploader

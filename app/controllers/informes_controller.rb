@@ -11,9 +11,6 @@ class InformesController < ApplicationController
   def usuarios
     @users = User.all
     @empresas = Empresa.all
-
-
-
     respond_to do |format|
       format.html
       format.pdf do
@@ -23,8 +20,22 @@ class InformesController < ApplicationController
         :show_as_html => params[:debug].present?
       end
     end
+  end
 
-
+  # Listado de Doctores, con el numero de Historias
+  # Clinicas que ha hecho cada uno
+  def doctores
+    @users = User.where(:rol_id => 2)
+    @historias_clinicas = HistoriaClinica.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'historias_clinicas/pdfs/doctores.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
   end
 
   def  mensual_actividades_medicas
