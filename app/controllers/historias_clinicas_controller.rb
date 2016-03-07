@@ -11,7 +11,7 @@ class HistoriasClinicasController < ApplicationController
 
   def show
     @cie10 = Cie10.all
-    @cie102 = Cie102.all
+   # @cie102 = Cie102.all
     @alejo = 0
 
     @diagnosticos = @historia_clinica.diagnosticos.all

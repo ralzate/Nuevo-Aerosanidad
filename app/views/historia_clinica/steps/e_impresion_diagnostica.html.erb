@@ -449,7 +449,7 @@ $.validator.setDefaults({ ignore: ":hidden:not(select)" });
 
 
 
-				<%= f.select :cie102_id, Cie10.all.map { |u| ["#{u.descripcion}, #{u.codigo}", u.id] }, { include_blank: true },
+				<%= f.select :cie10_id, Cie10.all.map { |u| ["#{u.descripcion}, #{u.codigo}", u.id] }, { include_blank: true },
 				    { class: 'chosen-select required', id: 'id_tipo_equipo', :required => true } %>
 
 
