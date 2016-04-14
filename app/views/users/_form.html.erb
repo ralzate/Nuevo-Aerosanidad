@@ -4,7 +4,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 </script>
 
 <div class="col-md-12" style = "margin:25px!important">
-<% if current_user %>
+<% if current_user && current_user.rol_id == 1 %>
 
     <%= link_to "Listado de Usuarios",  users_path, :class => "btn btn-info color_blanco  pull-left" %>
 <% end %>
@@ -147,7 +147,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 
                 <div class="row">
 
-<% if current_user.rol_id == 1 %>
+<%  if current_user.rol_id == 1 %>
                   <div class="col-md-3">
                     <label class="label">Rol</label>
                     <div class="form-group" id="tagtype">

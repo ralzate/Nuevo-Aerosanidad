@@ -5,7 +5,6 @@ class CreateNotasProgreso < ActiveRecord::Migration
       t.string :documento_paciente
       t.string :tipo_documento
       t.string :procedimientos_medicos_y_de_enfermeria
-      t.string :
       t.text :descripcion
       t.references :historia_clinica, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true

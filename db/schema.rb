@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302185104) do
+ActiveRecord::Schema.define(version: 20160229150634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,6 @@ ActiveRecord::Schema.define(version: 20160302185104) do
     t.string   "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "cie102s", force: :cascade do |t|
-    t.string   "familia"
-    t.string   "codigo"
-    t.text     "descripcion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "cie10s", force: :cascade do |t|
@@ -256,12 +248,9 @@ ActiveRecord::Schema.define(version: 20160302185104) do
     t.boolean  "s3_validation"
     t.boolean  "s4_validation"
     t.boolean  "s5_validation"
-    t.integer  "diagnostico_id"
-    t.integer  "cie102_id"
   end
 
   add_index "historias_clinicas", ["aeropuerto_id"], name: "index_historias_clinicas_on_aeropuerto_id", using: :btree
-  add_index "historias_clinicas", ["cie102_id"], name: "index_historias_clinicas_on_cie102_id", using: :btree
   add_index "historias_clinicas", ["cie10_id"], name: "index_historias_clinicas_on_cie10_id", using: :btree
   add_index "historias_clinicas", ["user_id"], name: "index_historias_clinicas_on_user_id", using: :btree
 
@@ -434,6 +423,7 @@ ActiveRecord::Schema.define(version: 20160302185104) do
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["last_logout_at", "last_activity_at"], name: "index_users_on_last_logout_at_and_last_activity_at", using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
@@ -443,7 +433,6 @@ ActiveRecord::Schema.define(version: 20160302185104) do
   add_foreign_key "diagnosticos", "cie10s"
   add_foreign_key "diagnosticos", "historias_clinicas"
   add_foreign_key "historias_clinicas", "aeropuertos"
-  add_foreign_key "historias_clinicas", "cie102s"
   add_foreign_key "historias_clinicas", "cie10s"
   add_foreign_key "historias_clinicas", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"

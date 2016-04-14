@@ -14,8 +14,20 @@ module PetThing
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    config.time_zone = 'Bogota'
+    # config.time_zone = 'Bogota'
+    #config.time_zone = 'Eastern Time (US & Canada)'
+    #config.active_record.default_timezone = 'Eastern Time (US & Canada)'
+    #Time.zone.parse('2016-03-24 09:52:45')
+    # zone_offset += 3600
+    # config.time_zone = "UTC"
+    # config.active_record.default_timezone = :utc
+   config.time_zone = "Bogota"#change(hour: 19) 
 
+   #config.time_zone = "Bogota" => "America/Bogota"
+
+    #config.active_record.default_timezone = :local
+
+   # config.active_record.raise_in_transactional_callbacks = true
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de

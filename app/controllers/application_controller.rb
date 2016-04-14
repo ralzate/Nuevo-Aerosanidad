@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include UsersHelper
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
+ # force_ssl
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

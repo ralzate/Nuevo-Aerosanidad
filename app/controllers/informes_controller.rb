@@ -57,7 +57,6 @@ class InformesController < ApplicationController
         render :pdf => 'file_name',
         :template => 'historias_clinicas/pdfs/actividades_clinicas.pdf.erb',
         :layout => 'pdf.html.erb',
-        orientation:                    'Landscape',                  # default Portrait
         :show_as_html => params[:debug].present?
       end
     end
@@ -180,7 +179,6 @@ class InformesController < ApplicationController
         render :pdf => 'file_name',
         :template => 'historias_clinicas/pdfs/aerocivil.pdf.erb',
         :layout => 'pdf.html.erb',
-        orientation:                    'Landscape',                  # default Portrait
         :show_as_html => params[:debug].present?
       end
     end

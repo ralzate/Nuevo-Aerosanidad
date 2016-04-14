@@ -79,10 +79,10 @@ class User < ActiveRecord::Base
 
 
    def self.search(search)
-    where("primer_nombre like '%#{search}%'  or second_name like '%#{search}%'
-    or first_surname like '%#{search}%'  or second_surname like '%#{search}%'
-    or email like '%#{search}%' or document like '%#{search}%'")
+    where("nombres like '%#{search}%'  or apellidos like '%#{search}%'
+    or email like '%#{search}%' or documento like '%#{search}%' ")
    end
+
 
 
 

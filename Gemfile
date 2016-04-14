@@ -60,6 +60,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'seed_dump'
 
 gem 'bootstrap_form'
+gem "thin"
 
 
 

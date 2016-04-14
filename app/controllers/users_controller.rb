@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
 
-    @users = User.paginate(page: params[:page], per_page: 20)
+    @users = User.search(params[:search]).page(params[:page]).per_page(20)
     @usuarios = User.all
 
     respond_to do |format|
@@ -26,6 +26,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    
+    if current_user.rol_id == 1
 
     @users = User.paginate(page: params[:page], per_page: 10)
 
@@ -37,7 +39,9 @@ class UsersController < ApplicationController
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition => "inline"
       end
     end
-
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /users/new
@@ -47,6 +51,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if current_user.rol_id != 1
+      if current_user.id != @user.id
+        redirect_to root_path
+      end
+    end
   end
 
   def create

@@ -5,7 +5,8 @@ class AeropuertosController < ApplicationController
   respond_to :html
 
   def index
-     @aeropuertos = Aeropuerto.search(params[:search]).page(params[:page]).per_page(20)
+     @aeropuertos = Aeropuerto.search(params[:search]).page(params[:page]).all
+     @aeropuertos = Aeropuerto.where("id = ? OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?  OR id = ?", 196, 271, 309, 207, 184, 280, 217, 318, 308, 343, 221, 197, 191)
     respond_to do |format|
       format.html
       format.json
