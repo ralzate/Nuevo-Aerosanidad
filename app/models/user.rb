@@ -55,7 +55,6 @@ class User < ActiveRecord::Base
   PASSWORD_REGEX = /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+\z/
 
 
-
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "220x220>" }, default_url: "/images/:style/missing.png"
 
 

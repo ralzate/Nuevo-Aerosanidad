@@ -17,9 +17,7 @@ class Rol < ActiveRecord::Base
   validates :nombre, :presence => { :message => " es un Campo Obligatorio"}
   validates :descripcion, :presence => { :message => " es un Campo Obligatorio"}
 
-
-
-   def self.search(search)
+  def self.search(search)
     where("nombre like '%#{search}%'  or descripcion like '%#{search}%'")
   end
 

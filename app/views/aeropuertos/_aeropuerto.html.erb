@@ -1,17 +1,15 @@
+<tr class = "x" id=<%= "aeropuerto_#{aeropuerto.id}" %>
+  >
+  <td>
+    <%= aeropuerto.id %></td>
+  <td>
+    <%= aeropuerto.nombre.capitalize %></td>
+  <td>
+    <%= aeropuerto.ciudad.nombre.capitalize %></td>
 
+  <td>
 
-
-<tr class = "x" id=<%= "aeropuerto_#{aeropuerto.id}" %>>
-	<td><%= aeropuerto.id %></td>
-	<td><%= aeropuerto.nombre.capitalize %></td>
-	<td><%= aeropuerto.ciudad.nombre.capitalize %></td>
-
-	<td>
-
-
-
-
-<style type="text/css" media="screen">
+    <style type="text/css" media="screen">
 .icono {
     font-size: 16px;
     color: #848484;
@@ -21,16 +19,11 @@ color: #666;
 }
 </style>
 
-<%= link_to aeropuerto, :remote => true, class: "btn btn-link btn-xs", title: "Ver Aeropuerto", :remote => true do %>
-    <i class="glyphicon glyphicon-eye-open icono"></i>
-<% end %>
+    <%= link_to aeropuerto, :remote =>
+    true, class: "btn btn-link btn-xs", title: "Ver Aeropuerto", :remote => true do %> <i class="glyphicon glyphicon-eye-open icono"></i>
+    <% end %>
 
-
-
-
-  <%= link_to edit_aeropuerto_path(aeropuerto), :remote => true, class: "btn btn-link btn-xs", title: "Editar Aeropuerto" do %>
-      <i class="glyphicon glyphicon-pencil icono"></i>
-  <% end %>
-
-	</td>
+    <%= link_to edit_aeropuerto_path(aeropuerto), :remote =>
+    true, class: "btn btn-link btn-xs", title: "Editar Aeropuerto" do %> <i class="glyphicon glyphicon-pencil icono"></i>
+    <% end %></td>
 </tr>

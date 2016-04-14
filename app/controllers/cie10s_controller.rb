@@ -1,33 +1,27 @@
 class Cie10sController < ApplicationController
   before_action :set_cie10, only: [:show, :edit, :update, :destroy]
 
-  # GET /cie10s
-  # GET /cie10s.json
   def index
     @cie10s = Cie10.all
 
   respond_to do |format|
-       format.json { render :json => @cie10s }
-     end
+      format.html
+      format.json
+    end
 
+ 
   end
 
-  # GET /cie10s/1
-  # GET /cie10s/1.json
   def show
   end
 
-  # GET /cie10s/new
   def new
     @cie10 = Cie10.new
   end
 
-  # GET /cie10s/1/edit
   def edit
   end
 
-  # POST /cie10s
-  # POST /cie10s.json
   def create
     @cie10 = Cie10.new(cie10_params)
 
@@ -42,8 +36,6 @@ class Cie10sController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cie10s/1
-  # PATCH/PUT /cie10s/1.json
   def update
     respond_to do |format|
       if @cie10.update(cie10_params)
@@ -56,8 +48,6 @@ class Cie10sController < ApplicationController
     end
   end
 
-  # DELETE /cie10s/1
-  # DELETE /cie10s/1.json
   def destroy
     @cie10.destroy
     respond_to do |format|
@@ -67,12 +57,10 @@ class Cie10sController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_cie10
       @cie10 = Cie10.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def cie10_params
       params.require(:cie10).permit(:familia, :codigo, :descripcion)
     end

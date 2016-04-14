@@ -4,55 +4,47 @@
   <title>AeroSanidad</title>
 
   <meta name="robots" content="noindex">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =>
+  true %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag "autocomplete-rails.js" %>
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-  
+
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="http://daneden.github.io/animate.css/animate.min.css" rel='stylesheet' type='text/css'>
-<%= favicon_link_tag 'favicon/logo.png' %>
-
-</head>
+  <%= favicon_link_tag 'favicon/logo.png' %></head>
 <body>
   <div>
 
- <% if current_user? %>
+    <% if current_user? %>
 
     <%= render 'layouts/header' %>
 
-    <div>     
-      <%= yield %>
-      
+    <div>
+      <%= yield %></div>
+    <!-- /.row -->
 
-              </div>
-              <!-- /.row -->
+    <!-- /.row -->
 
-              <!-- /.row -->
+    <div class="row"></div>
+    <!-- /.row --> </div>
+  <!-- /.container-fluid -->
 
-              <div class="row">
+</div>
+<!-- /#page-wrapper -->
 
-              </div>
-              <!-- /.row -->
+</div>
+<!-- /#wrapper -->
 
-          </div>
-          <!-- /.container-fluid -->
+<!-- jQuery -->
 
-      </div>
-      <!-- /#page-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- jQuery -->
-
-  </div>
+</div>
 </div>
 
-  <% if logged_in? %>
-  <%= render 'shared/current_users' %>
-  <% end %>
+<% if logged_in? %>
+<%= render 'shared/current_users' %>
+<% end %>
 
 <% if  current_user %>
 
@@ -61,21 +53,10 @@
 <% end %>
 
 <% else%>
-  <%= yield %>
+<%= yield %>
 
-<% end %>
-
-
-
-
-
-
- 
- 
- 
-</body>
+<% end %></body>
 </html>
-
 
 </body>
 </html>

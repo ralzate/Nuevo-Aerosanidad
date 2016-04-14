@@ -9,7 +9,6 @@
 #  pais_codigo :string
 #
 
-
 class Ciudad < ActiveRecord::Base
 
 	#has_many :pacientes
@@ -18,7 +17,7 @@ class Ciudad < ActiveRecord::Base
 	#validates :nombre, :on => :create, :presence => { :message => " es un Campo Obligatorio"}
 
 
-   def self.search(search)
+  def self.search(search)
     where("pais_codigo like '%#{search}%'  or nombre like '%#{search}%'")
   end
 

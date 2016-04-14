@@ -1,43 +1,37 @@
 <div>
 
+  <div class="panel">
 
+    <div class="panel-heading">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+      Información Rol
+    </div>
 
-     <div class="panel">
-           
-            <div class="panel-heading">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
-                Información Rol
-            </div>
-           
-           
-            <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12">
-                <strong>Nombre: </strong> <%= @rol.nombre %>
-              </div><!-- .col-md-3 -->
-            </div>
-            <br/>
-            <div class="row">
-              <div class="col-md-12">
-                <strong>Descripción: </strong> <%= @rol.descripcion %>
-              </div><!-- .col-md-3 -->
-            </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12"> <strong>Nombre:</strong>
+          <%= @rol.nombre %></div>
+        <!-- .col-md-3 --> </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-12"> <strong>Descripción:</strong>
+          <%= @rol.descripcion %></div>
+        <!-- .col-md-3 --> </div>
 
-            <br/>
-   
+      <br/>
 
-            </div><!-- .panel-body -->
-            
-            <div class="panel-footer">
-                    <a href="#" class="btn btn-info color_blanco custom" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+    <!-- .panel-body -->
 
-            </div>
-    
-      </div><!-- .panel -->
+    <div class="panel-footer">
+      <a href="#" class="btn btn-info color_blanco custom" onclick="$.lazybox.close()">Cerrar</a>
 
+    </div>
+
+  </div>
+  <!-- .panel -->
 
 </div>
-
 
 <style type="text/css">
   .panel-heading{
@@ -59,5 +53,3 @@
     border-left-style: solid;
   }
 </style>
-
-

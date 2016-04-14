@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %></p>
 
 <h1>Listing Procedimientos</h1>
 
@@ -17,19 +18,27 @@
 
   <tbody>
     <% @procedimientos.each do |procedimiento| %>
-      <tr>
-        <td><%= procedimiento.tratamiento %></td>
-        <td><%= procedimiento.via_acceso %></td>
-        <td><%= procedimiento.descripcion %></td>
-        <td><%= procedimiento.glucometria1 %></td>
-        <td><%= procedimiento.glucometria2 %></td>
-        <td><%= procedimiento.electrocardiograma %></td>
-        <td><%= link_to 'Show', procedimiento %></td>
-        <td><%= link_to 'Edit', edit_procedimiento_path(procedimiento) %></td>
-        <td><%= link_to 'Destroy', procedimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tr>
+      <td>
+        <%= procedimiento.tratamiento %></td>
+      <td>
+        <%= procedimiento.via_acceso %></td>
+      <td>
+        <%= procedimiento.descripcion %></td>
+      <td>
+        <%= procedimiento.glucometria1 %></td>
+      <td>
+        <%= procedimiento.glucometria2 %></td>
+      <td>
+        <%= procedimiento.electrocardiograma %></td>
+      <td>
+        <%= link_to 'Show', procedimiento %></td>
+      <td>
+        <%= link_to 'Edit', edit_procedimiento_path(procedimiento) %></td>
+      <td>
+        <%= link_to 'Destroy', procedimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %></tbody>
 </table>
 
 <br>

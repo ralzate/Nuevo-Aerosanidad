@@ -6,9 +6,6 @@ class HistoriasClinicasController < ApplicationController
     @historias_clinicas = @paciente.historias_clinicas.search(params[:search]).page(params[:page]).per_page(20)
   end
 
-
-
-
   def show
     @cie10 = Cie10.all
    # @cie102 = Cie102.all
@@ -29,37 +26,19 @@ class HistoriasClinicasController < ApplicationController
         :show_as_html => params[:debug].present?
       end
     end
-
-
   end
 
-
-
-  # GET /countries/1/edit
   def edit
     #@diagnosticos = Diagnostico.where("historia_clinica_id = @historia_clinica")
-
   end
 
-
-
-
-
-
-  # GET /pets/new
   def new
     @historia_clinica = HistoriaClinica.new
-   end
-
-  # POST /pets
-  # POST /pets.json
-
+  end
 
   def create
     @historia_clinica = HistoriaClinica.new(historia_clinica_params)
     @historia_clinica.paciente_id = @paciente.id
-
-
 
     respond_to do |format|
       if @historia_clinica.save(validate: false)
@@ -74,13 +53,6 @@ class HistoriasClinicasController < ApplicationController
     end
   end
 
-
-  # PATCH/PUT /diagnosticos/1
-  # PATCH/PUT /diagnosticos/1.json
-
-
-
-
   def update
     respond_to do |format|
       if @historia_clinica.update(historia_clinica_params)
@@ -93,9 +65,6 @@ class HistoriasClinicasController < ApplicationController
     end
   end
 
-
-  # DELETE /pets/1
-  # DELETE /pets/1.json
   def destroy
     @historia_clinica.destroy
     respond_to do |format|
@@ -105,22 +74,13 @@ class HistoriasClinicasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_historia_clinica
       @paciente = Paciente.find(params[:paciente_id])
       @historia_clinica = HistoriaClinica.find(params[:id]) if params[:id]
 
     end
 
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    # Never trust parameters from the scary internet, only allow the white list through.
     def historia_clinica_params
         params.require(:historia_clinica).permit!
-
     end
-
-
-
-
 end

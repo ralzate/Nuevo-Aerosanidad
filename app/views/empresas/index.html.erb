@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %></p>
 
 <h1>Listing Empresas</h1>
 
@@ -12,14 +13,17 @@
 
   <tbody>
     <% @empresas.each do |empresa| %>
-      <tr>
-        <td><%= empresa.nombre %></td>
-        <td><%= link_to 'Show', empresa %></td>
-        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-        <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tr>
+      <td>
+        <%= empresa.nombre %></td>
+      <td>
+        <%= link_to 'Show', empresa %></td>
+      <td>
+        <%= link_to 'Edit', edit_empresa_path(empresa) %></td>
+      <td>
+        <%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %></tbody>
 </table>
 
 <br>

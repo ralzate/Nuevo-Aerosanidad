@@ -2,18 +2,19 @@
 
 <style>
 .ids{
-	color:gray;
+  color:gray;
 }
 </style>
-<tr class="x" id=<%= "eps_#{eps.id}" %>>
-	<td style="text-align: center;"><%= link_to eps.id, edit_eps_path(eps), :remote => true, :class => "ids" %> </td>
-	<td><%= eps.nombre.capitalize %></td>
+<tr class="x" id=<%= "eps_#{eps.id}" %>
+  >
+  <td style="text-align: center;">
+    <%= link_to eps.id, edit_eps_path(eps), :remote =>true, :class => "ids" %></td>
+  <td>
+    <%= eps.nombre.capitalize %></td>
 
-	<td>
+  <td>
 
-
-
-<style type="text/css" media="screen">
+    <style type="text/css" media="screen">
 .icono {
     font-size: 16px;
     color: #848484;
@@ -23,17 +24,11 @@ color: #666;
 }
 </style>
 
-<%= link_to eps, :remote => true, class: "btn btn-link btn-xs", title: "Ver Arl" do %>
-    <i class="glyphicon glyphicon-eye-open icono"></i>
-<% end %>
+    <%= link_to eps, :remote =>
+    true, class: "btn btn-link btn-xs", title: "Ver Arl" do %> <i class="glyphicon glyphicon-eye-open icono"></i>
+    <% end %>
 
-  <%= link_to edit_eps_path(eps), :remote => true, class: "btn btn-link btn-xs", title: "Editar Arl" do %>
-      <i class="glyphicon glyphicon-pencil icono"></i>
-  <% end %>
-
-
-  
-
-
-	</td>
+    <%= link_to edit_eps_path(eps), :remote =>
+    true, class: "btn btn-link btn-xs", title: "Editar Arl" do %> <i class="glyphicon glyphicon-pencil icono"></i>
+    <% end %></td>
 </tr>

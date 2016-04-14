@@ -1,18 +1,16 @@
 
 <div class="nested-fields">
   <div class="">
-      <div class=" clearfix inicio">
+    <div class=" clearfix inicio">
       <div class="row">
         <div class="col-md-11">
-<%= f.select :cie10_id,
+          <%= f.select :cie10_id,
   Cie10.all.map { |u| ["#{u.descripcion}, #{u.codigo}", u.id] },
                { include_blank: true },
-               { class: 'chosen-select required' } %>
-        </div>
+               { class: 'chosen-select required' } %></div>
 
         <div class="col-md-1">
-          <%= link_to_remove_association 'Eliminar', f, :class => "btn btn-danger color_blanco custom  pull-right btn-sm" %>
-        </div>
+          <%= link_to_remove_association 'Eliminar', f, :class =>"btn btn-danger color_blanco custom  pull-right btn-sm" %></div>
       </div>
     </div>
   </div>
@@ -38,8 +36,6 @@
 }
 </style>
 
-
-
 <script type="text/javascript">
 $(function() {
   return $('.chosen-select').chosen({
@@ -54,7 +50,6 @@ $(function() {
 
 
 </script>
-
 
 <script>
 /*! jQuery Validation Plugin - v1.13.0 - 7/1/2014

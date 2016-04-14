@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
-
 <style type="text/css">
 
 input {margin-bottom: 10px;}
@@ -24,7 +23,6 @@ input {margin-bottom: 10px;}
   border: 1px solid red;
 }
 </style>
-
 
 <script type="text/javascript">
 
@@ -68,96 +66,62 @@ $(document).ready(function() {
 }); // end ready
 </script>
 
-
-
 <% @campo2 = @historia_clinica.s2_validation %>
 <% @campo3 = @historia_clinica.s3_validation %>
 <% @campo4 = @historia_clinica.s4_validation %>
 <% @campo5 = @historia_clinica.s5_validation %>
 
-
-
-
-
-
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="panel panel-default modal-dialog">
-            <div class="panel-body">
+	<div class="row">
+		<div class="panel panel-default modal-dialog">
+			<div class="panel-body">
 
+				<%= link_to "1. Informacion General", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.first), :class=>
+				"btn btn-default  mrg" %>
+				<% if @campo2 == true %>
+				<%= link_to "2. Antecedentes Personales", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.second), :class=>
+				"btn btn-info color_blanco mrg" %>
+				<% elsif @campo2 == false %>
+				<a class="btn btn-info color_blanco mrg" disabled="disabled">2. Antecedentes Personales</a>
+				<% end %>
 
-     <%= link_to "1. Informacion General", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.first), :class=>"btn btn-default  mrg" %>
+				<% if @campo3 == true %>
+				<%= link_to "3. Revisión por Sistemas", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.third), :class=>
+				"btn btn-info color_blanco mrg" %>
+				<% elsif @campo3 == false %>
+				<a class="btn btn-info color_blanco mrg" disabled="disabled">3. Revisión por Sistemas</a>
 
+				<% end %>
 
+				<% if @campo4 == true %>
+				<%= link_to "4. Examen Fisico", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fourth), :class=>
+				"btn btn-info color_blanco mrg" %>
+				<% elsif @campo4 == false %>
+				<a class="btn btn-info color_blanco mrg" disabled="disabled">4. Examen Fisico</a>
 
+				<% end %>
 
+				<% if @campo5 == true %>
+				<%= link_to "5. Impresión Diagnostica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>
+				"btn btn-info color_blanco mrg" %>
+				<% elsif @campo5 == false %>
+				<a class="btn btn-info color_blanco mrg" disabled="disabled">5. Impresión Diagnostica</a>
 
-<% if @campo2 == true %>
-    <%= link_to "2. Antecedentes Personales", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.second), :class=>"btn btn-info color_blanco mrg" %>
-<% elsif @campo2 == false %>
-<a class="btn btn-info color_blanco mrg" disabled="disabled">2. Antecedentes Personales</a>
-<% end %>
+				<% end %></div>
+		</div>
 
-<% if @campo3 == true %>
-    <%= link_to "3. Revisión por Sistemas", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.third), :class=>"btn btn-info color_blanco mrg" %>
-<% elsif @campo3 == false %>
-<a class="btn btn-info color_blanco mrg" disabled="disabled">3. Revisión por Sistemas</a>
-
-<% end %>
-
-<% if @campo4 == true %>
-    <%= link_to "4. Examen Fisico", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fourth), :class=>"btn btn-info color_blanco mrg" %>
-<% elsif @campo4 == false %>
-<a class="btn btn-info color_blanco mrg" disabled="disabled">4. Examen Fisico</a>
-
-
-<% end %>
-
-<% if @campo5 == true %>
-    <%= link_to "5. Impresión Diagnostica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>"btn btn-info color_blanco mrg" %>
-<% elsif @campo5 == false %>
-<a class="btn btn-info color_blanco mrg" disabled="disabled">5. Impresión Diagnostica</a>
-
-<% end %>
-
-            </div>
-        </div>
-
-    </div>
+	</div>
 </div>
-
-
 
 <style>
 .panel-default{width:97%;text-align:center}.btn{border-radius:0;border:0;border-bottom:4px solid #CCC;margin:0;-webkit-box-shadow:0 5px 5px -6px rgba(0,0,0,.3);-moz-box-shadow:0 5px 5px -6px rgba(0,0,0,.3);box-shadow:0 5px 5px -6px rgba(0,0,0,.3)}.btn .btn-block:active,.btn .btn-lg:active{-webkit-box-shadow:inset 0 3px 3px -5px rgba(0,0,0,.3);-moz-box-shadow:inset 0 3px 3px -5px rgba(0,0,0,.3);box-shadow:inset 0 3px 3px -5px rgba(0,0,0,.3)}.btn-default{color:#555;background-color:#f9f9f9;border-color:#cacaca;text-shadow:1px 1px 0 #f5f5f5}.btn-default:hover,.btn-default:focus{background-color:#f4f4f4;border-color:#bebebe}.btn-success{background-color:#80d752;border-color:#61be26;text-shadow:1px 1px 0 #5fdb34}.btn-success:hover,.btn-success:focus{background-color:#75cd53;border-color:#53aa27}.btn-info{background-color:#39b3d7;border-color:#348fd2;text-shadow:1px 1px 0 #238ed5}.btn-info:hover,.btn-info:focus{background-color:#45abcd;border-color:#347abe}.btn-warning{background-color:#FEAF20;border-color:#d79a34;text-shadow:1px 1px 0 #db9e34}.btn-warning:hover,.btn-warning:focus{background-color:#f5a620;border-color:#cd9034}.btn-danger{background-color:#d73814;border-color:#be0000;text-shadow:1px 1px 0 #ac2925}.btn-danger:hover,.btn-danger:focus{background-color:#cd3714;border-color:#a00}.btn-primary{background-color:#4274d7;border-color:#4d5bbe;text-shadow:1px 1px 0 #232bd5}.btn-primary:hover,.btn-primary:focus{background-color:#426acd;border-color:#4f56aa}.btn-magick{color:#fff;background-color:#bb39d7;border-color:#9a00cd;text-shadow:1px 1px 0 #9823d5}.btn-magick:hover,.btn-magick:focus{color:#fff;background-color:#b13acd;border-color:#8600b9}.btn-pressure{position:relative;margin-bottom:0}.btn-pressure:focus{-moz-outline-style:none;outline:medium none}.btn-pressure:active,.btn-pressure.active{top:4px;border:0;position:relative}.btn-sensitive:active,.btn-sensitive.active{top:1px;margin-top:4px}
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container-fluid">
 
-    <div id="loginbox" class="mainbox col-md-12 col-sm-12">
+	<div id="loginbox" class="mainbox col-md-12 col-sm-12">
 
-
-    <style type="text/css">
+		<style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Roboto);
         @import url(https://fonts.googleapis.com/css?family=Montserrat);
         .panel-heading {
@@ -186,36 +150,24 @@ $(document).ready(function() {
 	}
     </style>
 
+		<div class="container-fluid navbar navbar-default" style = "margin-bottom:0px!important">
+			<div class="row">
+				<%= simple_form_for([@paciente, @historia_clinica], method: :put, url: wizard_path, :html =>
+				{ :class => 'block multistep pf_form w_normal horizontal_center shadow', :id => "signup" }) do |f| %>
+				<% if @historia_clinica.errors.any? %>
+				<div id="error_explanation">
+					<h2>
+						<%= pluralize(@historia_clinica.errors.count, "error") %>prohibited this pet from being saved:</h2>
 
+					<ul>
+						<% @historia_clinica.errors.full_messages.each do |msg| %>
+						<li>
+							<%= msg %></li>
+						<% end %></ul>
+				</div>
+				<% end %>
 
-
-<div class="container-fluid navbar navbar-default" style = "margin-bottom:0px!important">
-  <div class="row">
-<%= simple_form_for([@paciente, @historia_clinica], method: :put, url: wizard_path, :html => { :class => 'block multistep pf_form w_normal horizontal_center shadow', :id => "signup" }) do |f| %>
-
-
-
-  <% if @historia_clinica.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@historia_clinica.errors.count, "error") %> prohibited this pet from being saved:</h2>
-
-      <ul>
-      <% @historia_clinica.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
+				<script type="text/javascript">
 
 
 $(document).on("ready page:load",function(){
@@ -225,53 +177,15 @@ $('.chosen-single.chosen-default span').text("Debes Seleccionar una Opción");
 });
 </script>
 
+				<div class="container-fluid">
+					<br/>
+					<%= link_to "Regresar", pacientes_path, :class=>
+					"btn btn-info color_blanco mrg" %>
+					<h3 style = "color: #22BDC8;">DATOS GENERALES</h3>
 
+					<div class="row">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid">
-<br/>
-	<%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %>
-
-    <h3 style = "color: #22BDC8;">DATOS GENERALES</h3>
-
-
-
-    <div class="row">
-
-
-
-
-
-
-
-
-<script type="text/javascript">
+						<script type="text/javascript">
 	$.validator.setDefaults({
     errorElement: "span",
     errorClass: "help-block",
@@ -311,7 +225,7 @@ $(document).ready(function () {
 
 });
 </script>
-<style type="text/css" media="screen">
+						<style type="text/css" media="screen">
 	.has-error .select2-selection {
     border: 1px solid #a94442;
 }
@@ -324,83 +238,63 @@ div .help-block{
 
 </style>
 
+						<div class="container-fluid">
 
+							<div class="row">
 
-<div class="container-fluid">
+								<div class="col-md-4 aeropuerto" style="margin-top: 3px;">
+									<label>Aeropuerto:</label>
+									<%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.id] }, { :include_blank =>
+									'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_aeropuerto" } %>
+								</div>
 
-<div class="row">
+								<div class="col-md-4">
+									<label>Auxiliar de enfermería:</label>
+									<%= f.input :a_auxiliar,  :input_html =>
+									{ class: 'form-control required', title: "Campo Obligatorio", :required => true } , placeholder: 'Campo Obligatorio', label: false  %>
+								</div>
 
+								<div class="col-md-4">
+									<label>Cove:</label>
+									<%= f.input :a_cove,  :input_html =>
+									{ class: 'form-control required', title: "Campo Obligatorio" } , placeholder: 'Campo Obligatorio', label: false  %>
+								</div>
 
+							</div>
 
-	        <div class="col-md-4 aeropuerto" style="margin-top: 3px;">
-	          <label>Aeropuerto:</label>
-	          <%= f.select :aeropuerto_id, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.id] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_aeropuerto" } %>
+							<br/>
 
-	        </div>
+							<div class="row">
 
+								<div class="col-md-3">
 
-	        <div class="col-md-4">
-	            <label>Auxiliar de enfermería:</label>
-	            <%= f.input :a_auxiliar,  :input_html => { class: 'form-control required', title: "Campo Obligatorio", :required => true } , placeholder: 'Campo Obligatorio', label: false  %>
-	   	 	</div>
+									<label>Movil/Servicio:</label>
+									<%= f.input :a_movil_servicio,  :input_html =>
+									{ class: 'form-control required', title: "Campo Obligatorio" }  , placeholder: 'Campo Obligatorio', label: false  %>
+								</div>
 
-
-
-	          <div class="col-md-4">
-	              <label>Cove:</label>
-	              <%= f.input :a_cove,  :input_html => { class: 'form-control required', title: "Campo Obligatorio" } , placeholder: 'Campo Obligatorio', label: false  %>
-	          </div>
-
-
-
-
-</div>
-
-
-       <br/>
-
-
-    <div class="row">
-
-          <div class="col-md-3">
-
-              <label>Movil/Servicio:</label>
-              <%= f.input :a_movil_servicio,  :input_html => { class: 'form-control required', title: "Campo Obligatorio" }  , placeholder: 'Campo Obligatorio', label: false  %>
-
-
-
-          </div>
-
-        <div class="col-md-3">
-        	<label>Tipo De Vuelo</label>
-          		<%= f.input :tipo_de_vuelo,
+								<div class="col-md-3">
+									<label>Tipo De Vuelo</label>
+									<%= f.input :tipo_de_vuelo,
                   prompt:       'Seleccionar una Opción',
                   collection: @historia_clinica.select_tipo_de_vuelo,
                   error: false, label: false,
                   input_html:   {class: 'form-control required'},
-                  required: true   %>
-        </div>
-    </div>
+                  required: true   %></div>
+							</div>
 
-       <br/>
-    <h3 style = "color: #22BDC8;">I. IDENTIFICACIÓN DEL PACIENTE</h3>
+							<br/>
+							<h3 style = "color: #22BDC8;">I. IDENTIFICACIÓN DEL PACIENTE</h3>
 
-    <div class="row ">
+							<div class="row ">
 
+								<hr class="featurette-divider"></hr>
 
+							<div class="col-md-4 aa">
+								<label>Condición:</label>
+								<%= f.select :a_condicion, [ 'Pasajero', 'Tripulante', 'Empleado', 'Visitante', 'Otro' ], {},  {class: "form-control required", id: "myselect", title: "Campo Obligatorio"} %></div>
 
-    <hr class="featurette-divider"></hr>
-
-          <div class="col-md-4 aa">
-              <label>Condición:</label>
-              <%= f.select :a_condicion, [ 'Pasajero', 'Tripulante', 'Empleado', 'Visitante', 'Otro' ], {},  {class: "form-control required", id: "myselect", title: "Campo Obligatorio"} %>
-
-          </div>
-
-
-
-
-<script type="text/javascript">
+							<script type="text/javascript">
 jQuery(document).ready(function() {
    jQuery("#myselect").change(function() {
       if(jQuery(this).find("option:selected").val() == "Pasajero" ) {
@@ -437,52 +331,33 @@ jQuery(document).ready(function() {
 });
 </script>
 
-
-
-
-
-
-
-
-
-          <div class="col-md-4">
-              <label>Tipo Servicio:</label>
-                    <%= f.input :a_tipo_servicio,
+							<div class="col-md-4">
+								<label>Tipo Servicio:</label>
+								<%= f.input :a_tipo_servicio,
                     collection: @historia_clinica.select_type_service.sort,
                     error: false, label: false,
-                    input_html:   {class: 'form-control required', title: "Campo Obligatorio"}, 'aria-required' => 'true' %>
-          </div>
-          <div class="col-md-4">
+                    input_html:   {class: 'form-control required', title: "Campo Obligatorio"}, 'aria-required' =>'true' %></div>
+							<div class="col-md-4">
 
-              <label>Empresa:</label>
+								<label>Empresa:</label>
 
-              <%= f.collection_select :a_empresa, Empresa.all, :nombre, :nombre, {}, {class: "form-control required", title: "Campo Obligatorio"} %>
+								<%= f.collection_select :a_empresa, Empresa.all, :nombre, :nombre, {}, {class: "form-control required", title: "Campo Obligatorio"} %></div>
 
+						</div>
 
-          </div>
+						<br/>
 
+						<div class="row">
 
+							<div class="col-md-4">
 
-        </div>
-
-        <br/>
-
-    <div class="row">
-
-
-
-          <div class="col-md-4">
-
-          <label>Lugar de Atención:</label>
-              <%= f.input :a_lugar_de_atencion,
+								<label>Lugar de Atención:</label>
+								<%= f.input :a_lugar_de_atencion,
                 collection: @historia_clinica.select_lugar.sort,
                 error: false, label: false,
-                input_html:   {class: 'form-control required', title: "Campo Obligatorio"}, 'aria-required' => 'true' %>
-          </div>
+                input_html:   {class: 'form-control required', title: "Campo Obligatorio"}, 'aria-required' =>'true' %></div>
 
-
-
-<script type="text/javascript">
+							<script type="text/javascript">
 
 $(function() {
   return $('.chosen-select2').chosen({
@@ -506,8 +381,7 @@ $(function() {
 
 </script>
 
-
-<style type="text/css">
+							<style type="text/css">
 
 .chosen-container-single .chosen-single {
   width: 145% !important;
@@ -524,36 +398,26 @@ $(function() {
 
 </style>
 
-          <div class="col-md-4">
+							<div class="col-md-4">
 
+								<label>Origen:</label>
+								<br/>
 
- <label>Origen:</label> <br/>
+								<%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { :include_blank =>
+								'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_origen" } %>
+							</div>
 
+							<div class="col-md-4">
+								<label>Destino:</label>
+								<br/>
 
+								<%= f.select :a_destino, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { :include_blank =>
+								'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_destino" } %>
+							</div>
+						</div>
 
-	          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_origen" } %>
-
-
-
-                  </div>
-
-          <div class="col-md-4">
-              <label>Destino:</label>  <br/>
-
-
-
-	          <%= f.select :a_destino, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_destino" } %>
-
-
-
-
-
-          </div>
-           </div>
-
-
-     <br/>
-<script>
+						<br/>
+						<script>
 function edValueKeyPress()
 {
   var acompañante = document.getElementById("acompañante");
@@ -577,155 +441,127 @@ function edValueKeyPress()
 }
 </script>
 
-    <div class="row">
-
-          <div class="col-md-4">
-              <label>Nombre Acompañante:</label>
-                <%= f.input :a_nombre_acompañante,  :input_html => { :class => 'form-control required', id: "acompañante", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
-          </div>
-          <div class="col-md-4">
-              <label>Parentesco:</label>
-                <%= f.input :a_parentesco,  :input_html => { :class => 'form-control required', id: "parentesco", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
-
-          </div>
-<div class="col-md-4">
-              <label>Telefono Acompañante:</label>
-                <%= f.input :a_telefono,  :input_html => { :class => 'form-control required', id: "telefono", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
-
-          </div>
-
-
-        </div>
-                <br/>
-
-
-
-
-    <div class="row">
-
-          <div class="col-md-4">
-                        <label>Arl:</label>
-
-                            <%= f.autocomplete_field :arl, autocomplete_arl_nombre_arles_path, class: 'form-control required', title: "Campo Obligatorio", id: "company", title: "Campo Obligatorio", :onchange => 'changeddl(this)', placeholder: 'Ingresar Arl'  %>
-
-
-
-
-                    </div>
-
-
-              <div class="col-md-4">
-                  <label>Eps:</label>
-
-
-                  <%= f.autocomplete_field :eps, autocomplete_eps_nombre_epses_path, class: 'form-control required', title: "Campo Obligatorio", placeholder: 'Ingresar Eps' %>
-
-
-              </div>
-
-
-
-
-
-         </div>
-
-
-
-
-
-
-        <br/>
-        <br/>
-
-
-
-
-               <br/>
-        <br/>
-
-
-
-
-
-
-
-
-
-
-<h3 style = "color: #22BDC8;"> II. MOTIVO DE LA CONSULTA</h3>
-<hr class="featurette-divider"></hr>
-
-
-
-<div>
-    <div class="row">
-        <div class="col-md-12">
-
-          <div class="col-md-12">
-
-                <%= f.text_area :a_motivo_de_consulta, :class => 'form-control required', id: "reason_for_consultation"  , placeholder: 'Campo Obligatorio', label: false, title: "Campo Obligatorio"  %>
-          </div>
-        </div>
-        <br/>
-        <br/>        <br/>
-        <br/>        <br/>
-    </div>
-</div>
-
-
-
-
-
-<h3 style = "color: #22BDC8;"> III. ENFERMEDAD ACTUAL</h3>
-<hr class="featurette-divider"></hr>
-
-
-<div >
-    <div class="row">
-        <div class="col-md-12">
-
-          <div class="col-md-12">
-
-              <%= f.text_area :a_enfermedad_actual, :class => 'form-control required', id: "current_illness", placeholder: 'Campo Obligatorio', label: false, title: "Campo Obligatorio"  %>
-          </div>
-        </div>
-        <br/>
-        <br/>        <br/>
-        <br/>        <br/>
-    </div>
-</div>
-
-
-
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.hidden_field :paciente_id, :value => @paciente.id %>
-      <%= f.hidden_field :p_primer_nombre, :value => @paciente.primer_nombre %>
-      <%= f.hidden_field :p_segundo_nombre, :value => @paciente.segundo_nombre %>
-      <%= f.hidden_field :p_primer_apellido, :value => @paciente.primer_apellido %>
-      <%= f.hidden_field :p_segundo_apellido, :value => @paciente.segundo_apellido %>
-      <%= f.hidden_field :p_email, :value => @paciente.email %>
-      <%= f.hidden_field :p_tipo_documento, :value => @paciente.tipo_documento %>
-      <%= f.hidden_field :p_documento, :value => @paciente.documento %>
-      <%= f.hidden_field :p_fecha_nacimiento, :value => @paciente.fecha_nacimiento.strftime("%Y-%m-%d") %>
-      <%= f.hidden_field :p_genero, :value => @paciente.genero %>
-      <%= f.hidden_field :p_profesion, :value => @paciente.profesion %>
-      <%= f.hidden_field :p_tipo_sangre, :value => @paciente.tipo_sangre %>
-      <%= f.hidden_field :p_nacionalidad, :value => @paciente.nacionalidad %>
-      <%= f.hidden_field :p_direccion, :value => @paciente.direccion %>
-      <%= f.hidden_field :p_ciudad, :value => @paciente.ciudad %>
-      <%= f.hidden_field :registro_medico, :value => current_user.registro_medico %>
-      <%= f.hidden_field :latitude, class: 'lat'  %>
-      <%= f.hidden_field :longitude, class: 'lon' %>
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
+						<div class="row">
+
+							<div class="col-md-4">
+								<label>Nombre Acompañante:</label>
+								<%= f.input :a_nombre_acompañante,  :input_html =>
+								{ :class => 'form-control required', id: "acompañante", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
+							</div>
+							<div class="col-md-4">
+								<label>Parentesco:</label>
+								<%= f.input :a_parentesco,  :input_html =>
+								{ :class => 'form-control required', id: "parentesco", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
+							</div>
+							<div class="col-md-4">
+								<label>Telefono Acompañante:</label>
+								<%= f.input :a_telefono,  :input_html =>
+								{ :class => 'form-control required', id: "telefono", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
+							</div>
+
+						</div>
+						<br/>
+
+						<div class="row">
+
+							<div class="col-md-4">
+								<label>Arl:</label>
+
+								<%= f.autocomplete_field :arl, autocomplete_arl_nombre_arles_path, class: 'form-control required', title: "Campo Obligatorio", id: "company", title: "Campo Obligatorio", :onchange =>'changeddl(this)', placeholder: 'Ingresar Arl'  %></div>
+
+							<div class="col-md-4">
+								<label>Eps:</label>
+
+								<%= f.autocomplete_field :eps, autocomplete_eps_nombre_epses_path, class: 'form-control required', title: "Campo Obligatorio", placeholder: 'Ingresar Eps' %></div>
+
+						</div>
+
+						<br/>
+						<br/>
+
+						<br/>
+						<br/>
+
+						<h3 style = "color: #22BDC8;">II. MOTIVO DE LA CONSULTA</h3>
+						<hr class="featurette-divider"></hr>
+
+					<div>
+						<div class="row">
+							<div class="col-md-12">
+
+								<div class="col-md-12">
+
+									<%= f.text_area :a_motivo_de_consulta, :class =>
+									'form-control required', id: "reason_for_consultation"  , placeholder: 'Campo Obligatorio', label: false, title: "Campo Obligatorio"  %>
+								</div>
+							</div>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+						</div>
+					</div>
+
+					<h3 style = "color: #22BDC8;">III. ENFERMEDAD ACTUAL</h3>
+					<hr class="featurette-divider"></hr>
+
+				<div >
+					<div class="row">
+						<div class="col-md-12">
+
+							<div class="col-md-12">
+
+								<%= f.text_area :a_enfermedad_actual, :class =>
+								'form-control required', id: "current_illness", placeholder: 'Campo Obligatorio', label: false, title: "Campo Obligatorio"  %>
+							</div>
+						</div>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+					</div>
+				</div>
+
+				<%= f.hidden_field :user_id, :value =>
+				current_user.id %>
+				<%= f.hidden_field :paciente_id, :value =>
+				@paciente.id %>
+				<%= f.hidden_field :p_primer_nombre, :value =>
+				@paciente.primer_nombre %>
+				<%= f.hidden_field :p_segundo_nombre, :value =>
+				@paciente.segundo_nombre %>
+				<%= f.hidden_field :p_primer_apellido, :value =>
+				@paciente.primer_apellido %>
+				<%= f.hidden_field :p_segundo_apellido, :value =>
+				@paciente.segundo_apellido %>
+				<%= f.hidden_field :p_email, :value =>
+				@paciente.email %>
+				<%= f.hidden_field :p_tipo_documento, :value =>
+				@paciente.tipo_documento %>
+				<%= f.hidden_field :p_documento, :value =>
+				@paciente.documento %>
+				<%= f.hidden_field :p_fecha_nacimiento, :value =>
+				@paciente.fecha_nacimiento.strftime("%Y-%m-%d") %>
+				<%= f.hidden_field :p_genero, :value =>
+				@paciente.genero %>
+				<%= f.hidden_field :p_profesion, :value =>
+				@paciente.profesion %>
+				<%= f.hidden_field :p_tipo_sangre, :value =>
+				@paciente.tipo_sangre %>
+				<%= f.hidden_field :p_nacionalidad, :value =>
+				@paciente.nacionalidad %>
+				<%= f.hidden_field :p_direccion, :value =>
+				@paciente.direccion %>
+				<%= f.hidden_field :p_ciudad, :value =>
+				@paciente.ciudad %>
+				<%= f.hidden_field :registro_medico, :value =>
+				current_user.registro_medico %>
+				<%= f.hidden_field :latitude, class: 'lat'  %>
+				<%= f.hidden_field :longitude, class: 'lon' %>
+
+				<script type="text/javascript">
 
 $(document).ready(function(){
   $('#yes').click(function(){
@@ -737,81 +573,23 @@ $(document).ready(function(){
 
 </script>
 
+				<div class="well pie_form">
 
+					<div class="form-actions"  style = "text-align:center!important">
 
+						<%= f.submit "Siguiente", :class =>'btn btn btn-info  custom' %></div>
+				</div>
 
+			</div>
+		</div>
 
+		<% end %></div>
 
+	<div class="container-fluid">
 
+		<div id="loginbox" class="mainbox col-md-12 col-sm-12">
 
-
-
-
-
-
-
-         <div class="well pie_form">
-
-                <div class="form-actions"  style = "text-align:center!important">
-
-
-
-                        <%= f.submit "Siguiente", :class => 'btn btn btn-info  custom' %>
-
-                </div>
-              </div>
-
-
-  </div>
-</div>
-
-
-
-
-
-
-            <% end %>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid">
-
-    <div id="loginbox" class="mainbox col-md-12 col-sm-12">
-
-
-    <style type="text/css">
+			<style type="text/css">
 
 
 

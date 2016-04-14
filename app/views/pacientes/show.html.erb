@@ -1,12 +1,6 @@
-
-
-
-
-
-
-<div class="container-fluid">            
-    <div id="loginbox" style = "margin-top: 30px;" class="mainbox col-md-12 col-sm-12"> 
-        <style type="text/css">
+<div class="container-fluid">
+  <div id="loginbox" style = "margin-top: 30px;" class="mainbox col-md-12 col-sm-12">
+    <style type="text/css">
             @import url(https://fonts.googleapis.com/css?family=Roboto);
             @import url(https://fonts.googleapis.com/css?family=Montserrat);
             .panel-heading {
@@ -32,115 +26,116 @@
 
         </style>
 
+    <div class="container-fluid navbar navbar-default" style = "margin-bottom:0px!importan">
+      <div class="row">
+        <br/>
+        <div class="container-fluid" >
+          <div class="col-sm-6">
+            <%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %></div>
+        </div>
 
-        <div class="container-fluid navbar navbar-default" style = "margin-bottom:0px!importan">
-            <div class="row">
-                <br/>
-                <div class="container-fluid" >        
-                    <div class="col-sm-6">
-                        <%= link_to "Regresar", pacientes_path, :class=>"btn btn-info color_blanco mrg" %>
-                    </div>
-                </div>
+        <div class="col-sm-6"></div>
 
-                <div class="col-sm-6">
-                </div>
-
-            </div>
-        <div>
+      </div>
+      <div>
 
         <br/>
 
-
         <div class="row">
-            <div class="profile">
-                <div class="col-sm-12">
-                    <div class="container-fluid">
-                        <div class="row col-md-12  custyle">
-                            <h1 style=" font-size:25px; text-align: left;color: #22BDC8; margin-top: 0px;"> 
-                                <span style = "margin-right:10px;color: #22BDC8; "class="glyphicon glyphicon-list-alt"></span> 
-                                Datos Paciente
-                            </h1>
+          <div class="profile">
+            <div class="col-sm-12">
+              <div class="container-fluid">
+                <div class="row col-md-12  custyle">
+                  <h1 style=" font-size:25px; text-align: left;color: #22BDC8; margin-top: 0px;">
+                    <span style = "margin-right:10px;color: #22BDC8; "class="glyphicon glyphicon-list-alt"></span>
+                    Datos Paciente
+                  </h1>
 
-                            <table class="table table-striped custab table-bordered table-hover">
+                  <table class="table table-striped custab table-bordered table-hover">
 
-                                <tr>
-                                    <th>Nombres:</th>
-                                    <td><%= @paciente.primer_nombre %> <%= @paciente.segundo_nombre %></td>
-                                    <th>Apellidos:</th>
-                                    <td><%= @paciente.primer_apellido %> <%= @paciente.segundo_apellido %></td>
-                                </tr>
-                                <tr>
-                                    <th>Email:</th>
-                                    <td><%= @paciente.email %></td>
-                                    <th>Tipo Documento:</th>
-                                    <td><%= @paciente.tipo_documento %></td>
-                                </tr>
-                                <tr>
-                                    <th>Documento:</th>
-                                    <td><%= @paciente.documento %></td>
-                                    <th>Fecha Nacimiento:</th>
-                                    <td><%= @paciente.fecha_nacimiento %></td>
-                                </tr>
+                    <tr>
+                      <th>Nombres:</th>
+                      <td>
+                        <%= @paciente.primer_nombre %>
+                        <%= @paciente.segundo_nombre %></td>
+                      <th>Apellidos:</th>
+                      <td>
+                        <%= @paciente.primer_apellido %>
+                        <%= @paciente.segundo_apellido %></td>
+                    </tr>
+                    <tr>
+                      <th>Email:</th>
+                      <td>
+                        <%= @paciente.email %></td>
+                      <th>Tipo Documento:</th>
+                      <td>
+                        <%= @paciente.tipo_documento %></td>
+                    </tr>
+                    <tr>
+                      <th>Documento:</th>
+                      <td>
+                        <%= @paciente.documento %></td>
+                      <th>Fecha Nacimiento:</th>
+                      <td>
+                        <%= @paciente.fecha_nacimiento %></td>
+                    </tr>
 
-                                <tr>
-                                    <th>Genero:</th>
-                                    <td><%= @paciente.genero %></td>
-                                    <th>Profesión:</th>
-                                    <td><%= @paciente.profesion %></td>
-                                </tr>
+                    <tr>
+                      <th>Genero:</th>
+                      <td>
+                        <%= @paciente.genero %></td>
+                      <th>Profesión:</th>
+                      <td>
+                        <%= @paciente.profesion %></td>
+                    </tr>
 
+                    <tr>
+                      <th>Tipo Sanguineo:</th>
+                      <td>
+                        <%= @paciente.tipo_sangre %></td>
+                      <th>Nacionalidad:</th>
+                      <td>
+                        <%= @paciente.nacionalidad %></td>
+                    </tr>
 
-                                <tr>
-                                    <th>Tipo Sanguineo:</th>
-                                    <td><%= @paciente.tipo_sangre %></td>
-                                    <th>Nacionalidad:</th>
-                                    <td><%= @paciente.nacionalidad %></td>
-                                </tr>
+                    <tr>
+                      <th>Dirección:</th>
+                      <td>
+                        <%= @paciente.direccion %></td>
+                    </tr>
 
-                                <tr>
-                                    <th>Dirección:</th>
-                                    <td><%= @paciente.direccion %></td>
-                                </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 text-center">
+              <div class="col-xs-12 col-sm-4 emphasis">
 
-                            </table>
-                        </div>
-                    </div>
-                </div>            
-                <div class="col-xs-12 text-center">
-                    <div class="col-xs-12 col-sm-4 emphasis">
+                <% if current_user.rol_id != 3 %>
 
-
-                    <% if current_user.rol_id != 3 %>
-
-                        <%= link_to ' Nueva Historia Clinica',  new_paciente_historia_clinica_path(@paciente), :class => 'btn btn-primary  color_blanco principal'  %>
-
-                    <% end %>
-
-                    
-                    </div>
-                    <div class="col-xs-12 col-sm-4 emphasis">
-                        <% if @paciente.historias_clinicas.count != 0 
+                <%= link_to ' Nueva Historia Clinica',  new_paciente_historia_clinica_path(@paciente), :class =>
+                'btn btn-primary  color_blanco principal'  %>
+                <% end %></div>
+              <div class="col-xs-12 col-sm-4 emphasis">
+                <% if @paciente.historias_clinicas.count != 0 
                         @alejo = @paciente.historias_clinicas.last
                           %>
-                          
-                        <%= link_to ' Nueva Nota de Evolucion', new_paciente_historia_clinica_nota_progreso_path(@paciente, @alejo.id), :class => 'btn btn-primary  color_blanco principal' %> 
 
-                        <% end %>
+                <%= link_to ' Nueva Nota de Evolucion', new_paciente_historia_clinica_nota_progreso_path(@paciente, @alejo.id), :class =>
+                'btn btn-primary  color_blanco principal' %>
+                <% end %></div>
+              <div class="col-xs-12 col-sm-4 emphasis">
+                <%= link_to 'Ver Historias Clinicas ', paciente_historias_clinicas_path(@paciente), :class =>'btn btn-primary color_blanco principal' %></div>
+            </div>
+          </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-4 emphasis">
-                        <%= link_to 'Ver Historias Clinicas ', paciente_historias_clinicas_path(@paciente), :class => 'btn btn-primary color_blanco principal' %> 
-                    </div>
-                </div>
-            </div>  
-
-            <br/>
-            <br/>
-            <br/>
+          <br/>
+          <br/>
+          <br/>
         </div>
+      </div>
     </div>
-</div>
-<style type="text/css">
+    <style type="text/css">
     @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
     
 body {
@@ -220,4 +215,3 @@ span.tags {
     z-index: 10;
 }
 </style>
-

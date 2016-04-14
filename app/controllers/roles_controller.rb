@@ -12,37 +12,29 @@ class RolesController < ApplicationController
       format.json
     end
   end
-  # GET /blogs/1
-  # GET /blogs/1.json
+
   def show
     @rol = Rol.find(params[:id])
   end
 
-  # GET /epss/new
   def new
     @rol = Rol.new
   end
 
-  # GET /epss/1/edit
   def edit
     @rol = Rol.find(params[:id])
   end
 
-  # POST /epss
-  # POST /epss.json
   def create
     @rol = Rol.new(rol_params)
     render :action => :new unless @rol.save
   end
-
-
 
   def update
     @rol = Rol.find(params[:id])
     render :action => :edit unless @rol.update_attributes(rol_params)
   end
  
-
   def update
     @rol = Rol.find(params[:id])
     render :action => :edit unless @rol.update_attributes(rol_params)
@@ -53,7 +45,6 @@ class RolesController < ApplicationController
     @rol.destroy
   end
   
-
   private
   def set_rol
     @rol = Rol.find(params[:id])

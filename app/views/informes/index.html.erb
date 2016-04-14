@@ -9,16 +9,14 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
-    <script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+<script>
       $(function() {
         $('.chosen-select').chosen();
         $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
       });
     </script>
-
-
 
 <style type="text/css">
 
@@ -76,7 +74,6 @@ input {margin-bottom: 10px;}
 .mar{margin-bottom: 0px!important}
 
 </style>
-
 
 <script type="text/javascript">
 
@@ -239,50 +236,28 @@ $(document).ready(function() {
 }); // end ready
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style type="text/css" media="screen">
  .text-center{
   font-size: 15px;
  }
 </style>
 
-
 <br/>
 <div class="container-fluid">
-    <div class="row">
+	<div class="row">
 
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4 class="text-center">
-                       <i class="fa fa-user-md"></i> Actividades Medicas
-                    </h4>
-                </div>
-                <div class="panel-body text-center">
+		<div class="col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 class="text-center"> <i class="fa fa-user-md"></i>
+						Actividades Medicas
+					</h4>
+				</div>
+				<div class="panel-body text-center">
 
-                  <%= form_tag( {:action => 'mensual_actividades_medicas', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup")  do  %>
-
-
-
-<script type="text/javascript">
+					<%= form_tag( {:action =>
+					'mensual_actividades_medicas', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup")  do  %>
+					<script type="text/javascript">
 $(document).ready(function(){
     $('#aeropuerto > option[value="196"]').attr('selected', 'selected');
     $('#aeropuerto2 > option[value="196"]').attr('selected', 'selected');
@@ -292,43 +267,34 @@ $(document).ready(function(){
 });
 </script>
 
-<script>
+					<script>
   $(document).ready(function() { $("#aeropuerto").select2(); });
 </script>
 
+					<div class="well clearfix mar">
+						<div class="row">
+							<div class="col-md-12">
+								<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
+									<option value="196">ELDORADO</option>
+									<option value="271">OLAYA HERRERA</option>
+									<option value="309">JOSE MARIA CORDOVA</option>
+									<option value="4011">CARREÑO-GERMAN OLANO</option>
+									<option value="184">ANTONIO ROLDAN BETANCOURT</option>
+									<option value="280">LOS GARZONES</option>
+									<option value="2119">LAS BRUJAS</option>
+									<option value="2220">SIMON BOLIVAR</option>
+									<option value="4112">ALMIRANTE PADILLA</option>
+									<option value="343">ALFONSO LOPEZ P.</option>
+									<option value="2123">CAMILO DAZA</option>
+									<option value="4001">PALONEGRO</option>
+									<option value="191">YARIGUIES</option>
+								</select>
 
-
-
-
-
-                  <div class="well clearfix mar">
-                  <div class="row">
-                    <div class="col-md-12">
-<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
-<option value="196"> ELDORADO</option>
-<option value="271">OLAYA HERRERA</option>
-<option value="309">JOSE MARIA CORDOVA</option>
-<option value="4011">CARREÑO-GERMAN OLANO</option>
-<option value="184">ANTONIO ROLDAN BETANCOURT</option>
-<option value="280">LOS GARZONES</option>
-<option value="2119">LAS BRUJAS</option>
-<option value="2220">SIMON BOLIVAR</option>
-<option value="4112">ALMIRANTE PADILLA</option>
-<option value="343">ALFONSO LOPEZ P.</option>
-<option value="2123">CAMILO DAZA</option>
-<option value="4001">PALONEGRO</option>
-<option value="191">YARIGUIES</option>
-</select>
-
-
-
-
-
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
+								<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+								<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+								<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+								<link rel="stylesheet" href="/resources/demos/style.css">
+								<script>
   $(function() {
     $( "#fecha3" ).datepicker();
     $( "#fecha4" ).datepicker();
@@ -341,308 +307,268 @@ $(document).ready(function(){
 
   });
   </script>
- 
 
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox3,params[:searchbox3],:size =>5,  id: 'fecha3', class: 'form-control required' %></div>
 
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox33,params[:searchbox33],:size =>5,  id: 'fecha4', class: 'form-control required' %></div>
+						</div>
 
+					</div>
 
-                    </div>
-                  </div>
-                  <br/>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox3,params[:searchbox3],:size => 5,  id: 'fecha3', class: 'form-control required' %>
+				</div>
 
-                    </div>
+				<div class="panel-footer" align="center">
 
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox33,params[:searchbox33],:size => 5,  id: 'fecha4', class: 'form-control required' %>
-                    </div>
-                  </div>
-
-                  </div>
-
-                </div>
-
-                <div class="panel-footer" align="center">
-
-                  <%= button_tag( :class => "btn btn-info btn-sm color_blanco", type: "submit") do %>
+					<%= button_tag( :class =>
+					"btn btn-info btn-sm color_blanco", type: "submit") do %>
                     Generar Informe <i class="fa fa-file-pdf-o"></i>
-                  <% end %>
-                </div>
-                <% end %>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4 class="text-center">
-                       <i class="fa fa-stethoscope"></i> Procedimientos  Medicos Y Enfermeria
-                    </h4>
-                </div>
-                <div class="panel-body text-center">
+					<% end %></div>
+				<% end %></div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 class="text-center">
+						<i class="fa fa-stethoscope"></i>
+						Procedimientos  Medicos Y Enfermeria
+					</h4>
+				</div>
+				<div class="panel-body text-center">
 
-
-
-                <script>
+					<script>
                   $(document).ready(function() { $("#aeropuerto2").select2(); });
                 </script>
 
+					<%= form_tag( {:action =>
+					'procedimientos_medicos_enfermeria', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup2")  do  %>
+					<div class="well clearfix mar">
+						<div class="row">
+							<div class="col-md-12">
+								<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
+									<option value="196">ELDORADO</option>
+									<option value="271">OLAYA HERRERA</option>
+									<option value="309">JOSE MARIA CORDOVA</option>
+									<option value="4011">CARREÑO-GERMAN OLANO</option>
+									<option value="184">ANTONIO ROLDAN BETANCOURT</option>
+									<option value="280">LOS GARZONES</option>
+									<option value="2119">LAS BRUJAS</option>
+									<option value="2220">SIMON BOLIVAR</option>
+									<option value="4112">ALMIRANTE PADILLA</option>
+									<option value="343">ALFONSO LOPEZ P.</option>
+									<option value="2123">CAMILO DAZA</option>
+									<option value="4001">PALONEGRO</option>
+									<option value="191">YARIGUIES</option>
+								</select>
 
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox4,params[:searchbox4],:size =>5,  id: 'fecha5', class: 'form-control required' %></div>
 
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox44,params[:searchbox44],:size =>5,  id: 'fecha6', class: 'form-control required' %></div>
+						</div>
 
-                    <%= form_tag( {:action => 'procedimientos_medicos_enfermeria', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup2")  do  %>
+					</div>
 
+				</div>
 
-                  <div class="well clearfix mar">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
-<option value="196"> ELDORADO</option>
-<option value="271">OLAYA HERRERA</option>
-<option value="309">JOSE MARIA CORDOVA</option>
-<option value="4011">CARREÑO-GERMAN OLANO</option>
-<option value="184">ANTONIO ROLDAN BETANCOURT</option>
-<option value="280">LOS GARZONES</option>
-<option value="2119">LAS BRUJAS</option>
-<option value="2220">SIMON BOLIVAR</option>
-<option value="4112">ALMIRANTE PADILLA</option>
-<option value="343">ALFONSO LOPEZ P.</option>
-<option value="2123">CAMILO DAZA</option>
-<option value="4001">PALONEGRO</option>
-<option value="191">YARIGUIES</option>
-</select>
+				<div class="panel-footer" align="center">
+					<%= button_tag( :class =>
+					"btn btn-info btn-sm color_blanco", type: "submit") do %>
+                    Generar Informe
+					<i class="fa fa-file-pdf-o"></i>
+					<% end %></div>
+				<% end %></div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 class="text-center">
+						<i class="fa fa-wheelchair"></i>
+						Pacientes Atendidos Por Empresa
+					</h4>
+				</div>
+				<div class="panel-body text-center">
 
-                    </div>
-                  </div>
-                  <br/>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox4,params[:searchbox4],:size => 5,  id: 'fecha5', class: 'form-control required' %>
-
-                    </div>
-
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox44,params[:searchbox44],:size => 5,  id: 'fecha6', class: 'form-control required' %>
-                    </div>
-                  </div>
-
-                  </div>
-
-                </div>
-
-                <div class="panel-footer" align="center">
-                  <%= button_tag( :class => "btn btn-info btn-sm color_blanco", type: "submit") do %>
-                    Generar Informe <i class="fa fa-file-pdf-o"></i>
-                  <% end %>
-                </div>
-                <% end %>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4 class="text-center">
-                       <i class="fa fa-wheelchair"></i> Pacientes Atendidos Por Empresa
-                    </h4>
-                </div>
-                <div class="panel-body text-center">
-
-
-
-                <script>
+					<script>
                   $(document).ready(function() { $("#aeropuerto3").select2(); });
                 </script>
 
+					<%= form_tag( {:action =>
+					'pacientes_atendidos_por_empresas', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup3")  do  %>
+					<div class="well clearfix mar">
+						<div class="row">
+							<div class="col-md-12">
 
+								<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
+									<option value="196">ELDORADO</option>
+									<option value="271">OLAYA HERRERA</option>
+									<option value="309">JOSE MARIA CORDOVA</option>
+									<option value="4011">CARREÑO-GERMAN OLANO</option>
+									<option value="184">ANTONIO ROLDAN BETANCOURT</option>
+									<option value="280">LOS GARZONES</option>
+									<option value="2119">LAS BRUJAS</option>
+									<option value="2220">SIMON BOLIVAR</option>
+									<option value="4112">ALMIRANTE PADILLA</option>
+									<option value="343">ALFONSO LOPEZ P.</option>
+									<option value="2123">CAMILO DAZA</option>
+									<option value="4001">PALONEGRO</option>
+									<option value="191">YARIGUIES</option>
+								</select>
 
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox,params[:searchbox],:size =>5,  id: 'fecha7', class: 'form-control required' %></div>
 
-                    <%= form_tag( {:action => 'pacientes_atendidos_por_empresas', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup3")  do  %>
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox2,params[:searchbox2],:size =>5,  id: 'fecha8', class: 'form-control required' %></div>
+						</div>
 
+					</div>
 
-                  <div class="well clearfix mar">
-                  <div class="row">
-                    <div class="col-md-12">
-                    
+				</div>
 
+				<div class="panel-footer" align="center">
+					<%= button_tag( :class =>
+					"btn btn-info btn-sm color_blanco", type: "submit") do %>
+                    Generar Informe
+					<i class="fa fa-file-pdf-o"></i>
+					<% end %></div>
+				<% end %></div>
+		</div>
+		<hr>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 class="text-center">
+						<img src="http://www.aerocivil.gov.co/_catalogs/masterpage/aerocivil2011/images/identidad100x.png" style="width: 16px;">Aerocivil</h4>
+				</div>
+				<div class="panel-body text-center">
 
-<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
-<option value="196"> ELDORADO</option>
-<option value="271">OLAYA HERRERA</option>
-<option value="309">JOSE MARIA CORDOVA</option>
-<option value="4011">CARREÑO-GERMAN OLANO</option>
-<option value="184">ANTONIO ROLDAN BETANCOURT</option>
-<option value="280">LOS GARZONES</option>
-<option value="2119">LAS BRUJAS</option>
-<option value="2220">SIMON BOLIVAR</option>
-<option value="4112">ALMIRANTE PADILLA</option>
-<option value="343">ALFONSO LOPEZ P.</option>
-<option value="2123">CAMILO DAZA</option>
-<option value="4001">PALONEGRO</option>
-<option value="191">YARIGUIES</option>
-</select>
-
-                    </div>
-                  </div>
-                  <br/>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox,params[:searchbox],:size => 5,  id: 'fecha7', class: 'form-control required' %>
-
-                    </div>
-
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox2,params[:searchbox2],:size => 5,  id: 'fecha8', class: 'form-control required' %>
-                    </div>
-                  </div>
-
-                  </div>
-
-                </div>
-
-                <div class="panel-footer" align="center">
-                  <%= button_tag( :class => "btn btn-info btn-sm color_blanco", type: "submit") do %>
-                    Generar Informe <i class="fa fa-file-pdf-o"></i>
-                  <% end %>
-                </div>
-                <% end %>
-            </div>
-        </div>
-      <hr><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4 class="text-center">
-                       <img src="http://www.aerocivil.gov.co/_catalogs/masterpage/aerocivil2011/images/identidad100x.png" style="width: 16px;"> Aerocivil
-                    </h4>
-                </div>
-                <div class="panel-body text-center">
-
-
-
-                <script>
+					<script>
                   $(document).ready(function() { $("#aeropuerto4").select2(); });
                 </script>
 
+					<%= form_tag( {:action =>
+					'aerocivil', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup4")  do  %>
+					<div class="well clearfix mar">
+						<div class="row">
+							<div class="col-md-12">
 
-                <%= form_tag( {:action => 'aerocivil', :format => :pdf}, :method => :get, :target => '_blank', :id => "signup4")  do  %>
+								<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
+									<option value="196">ELDORADO</option>
+									<option value="271">OLAYA HERRERA</option>
+									<option value="309">JOSE MARIA CORDOVA</option>
+									<option value="4011">CARREÑO-GERMAN OLANO</option>
+									<option value="184">ANTONIO ROLDAN BETANCOURT</option>
+									<option value="280">LOS GARZONES</option>
+									<option value="2119">LAS BRUJAS</option>
+									<option value="2220">SIMON BOLIVAR</option>
+									<option value="4112">ALMIRANTE PADILLA</option>
+									<option value="343">ALFONSO LOPEZ P.</option>
+									<option value="2123">CAMILO DAZA</option>
+									<option value="4001">PALONEGRO</option>
+									<option value="191">YARIGUIES</option>
+								</select>
 
+							</div>
+						</div>
 
+						<br/>
+						<div class="row">
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox,params[:searchbox],:size =>5,  id: 'fecha9', class: 'form-control required' %></div>
 
-                  <div class="well clearfix mar">
-                  <div class="row">
-                                      <div class="col-md-12">
+							<div class="col-md-6">
+								<%= text_field_tag :searchbox2,params[:searchbox23],:size =>5,  id: 'fecha10', class: 'form-control required' %></div>
+						</div>
 
+					</div>
 
+				</div>
 
-<select class="form-control required" id="aeropuerto" title="Campo Obligatorio" selected="selected" name="nombre[id]">
-<option value="196"> ELDORADO</option>
-<option value="271">OLAYA HERRERA</option>
-<option value="309">JOSE MARIA CORDOVA</option>
-<option value="4011">CARREÑO-GERMAN OLANO</option>
-<option value="184">ANTONIO ROLDAN BETANCOURT</option>
-<option value="280">LOS GARZONES</option>
-<option value="2119">LAS BRUJAS</option>
-<option value="2220">SIMON BOLIVAR</option>
-<option value="4112">ALMIRANTE PADILLA</option>
-<option value="343">ALFONSO LOPEZ P.</option>
-<option value="2123">CAMILO DAZA</option>
-<option value="4001">PALONEGRO</option>
-<option value="191">YARIGUIES</option>
-</select>
+				<div class="panel-footer" align="center">
+					<%= button_tag( :class =>
+					"btn btn-info btn-sm color_blanco", type: "submit") do %>
+                    Generar Informe
+					<i class="fa fa-file-pdf-o"></i>
+					<% end %></div>
+				<% end %></div>
+		</div>
 
+		<div class="col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 class="text-center">
+						<i class="fa fa-users"></i>
+						Usuarios
+					</h4>
+				</div>
+				<div class="panel-body text-center">
 
-                    </div>
-                  </div>
+					<%= form_tag( {:action =>
+					'usuarios', :format => :pdf}, :method => :get, :target => '_blank')  do  %>
+				</div>
 
+				<div class="panel-footer" align="center">
 
-                  <br/>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox,params[:searchbox],:size => 5,  id: 'fecha9', class: 'form-control required' %>
+					<%= button_tag( :class =>
+					"btn btn-info btn-sm color_blanco", type: "submit") do %>
+                    Generar Informe
+					<i class="fa fa-file-pdf-o"></i>
+					<% end %></div>
+				<% end %></div>
+		</div>
 
-                    </div>
+		<div class="col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 class="text-center">
+						<i class="fa fa-users"></i>
+						Doctores
+					</h4>
+				</div>
+				<div class="panel-body text-center">
 
-                    <div class="col-md-6">
-                      <%= text_field_tag :searchbox2,params[:searchbox23],:size => 5,  id: 'fecha10', class: 'form-control required' %>
-                    </div>
-                  </div>
+					<%= form_tag( {:action =>
+					'doctores', :format => :pdf}, :method => :get, :target => '_blank')  do  %>
+				</div>
 
-                  </div>
+				<div class="panel-footer" align="center">
 
+					<%= button_tag( :class =>
+					"btn btn-info btn-sm color_blanco", type: "submit") do %>
+                    Generar Informe
+					<i class="fa fa-file-pdf-o"></i>
+					<% end %></div>
+				<% end %></div>
+		</div>
 
-
-                </div>
-
-                <div class="panel-footer" align="center">
-                  <%= button_tag( :class => "btn btn-info btn-sm color_blanco", type: "submit") do %>
-                    Generar Informe <i class="fa fa-file-pdf-o"></i>
-                  <% end %>
-                </div>
-                <% end %>
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4 class="text-center">
-                       <i class="fa fa-users"></i> Usuarios
-                    </h4>
-                </div>
-                <div class="panel-body text-center">
-
-                    <%= form_tag( {:action => 'usuarios', :format => :pdf}, :method => :get, :target => '_blank')  do  %>
-
-                </div>
-
-                <div class="panel-footer" align="center">
-
-                  <%= button_tag( :class => "btn btn-info btn-sm color_blanco", type: "submit") do %>
-                    Generar Informe <i class="fa fa-file-pdf-o"></i>
-                  <% end %>
-                </div>
-                <% end %>
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h4 class="text-center">
-                       <i class="fa fa-users"></i> Doctores
-                    </h4>
-                </div>
-                <div class="panel-body text-center">
-
-                    <%= form_tag( {:action => 'doctores', :format => :pdf}, :method => :get, :target => '_blank')  do  %>
-
-                </div>
-
-                <div class="panel-footer" align="center">
-
-                  <%= button_tag( :class => "btn btn-info btn-sm color_blanco", type: "submit") do %>
-                    Generar Informe <i class="fa fa-file-pdf-o"></i>
-                  <% end %>
-                </div>
-                <% end %>
-            </div>
-        </div>
-
-
-    </div>
+	</div>
 </div>
 
-
-<style type="text/css" media="screen">
-.lead { font-size: 33px;margin-bottom:0px; }
-</style>
-
-
-
-
+<style type="text/css" media="screen">.lead { font-size: 33px;margin-bottom:0px; }</style>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
@@ -674,4 +600,3 @@ $("#fecha9").datepicker();
 $("#fecha10").datepicker();
 });
 </script>
-

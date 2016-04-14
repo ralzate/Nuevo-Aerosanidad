@@ -2,28 +2,20 @@ class ProcedimientosController < ApplicationController
   before_action :set_procedimiento, only: [:show, :edit, :update, :destroy]
   before_action :authorize
 
-  # GET /procedimientos
-  # GET /procedimientos.json
   def index
     @procedimientos = Procedimiento.all
   end
 
-  # GET /procedimientos/1
-  # GET /procedimientos/1.json
   def show
   end
 
-  # GET /procedimientos/new
   def new
     @procedimiento = Procedimiento.new
   end
 
-  # GET /procedimientos/1/edit
   def edit
   end
 
-  # POST /procedimientos
-  # POST /procedimientos.json
   def create
     @procedimiento = Procedimiento.new(procedimiento_params)
 
@@ -38,8 +30,6 @@ class ProcedimientosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /procedimientos/1
-  # PATCH/PUT /procedimientos/1.json
   def update
     respond_to do |format|
       if @procedimiento.update(procedimiento_params)
@@ -52,8 +42,6 @@ class ProcedimientosController < ApplicationController
     end
   end
 
-  # DELETE /procedimientos/1
-  # DELETE /procedimientos/1.json
   def destroy
     @procedimiento.destroy
     respond_to do |format|
@@ -63,12 +51,10 @@ class ProcedimientosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_procedimiento
       @procedimiento = Procedimiento.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def procedimiento_params
       params.require(:procedimiento).permit(:tratamiento, :via_acceso, :descripcion, :glucometria1, :glucometria2, :electrocardiograma)
     end

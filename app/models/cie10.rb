@@ -13,6 +13,6 @@
 class Cie10 < ActiveRecord::Base
 
   has_many :historias_clinicas
-	has_many :diagnosticos 
+  has_many :diagnosticos 
 
 end

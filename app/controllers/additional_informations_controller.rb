@@ -1,30 +1,21 @@
 class AdditionalInformationsController < ApplicationController
-  # before_action :set_additional_information, only: [:show, :edit, :update, :destroy]
   before_action :set_member
 
-  # GET /additional_informations
-  # GET /additional_informations.json
   def index
     @additional_informations = @clinic_history.additional_informations.all
 
   end
 
-  # GET /additional_informations/1
-  # GET /additional_informations/1.json
   def show
   end
 
-  # GET /additional_informations/new
   def new
     @additional_information = AdditionalInformation.new
   end
 
-  # GET /additional_informations/1/edit
   def edit
   end
 
-  # POST /additional_informations
-  # POST /additional_informations.json
   def create
     @additional_information = AdditionalInformation.new(additional_information_params)
     @additional_information.clinic_history_id = @clinic_history.id
@@ -58,8 +49,6 @@ class AdditionalInformationsController < ApplicationController
 
 
 
-  # DELETE /personal_histories/1
-  # DELETE /personal_histories/1.json
   def destroy
     @personal_history.destroy
     respond_to do |format|
@@ -72,13 +61,11 @@ class AdditionalInformationsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_member
       @clinic_history = ClinicHistory.find(params[:clinic_history_id])
       @additional_information = AdditionalInformation.find(params[:id]) if params[:id]
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def additional_information_params
       params.require(:additional_information).permit(:analysis, :print_diagnosed, :plan_and_treatment, :observations_recommendations)
     end

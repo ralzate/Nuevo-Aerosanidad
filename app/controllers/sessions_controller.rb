@@ -19,9 +19,6 @@ class SessionsController < ApplicationController
     end
   end
 
-
-  
-
   def destroy
     logout
     flash[:success] = "Cerraste Sesión"

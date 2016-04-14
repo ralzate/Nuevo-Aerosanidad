@@ -13,38 +13,30 @@ class CiudadesController < ApplicationController
       format.json
     end
   end
-  # GET /blogs/1
-  # GET /blogs/1.json
+
   def show
     @ciudad = Ciudad.find(params[:id])
   end
 
-  # GET /Ciudads/new
   def new
     @ciudad = Ciudad.new
     
   end
 
-  # GET /Ciudads/1/edit
   def edit
     @ciudad = Ciudad.find(params[:id])
   end
 
-  # POST /Ciudads
-  # POST /Ciudads.json
   def create
     @ciudad = Ciudad.new(ciudad_params)
     render :action => :new unless @ciudad.save
   end
-
-
 
   def update
     @ciudad = Ciudad.find(params[:id])
     render :action => :edit unless @ciudad.update_attributes(ciudad_params)
   end
  
-
   def update
     @ciudad = Ciudad.find(params[:id])
     render :action => :edit unless @ciudad.update_attributes(ciudad_params)
@@ -55,7 +47,6 @@ class CiudadesController < ApplicationController
     @ciudad.destroy
   end
   
-
   private
   def set_ciudad
     @ciudad = Ciudad.find(params[:id])

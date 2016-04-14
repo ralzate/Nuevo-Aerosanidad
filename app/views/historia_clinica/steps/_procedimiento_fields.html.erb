@@ -3,28 +3,21 @@
 <br/>
 <div class="nested-fields">
   <div class="container-fluid">
-      <div class="well clearfix inicio">
+    <div class="well clearfix inicio">
       <div class="row">
         <div class="col-md-3">
-          <%= f.text_field :tratamiento, class: 'form-control', :placeholder => "Tratamiento" %>
-        </div>
+          <%= f.text_field :tratamiento, class: 'form-control', :placeholder =>"Tratamiento" %></div>
 
         <div class="col-md-3">
 
-          <%= f.text_field :via_acceso, class: 'form-control', :placeholder => "Via Acceso" %>
-
-        </div>
+          <%= f.text_field :via_acceso, class: 'form-control', :placeholder =>"Via Acceso" %></div>
 
         <div class="col-md-3">
-            
-          <%= f.text_field :descripcion, class: 'form-control', :placeholder => "Descripción" %>
 
-        </div>
+          <%= f.text_field :descripcion, class: 'form-control', :placeholder =>"Descripción" %></div>
 
         <div class="col-md-3">
-          <%= link_to_remove_association 'Eliminar', f, :class => "btn btn-danger color_blanco custom btn-sm" %>
-
-        </div>
+          <%= link_to_remove_association 'Eliminar', f, :class =>"btn btn-danger color_blanco custom btn-sm" %></div>
 
       </div>
 
@@ -46,4 +39,3 @@
 }
 
 </style>
-

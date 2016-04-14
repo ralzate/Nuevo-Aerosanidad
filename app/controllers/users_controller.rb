@@ -4,8 +4,6 @@ class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:new, :create, :show]
   before_action :authorize, only: [:index, :destroy, :new, :create]
 
-  # GET /users
-  # GET /users.json
   def index
 
     @users = User.search(params[:search]).page(params[:page]).per_page(20)
@@ -16,15 +14,12 @@ class UsersController < ApplicationController
       format.pdf do
         pdf = UsersPdf.new(
           @usuarios)
-        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition => "inline"
+        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf', :disposition =>
+  "inline"
       end
     end
-
-
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     
     if current_user.rol_id == 1
@@ -44,12 +39,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
     if current_user.rol_id != 1
       if current_user.id != @user.id
@@ -74,8 +67,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -90,8 +81,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
@@ -117,11 +106,10 @@ class UsersController < ApplicationController
 
   private
     def set_user
-          @user = User.find(params[:id])
+      @user = User.find(params[:id])
 
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:aprobado_login, :nombre_usuario, :nombres, :apellidos , :tipo_documento, :documento, :rol_id,
       :registro_medico, :email, :password, :password_confirmation, :avatar)

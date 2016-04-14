@@ -1,28 +1,20 @@
 class PaisesController < ApplicationController
   before_action :set_pais, only: [:show, :edit, :update, :destroy]
 
-  # GET /paises
-  # GET /paises.json
   def index
     @paises = Pais.all
   end
 
-  # GET /paises/1
-  # GET /paises/1.json
   def show
   end
 
-  # GET /paises/new
   def new
     @pais = Pais.new
   end
 
-  # GET /paises/1/edit
   def edit
   end
 
-  # POST /paises
-  # POST /paises.json
   def create
     @pais = Pais.new(pais_params)
 
@@ -37,8 +29,6 @@ class PaisesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /paises/1
-  # PATCH/PUT /paises/1.json
   def update
     respond_to do |format|
       if @pais.update(pais_params)
@@ -51,8 +41,6 @@ class PaisesController < ApplicationController
     end
   end
 
-  # DELETE /paises/1
-  # DELETE /paises/1.json
   def destroy
     @pais.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class PaisesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_pais
       @pais = Pais.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def pais_params
       params.require(:pais).permit(:nombre)
     end

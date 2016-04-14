@@ -1,5 +1,4 @@
 class AeropuertosController < ApplicationController
- # before_action :set_ciudad, only: [:show, :edit, :update, :destroy]
   before_action :authorize
 
   respond_to :html
@@ -12,25 +11,20 @@ class AeropuertosController < ApplicationController
       format.json
     end
   end
-  # GET /blogs/1
-  # GET /blogs/1.json
+
   def show
     @aeropuerto = Aeropuerto.find(params[:id])
   end
 
-  # GET /Ciudads/new
   def new
     @aeropuerto = Aeropuerto.new
     @aeropuerto.historias_clinicas.build
   end
 
-  # GET /aeropuertos/1/edit
   def edit
     @aeropuerto = Aeropuerto.find(params[:id])
   end
 
-  # POST /Ciudads
-  # POST /Ciudads.json
   def create
     @aeropuerto = Aeropuerto.new(aeropuerto_params)
     render :action => :new unless @aeropuerto.save

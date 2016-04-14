@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %></p>
 
 <h1>Listing Diagnosticos</h1>
 
@@ -17,15 +18,19 @@
 
   <tbody>
     <% @diagnosticos.each do |diagnostico| %>
-      <tr>
-        <td><%= diagnostico.historia_clinica_id %></td>
-        <td><%= diagnostico.cie10_id %></td>
-        <td><%= link_to 'Show', diagnostico %></td>
-        <td><%= link_to 'Edit', edit_diagnostico_path(diagnostico) %></td>
-        <td><%= link_to 'Destroy', diagnostico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tr>
+      <td>
+        <%= diagnostico.historia_clinica_id %></td>
+      <td>
+        <%= diagnostico.cie10_id %></td>
+      <td>
+        <%= link_to 'Show', diagnostico %></td>
+      <td>
+        <%= link_to 'Edit', edit_diagnostico_path(diagnostico) %></td>
+      <td>
+        <%= link_to 'Destroy', diagnostico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %></tbody>
 </table>
 
 <br>

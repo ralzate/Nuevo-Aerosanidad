@@ -1,32 +1,23 @@
 class PacientesController < ApplicationController
   before_action :set_paciente, only: [:show, :edit, :update, :destroy]
-
   # before_filter :find_paciente_clinic_histories
-  # GET /pacientes
-  # GET /pacientes.json
+
   def index
     @pacientes = Paciente.search(params[:search]).page(params[:page]).per_page(20)
   end
 
-  # GET /pacientes/1
-  # GET /pacientes/1.json
   def show
   end
 
-  # GET /pacientes/new
   def new
     @paciente = Paciente.new
    # @paciente.build_ciudad
-
   end
 
-  # GET /pacientes/1/edit
   def edit
 
   end
 
-  # POST /pacientes
-  # POST /pacientes.json
   def create
     @paciente = Paciente.new(paciente_params)
     if @paciente.email.blank?
@@ -43,8 +34,6 @@ class PacientesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pacientes/1
-  # PATCH/PUT /pacientes/1.json
   def update
 
     respond_to do |format|
@@ -59,8 +48,6 @@ class PacientesController < ApplicationController
     end
   end
 
-  # DELETE /pacientes/1
-  # DELETE /pacientes/1.json
   def destroy
     @paciente.destroy
     respond_to do |format|
@@ -70,13 +57,11 @@ class PacientesController < ApplicationController
   end
 
     private
-    # Use callbacks to share common setup or constraints between actions.
     def set_paciente
       @paciente = Paciente.find(params[:id])
 
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def paciente_params
       params.require(:paciente).permit!
     end

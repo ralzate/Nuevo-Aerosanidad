@@ -1,22 +1,19 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Aerosanidad</title>
+  <title>Aerosanidad</title>
 
-    <!-- Bootstrap Core CSS -->
+  <!-- Bootstrap Core CSS -->
 
-<style>
+  <style>
 /*!
  * Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -256,31 +253,28 @@ ul.alert-dropdown {
 }
 
   </style>
-    <!-- Morris Charts CSS -->
+  <!-- Morris Charts CSS -->
 
-<style>
+  <style>
 .morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
 .morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
   </style>
-    <!-- Custom Fonts -->
+  <!-- Custom Fonts -->
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+  <div id="wrapper">
 
-
-
-<style>
+    <style>
 .navbar-inverse{
   background-color: #2e353d !important;
 }
@@ -296,60 +290,57 @@ ul.alert-dropdown {
 
   </style>
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
+        <%= link_to  root_path, class: "color-negro" do %>
+        <a class="navbar-brand">
+          Aerosanidad
+          <span class="title">
+            Virtual <i class="fa fa-heartbeat "></i>
+          </span>
+        </a>
+        <% end %></div>
+      <!-- Top Menu Items -->
+      <ul class="nav navbar-right top-nav">
 
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user"></i>
+            <%= truncate(current_user.nombres, :length =>
+            12) %>
+            <%= truncate(current_user.apellidos, :length =>
+            12) %> <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
 
+            <li class="divider"></li>
 
-  <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <li>
 
+              <%= link_to  edit_user_path(current_user) do %>
+              <i class="fa fa-fw fa-user-plus"></i>
+              Actualizar mi información
+              <% end %></li>
 
+            <li>
 
+              <%= link_to  logout_path do %>
+              <i class="fa fa-fw fa-power-off"></i>
+              Cerrar Sesión
+              <% end %></li>
+          </ul>
+        </li>
+      </ul>
 
-<%= link_to  root_path, class: "color-negro" do %>
-                <a class="navbar-brand">Aerosanidad <span class="title"> Virtual <i class="fa fa-heartbeat "></i> </span></a>
-<% end %>
-
-
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  <%= truncate(current_user.nombres, :length => 12) %> <%= truncate(current_user.apellidos, :length => 12) %> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-
-                        <li class="divider"></li>
-
-                      <li>
-
-                      <%= link_to  edit_user_path(current_user) do %>
-                          <i class="fa fa-fw fa-user-plus"></i>Actualizar mi información
-                      <% end %>
-                      </li>
-
-
-                      <li>
-
-                      <%= link_to  logout_path do %>
-                          <i class="fa fa-fw fa-power-off"></i>Cerrar Sesión
-                      <% end %>
-
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-            <style>
+      <style>
             .color-negro{
               color:  #fff !important;
             }
@@ -365,108 +356,95 @@ ul.alert-dropdown {
 
 
             </style>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
+      <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
 
-                    <li class="active">
-                      <% if current_user.rol_id == 1 %>                    
-                        <%= link_to  graficas_path, class: "color-negro" do %>
-                            <i class="fa fa-fw fa-home"></i> Dashboard
-                        <% end %>
-                      <% end %>
-                    </li>
+          <li class="active">
+            <% if current_user.rol_id == 1 %>
+            <%= link_to  graficas_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-home"></i>
+            Dashboard
+            <% end %>
+            <% end %></li>
 
+          <li>
 
-              
-                    <li>
+            <%= link_to  root_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-home"></i>
+            Inicio
+            <% end %></li>
 
-                      <%= link_to  root_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-home"></i> Inicio
-                      <% end %>
-                    </li>
+          <li>
+            <% if current_user.rol_id == 1 %>
+            <%= link_to  epses_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-building-o"></i>
+            Eps
+            <% end %></li>
 
-                    <li>
-                      <% if current_user.rol_id == 1 %>
-                      <%= link_to  epses_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-building-o"></i> Eps
-                      <% end %>
-                    </li>
+          <li>
 
-                    <li>
+            <%= link_to  arles_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-building"></i>
+            Arl
+            <% end %></li>
 
-                      <%= link_to  arles_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-building"></i> Arl
-                      <% end %>
-                    </li>
+          <li>
 
+            <%= link_to  aeropuertos_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-plane"></i>
+            Aeropuertos
+            <% end %></li>
 
-                    <li>
+          <li>
 
-                      <%= link_to  aeropuertos_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-plane"></i> Aeropuertos
-                      <% end %>
-                    </li>
+            <%= link_to  ciudades_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-sitemap"></i>
+            Ciudades
+            <% end %></li>
 
+          <li>
 
-                    <li>
+            <%= link_to  users_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-user-plus"></i>
+            Usuarios
+            <% end %></li>
 
-                      <%= link_to  ciudades_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-sitemap"></i> Ciudades
-                      <% end %>
-                    </li>
+          <li>
 
+            <%= link_to  roles_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-users"></i>
+            Roles
+            <% end %></li>
 
-                    <li>
+          <% end %>
 
-                      <%= link_to  users_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-user-plus"></i> Usuarios
-                      <% end %>
-                    </li>
+          <li>
 
+            <%= link_to  pacientes_path, class: "color-negro" do %>
+            <i class="fa fa-fw fa-wheelchair"></i>
+            Pacientes
+            <% end %></li>
+          <% if current_user.rol_id == 1 %>
 
+          <li class="color-negro">
 
-                    <li>
+            <%= link_to  info_link_path, class: "color-negro", method: :get  do %>
+            <i class="fa fa-fw fa-bar-chart"></i>
+            Informes
+            <% end %></li>
+          <% end %>
 
-                      <%= link_to  roles_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-users"></i> Roles
-                      <% end %>
-                    </li>
+          <li class="my-logo">
+            <%= link_to image_tag('Logo/logo.png',:size =>"140x70", :class =>"ember-view"), root_path %></li>
+        </ul>
 
+      </div>
+      <!-- /.navbar-collapse --> </nav>
 
-<% end %>
+    <div id="page-wrapper">
 
+      <div class="container-fluid">
 
-                    <li>
-
-                      <%= link_to  pacientes_path, class: "color-negro" do %>
-                          <i class="fa fa-fw fa-wheelchair"></i> Pacientes
-                      <% end %>
-                    </li>
-                <% if current_user.rol_id == 1 %>
-
-                        <li class="color-negro">
-
-                       <%= link_to  info_link_path, class: "color-negro", method: :get  do %>
-                           <i class="fa fa-fw fa-bar-chart"></i> Informes
-                       <% end %>
-
-                     </li>
-                <% end %>
-
-                    <li class="my-logo"><%= link_to image_tag('Logo/logo.png',:size => "140x70", :class =>"ember-view"), root_path %></li>
-                </ul>
-
-
-
-
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
+        <!-- Page Heading -->
+        <div class="row">

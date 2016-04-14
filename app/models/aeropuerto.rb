@@ -10,7 +10,6 @@
 #  updated_at   :datetime         not null
 #
 
-
 class Aeropuerto < ActiveRecord::Base
   belongs_to :ciudad
   has_many :historias_clinicas
@@ -19,19 +18,13 @@ class Aeropuerto < ActiveRecord::Base
 
   has_many :historias_clinicas, :class_name => "HistoriaClinica", :foreign_key => "cie10_id"
 
-
-
-
-
 	#validates :nombre, :presence => {:message => 'Name cannot be blank, Task not saved'}
 	
 
   #validates :ciudad_id, :presence => {:message => 'Name cannot be blank, Task not saved'}
 	#validates :departamento, :presence => {:message => 'Name cannot be blank, Task not saved'}
 
-
-
-   def self.search(search)
+  def self.search(search)
     where("nombre like '%#{search}%'  or departamento like '%#{search}%'")
   end
 

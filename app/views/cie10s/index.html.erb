@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %></p>
 
 <h1>Listing Cie10s</h1>
 
@@ -14,16 +15,21 @@
 
   <tbody>
     <% @cie10s.each do |cie10| %>
-      <tr>
-        <td><%= cie10.familia %></td>
-        <td><%= cie10.codigo %></td>
-        <td><%= cie10.descripcion %></td>
-        <td><%= link_to 'Show', cie10 %></td>
-        <td><%= link_to 'Edit', edit_cie10_path(cie10) %></td>
-        <td><%= link_to 'Destroy', cie10, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tr>
+      <td>
+        <%= cie10.familia %></td>
+      <td>
+        <%= cie10.codigo %></td>
+      <td>
+        <%= cie10.descripcion %></td>
+      <td>
+        <%= link_to 'Show', cie10 %></td>
+      <td>
+        <%= link_to 'Edit', edit_cie10_path(cie10) %></td>
+      <td>
+        <%= link_to 'Destroy', cie10, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %></tbody>
 </table>
 
 <br>

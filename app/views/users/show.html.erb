@@ -1,12 +1,6 @@
-
-
-
-
-
-
-<div class="container-fluid">            
-    <div id="loginbox" style = "margin-top: 30px;" class="mainbox col-md-12 col-sm-12"> 
-        <style type="text/css">
+<div class="container-fluid">
+  <div id="loginbox" style = "margin-top: 30px;" class="mainbox col-md-12 col-sm-12">
+    <style type="text/css">
             @import url(https://fonts.googleapis.com/css?family=Roboto);
             @import url(https://fonts.googleapis.com/css?family=Montserrat);
             .panel-heading {
@@ -32,113 +26,110 @@
 
         </style>
 
+  </div>
 
-  
-
-
-    </div>
-
-
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-<div class="container-fluid">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 col-lg-12">
-         <div class="well profile">
-            <div class="col-sm-12">
-                <div class="col-xs-12 col-sm-9" style="margin-top: 30px;">
-                    <h2><%= @user.nombres %> <%= @user.apellidos %></h2>
-                    <table class="table table-striped custab  table-hover">
+      <div class="col-md-12 col-lg-12">
+        <div class="well profile">
+          <div class="col-sm-12">
+            <div class="col-xs-12 col-sm-9" style="margin-top: 30px;">
+              <h2>
+                <%= @user.nombres %>
+                <%= @user.apellidos %></h2>
+              <table class="table table-striped custab  table-hover">
 
-                                <tr>
-                                    <th style="width:50%;">Nombres:</th>
-                                    <td style="width:50%;"><%= @user.nombres %> </td>
-                                    
-   
-                                </tr>
-                                <tr>
-                                    <th style="width:50%;">Apellidos:</th>
-                                    <td style="width:50%;"><%= @user.apellidos %> </td>
-                                </tr>
-                                <tr>
-                                    <th>Tipo De Identificación:</th>
-                                    <td><%= @user.tipo_documento %></td>
-                                    
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Identificación</th>
-                                    <td><%= @user.documento %></td>
-                                </tr>
+                <tr>
+                  <th style="width:50%;">Nombres:</th>
+                  <td style="width:50%;">
+                    <%= @user.nombres %></td>
 
-                                <tr>
-                                    <th>Email:</th>
-                                    <td><%= @user.email  %></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Rol:</th>
-                                    <td><%= @user.rol.nombre %></td>
-                                </tr>
-                                <tr>
-                                    <th>Registro Medico:</th>
-                                    <th><%= @user.registro_medico  %></th>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Nombre Usuario:</th>
-                                    <th><%= @user.nombre_usuario %></th>
-                                </tr>
+                </tr>
+                <tr>
+                  <th style="width:50%;">Apellidos:</th>
+                  <td style="width:50%;">
+                    <%= @user.apellidos %></td>
+                </tr>
+                <tr>
+                  <th>Tipo De Identificación:</th>
+                  <td>
+                    <%= @user.tipo_documento %></td>
 
-                            </table>
-                </div>             
-               <style>
+                </tr>
+                <tr>
+                  <th>Identificación</th>
+                  <td>
+                    <%= @user.documento %></td>
+                </tr>
+
+                <tr>
+                  <th>Email:</th>
+                  <td>
+                    <%= @user.email  %></td>
+
+                </tr>
+                <tr>
+                  <th>Rol:</th>
+                  <td>
+                    <%= @user.rol.nombre %></td>
+                </tr>
+                <tr>
+                  <th>Registro Medico:</th>
+                  <th>
+                    <%= @user.registro_medico  %></th>
+
+                </tr>
+                <tr>
+                  <th>Nombre Usuario:</th>
+                  <th>
+                    <%= @user.nombre_usuario %></th>
+                </tr>
+
+              </table>
+            </div>
+            <style>
                 .img-thumbnail{
                     width: 100px !important;
                     height: 100px !important;
                     margin-left: 30px;
                 }
                </style>
-                <div class="col-xs-12 col-sm-3 text-center">
-                    <figure>
-                    <% if @user.avatar.exists? %>
-                    <%= image_tag @user.avatar.url(:medium), :class => 'img-thumbnail'  %>
-                    <% else %>
-                    <%= image_tag("Logo/logo.png", :alt => "Logo", :class => "img-thumbnail") %>
-                    <% end %>
-                    </figure>
-                </div>
-            </div>            
-            <div class="col-xs-12 divider text-center">
-                <div class="col-xs-4 col-sm-4 emphasis">
-<br/>
-<% if current_user.rol_id == 1 %>
-                        <%= link_to "Regresar", users_path(), :class => 'btn btn-primary  color_blanco principal' %>
-<% else %>
-                        <%= link_to "Inicio", root_path(), :class => 'btn btn-primary  color_blanco principal' %>
-<% end %>
-
-                </div>
-                <div class="col-xs-4 col-sm-4 emphasis">
-                <br/>
-
-                        <%= link_to ' Editar Usuario',  edit_user_path(), :class => 'btn btn-primary  color_blanco principal'  %>
-
-                </div>
-                                <div class="col-xs-4 col-sm-4 emphasis">
-                                <br/>
-                    <%= link_to ' Nuevo Usuario',  new_user_path(), :class => 'btn btn-primary  color_blanco principal'  %>
-
-
-                </div>
-
+            <div class="col-xs-12 col-sm-3 text-center">
+              <figure>
+                <% if @user.avatar.exists? %>
+                <%= image_tag @user.avatar.url(:medium), :class =>
+                'img-thumbnail'  %>
+                <% else %>
+                <%= image_tag("Logo/logo.png", :alt =>
+                "Logo", :class => "img-thumbnail") %>
+                <% end %></figure>
             </div>
-         </div>                 
+          </div>
+          <div class="col-xs-12 divider text-center">
+            <div class="col-xs-4 col-sm-4 emphasis">
+              <br/>
+              <% if current_user.rol_id == 1 %>
+              <%= link_to "Regresar", users_path(), :class =>
+              'btn btn-primary  color_blanco principal' %>
+              <% else %>
+              <%= link_to "Inicio", root_path(), :class =>
+              'btn btn-primary  color_blanco principal' %>
+              <% end %></div>
+            <div class="col-xs-4 col-sm-4 emphasis">
+              <br/>
+
+              <%= link_to ' Editar Usuario',  edit_user_path(), :class =>'btn btn-primary  color_blanco principal'  %></div>
+            <div class="col-xs-4 col-sm-4 emphasis">
+              <br/>
+              <%= link_to ' Nuevo Usuario',  new_user_path(), :class =>'btn btn-primary  color_blanco principal'  %></div>
+
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-</div>
-
-
 
 <style type="text/css">
     @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
@@ -222,35 +213,6 @@ span.tags {
     z-index: 10;
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);

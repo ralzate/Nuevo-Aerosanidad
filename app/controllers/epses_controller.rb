@@ -14,36 +14,28 @@ class EpsesController < ApplicationController
       format.json
     end
   end
-  # GET /blogs/1
-  # GET /blogs/1.json
+
   def show
     @eps = Eps.find(params[:id])
   end
 
-  # GET /epss/new
   def new
     @eps = Eps.new
   end
 
-  # GET /epss/1/edit
   def edit
     @eps = Eps.find(params[:id])
   end
 
-  # POST /epss
-  # POST /epss.json
   def create
     @eps = Eps.new(eps_params)
     render :action => :new unless @eps.save
   end
 
-
-
   def update
     @eps = Eps.find(params[:id])
     render :action => :edit unless @eps.update_attributes(eps_params)
   end
-
 
   def update
     @eps = Eps.find(params[:id])
@@ -54,7 +46,6 @@ class EpsesController < ApplicationController
     @eps = eps.find(params[:id])
     @eps.destroy
   end
-
 
   private
   def set_eps

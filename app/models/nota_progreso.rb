@@ -16,9 +16,6 @@
 #  cantidad_procedimientos                 :string
 #
 
-
-
-
 class NotaProgreso < ActiveRecord::Base
   belongs_to :historia_clinica
   belongs_to :user

@@ -1,27 +1,21 @@
 
-<script>
-$( ".chosen-default" ).text( "Selecciona una Ciudad." );
-</script>
+<script>$( ".chosen-default" ).text( "Selecciona una Ciudad." );</script>
 
 <div class="col-md-12" style = "margin:25px!important">
-<% if current_user && current_user.rol_id == 1 %>
+  <% if current_user && current_user.rol_id == 1 %>
 
-    <%= link_to "Listado de Usuarios",  users_path, :class => "btn btn-info color_blanco  pull-left" %>
-<% end %>
-
-  </div>
+  <%= link_to "Listado de Usuarios",  users_path, :class =>
+  "btn btn-info color_blanco  pull-left" %>
+  <% end %></div>
 
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
 <div class="container-fluid">
 
-    <div id="loginbox" class="mainbox col-md-12 col-sm-12">
+  <div id="loginbox" class="mainbox col-md-12 col-sm-12">
 
-
-
-
-      <style type="text/css">
+    <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Roboto);
       @import url(https://fonts.googleapis.com/css?family=Montserrat);
       .panel-heading {
@@ -47,160 +41,113 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 
       </style>
 
-
-
-
-
-
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
-
-
-        <div class="panel-heading">
-            <div class="panel-title">
-            <span style = "margin-right:10px;"class="glyphicon glyphicon-user"></span>Datos Usuario
-            </div>
-        </div>
-
-
-
-
-
-
-
+    <div class="panel-heading">
+      <div class="panel-title">
+        <span style = "margin-right:10px;"class="glyphicon glyphicon-user"></span>
+        Datos Usuario
+      </div>
+    </div>
 
     <div class="container-fluid navbar navbar-default" style = "margin-bottom:0px!importan">
       <div class="row">
-            <%= simple_form_for(@user, :html => { :class => 'contact-form', :id => 'contact-form',  multipart: true }) do |f| %>
+        <%= simple_form_for(@user, :html =>
+        { :class => 'contact-form', :id => 'contact-form',  multipart: true }) do |f| %>
+        <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %>prohibited this pet from being saved:</h2>
 
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %></li>
+            <% end %></ul>
+        </div>
+        <% end %>
 
+        <div class="row">
 
+          <div class="col-md-3">
+            <label class="label">Nombres</label>
+            <div class="form-group">
+              <%= f.text_field :nombres, class: "form-control ", placeholder: 'Nombres',  id: 'document'  %></div>
+          </div>
 
+          <div class="col-md-3">
+            <label class="label">Apellidos</label>
+            <div class="form-group">
+              <%= f.text_field :apellidos, class: "form-control ", placeholder: 'Apellidos',  id: 'document'  %></div>
+          </div>
 
-
-
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this pet from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-
-
-
-
-
-                <div class="row">
-
-
-
-
-
-                  <div class="col-md-3">
-                    <label class="label">Nombres</label>
-                    <div class="form-group">
-                        <%= f.text_field :nombres, class: "form-control ", placeholder: 'Nombres',  id: 'document'  %>
-                    </div>
-                  </div>
-
-<div class="col-md-3">
-                    <label class="label">Apellidos</label>
-                    <div class="form-group">
-                        <%= f.text_field :apellidos, class: "form-control ", placeholder: 'Apellidos',  id: 'document'  %>
-                    </div>
-                  </div>
-
-
-
-
-                  <div class="col-md-3">
-                    <label class="label">Tipo Documento</label>
-                    <div class="form-group">
-                      <%= f.input :tipo_documento,
+          <div class="col-md-3">
+            <label class="label">Tipo Documento</label>
+            <div class="form-group">
+              <%= f.input :tipo_documento,
                               prompt:       'Seleccionar un Documento',
                               collection: @user.select_document.sort,
                               error: false, label: false,
                               input_html:   {class: 'form-control'},
-                              required: true  %>
-                    </div>
-                  </div>
+                              required: true  %></div>
+          </div>
 
+          <div class="col-md-3">
+            <label class="label">Documento</label>
+            <div class="form-group">
+              <%= f.number_field :documento, class: "form-control ", placeholder: 'Documento',  id: 'document'  %></div>
+          </div>
 
+        </div>
 
-                <div class="col-md-3">
-                    <label class="label">Documento</label>
-                    <div class="form-group">
-                        <%= f.number_field :documento, class: "form-control ", placeholder: 'Documento',  id: 'document'  %>
-                    </div>
-                  </div>
+        <div class="row">
 
-</div>
+          <%  if current_user.rol_id == 1 %>
+          <div class="col-md-3">
+            <label class="label">Rol</label>
+            <div class="form-group" id="tagtype">
 
-                <div class="row">
+              <%= f.collection_select :rol_id, Rol.all, :id, :nombre, {prompt: "Campo Obligatorio"}, {class: "form-control"} %></div>
+          </div>
+          <% end %>
 
-<%  if current_user.rol_id == 1 %>
-                  <div class="col-md-3">
-                    <label class="label">Rol</label>
-                    <div class="form-group" id="tagtype">
+          <div class="col-md-3">
+            <label class="label ">Registro Medico</label>
+            <div class="form-group">
 
-                      <%= f.collection_select :rol_id, Rol.all, :id, :nombre, {prompt: "Campo Obligatorio"}, {class: "form-control"} %>
+              <%= f.text_field :registro_medico, class: 'ng-binding form-control multiples', placeholder: 'Registro Medico' %></div>
+          </div>
 
-                    </div>
-                  </div>
-<% end %>
+          <div class="col-md-3">
+            <label class="label">Email</label>
+            <div class="form-group">
+              <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %></div>
+          </div>
 
+          <div class="col-md-3" style="margin-top:16px;">
 
+            <!-- image-preview-filename input [CUT FROM HERE]-->
+            <div class="input-group image-preview">
+              <input type="text" class="form-control image-preview-filename" disabled="disabled">
+              <!-- don't give a name === doesn't send on POST/GET -->
+              <span class="input-group-btn">
+                <!-- image-preview-clear button -->
+                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  Limpiar
+                </button>
+                <!-- image-preview-input -->
+                <div class="btn btn-default image-preview-input">
+                  <span class="glyphicon glyphicon-folder-open"></span>
+                  <span class="image-preview-input-title">Seleccionar</span>
+                  <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                  <!-- rename it --> </div>
+              </span>
+            </div>
+            <!-- /input-group image-preview [TO HERE]--> </div>
 
-
-                  <div class="col-md-3">
-                    <label class="label ">Registro Medico</label>
-                    <div class="form-group">
-
-                      <%= f.text_field :registro_medico, class: 'ng-binding form-control multiples', placeholder: 'Registro Medico' %>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <label class="label">Email</label>
-                    <div class="form-group">
-                      <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
-                    </div>
-                  </div>
-
-
-
-                <div class="col-md-3" style="margin-top:16px;">
-
-                      <!-- image-preview-filename input [CUT FROM HERE]-->
-                      <div class="input-group image-preview">
-                          <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                          <span class="input-group-btn">
-                              <!-- image-preview-clear button -->
-                              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                  <span class="glyphicon glyphicon-remove"></span> Limpiar
-                              </button>
-                              <!-- image-preview-input -->
-                              <div class="btn btn-default image-preview-input">
-                                  <span class="glyphicon glyphicon-folder-open"></span>
-                                  <span class="image-preview-input-title">Seleccionar</span>
-                                  <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                              </div>
-                          </span>
-                      </div><!-- /input-group image-preview [TO HERE]-->
-
-                </div>
-
-
-<style>
+          <style>
 .container{
     margin-top:20px;
 }
@@ -228,7 +175,7 @@ $( ".chosen-default" ).text( "Selecciona una Ciudad." );
 }
   </style>
 
-<script type="text/javascript">
+          <script type="text/javascript">
   $(document).on('click', '#close-preview', function(){
     $('.image-preview').popover('hide');
     // Hover befor close the preview
@@ -289,136 +236,90 @@ $(function() {
 });
 </script>
 
+        </div>
 
+        <div class="row">
 
+          <div class="col-md-3">
+            <label class="label">Nombre de Usuario</label>
+            <div class="form-group">
+              <%= f.text_field :nombre_usuario, class: "form-control ", placeholder: 'Nombre de Usuario',  id: 'document'  %></div>
+          </div>
 
-                </div>
-
-
-
-                <div class="row">
-
-             <div class="col-md-3">
-                    <label class="label">Nombre de Usuario</label>
-                    <div class="form-group">
-                        <%= f.text_field :nombre_usuario, class: "form-control ", placeholder: 'Nombre de Usuario',  id: 'document'  %>
-                    </div>
-                  </div>
-
-
-                  <div class="col-md-3">
-                    <label class="label">Contraseña</label>
-      <%= f.password_field :password, class: 'form-control', :id => 'password3', :autocomplete => :yes %>
-
-      <div class="row">
-      <div class="col-sm-12">
-      <span id="8char" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Minimo 8 Caracteres<br>
-      <span id="ucase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Una Letra en Mayuscula
-      </div>
-      <div class="col-sm-12">
-      <span id="lcase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Una Letra en Minuscula<br>
-</div>
-
-      <div class="col-sm-12">
-      <span id="num" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Un Numero
-      </div>
-      </div>
-
-    </div>
-
-
-
-        <div class="col-md-3">
-          <label class="label">Confirmar Contraseña</label>
-            <%= f.password_field :password_confirmation, class: 'form-control', :id => 'password4' %>
+          <div class="col-md-3">
+            <label class="label">Contraseña</label>
+            <%= f.password_field :password, class: 'form-control', :id =>
+            'password3', :autocomplete => :yes %>
             <div class="row">
               <div class="col-sm-12">
-                <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Las Contraseñas Concuerdan
+                <span id="8char" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
+                Minimo 8 Caracteres
+                <br>
+                <span id="ucase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
+                Una Letra en Mayuscula
+              </div>
+              <div class="col-sm-12">
+                <span id="lcase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
+                Una Letra en Minuscula
+                <br></div>
+
+              <div class="col-sm-12">
+                <span id="num" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
+                Un Numero
               </div>
             </div>
 
+          </div>
 
-
-
-        </div>
-
-
-
-<% if current_user.rol_id == 1 %>
-
-
-                  <div class="col-md-3">
-                    <label class="label">Autorizado Para Ingresar</label><br/>
-
-                Si <%= f.radio_button(:aprobado_login, "Si", class: "required requerido", :title => "Debes Seleccionar una Opción", id: 'myRadio' )%>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                No <%= f.radio_button(:aprobado_login, "No", class: "required requerido", :title => "Debes Seleccionar una Opción", id: 'myRadio' )%>
-
-
-    </div>
-    <% end %>
-
-
-
-    </div>
-
-
-<br/>
-
-
-
-
-
-                <div class="well pie_form">
-                  <% if not @user.errors.any? %>
-
-                      <div class="form-actions"  style = "text-align:center!important">
-
-                        <%= link_to "Regresar", users_path, :class=>"btn btn-info color_blanco custom" %>
-
-
-                      <% end %>
-
-                      <button type="reset" class="btn btn btn-info custom" style = "margin-right:20px;margin-left:20px;">Borrar</button>
-                      <%= f.submit "Guardar", :class => 'btn btn btn-info  custom' %>
-
-                </div>
+          <div class="col-md-3">
+            <label class="label">Confirmar Contraseña</label>
+            <%= f.password_field :password_confirmation, class: 'form-control', :id =>
+            'password4' %>
+            <div class="row">
+              <div class="col-sm-12">
+                <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
+                Las Contraseñas Concuerdan
               </div>
+            </div>
 
+          </div>
 
+          <% if current_user.rol_id == 1 %>
 
+          <div class="col-md-3">
+            <label class="label">Autorizado Para Ingresar</label>
+            <br/>
+            Si
+            <%= f.radio_button(:aprobado_login, "Si", class: "required requerido", :title =>
+            "Debes Seleccionar una Opción", id: 'myRadio' )%>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                No
+            <%= f.radio_button(:aprobado_login, "No", class: "required requerido", :title =>"Debes Seleccionar una Opción", id: 'myRadio' )%></div>
+          <% end %></div>
 
+        <br/>
 
+        <div class="well pie_form">
+          <% if not @user.errors.any? %>
 
+          <div class="form-actions"  style = "text-align:center!important">
 
-
+            <%= link_to "Regresar", users_path, :class=>
+            "btn btn-info color_blanco custom" %>
             <% end %>
 
-
+            <button type="reset" class="btn btn btn-info custom" style = "margin-right:20px;margin-left:20px;">Borrar</button>
+            <%= f.submit "Guardar", :class =>'btn btn btn-info  custom' %></div>
         </div>
 
-      </div>
+        <% end %></div>
 
-
-
-
-
-
-
-
-
-
-        </fieldset>
     </div>
-  </div>
+
+  </fieldset>
 </div>
-
-
-
-
-
-
-
+</div>
+</div>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
@@ -451,7 +352,6 @@ jQuery(document).ready(function() {
 });
 </script>
 
-
 <script type="text/javascript">
   $("input[type=password]").keyup(function(){
     var ucase = new RegExp("[A-Z]+");
@@ -473,55 +373,51 @@ jQuery(document).ready(function() {
 });
 </script>
 
-
-
-
-
 <script>
 $("input[type=password]").keyup(function(){
     var ucase = new RegExp("[A-Z]+");
-	var lcase = new RegExp("[a-z]+");
-	var num = new RegExp("[0-9]+");
+  var lcase = new RegExp("[a-z]+");
+  var num = new RegExp("[0-9]+");
 
-	if($("#password3").val().length >= 8){
-		$("#8char").removeClass("glyphicon-remove");
-		$("#8char").addClass("glyphicon-ok");
-		$("#8char").css("color","#00A41E");
-	}else{
-		$("#8char").removeClass("glyphicon-ok");
-		$("#8char").addClass("glyphicon-remove");
-		$("#8char").css("color","#FF0004");
-	}
+  if($("#password3").val().length >= 8){
+    $("#8char").removeClass("glyphicon-remove");
+    $("#8char").addClass("glyphicon-ok");
+    $("#8char").css("color","#00A41E");
+  }else{
+    $("#8char").removeClass("glyphicon-ok");
+    $("#8char").addClass("glyphicon-remove");
+    $("#8char").css("color","#FF0004");
+  }
 
-	if(ucase.test($("#password3").val())){
-		$("#ucase").removeClass("glyphicon-remove");
-		$("#ucase").addClass("glyphicon-ok");
-		$("#ucase").css("color","#00A41E");
-	}else{
-		$("#ucase").removeClass("glyphicon-ok");
-		$("#ucase").addClass("glyphicon-remove");
-		$("#ucase").css("color","#FF0004");
-	}
+  if(ucase.test($("#password3").val())){
+    $("#ucase").removeClass("glyphicon-remove");
+    $("#ucase").addClass("glyphicon-ok");
+    $("#ucase").css("color","#00A41E");
+  }else{
+    $("#ucase").removeClass("glyphicon-ok");
+    $("#ucase").addClass("glyphicon-remove");
+    $("#ucase").css("color","#FF0004");
+  }
 
-	if(lcase.test($("#password3").val())){
-		$("#lcase").removeClass("glyphicon-remove");
-		$("#lcase").addClass("glyphicon-ok");
-		$("#lcase").css("color","#00A41E");
-	}else{
-		$("#lcase").removeClass("glyphicon-ok");
-		$("#lcase").addClass("glyphicon-remove");
-		$("#lcase").css("color","#FF0004");
-	}
+  if(lcase.test($("#password3").val())){
+    $("#lcase").removeClass("glyphicon-remove");
+    $("#lcase").addClass("glyphicon-ok");
+    $("#lcase").css("color","#00A41E");
+  }else{
+    $("#lcase").removeClass("glyphicon-ok");
+    $("#lcase").addClass("glyphicon-remove");
+    $("#lcase").css("color","#FF0004");
+  }
 
-	if(num.test($("#password3").val())){
-		$("#num").removeClass("glyphicon-remove");
-		$("#num").addClass("glyphicon-ok");
-		$("#num").css("color","#00A41E");
-	}else{
-		$("#num").removeClass("glyphicon-ok");
-		$("#num").addClass("glyphicon-remove");
-		$("#num").css("color","#FF0004");
-	}
+  if(num.test($("#password3").val())){
+    $("#num").removeClass("glyphicon-remove");
+    $("#num").addClass("glyphicon-ok");
+    $("#num").css("color","#00A41E");
+  }else{
+    $("#num").removeClass("glyphicon-ok");
+    $("#num").addClass("glyphicon-remove");
+    $("#num").css("color","#FF0004");
+  }
 
 
 });
