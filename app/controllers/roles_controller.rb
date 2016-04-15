@@ -34,11 +34,6 @@ class RolesController < ApplicationController
     @rol = Rol.find(params[:id])
     render :action => :edit unless @rol.update_attributes(rol_params)
   end
- 
-  def update
-    @rol = Rol.find(params[:id])
-    render :action => :edit unless @rol.update_attributes(rol_params)
-  end
 
   def destroy
     @rol = Rol.find(params[:id])

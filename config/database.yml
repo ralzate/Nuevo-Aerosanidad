@@ -4,9 +4,9 @@ development:
   database: Aerosanidad_development
   pool: 5
   username: postgres 
-  password: postgres
+  password: Aerosanidad_2015
   host: localhost
-  port: 5433
+  port: 5432
 
 
 
@@ -16,9 +16,9 @@ test:
   database: Aerosanidad_test
   pool: 5
   username: postgres 
-  password: postgres
+  password: Aerosanidad_2015
   host: localhost
-  port: 5433
+  port: 5432
 
 production:
   adapter: postgresql
@@ -26,6 +26,6 @@ production:
   database: Aerosanidad_production
   pool: 5
   username: postgres
-  password: postgres
+  password: Aerosanidad_2015
   host: localhost
-  port: 5433
+  port: 5432
