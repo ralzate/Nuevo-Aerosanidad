@@ -666,6 +666,18 @@ function edValueKeyPress()
 						</div>
 
 						<br/>
+
+<script>
+function edValueKeyPress()
+{
+  var evento_adverso = document.getElementById("evento_adverso");
+  var s = evento_adverso.value;
+  if (s == '.'){
+    $('#evento_adverso').val('N/A');
+  }
+
+}
+</script>
 						<div class="form-group">
 							<div class="controls">
 								<div class="row">
@@ -677,8 +689,8 @@ function edValueKeyPress()
 
 									<%= f.label :evento_adverso %>
 									<br />
-									<%= f.text_area :e_evento_adverso, class: 'form-control required', :title =>
-									"Es un Campo Obligatorio"  %>
+									<%= f.text_area :e_evento_adverso, class: 'form-control required', :title => "Es un Campo Obligatorio", id: "evento_adverso", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" , placeholder: 'Campo Obligatorio'  %>
+
 									<br/>
 									<br/>
 
@@ -727,7 +739,15 @@ function edValueKeyPress()
 												<%= f.label "Salida Voluntaria" %></td>
 											<td>
 												<%= f.radio_button(:e_estado_paciente, "salida voluntaria" , class: "calc")%></td>
+
+											<td  colspan="1" style = " text-align:right;">
+												<%= f.label "No se otorga aptitud de vuelo" %></td>
+											<td>
+												<%= f.radio_button(:e_estado_paciente, "No se otorga aptitud de vuelo" , class: "calc")%></td>
+
 										</tr>
+
+										
 
 									</thead>
 								</table>
