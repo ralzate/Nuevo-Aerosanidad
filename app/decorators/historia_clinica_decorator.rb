@@ -191,6 +191,7 @@ module HistoriaClinicaDecorator
     [
       ['Ambulancia', 'Ambulancia'],
       ['Comercial', 'Comercial'],
+      ['Charter', 'Charter'],
       ['No Aplica', 'No Aplica'],
     ]
   end

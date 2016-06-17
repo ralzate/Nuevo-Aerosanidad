@@ -554,6 +554,20 @@ function edValueKeyPress()
     $('#telefono').val('N/A');
   }
 
+ var arl = document.getElementById("arl_auto");
+  var s = arl_auto.value;
+  if (s == '.'){
+    $('#arl_auto').val('N/A');
+  }
+
+var eps = document.getElementById("eps_auto");
+  var s = eps_auto.value;
+  if (s == '.'){
+    $('#eps_auto').val('N/A');
+  }
+
+
+
 }
 </script>
 
@@ -572,6 +586,12 @@ function edValueKeyPress()
               <label>Telefono Acompañante:</label>
                 <%= f.input :a_telefono,  :input_html => { :class => 'form-control required', id: "telefono", title: "Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" } , placeholder: 'Campo Obligatorio', label: false  %>
 
+
+
+
+
+
+
           </div>
 
 
@@ -586,8 +606,7 @@ function edValueKeyPress()
           <div class="col-md-4">
                         <label>Arl:</label>
 
-                            <%= f.autocomplete_field :arl, autocomplete_arl_nombre_arles_path, class: 'form-control required', title: "Campo Obligatorio", id: "company", title: "Campo Obligatorio", :onchange => 'changeddl(this)', placeholder: 'Ingresar Arl'  %>
-
+                <%= f.autocomplete_field :arl, autocomplete_arl_nombre_arles_path, class: 'form-control required', id: "arl_auto", title: "Ingresa Arl", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()", :onchange => 'changeddl(this)', placeholder: 'Selecciona una Arl', label: false  %>
 
 
 
@@ -598,7 +617,7 @@ function edValueKeyPress()
                   <label>Eps:</label>
 
 
-                  <%= f.autocomplete_field :eps, autocomplete_eps_nombre_epses_path, class: 'form-control required', title: "Campo Obligatorio", placeholder: 'Ingresar Eps' %>
+                  <%= f.autocomplete_field :eps, autocomplete_eps_nombre_epses_path, class: 'form-control required', title: "Campo Obligatorio", placeholder: 'Selecciona una Eps', id: "eps_auto", title: "Ingresa Arl", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()", :onchange => 'changeddl(this)', placeholder: 'Campo Obligatorio', label: false %>
 
 
               </div>
