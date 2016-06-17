@@ -22,7 +22,7 @@ PetThing::Application.routes.draw do
 
 
   resources :paises
-  resources :cie10s
+  resources :cie10s , :defaults => { :format => :json }
 
   resources :empresas, :path => "empresas"
   resources :procedimientos, :path => "procedimientos"
@@ -102,6 +102,8 @@ PetThing::Application.routes.draw do
 
 
   root to: 'pages#home'
+
+  match "*path" => redirect("/"), via: :get 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

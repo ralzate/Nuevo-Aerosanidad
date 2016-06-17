@@ -1,20 +1,4 @@
 
-
-
-<h2>
-
-  <% #Diagnostico.where(:cie10_id =>
-  2).count %>
-  <% #@diagnosticos.each do |f|  %>
-
-  <% # if f.cie10.familia == "Enfermedades infecciosas y parasitarias." %>
-  <% #@alejo = @alejo + 1  %>
-
-  <% # end %>
-  <% #end %></h2>
-
-<% #@alejo  %>
-
 <style>
 .alert-message
 {
@@ -1144,9 +1128,9 @@
                           <th  style="width:8%;">Codigo</th>
                           <th  colspan="2"  style="width:50%;">Descripción</th>
                         </tr>
-
                         <%  unless @diagnosticos.blank? %>
 
+                       
                         <tr>
                           <td>
                             <%= @historia_clinica.cie10_principal.familia %></td>
@@ -1155,7 +1139,9 @@
                           <td>
                             <%= @historia_clinica.cie10_principal.descripcion.capitalize %></td>
                         </tr>
-                        <% end %></tbody>
+                        <% end %>
+
+                        </tbody>
 
                     </table>
                   </div>
@@ -1191,8 +1177,7 @@
                           <th  colspan="2"  style="width:50%;">Descripción></th>
                         </tr>
 
-                        <%  unless @diagnosticos.blank? %>
-
+           
                         <% @diagnosticos.each do |diagnostico| %>
                         <tr>
                           <td>
@@ -1202,7 +1187,6 @@
                           <td>
                             <%= diagnostico.cie10.descripcion.capitalize %></td>
                         </tr>
-                        <% end %>
                         <% end %></tbody>
 
                     </table>

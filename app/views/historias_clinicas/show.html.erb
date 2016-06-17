@@ -1244,9 +1244,12 @@ Licensed under MIT
 
                               <tbody>
                                   <tr>
+                                  <% if @historia_clinica.cie10 %>
+
                                     <td><%= @historia_clinica.cie10.familia.capitalize %></td>
                                     <td><%= @historia_clinica.cie10.codigo %></td>
                                     <td><%= @historia_clinica.cie10.descripcion.capitalize %></td>
+                                  <% end %>
                                   </tr>
                               </tbody>
 
