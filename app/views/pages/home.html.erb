@@ -609,7 +609,7 @@ background-image: url('/assets/06.jpg')  ;
               <% end %>
               <div >
 
-                <div class="card card-container"  style="border-radius:20px;">
+                <div class="card card-container"  style="border-radius: 4px;">
                   <div class="row">
                     <div class="col-xs-6 col-md-6 col-sm-6">
                       <%= link_to  image_tag('Logo/logo.png', :size =>
@@ -626,11 +626,11 @@ background-image: url('/assets/06.jpg')  ;
 
 }
 </style>
-                    <div class="col-xs-6 col-md-6 col-sm-6"> <i class="glyphicon glyphicon-lock"></i>
+                    <div class="col-xs-6 col-md-6 col-sm-6"> 
+                    <img src="/assets/9-128.png" width="60%" alt="">
                     </div>
                   </div>
 
-                  <hr class="colorgraph">
                   <br>
 
                   <p id="profile-name" class="profile-name-card"></p>
@@ -638,12 +638,10 @@ background-image: url('/assets/06.jpg')  ;
 
                     <%= text_field_tag :nombre_usuario, nil, class: 'form-control', :placeholder =>
                     "Nombres" %>
+                    <br/>
                     <%= password_field_tag :password, nil, class: 'form-control', :placeholder =>
                     "Clave" %>
-                    <div id="remember" class="checkbox">
-                      <label>
-                        <%= check_box_tag :remember_me %>Recordar mis datos</label>
-                    </div>
+                    <br/><br/>
                     <%= submit_tag 'Ingresar', class: 'btn btn-lg btn-primary btn-block btn-signin' %></form>
                   <!-- /form -->
                   <br/>

@@ -123,26 +123,26 @@ $(document).ready(function() {
 
 				<div class="row">
 					<div class="col-md-3">
-						<label class="label">Primer Nombre</label>
+						<label class="label"><b>Primer Nombre</b></label>
 						<div class="form-group">
 
 							<%= f.text_field :primer_nombre, class: "form-control trs1 required", :title =>"Es un Campo Obligatorio", id: '1name'  %></div>
 					</div>
 
 					<div class="col-md-3">
-						<label class="label">Segundo Nombre</label>
+						<label class="label"><b>Segundo Nombre</b></label>
 						<div class="form-group">
 							<%= f.text_field :segundo_nombre, class: "form-control trs2 ", id: '2name' %></div>
 					</div>
 
 					<div class="col-md-3">
-						<label class="label">Primer Apellido</label>
+						<label class="label"><b>Primer Apellido</b></label>
 						<div class="form-group">
 
 							<%= f.text_field :primer_apellido, class: "form-control trs3 required", :title =>"Es un Campo Obligatorio", id: '1surname' %></div>
 					</div>
 					<div class="col-md-3">
-						<label class="label">Segundo Apellido</label>
+						<label class="label"><b>Segundo Apellido</b></label>
 						<div class="form-group">
 							<%= f.text_field :segundo_apellido, class: "form-control trs4", id: '2surname' %></div>
 					</div>
@@ -172,13 +172,13 @@ function edValueKeyPress()
 				<div class="row sir">
 
 					<div class="col-md-4">
-						<label class="label">Email</label>
+						<label class="label"><b>Email / Telefono</b></label>
 						<div class="form-group">
 							<%= f.text_field :email, class: 'form-control', id: "email", :onkeypress =>"edValueKeyPress()", :onkeyup => "edValueKeyPress()" %></div>
 					</div>
 
 					<div class="col-md-4">
-						<label class="label">Tipo Documento</label>
+						<label class="label"><b>Tipo Documento</b></label>
 						<div class="form-group">
 
 							<%= f.input :tipo_documento,
@@ -189,13 +189,13 @@ function edValueKeyPress()
 					</div>
 
 					<div class="col-md-4">
-						<label class="label">Documento</label>
+						<label class="label"><b>Documento</b></label>
 						<div class="form-group">
 							<%= f.text_field :documento, class: "form-control required",  id: 'document', :title =>"Es un Campo Obligatorio"  %></div>
 					</div>
 
 					<div class="col-md-6 sir">
-						<label class="label">Fecha de Nacimiento</label>
+						<label class="label"><b>Fecha de Nacimiento</b></label>
 						<div class="form-group">
 							<%= f.date_select :fecha_nacimiento,{
                         :start_year =>
@@ -212,7 +212,7 @@ function edValueKeyPress()
 					</div>
 
 					<div class="col-md-3 sir">
-						<label class="label">Genero</label>
+						<label class="label"><b>Genero</b></label>
 						<div class="form-group">
 							<%= f.input :genero,
                               prompt:       'Seleccionar',
@@ -222,7 +222,7 @@ function edValueKeyPress()
 					</div>
 
 					<div class="col-md-3 sir">
-						<label class="label">Tipo Sanguineo</label>
+						<label class="label"><b>Tipo Sanguineo</b></label>
 						<div class="form-group">
 							<%= f.input :tipo_sangre,
                           prompt:       'Seleccionar',
@@ -236,7 +236,7 @@ function edValueKeyPress()
 				<div class="row sir">
 
 					<div class="col-md-4">
-						<label class="label">Profesion</label>
+						<label class="label"><b>Profesion</b></label>
 						<div class="form-group">
 
 							<%= f.text_field :profesion, class: "form-control required",  id: 'profesion', :title =>
@@ -245,14 +245,14 @@ function edValueKeyPress()
 					</div>
 
 					<div class="col-md-4">
-						<label class="label">Direccion</label>
+						<label class="label"><b>Direccion</b></label>
 						<div class="form-group">
 							<%= f.text_field :direccion, class: 'form-control fontf required', :title =>"Es un Campo Obligatorio" %></div>
 					</div>
 
 					<div class="col-md-4">
 						<div class="form-group">
-							<label class="label">Nacionalidad</label>
+							<label class="label"><b>Nacionalidad</b></label>
 
 							<%= f.select :nacionalidad, Pais.order('nombre ASC').collect { |u| ["#{u.nombre}", u.nombre] }, { include_blank: true },  { class: 'chosen-select required', :date =>
 							{:placeholder => 'Choose a Country...'} } %>
@@ -276,7 +276,7 @@ $(function() {
 				<div class="row sir">
 
 					<div class="col-md-4">
-						<label class="label">Ciudad</label>
+						<label class="label"><b>Ciudad</b></label>
 						<div class="form-group aa">
 
 							<%= f.autocomplete_field :ciudad, autocomplete_ciudad_nombre_ciudades_path, class: 'form-control required', title: "Campo Obligatorio" %></div>
