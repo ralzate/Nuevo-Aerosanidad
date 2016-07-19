@@ -15,7 +15,7 @@ module HistoriaClinicaDecorator
       ['Atención prehospitalaria', 'Atención prehospitalaria'],
       ['Valoración aptitud de vuelo', 'Valoración aptitud de vuelo'],
       ['Enfermedad general', 'Enfermedad general'],
-      ['Evento laboral', 'Evento laboral'],
+      ['Accidente laboral', 'Accidente laboral'],
       ['Accidente de transito', 'Accidente de transito'],
       ['Traslado', 'Traslado'],
       ['Otro tipo de accidente', 'Otro tipo de accidente'],
@@ -67,6 +67,8 @@ module HistoriaClinicaDecorator
       ['Traumas', 'Traumas'],
       ['Tumorales', 'Tumorales'],
       ['Otros', 'Otros'],
+      ['Post Operatorios Varios', 'Post Operatorios Varios'],
+
     ]
   end
 
@@ -85,7 +87,6 @@ module HistoriaClinicaDecorator
       ['Intoxicacion', 'Intoxicacion'],
       ['Neumonia', 'Neumonia'],
       ['Otalgias Odontalgias', 'Otalgias Odontalgias'],
-      ['Post Operatorios Varios', 'Post Operatorios Varios'],
       ['Quemaduras', 'Quemaduras'],
       ['Recien Nacidos', 'Recien Nacidos'],
       ['Rinofaringitis', 'Rinofaringitis'],
@@ -168,6 +169,7 @@ module HistoriaClinicaDecorator
       ['TRACOMA - 305', 'TRACOMA - 305'],
       ['TUBERCULOSIS - 815', 'TUBERCULOSIS - 815'],
       ['VIGILANCIA INTEGRADA RABIA HUMANA - 307', 'VIGILANCIA INTEGRADA RABIA HUMANA - 307'],
+      ['ZIKA - 895', 'ZIKA - 895'],
       ['NINGUNO', 'NINGUNO']
     ]
   end

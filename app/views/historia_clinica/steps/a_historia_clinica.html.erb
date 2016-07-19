@@ -100,13 +100,9 @@ $(document).ready(function() {
 
 				<% end %>
 
-				<% if @campo5 == true %>
-				<%= link_to "5. Impresión Diagnostica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=>
-				"btn btn-info color_blanco mrg" %>
-				<% elsif @campo5 == false %>
-				<a class="btn btn-info color_blanco mrg" disabled="disabled">5. Impresión Diagnostica</a>
+				<%= link_to "5. Impresión Diagnostica", paciente_historia_clinica_steps_path(@paciente, @historia_clinica, HistoriaClinica.form_steps.fifth), :class=> "btn btn-info color_blanco mrg" %>
 
-				<% end %></div>
+				</div>
 		</div>
 
 	</div>
@@ -403,7 +399,7 @@ div .help-block{
 
           <div class="col-md-4 aa">
               <label>Condición:</label>
-              <%= f.select :a_condicion, [ 'Pasajero', 'Tripulante', 'Empleado', 'Visitante', 'Otro' ], {},  {class: "form-control required", id: "myselect", title: "Campo Obligatorio"} %>
+              <%= f.select :a_condicion, [ 'Conductor', 'Empleado', 'Pasajero', 'Peatón', 'Tripulante', 'Visitante' ], {},  {class: "form-control required", id: "myselect", title: "Campo Obligatorio"} %>
 
           </div>
 

@@ -23,5 +23,7 @@ class PagesController < ApplicationController
   def help
   end
 
+  def reportes
+  end
 
 end

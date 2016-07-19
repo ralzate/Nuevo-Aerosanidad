@@ -142,7 +142,7 @@ $(document).ready(function() {
 													<h3 style = "color: #22BDC8;">VII. ANALISIS</h3>
 													<hr class="featurette-divider"></hr>
 
-												<%= f.text_area :e_analisis, class: 'form-control required', :title =>"Es un Campo Obligatorio"  %></div>
+												<%= f.text_area :e_analisis, class: 'form-control required', :title =>"Es un Campo Obligatorio",  :id => "analisis", :onkeyup => "edValueKeyPress()", :onkeyup => "edValueKeyPress()"  %></div>
 
 										</div>
 									</div>
@@ -438,6 +438,8 @@ $(function() {
 								<br/>
 								<br/>
 
+
+
 								<div class="form-group">
 									<div class="controls">
 										<div class="row">
@@ -452,7 +454,7 @@ $(function() {
                               prompt:       'Seleccionar una Opción',
                               collection: @historia_clinica.select_patologia,
                               error: false, label: false, 
-                              input_html:   {class: 'form-control'},
+                              input_html:   {class: 'form-control select', id: 'state'},
                               required: true, :selected =>'1'   %></div>
 												</div>
 
@@ -464,9 +466,26 @@ $(function() {
                               prompt:       'Seleccionar una Opción',
                               collection: @historia_clinica.select_otras_patologias,
                               error: false, label: false, 
-                              input_html:   {class: 'form-control'},
+                              input_html:   {class: 'form-control', id: "province"},
                               required: true, :selected =>'1'   %></div>
 												</div>
+
+
+
+
+
+<script>
+var $state = $('#state'),
+    $province = $('#province');
+$state.change(function() {
+    if ($state.val() == 'Otros') {
+        $province.removeAttr('disabled');
+    } else {
+        $province.attr('disabled', 'disabled').val('');
+    }
+}).trigger('change'); // added trigger to calculate initial state
+</script>
+
 
 												<div class="col-md-3">
 													<label class="label">
@@ -560,8 +579,17 @@ $(function() {
 							</div>
 
 							<script>
+
+
 function edValueKeyPress()
 {
+
+  var analisis = document.getElementById("analisis");
+  var s = analisis.value;
+  if (s == '.'){
+    $('#analisis').val('N/A');
+  } 
+
   var glucometria1 = document.getElementById("glucometria1");
   var s = glucometria1.value;
   if (s == '.'){
@@ -574,27 +602,38 @@ function edValueKeyPress()
     $('#glucometria2').val('N/A');
   } 
 
-
   var hora1 = document.getElementById("hora1");
   var s = hora1.value;
   if (s == '.'){
     $('#hora1').val('N/A');
   } 
 
-
   var hora2 = document.getElementById("hora2");
   var s = hora2.value;
   if (s == '.'){
     $('#hora2').val('N/A');
-  } 
+  }
+
+  var evento_adverso = document.getElementById("evento_adverso");
+  var s = evento_adverso.value;
+  if (s == '.'){
+    $('#evento_adverso').val('N/A');
+  }
+
+  var observaciones = document.getElementById("observaciones");
+  var s = observaciones.value;
+  if (s == '.'){
+    $('#observaciones').val('N/A');
+  }
 
   var electrocardiograma = document.getElementById("electrocardiograma");
   var s = electrocardiograma.value;
   if (s == '.'){
     $('#electrocardiograma').val('N/A');
   } 
-
+  
 }
+
 </script>
 
 							<div class="form-group">
@@ -606,7 +645,7 @@ function edValueKeyPress()
 												<%= f.label :glucometria1 %>
 												<br>
 												<%= f.text_field :e_glucometria1, class: 'form-control required', :title =>
-												"Es un Campo Obligatorio",  :id => "glucometria1", :onkeyup => "edValueKeyPress()"  %>
+												"Es un Campo Obligatorio",  :id => "glucometria1", :onkeyup => "edValueKeyPress()", :onkeyup => "edValueKeyPress()"  %>
 											</div>
 										</div>
 
@@ -624,7 +663,7 @@ function edValueKeyPress()
 												<%= f.label :glucometria2 %>
 												<br>
 												<%= f.text_field :e_glucometria2, class: 'form-control required', :title =>
-												"Es un Campo Obligatorio",  :id => "glucometria2", :onkeyup => "edValueKeyPress()"  %>
+												"Es un Campo Obligatorio",  :id => "glucometria2", :onkeyup => "edValueKeyPress()", :onkeypress => "edValueKeyPress()"  %>
 											</div>
 										</div>
 
@@ -633,7 +672,7 @@ function edValueKeyPress()
 												<%= f.label :hora2 %>
 												<br>
 												<%= f.text_field :e_hora2, class: 'form-control required', :title =>
-												"Es un Campo Obligatorio",  :id => "hora2", :onkeyup => "edValueKeyPress()" %>
+												"Es un Campo Obligatorio",  :id => "hora2", :onkeyup => "edValueKeyPress()", :onkeypress => "edValueKeyPress()" %>
 											</div>
 										</div>
 
@@ -642,13 +681,15 @@ function edValueKeyPress()
 											<div class="field">
 												<%= f.label :electrocardiograma %>
 												<br>
-												<%= f.text_field :e_electrocardiograma, class: 'form-control required', :title =>
-												"Es un Campo Obligatorio",  :id => "electrocardiograma", :onkeyup => "edValueKeyPress()"  %>
+												<%= f.text_field :e_electrocardiograma, class: 'form-control required', :title => "Es un Campo Obligatorio",  :id => "electrocardiograma", :onkeyup => "edValueKeyPress()", :onkeypress => "edValueKeyPress()"  %>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
+
+
 
 							<br/>
 							<div class="form-group">
@@ -659,7 +700,9 @@ function edValueKeyPress()
 											<h3 style = "color: #22BDC8;">X.  OBSERVACIONES / RECOMENDACIONES</h3>
 											<hr class="featurette-divider"></hr>
 
-										<%= f.text_area :e_observaciones_recomendaciones, class: 'form-control required', :title =>"Es un Campo Obligatorio"   %></div>
+										<%= f.text_area :e_observaciones_recomendaciones, class: 'form-control required', :title =>"Es un Campo Obligatorio", id: "observaciones", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()"    %></div>
+
+
 
 								</div>
 							</div>
@@ -667,17 +710,9 @@ function edValueKeyPress()
 
 						<br/>
 
-<script>
-function edValueKeyPress()
-{
-  var evento_adverso = document.getElementById("evento_adverso");
-  var s = evento_adverso.value;
-  if (s == '.'){
-    $('#evento_adverso').val('N/A');
-  }
 
-}
-</script>
+
+
 						<div class="form-group">
 							<div class="controls">
 								<div class="row">

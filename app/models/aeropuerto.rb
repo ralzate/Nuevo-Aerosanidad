@@ -13,6 +13,7 @@
 class Aeropuerto < ActiveRecord::Base
   belongs_to :ciudad
   has_many :historias_clinicas
+  has_many :procedimientos_medicos_y_de_enfermeria
   #has_many :historias_clinicas, :class_name => "HistoriaClinica", :foreign_key => "a_origen"
 
 

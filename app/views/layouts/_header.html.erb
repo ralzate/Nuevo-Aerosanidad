@@ -425,6 +425,9 @@ ul.alert-dropdown {
             <i class="fa fa-fw fa-wheelchair"></i>
             Pacientes
             <% end %></li>
+
+          
+
           <% if current_user.rol_id == 1 %>
 
           <li class="color-negro">
@@ -433,6 +436,31 @@ ul.alert-dropdown {
             <i class="fa fa-fw fa-bar-chart"></i>
             Informes
             <% end %></li>
+
+          <li>
+
+            <%= link_to  reportes_path, class: "color-negro" do %>
+            <i class="fa fa-file-text" aria-hidden="true"></i> 
+            Reportes
+            <% end %></li>
+
+          <% if current_user.rol_id == 1 %>
+
+          <li>
+
+            <%= link_to  emergencias_path, class: "color-negro" do %>
+            <i class="fa fa-ambulance" aria-hidden="true"></i>
+            Emergencias
+            <% end %></li>
+          
+          <li>
+
+            <%= link_to  procedimientos_medicos_y_de_enfermeria_path, class: "color-negro" do %>
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+            Actividades Medicas Y De Enfermeria
+            <% end %></li>
+          <% end %>
+
           <% end %>
 
           <li class="my-logo">

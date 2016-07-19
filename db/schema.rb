@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229150634) do
+ActiveRecord::Schema.define(version: 20160719141714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(version: 20160229150634) do
 
   add_index "diagnosticos", ["cie10_id"], name: "index_diagnosticos_on_cie10_id", using: :btree
   add_index "diagnosticos", ["historia_clinica_id"], name: "index_diagnosticos_on_historia_clinica_id", using: :btree
+
+  create_table "emergencias", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "aeropuerto_id"
+    t.date     "fecha_novedad"
+    t.string   "emergencias"
+    t.text     "notas_de_la_emergencia"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "emergencias", ["aeropuerto_id"], name: "index_emergencias_on_aeropuerto_id", using: :btree
+  add_index "emergencias", ["user_id"], name: "index_emergencias_on_user_id", using: :btree
 
   create_table "empresas", force: :cascade do |t|
     t.string   "nombre"
@@ -366,6 +379,40 @@ ActiveRecord::Schema.define(version: 20160229150634) do
 
   add_index "procedimientos", ["historia_clinica_id"], name: "index_procedimientos_on_historia_clinica_id", using: :btree
 
+  create_table "procedimientos_medicos_y_de_enfermeria", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "aeropuerto_id"
+    t.date     "fecha_novedad"
+    t.integer  "cantidad_acompañamiento_a_pacientes_trasladados_en_ambulancia"
+    t.integer  "cantidad_actividades_de_capacitacion_propias_y_a_otro_personal"
+    t.integer  "cantidad_atencion_de_consultas_medicas"
+    t.integer  "cantidad_atencion_de_llamadas_de_emergencias_de_aeronaves"
+    t.integer  "cantidad_atencion_de_llamadas_de_emergencias_de_pasajeros_tripu"
+    t.integer  "cantidad_atencion_de_pacientes_urgentes"
+    t.integer  "cantidad_atencion_de_pacientes_lesionados_en_el_aeropuerto"
+    t.integer  "cantidad_autorizacion_de_organos_componente_anatomico"
+    t.integer  "cantidad_verificacion_de_cadaveres"
+    t.integer  "cantidad_ambulancias_externas"
+    t.integer  "cantidad_electrocardiogramas"
+    t.integer  "cantidad_glucometria"
+    t.integer  "cantidad_monitoreo_de_pacientes"
+    t.integer  "cantidad_reunion_de_personal_y_administrativas"
+    t.integer  "cantidad_reuniones_administrativas_academicas"
+    t.integer  "cantidad_salida_por_llamadas_de_accidentes_externos"
+    t.integer  "cantidad_servicios_de_ambulancias_de_sanidad"
+    t.integer  "cantidad_servicios_de_silla_de_rueda"
+    t.integer  "cantidad_suminitro_de_medicamentos_iv_im"
+    t.integer  "cantidad_suminitro_de_medicamentos_vo"
+    t.integer  "cantidad_suturas_curaciones_y_lavados"
+    t.integer  "cantidad_terapias_respiratorias_y_nebulizaciones"
+    t.integer  "cantidad_tomas_y_controles_de_tension_arterial"
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+  end
+
+  add_index "procedimientos_medicos_y_de_enfermeria", ["aeropuerto_id"], name: "index_procedimientos_medicos_y_de_enfermeria_on_aeropuerto_id", using: :btree
+  add_index "procedimientos_medicos_y_de_enfermeria", ["user_id"], name: "index_procedimientos_medicos_y_de_enfermeria_on_user_id", using: :btree
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -432,6 +479,8 @@ ActiveRecord::Schema.define(version: 20160229150634) do
   add_foreign_key "aeropuertos", "ciudades"
   add_foreign_key "diagnosticos", "cie10s"
   add_foreign_key "diagnosticos", "historias_clinicas"
+  add_foreign_key "emergencias", "aeropuertos"
+  add_foreign_key "emergencias", "users"
   add_foreign_key "historias_clinicas", "aeropuertos"
   add_foreign_key "historias_clinicas", "cie10s"
   add_foreign_key "historias_clinicas", "users"
@@ -442,5 +491,7 @@ ActiveRecord::Schema.define(version: 20160229150634) do
   add_foreign_key "notas_progreso", "users"
   add_foreign_key "pacientes", "users"
   add_foreign_key "procedimientos", "historias_clinicas"
+  add_foreign_key "procedimientos_medicos_y_de_enfermeria", "aeropuertos"
+  add_foreign_key "procedimientos_medicos_y_de_enfermeria", "users"
   add_foreign_key "products", "users"
 end

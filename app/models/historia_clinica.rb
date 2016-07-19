@@ -161,6 +161,10 @@
 #  latitude                               :float
 #  longitude                              :float
 #  address                                :string
+#  s2_validation                          :boolean
+#  s3_validation                          :boolean
+#  s4_validation                          :boolean
+#  s5_validation                          :boolean
 #
 
 class HistoriaClinica < ActiveRecord::Base

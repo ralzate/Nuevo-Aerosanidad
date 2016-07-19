@@ -1,6 +1,8 @@
 PetThing::Application.routes.draw do
 
   
+  resources :emergencias
+  resources :procedimientos_medicos_y_de_enfermeria
   # Rutas para acceder a los informes
   get 'dashboard1/mapa',  to: 'dashboard1#mapa', as: "mapa"
 
@@ -20,6 +22,7 @@ PetThing::Application.routes.draw do
 
   get 'informes/doctores',  to: 'informes#doctores', as: "doctores"
 
+  get "reportes", :to => "pages#reportes"
 
   resources :paises
   resources :cie10s , :defaults => { :format => :json }

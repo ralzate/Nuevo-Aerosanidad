@@ -14,6 +14,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     inflect.irregular 'nota_progreso', 'notas_progreso'
     inflect.irregular 'cie10', 'cie10s'
     inflect.irregular 'pais', 'paises'
+    inflect.irregular 'procedimiento_medico_y_de_enfermeria', 'procedimientos_medicos_y_de_enfermeria'
+    inflect.irregular 'emergencia', 'emergencias'
 #   inflect.uncountable %w( fish sheep )
 end
 
