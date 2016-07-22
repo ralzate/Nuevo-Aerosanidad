@@ -64,63 +64,49 @@ otros =  HistoriaClinica.where(:patologias => "Otros").where("date(created_at) >
  %>
 
 
-
-
-
-<div>
 <br/>
 <div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle">
+  <div class="row col-md-6 col-md-offset-2 custyle">
     <table style="width:1060px; margin-left: 10px; margin-top:10px;">
-    <tbody cls>
-          <tr >
-              <th class="text-center "   colspan="3" >SECRETARIA SISTEMAS OPERACIONALES- DIRECCION DE SEGURIDAD Y SUPERVISION GRUPO SANIDAD AEROPORTUARIA<br/>
-              INFORME ACTIVIDADES MEDICAS MENSUALES</th>
-              <th  style="width:0.1% !important;" rowspan="3">
-                <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width: 150px; margin-left: 100px; margin-top: -30px;" >
-              </th >
+      <tbody cls>
+        <tr>
+          <th class="text-center "   colspan="3" >SECRETARIA SISTEMAS OPERACIONALES- DIRECCION DE SEGURIDAD Y SUPERVISION GRUPO SANIDAD AEROPORTUARIA<br/>
+          INFORME ACTIVIDADES MEDICAS MENSUALES<br/>AEROPUERTO: <%= $aeropuerto_aerocivil %></th>
+          <th  style="width:0.1% !important;" rowspan="3">
+            <img src="http://www.aerosanidadvirtual.com/assets/Logo/logo.png" style="width: 150px; margin-left: 100px; margin-top: -30px;" >
+          </th >
+        </tr>
+        <tr>
+          <th  style=" text-align: center;">
+          <span style="margin-left: -80px;">TOTAL PACIENTES:   &nbsp;&nbsp;&nbsp;                
+            <%= HistoriaClinica.where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).count %></span>
 
-          </tr>
-
-
-
-              <tr>
-      <th  style=" text-align: center;">
-                <span style="margin-left: -80px;">TOTAL PACIENTES:   &nbsp;&nbsp;&nbsp;                
-                 <%= Paciente.where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).count %></span>
-
-                   <span style="margin-left: 50px;">PERIODO:  &nbsp;&nbsp;&nbsp; <%= $mes %> - <%= $mes2 %></span>
-                </th >
-
-
-                <th  style="text-align: center;" colspan="2">
-                    <span style="margin-left: -500px;">        
-                    AÑO: &nbsp;&nbsp;&nbsp;                   <% t = Time.now %>
-                    <%= t.strftime "%Y" %></span>
-                </th>
-
-          
-            </tr>
-
-
-
-
-    </tbody>
+          <span style="margin-left: 50px;">PERIODO:  &nbsp;&nbsp;&nbsp; <%= $mes %> - <%= $mes2 %></span>
+          </th >
+          <th  style="text-align: center;" colspan="2">
+            <span style="margin-left: -500px;">        
+            AÑO: &nbsp;&nbsp;&nbsp;                   <% t = Time.now %>
+            <%= t.strftime "%Y" %></span>
+          </th>
+        </tr>
+      </tbody>
 
     </table>
-    </div>
+  </div>
 </div>
 
 <%
-hombres =  HistoriaClinica.where(:p_genero => "Masculino").where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
-mujeres =  HistoriaClinica.where(:p_genero => "Femenino").where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
-pasajeros =  HistoriaClinica.where(:a_condicion => "Pasajero").where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
-tripulante = HistoriaClinica.where(:a_condicion => "Tripulante").where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
+
+hombres =  HistoriaClinica.where(:p_genero => "Masculino").where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
+mujeres =  HistoriaClinica.where(:p_genero => "Femenino").where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
+pasajeros =  HistoriaClinica.where(:a_condicion => "Pasajero").where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
+tripulante = HistoriaClinica.where(:a_condicion => "Tripulante").where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
 %>
+
 <div class="container" >
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped table-bordered table-hover dataTable no-footer"
@@ -152,10 +138,10 @@ tripulante = HistoriaClinica.where(:a_condicion => "Tripulante").where("date(cre
 
 
 <%
-internos = HistoriaClinica.where(:a_lugar_de_atencion => "Interno(Sanidad)").where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
-externos = HistoriaClinica.where(:a_lugar_de_atencion => "Externo").where("date(created_at) >= ?", $varAerocivil)
-.where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $aeropuertoAerocivil).count
+internos = HistoriaClinica.where(:a_lugar_de_atencion => "Interno(Sanidad)").where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
+externos = HistoriaClinica.where(:a_lugar_de_atencion => "Externo").where("date(created_at) >= ?", $varAerocivil).where("date(created_at) <= ?", $varAerocivil2).where(:aeropuerto_id => $id_aeropuerto_aerocivil).count
+
 total = internos.to_i + externos.to_i
 %>
 

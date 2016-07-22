@@ -72,6 +72,20 @@ module HistoriaClinicaDecorator
     ]
   end
 
+
+  def select_post_operatorios
+    [
+      ['Post Operatorios Cirugia Plastica', 'Post Operatorios Cirugia Plastica'],
+      ['Post Operatorios Cardiovasculares, Toracicas Y Abdominales', 'Post Operatorios Cardiovasculares, Toracicas Y Abdominales'],
+      ['Post Operatorios Ortopedicos', 'Post Operatorios Ortopedicos'],
+      ['Post Operatorio Otorrino', 'Post Operatorio Otorrino'],
+      ['Post Operatorio Oftalmologico', 'Post Operatorio Oftalmologico'],
+      ['Post Operatorio Neurologico', 'Post Operatorio Neurologico'],
+      ['Otros Post Operatorios', 'Otros Post Operatorios']
+    ]
+  end
+
+
   def select_otras_patologias
     [
       ['Accidente Cerebral', 'Accidente Cerebral'],
