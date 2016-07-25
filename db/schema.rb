@@ -261,6 +261,7 @@ ActiveRecord::Schema.define(version: 20160721163910) do
     t.boolean  "s3_validation"
     t.boolean  "s4_validation"
     t.boolean  "s5_validation"
+    t.integer  "diagnostico_id"
     t.string   "post_operatorios_varios"
   end
 
