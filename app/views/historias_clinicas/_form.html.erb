@@ -319,16 +319,27 @@ div .help-block{
 	        </div>
 
 
+
+
+
+
 	        <div class="col-md-4">
 	            <label>Auxiliar de enfermería:</label>
-	            <%= f.input :a_auxiliar,  :input_html => { class: 'form-control required', title: "Campo Obligatorio", :required => true } , placeholder: 'Campo Obligatorio', label: false  %>
+
+				<%= f.input :a_auxiliar,placeholder: 'Campo Obligatorio', :input_html => { :class => 'form-control fs1 required', id: "auxiliar", :title => "Es un Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" }, label: false %>
+
 	   	 	</div>
+
+
 
 
 
 	          <div class="col-md-4">
 	              <label>Cove:</label>
-	              <%= f.input :a_cove,  :input_html => { class: 'form-control required', title: "Campo Obligatorio" } , placeholder: 'Campo Obligatorio', label: false  %>
+
+				<%= f.input :a_cove,placeholder: 'Campo Obligatorio', :input_html => { :class => 'form-control fs1 required', id: "cove", :title => "Es un Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" }, label: false %>
+
+
 	          </div>
 
 
@@ -342,20 +353,20 @@ div .help-block{
 
     <div class="row">
 
-          <div class="col-md-3">
+          <div class="col-md-4">
 
               <label>Movil/Servicio:</label>
-              <%= f.input :a_movil_servicio,  :input_html => { class: 'form-control required', title: "Campo Obligatorio" }  , placeholder: 'Campo Obligatorio', label: false  %>
 
+				<%= f.input :a_movil_servicio,placeholder: 'Campo Obligatorio', :input_html => { :class => 'form-control fs1 required', id: "movil", :title => "Es un Campo Obligatorio", :onkeypress => "edValueKeyPress()", :onkeyup => "edValueKeyPress()" }, label: false %>
 
 
           </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
         	<label>Tipo De Vuelo</label>
           		<%= f.input :tipo_de_vuelo,
                   prompt:       'Seleccionar una Opción',
-                  collection: @historia_clinica.select_tipo_de_vuelo,
+                  collection: @historia_clinica.select_tipo_de_vuelo, selected: 'Comercial',
                   error: false, label: false,
                   input_html:   {class: 'form-control required'},
                   required: true   %>
@@ -373,7 +384,7 @@ div .help-block{
 
           <div class="col-md-4 aa">
               <label>Condición:</label>
-              <%= f.select :a_condicion, [ 'Conductor', 'Empleado', 'Pasajero', 'Peatón', 'Tripulante', 'Visitante' ], {},  {class: "form-control required", id: "myselect", title: "Campo Obligatorio"} %>
+              <%= f.select :a_condicion, [ 'Pasajero', 'Conductor', 'Empleado', 'Peatón', 'Tripulante', 'Visitante' ], {},  {class: "form-control required", id: "myselect", title: "Campo Obligatorio"} %>
 
           </div>
 
@@ -428,7 +439,7 @@ jQuery(document).ready(function() {
           <div class="col-md-4">
               <label>Tipo Servicio:</label>
                     <%= f.input :a_tipo_servicio,
-                    collection: @historia_clinica.select_type_service.sort,
+                    collection: @historia_clinica.select_type_service.sort, selected: 'Valoración aptitud de vuelo',
                     error: false, label: false,
                     input_html:   {class: 'form-control required', title: "Campo Obligatorio"}, 'aria-required' => 'true' %>
           </div>
@@ -507,11 +518,13 @@ $(function() {
           <div class="col-md-4">
 
 
+
+
  <label>Origen:</label> <br/>
 
 
 
-	          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.nombre] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_origen" } %>
+	          <%= f.select :a_origen, Aeropuerto.all.map { |u| ["#{u.ciudad.nombre.capitalize}, #{u.nombre.capitalize}", u.ciudad] }, { :include_blank => 'Selecciona un aeropuerto'},  { class: 'select2 form-control required', id: "select_origen" } %>
 
 
 
@@ -566,7 +579,24 @@ var eps = document.getElementById("eps_auto");
     $('#eps_auto').val('N/A');
   }
 
+  var auxiliar = document.getElementById("auxiliar");
+  var s = auxiliar.value;
+  if (s == '.'){
+    $('#auxiliar').val('N/A');
+  }
 
+  var cove = document.getElementById("cove");
+  var s = cove.value;
+  if (s == '.'){
+    $('#cove').val('N/A');
+  }
+
+
+  var movil = document.getElementById("movil");
+  var s = movil.value;
+  if (s == '.'){
+    $('#movil').val('N/A');
+  }
 
 }
 </script>

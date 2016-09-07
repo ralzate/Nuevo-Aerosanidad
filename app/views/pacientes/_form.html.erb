@@ -226,7 +226,7 @@ function edValueKeyPress()
 						<div class="form-group">
 							<%= f.input :tipo_sangre,
                           prompt:       'Seleccionar',
-                          collection: @paciente.select_sangre.sort,
+                          collection: @paciente.select_sangre,
                           error: false, label: false, 
                           input_html:   {class: 'form-control fontf required', :title =>"Es un Campo Obligatorio"} %></div>
 					</div>

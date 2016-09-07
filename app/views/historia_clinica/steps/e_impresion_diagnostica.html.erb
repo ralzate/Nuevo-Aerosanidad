@@ -523,10 +523,10 @@ $(function() {
 													<div class="form-group">
 														<%= f.input :accidentes_especiales,
                               prompt:       'Seleccionar una Opción',
-                              collection: @historia_clinica.select_accidentes_especiales,
+                              collection: @historia_clinica.select_accidentes_especiales, selected: 'Ninguno',
                               error: false, label: false, 
                               input_html:   {class: 'form-control'},
-                              required: true, :selected =>'1'   %></div>
+                              required: true  %></div>
 												</div>
 												<br/><br/><br/><br/><br/>
 
@@ -537,10 +537,10 @@ $(function() {
 													<div class="form-group">
 														<%= f.input :notificacion_obligatoria,
                               prompt:       'Seleccionar una Opción',
-                              collection: @historia_clinica.select_notificacion_obligatoria,
+                              collection: @historia_clinica.select_notificacion_obligatoria, selected: 'NINGUNO',
                               error: false, label: false, 
                               input_html:   {class: 'form-control'},
-                              required: true, :selected =>'1'   %></div>
+                              required: true   %></div>
 												</div>
 
 												<div class="col-md-3">
@@ -550,10 +550,10 @@ $(function() {
 													<div class="form-group">
 														<%= f.input :emergencias,
                               prompt:       'Seleccionar una Opción',
-                              collection: @historia_clinica.select_emergencias,
+                              collection: @historia_clinica.select_emergencias, selected: 'Ninguno',
                               error: false, label: false, 
                               input_html:   {class: 'form-control'},
-                              required: true, :selected =>'1'   %></div>
+                              required: true   %></div>
 												</div>
 
 
@@ -606,10 +606,29 @@ $(function() {
 function edValueKeyPress()
 {
 
-  var analisis = document.getElementById("analisis");
-  var s = analisis.value;
+  var tratamiento = document.getElementById("tratamiento");
+  var s = tratamiento.value;
   if (s == '.'){
-    $('#analisis').val('N/A');
+    $('#tratamiento').val('N/A');
+  } 
+
+
+  var via_acceso = document.getElementById("via_acceso");
+  var s = via_acceso.value;
+  if (s == '.'){
+    $('#via_acceso').val('N/A');
+  } 
+
+  var descripcion = document.getElementById("descripcion");
+  var s = descripcion.value;
+  if (s == '.'){
+    $('#descripcion').val('N/A');
+  } 
+
+  var glucometria1 = document.getElementById("glucometria1");
+  var s = glucometria1.value;
+  if (s == '.'){
+    $('#glucometria1').val('N/A');
   } 
 
   var glucometria1 = document.getElementById("glucometria1");

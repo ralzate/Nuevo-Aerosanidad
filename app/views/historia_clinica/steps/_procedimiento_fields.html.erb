@@ -6,17 +6,26 @@
     <div class="well clearfix inicio">
       <div class="row">
         <div class="col-md-3">
-          <%= f.text_field :tratamiento, class: 'form-control', :placeholder =>"Tratamiento" %></div>
+          <%= f.text_field :tratamiento, class: 'form-control required', placeholder: 'Tratamiento',  :id => "tratamiento", :onkeyup => "edValueKeyPress()", :onkeyup => "edValueKeyPress()"  %>
+            
+          </div>
 
         <div class="col-md-3">
 
-          <%= f.text_field :via_acceso, class: 'form-control', :placeholder =>"Via Acceso" %></div>
+          <%= f.text_field :via_acceso, class: 'form-control required', placeholder: 'Via Acceso',  :id => "via_acceso", :onkeyup => "edValueKeyPress()", :onkeyup => "edValueKeyPress()"  %>
+
+
+          </div>
 
         <div class="col-md-3">
 
-          <%= f.text_field :descripcion, class: 'form-control', :placeholder =>"Descripción" %></div>
 
-        <div class="col-md-3">
+          <%= f.text_field :descripcion, class: 'form-control required', placeholder: 'Descripción',  :id => "descripcion", :onkeyup => "edValueKeyPress()", :onkeyup => "edValueKeyPress()"  %>
+          </div>
+
+
+
+        <div class="col-md-2">
           <%= link_to_remove_association 'Eliminar', f, :class =>"btn btn-danger color_blanco custom btn-sm" %></div>
 
       </div>

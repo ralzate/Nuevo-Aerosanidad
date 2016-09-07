@@ -53,10 +53,14 @@ class Paciente < ActiveRecord::Base
   end
 
 
+
+
   def self.search(search)
-    where("primer_nombre like '%#{search}%'  or segundo_nombre like '%#{search}%'
-    or primer_apellido like '%#{search}%'  or segundo_apellido like '%#{search}%'
-    or email like '%#{search}%' or documento like '%#{search}%' or direccion like
+    where("(primer_nombre || ' ' || segundo_nombre || ' ' || primer_apellido  || ' ' || segundo_apellido) like '%#{search}%'  or 
+      segundo_nombre like '%#{search}%' or 
+      segundo_apellido like '%#{search}%' or 
+      email like '%#{search}%' or 
+      documento like '%#{search}%' or direccion like
     '%#{search}%'").order(:id)
   end
 

@@ -5,8 +5,6 @@ class PagesController < ApplicationController
   def home
 
     if params[:search].present?
-        search1 = (params[:search])
-        search = search1.capitalize
         @pacientes = Paciente.search(params[:search]).page(params[:page]).per_page(8)
     end
 

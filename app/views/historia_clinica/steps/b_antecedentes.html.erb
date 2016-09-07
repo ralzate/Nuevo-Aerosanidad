@@ -526,8 +526,14 @@
 					<tbody>
 						<tr id='addr0'>
 
+
+
 							<td>
-								<%= f.text_field :b_eco, class: 'form-control required', placeholder: 'Eco', :id =>"eco", :title => "Es un Campo Obligatorio"  %></td>
+									
+								<%= f.text_field :b_eco, class: 'form-control required', placeholder: 'Eco',  :id =>
+								"eco", :onkeyup => "edValueKeyPress()", :title => "Es un Campo Obligatorio" %>
+
+								</td>
 
 							<td>
 								<%= f.text_field :b_p, class: 'form-control required', placeholder: 'P',  :id =>
@@ -571,10 +577,10 @@ function edValueKeyPress()
 {
 
 
-  var eco = document.getElementById("eco");
-  var s = eco.value;
+  var ciclo = document.getElementById("ciclo");
+  var s = ciclo.value;
   if (s == '.'){
-    $('#eco').val('N/A');
+    $('#ciclo').val('N/A');
   }
 
   var fum = document.getElementById("fum");
@@ -603,11 +609,18 @@ function edValueKeyPress()
   }
 
 
+  var eco = document.getElementById("eco");
+  var s = eco.value;
+  if (s == '.'){
+    $('#eco').val('N/A');
+  }
+  
   var txt2 = document.getElementById("txt2");
   var s = txt2.value;
   if (s == '.'){
     $('#txt2').val('N/A');
   }
+
 
   var txt3 = document.getElementById("txt3");
   var s = txt3.value;
@@ -753,31 +766,23 @@ $(document).ready(function(){
 
 
 
-        $("#eco").attr("readonly", true);
         $('#eco').val('N/A');
 
-        $("#txt2").attr("readonly", true);
         $('#txt2').val('N/A');
 
-        $("#txt3").attr("readonly", true);
         $('#txt3').val('N/A');
 
 
-        $("#txt4").attr("readonly", true);
         $('#txt4').val('N/A');
 
 
-        $("#txt5").attr("readonly", true);
         $('#txt5').val('N/A');
 
-        $("#txt6").attr("readonly", true);
         $('#txt6').val('N/A');
 
 
-        $("#txt7").attr("readonly", true);
         $('#txt7').val('N/A');
 
-        $("#txt8").attr("readonly", true);
         $('#txt8').val('N/A');
 
       }
@@ -1023,7 +1028,7 @@ $('.no_requerido').change(function(){
       $('#text_requerido').removeClass('required');
       $('#text_requerido').removeClass('error');
       $('#text_requerido-error').hide(); 
-       $('#text_requerido').val('N/A').prop('readonly', true);             
+       $('#text_requerido').val('N/A');             
 
   }
 })
@@ -1040,7 +1045,7 @@ $('.no_requerido2').change(function(){
       $('#text_requerido2').removeClass('required');
       $('#text_requerido2').removeClass('error');
       $('#text_requerido2-error').hide(); 
-       $('#text_requerido2').val('N/A').prop('readonly', true);             
+       $('#text_requerido2').val('N/A');             
 
 
   }
@@ -1058,7 +1063,7 @@ $('.no_requerido3').change(function(){
       $('#text_requerido3').removeClass('required');
       $('#text_requerido3').removeClass('error');
       $('#text_requerido3-error').hide(); 
-       $('#text_requerido3').val('N/A').prop('readonly', true);             
+       $('#text_requerido3').val('N/A');             
 
 
   }
@@ -1076,7 +1081,7 @@ $('.no_requerido4').change(function(){
       $('#text_requerido4').removeClass('required');
       $('#text_requerido4').removeClass('error');
       $('#text_requerido4-error').hide(); 
-       $('#text_requerido4').val('N/A').prop('readonly', true);             
+       $('#text_requerido4').val('N/A');             
 
   }
 })
@@ -1093,7 +1098,7 @@ $('.no_requerido5').change(function(){
       $('#text_requerido5').removeClass('required');
       $('#text_requerido5').removeClass('error');
       $('#text_requerido5-error').hide(); 
-       $('#text_requerido5').val('N/A').prop('readonly', true);             
+       $('#text_requerido5').val('N/A');             
 
   }
 })
@@ -1110,7 +1115,7 @@ $('.no_requerido6').change(function(){
       $('#text_requerido6').removeClass('required');
       $('#text_requerido6').removeClass('error');
       $('#text_requerido6-error').hide(); 
-       $('#text_requerido6').val('N/A').prop('readonly', true);             
+       $('#text_requerido6').val('N/A');             
 
   }
 })
@@ -1127,7 +1132,7 @@ $('.no_requerido7').change(function(){
       $('#text_requerido7').removeClass('required');
       $('#text_requerido7').removeClass('error');
       $('#text_requerido7-error').hide(); 
-       $('#text_requerido7').val('N/A').prop('readonly', true);             
+       $('#text_requerido7').val('N/A');             
 
   }
 })
@@ -1144,7 +1149,7 @@ $('.no_requerido8').change(function(){
       $('#text_requerido8').removeClass('required');
       $('#text_requerido8').removeClass('error');
       $('#text_requerido8-error').hide(); 
-       $('#text_requerido8').val('N/A').prop('readonly', true);             
+       $('#text_requerido8').val('N/A');             
 
 
   }
@@ -1162,7 +1167,7 @@ $('.no_requerido9').change(function(){
       $('#text_requerido9').removeClass('required');
       $('#text_requerido9').removeClass('error');
       $('#text_requerido9-error').hide(); 
-       $('#text_requerido9').val('N/A').prop('readonly', true);             
+       $('#text_requerido9').val('N/A');             
 
 
   }

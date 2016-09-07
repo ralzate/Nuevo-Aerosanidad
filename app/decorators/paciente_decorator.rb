@@ -27,15 +27,16 @@ module PacienteDecorator
 
 	def select_sangre
 		[
-      ['O-', 'O-'],
-      ['O+', 'O+'],
       ['A-', 'A-'],
       ['A+', 'A+'],
       ['B-', 'B-'],
       ['B+', 'B+'],
       ['AB-', 'AB-'],
-      ['AB+', 'AB+']
-  	]
+      ['AB+', 'AB+'],            
+      ['O-', 'O-'],
+      ['O+', 'O+'],
+      ['No Especificado', 'No Especificado']
+ 	]
 	end
 
 
