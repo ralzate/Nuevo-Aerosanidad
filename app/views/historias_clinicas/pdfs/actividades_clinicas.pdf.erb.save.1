@@ -206,7 +206,9 @@
 
 <div class="container">
   <div class="row col-md-6 col-md-offset-2 custyle">
-    <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:220% !important; margin-top: 1px; margin-left: -40px;">
+    <table class="table table-striped table-bordered table-hor
+tig
+over dataTable no-footer" style="width:220% !important; margin-top: 1px; margin-left: -40px;">
       <tbody>
         <tr>
           <th class="info" style="width:0.4% !important; text-align: center;">Causa Externa</th>
@@ -414,59 +416,127 @@
 </div>
 
 <%
- 
-  # PATOLOGIAS
 
-  infecciosas = HistoriaClinica.where(:patologias => "Enf. Infecciosas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+  accidente_cerebrales = HistoriaClinica.where(:otras_patologias => "Accidente Cerebral")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  parasit = HistoriaClinica.where(:patologias => "E. Parasit").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
-  .where(:aeropuerto_id =>  $aeropuertoMensuales).count
+  sistema_muscular = HistoriaClinica.where(:patologias => "E. Sistema Muscular")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  tumorales = HistoriaClinica.where(:patologias => "Tumorales").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  endocr = HistoriaClinica.where(:patologias => "E. Endocr. Nutr Metab").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  sangre_organ = HistoriaClinica.where(:patologias => "E. Sangre Organ H").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  transtornos = HistoriaClinica.where(:patologias => "Transtornos Mentales").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  sistema_nervioso = HistoriaClinica.where(:patologias => "Enf. Sist. Nervioso").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  sentidos = HistoriaClinica.where(:patologias => "E. Organos De Los Sentidos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+  intoxicacion = HistoriaClinica.where(:otras_patologias => "Intoxicacion")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
   aparato_circulatorio = HistoriaClinica.where(:patologias => "Aparato Circulatorio").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  aparato_respiratorio_alto = HistoriaClinica.where(:patologias => "Aparato Respiratorio Alto").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  aparato_respiratorio_bajo = HistoriaClinica.where(:patologias => "Aparato Respiratorio Bajo").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  aparato_digestivo = HistoriaClinica.where(:patologias => "E. Aparato Digestivo").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  genital = HistoriaClinica.where(:patologias => "E. Aparato Genital").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  aparato_urinario = HistoriaClinica.where(:patologias => "E. Aparato Urinario").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  piel_y_tos = HistoriaClinica.where(:patologias => "E. Piel Y T.O.S").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
-
   sistema_oseo = HistoriaClinica.where(:patologias => "E. Sistema Oseo").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  sistema_muscular = HistoriaClinica.where(:patologias => "E. Sistema Muscular").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+  neumonia = HistoriaClinica.where(:otras_patologias => "Neumonia")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  congenitas = HistoriaClinica.where(:patologias => "E. Congenitas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  signos_sintomas = HistoriaClinica.where(:patologias => "Signos Y Sintomas Mal Definidos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  perinatal = HistoriaClinica.where(:patologias => "Enf. Perinatal").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  traumas = HistoriaClinica.where(:patologias => "Traumas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  envenenamiento = HistoriaClinica.where(:patologias => "Envenenamiento").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  embarazo_sin_complicaciones = HistoriaClinica.where(:patologias => "Embarazo Sin Complicaciones").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+  aparato_respiratorio = HistoriaClinica.where(:patologias => "Aparato Respiratorio Alto").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
   embarazo_coomplicado = HistoriaClinica.where(:patologias => "Embarazo Complicado")
   .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
+  otalgias = HistoriaClinica.where(:otras_patologias => "Otalgias Odontalgias")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  cancer = HistoriaClinica.where(:otras_patologias => "Cancer")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  embarazo_sin_complicaciones = HistoriaClinica.where(:patologias => "Embarazo Sin Complicaciones").where("date(created_at) >= ?", $varMensuales)
+  .where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  post_operatorios = HistoriaClinica.where(:otras_patologias => "Post Operatorios Varios").where("date(created_at) >= ?", $varMensuales).where("date(created_at)  <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  diabetes = HistoriaClinica.where(:otras_patologias => "Diabetes Mellitus")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at)
+    <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  congenitas = HistoriaClinica.where(:patologias => "E. Congenitas")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  quemaduras = HistoriaClinica.where(:otras_patologias => "Quemaduras")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
+
+  dolor_abdominal = HistoriaClinica.where(:otras_patologias => "Dolor Abdominal")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  diarreica = HistoriaClinica.where(:otras_patologias => "Enf. Diarreica Aguda")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  recien_nacidos = HistoriaClinica.where(:otras_patologias => "Recien Nacidos")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  dolor_precordial = HistoriaClinica.where(:otras_patologias => "Dolor Precordial/ Angina").where("date(created_at) >= ?", $varMensuales).where("date(created_at)  <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  infecciosas = HistoriaClinica.where(:patologias => "Enf. Infecciosas")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  rinofaringitis = HistoriaClinica.where(:otras_patologias => "Rinofaringitis")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  aparato_digestivo = HistoriaClinica.where(:patologias => "E. Aparato Digestivo")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  perinatal = HistoriaClinica.where(:patologias => "Enf. Perinatal")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  signos_sintomas = HistoriaClinica.where(:patologias => "Signos Y Sintomas Mal Definidos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  genital = HistoriaClinica.where(:patologias => "E. Aparato Genital")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  sistema_nervioso = HistoriaClinica.where(:patologias => "Enf. Sist. Nervioso")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  transtornos = HistoriaClinica.where(:patologias => "Transtornos Mentales")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  aparato_urinario = HistoriaClinica.where(:patologias => "E. Aparato Urinario")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  envenenamiento = HistoriaClinica.where(:patologias => "Envenenamiento")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  traumas = HistoriaClinica.where(:patologias => "Traumas")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  endocr = HistoriaClinica.where(:patologias => "E. Endocr. Nutr Metab")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  epoc =  HistoriaClinica.where(:otras_patologias => "Epoc")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  tumorales = HistoriaClinica.where(:patologias => "Tumorales")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  fiel_y_tos = HistoriaClinica.where(:patologias => "E. Fiel Y T.O.S")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
+
+  fracturas = HistoriaClinica.where(:otras_patologias => "Fracturas")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  vertigo =  HistoriaClinica.where(:otras_patologias => "Vertigo")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  sentidos = HistoriaClinica.where(:patologias => "E. Organos De Los Sentidos")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  corto_punzante = HistoriaClinica.where(:otras_patologias => "Heridas Por Corto Punzante").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  otros = HistoriaClinica.where(:patologias => "Otros").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
+
+  parasit = HistoriaClinica.where(:patologias => "E. Parasit").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2)
+  .where(:aeropuerto_id =>  $aeropuertoMensuales).count
+
+  hipertension = HistoriaClinica.where(:otras_patologias => "Hipertension Arterial")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
+
+  sangre_organ = HistoriaClinica.where(:patologias => "E. Sangre Organ H")
+  .where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+
+  total_patologias = accidente_cerebrales.to_i + sistema_muscular.to_i + intoxicacion.to_i + aparato_circulatorio.to_i + neumonia.to_i + aparato_respiratorio.to_i + embarazo_coomplicado.to_i + otalgias.to_i +  cancer.to_i + embarazo_sin_complicaciones.to_i + post_operatorios.to_i + diabetes.to_i + congenitas.to_i + quemaduras.to_i + dolor_abdominal.to_i + diarreica.to_i + recien_nacidos.to_i + dolor_precordial.to_i + infecciosas.to_i + rinofaringitis.to_i + aparato_digestivo.to_i + perinatal.to_i + signos_sintomas.to_i + genital.to_i + sistema_nervioso.to_i + transtornos.to_i + aparato_urinario.to_i + envenenamiento.to_i + traumas.to_i + endocr.to_i + epoc.to_i + tumorales.to_i + fiel_y_tos.to_i + fracturas.to_i + vertigo.to_i + sentidos.to_i + corto_punzante.to_i + otros.to_i + parasit.to_i + hipertension.to_i + sangre_organ.to_i
 %>                                                                                  
 <div class="row" style="width: 600px;">
   <div class="col-md-12" >
@@ -481,36 +551,8 @@
             <th  class="info" style="width:20% !important; text-align:center;">Cantidad</th>
           </tr>
           <tr>
-            <td>Enf. Infecciosas</td>
-            <td style="text-align:center;"><%= infecciosas %></td>
-          </tr>
-          <tr>
-            <td>E. Parasit</td>
-            <td style="text-align:center;"><%= parasit %></td> 
-          </tr>
-          <tr>
-            <td>Tumorales</td>
-            <td style="text-align:center;"><%= tumorales %></td>
-          </tr>  
-          <tr>
-            <td>E. Endocr. Nutr Metab</td>
-            <td style="text-align:center;"><%= endocr %></td>
-          </tr>
-          <tr>
-            <td>E. Sangre Organ H</td>
-            <td  style="text-align:center;"><%= sangre_organ %></td>
-          </tr>
-          <tr>
-            <td>Transtornos Mentales</td>
-            <td style="text-align:center;"><%= transtornos %></td>
-          </tr>
-          <tr>
-            <td>Enf. Sist. Nervioso</td>
-            <td style="text-align:center;"><%= sistema_nervioso %></td>
-          </tr>
-          <tr>
-            <td>E. Organos De Los Sentidos</td>
-            <td  style="text-align:center;"><%= sentidos %></td>
+            <td>Accidente Cerebral</td>
+            <td style="text-align:center;"><%= accidente_cerebrales %></td>
           </tr>
           <tr>
             <td>Aparato Circulatorio</td>
@@ -518,129 +560,7 @@
           </tr>
           <tr>
             <td>Aparato Respiratorio Alto</td>
-            <td  style="text-align:center;"><%= aparato_respiratorio_alto %></td>
-          </tr>
-          <tr>
-            <td>Aparato Respiratorio Bajo</td>
-            <td  style="text-align:center;"><%= aparato_respiratorio_bajo %></td>
-          </tr>
-          <tr>
-            <td>E. Aparato Digestivo</td>
-            <td style="text-align:center;"><%= aparato_digestivo %></td>
-          </tr>
-          <tr>
-            <td>E. Aparato Genital</td>
-            <td style="text-align:center;"><%= genital %></td>
-          </tr>
-          <tr>
-            <td>E. Aparato Urinario</td>
-            <td style="text-align:center;"><%= aparato_urinario %></td>
-          </tr>
-          <tr>
-            <td>E. Fiel Y T.O.S</td>
-            <td style="text-align:center;"><%= piel_y_tos %></td>
-          </tr>
-          <tr>
-            <td>E. Sistema Oseo</td>
-            <td  style="text-align:center;"><%= sistema_oseo %></td>
-          </tr>
-          <tr>
-            <td>E. Sistema Muscular</td>
-            <td  style="text-align:center;"><%= sistema_muscular %></td>
-          </tr>
-          <tr>
-            <td>E. Congenitas</td>
-            <td style="text-align:center;"><%= congenitas %></td> 
-          </tr> 
-          <tr>
-            <td>Signos Y Sintomas Mal Definidos</td>
-            <td style="text-align:center;"><%= signos_sintomas %></td>
-          </tr>
-          <tr>
-            <td>Enf. Perinatal</td>
-            <td style="text-align:center;"><%= perinatal %></td>
-          </tr>
-          <tr>
-            <td>Traumas</td>
-            <td style="text-align:center;"><%= traumas %></td>
-          </tr>
-          <tr>
-            <td>Envenenamiento</td>
-            <td style="text-align:center;"><%= envenenamiento %></td>
-          </tr>                
-          <tr>
-            <td>Embarazo Sin Complicaciones</td>
-            <td style="text-align:center;"><%= embarazo_sin_complicaciones %></td>
-          </tr>
-          <tr>
-            <td>Embarazo Complicado</td>
-            <td style="text-align:center;"><%= embarazo_coomplicado %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div> 
-
-
-<%
-
-  # OTRAS PATOLOGIAS
-
-  accidente_cerebrales = HistoriaClinica.where(:otras_patologias => "Accidente Cerebral").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  cancer = HistoriaClinica.where(:otras_patologias => "Cancer").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  diabetes = HistoriaClinica.where(:otras_patologias => "Diabetes Mellitus").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  dolor_abdominal = HistoriaClinica.where(:otras_patologias => "Dolor Abdominal").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  dolor_precordial = HistoriaClinica.where(:otras_patologias => "Dolor Precordial/ Angina").where("date(created_at) >= ?", $varMensuales).where("date(created_at)  <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  diarreica = HistoriaClinica.where(:otras_patologias => "Enf. Diarreica Aguda").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  epoc =  HistoriaClinica.where(:otras_patologias => "Epoc").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  fracturas = HistoriaClinica.where(:otras_patologias => "Fracturas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  corto_punzante = HistoriaClinica.where(:otras_patologias => "Heridas Por Corto Punzante").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  hipertension = HistoriaClinica.where(:otras_patologias => "Hipertension Arterial").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
-
-  intoxicacion = HistoriaClinica.where(:otras_patologias => "Intoxicacion").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  neumonia = HistoriaClinica.where(:otras_patologias => "Neumonia").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  quemaduras = HistoriaClinica.where(:otras_patologias => "Quemaduras").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id =>  $aeropuertoMensuales).count
-
-  recien_nacidos = HistoriaClinica.where(:otras_patologias => "Recien Nacidos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  rinofaringitis = HistoriaClinica.where(:otras_patologias => "Rinofaringitis").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  odontalgias = HistoriaClinica.where(:otras_patologias => "Odontalgias (Barotrauma)").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  cefaleas = HistoriaClinica.where(:otras_patologias => "Cefalea").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  otalgias_barotrauma = HistoriaClinica.where(:otras_patologias => "Otalgias (Barotrauma)").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count  
-
-  psiquiatricas = HistoriaClinica.where(:otras_patologias => "Psiquiatricas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  neurologicas = HistoriaClinica.where(:otras_patologias => "Neurologicas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-
-%>
-
-<div class="row" style="width: 600px;">
-  <div class="col-md-12" >
-    <div class="container">
-      <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:94% !important; margin-top: 1px; margin-left: -40px;">
-        <tbody>
-          <tr>
-            <th class="info" style="text-align: center;" colspan="2">Otros</th>
-          </tr>
-          <tr>
-            <td>Accidente Cerebral</td>
-            <td style="text-align:center;"><%= accidente_cerebrales %></td>
+            <td  style="text-align:center;"><%= aparato_respiratorio %></td>
           </tr>
           <tr>
             <td>Cancer</td>
@@ -659,8 +579,76 @@
             <td style="text-align:center;"><%= dolor_precordial %></td>
           </tr>
           <tr>
+            <td>E. Aparato Digestivo</td>
+            <td style="text-align:center;"><%= aparato_digestivo %></td>
+          </tr>
+          <tr>
+            <td>E. Aparato Genital</td>
+            <td style="text-align:center;"><%= genital %></td>
+          </tr>
+          <tr>
+            <td>E. Aparato Urinario</td>
+            <td style="text-align:center;"><%= aparato_urinario %></td>
+          </tr>
+          <tr>
+            <td>E. Endocr. Nutr Metab</td>
+            <td style="text-align:center;"><%= endocr %></td>
+          </tr>
+          <tr>
+            <td>E. Fiel Y T.O.S</td>
+            <td style="text-align:center;"><%= fiel_y_tos %></td>
+          </tr>
+          <tr>
+            <td>E. Organos De Los Sentidos</td>
+            <td  style="text-align:center;"><%= sentidos %></td>
+          </tr>
+          <tr>
+            <td>E. Parasit</td>
+            <td style="text-align:center;"><%= parasit %></td> 
+          </tr>
+          <tr>
+            <td>E. Sangre Organ H</td>
+            <td  style="text-align:center;"><%= sangre_organ %></td>
+          </tr>
+          <tr>
+            <td>E. Sistema Muscular</td>
+            <td  style="text-align:center;"><%= sistema_muscular %></td>
+          </tr>
+          <tr>
+            <td>E. Sistema Oseo</td>
+            <td  style="text-align:center;"><%= sistema_oseo %></td>
+          </tr>
+          <tr>
+            <td>Embarazo Complicado</td>
+            <td style="text-align:center;"><%= embarazo_coomplicado %></td>
+          </tr>
+          <tr>
+            <td>Embarazo Sin Complicaciones</td>
+            <td style="text-align:center;"><%= embarazo_sin_complicaciones %></td>
+          </tr>
+          <tr>
+            <td>E. Congenitas</td>
+            <td style="text-align:center;"><%= congenitas %></td>
+          </tr>
+          <tr>
             <td>Enf. Diarreica Aguda</td>
             <td style="text-align:center;"><%= diarreica %></td>
+          </tr>
+          <tr>
+            <td>Enf. Infecciosas</td>
+            <td style="text-align:center;"><%= infecciosas %></td>
+          </tr>
+          <tr>
+            <td>Enf. Perinatal</td>
+            <td style="text-align:center;"><%= perinatal %></td>
+          </tr>
+          <tr>
+            <td>Enf. Sist. Nervioso</td>
+            <td style="text-align:center;"><%= sistema_nervioso %></td>
+          </tr>
+          <tr>
+            <td>Envenenamiento</td>
+            <td style="text-align:center;"><%= envenenamiento %></td>
           </tr>
           <tr>
             <td>Epoc</td>
@@ -687,6 +675,14 @@
             <td style="text-align:center;"><%= neumonia %></td>
           </tr>
           <tr>
+            <td>Otalgias Odontalgias</td>
+            <td style="text-align:center;"><%= otalgias %></td>
+          </tr> 
+          <tr>
+            <td>Post Operatorios Varios</td>
+            <td style="text-align:center;"><%= post_operatorios %></td>
+          </tr>
+          <tr>
             <td>Quemaduras</td>
             <td style="text-align:center;"><%= quemaduras %></td>
           </tr>
@@ -699,101 +695,37 @@
             <td style="text-align:center;"><%= rinofaringitis %></td>
           </tr>
           <tr>
-            <td>Odontalgias (Barotrauma)</td>
-            <td style="text-align:center;"><%= odontalgias %></td>
-          </tr> 
+            <td>Signos Y Sintomas Mal Definidos</td>
+            <td style="text-align:center;"><%= signos_sintomas %></td>
+          </tr>
           <tr>
-            <td>Cefaleas (Barotrauma)</td>
-            <td style="text-align:center;"><%= cefaleas %></td>
-          </tr> 
+            <td>Transtornos Mentales</td>
+            <td style="text-align:center;"><%= transtornos %></td>
+          </tr>
           <tr>
-            <td>Otalgias (Barotrauma)</td>
-            <td style="text-align:center;"><%= otalgias_barotrauma %></td>
-          </tr> 
+            <td>Traumas</td>
+            <td style="text-align:center;"><%= traumas %></td>
+          </tr>
           <tr>
-            <td>Psiquiatricas</td>
-            <td style="text-align:center;"><%= psiquiatricas %></td>
-          </tr> 
+            <td>Tumorales</td>
+            <td style="text-align:center;"><%= tumorales %></td>
+          </tr>                                                                   <tr>
+            <td>Vertigo</td>
+            <td  style="text-align:center;"><%= vertigo %></td>
+          </tr>
           <tr>
-            <td>Neurologicas</td>
-            <td style="text-align:center;"><%= neurologicas %></td>
-          </tr> 
-
+            <td>Otros</td>
+            <td style="text-align:center;"><%= otros %></td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td style="text-align:center;"><%= total_patologias %></td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
-</div>
-
-<% 
-
-  # POST OPERATORIOS
-
-  cirugia_plastica = HistoriaClinica.where(:post_operatorios_varios => "Post Operatorios Cirugia Plastica").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  cardiovasculares = HistoriaClinica.where(:post_operatorios_varios => "Post Operatorios Cardiovasculares, Toracicas Y Abdominales").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  ortopedicos = HistoriaClinica.where(:post_operatorios_varios => "Post Operatorios Ortopedicos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  otorrino = HistoriaClinica.where(:post_operatorios_varios => "Post Operatorio Otorrino").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  oftalmologico = HistoriaClinica.where(:post_operatorios_varios => "Post Operatorio Oftalmologico").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  neurologico = HistoriaClinica.where(:post_operatorios_varios => "Post Operatorio Neurologico").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-  otros_post_operatorios = HistoriaClinica.where(:post_operatorios_varios => "Otros Post Operatorios").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
-
-%>
-
-<div class="row" style="width: 600px;">
-  <div class="col-md-12" >
-    <div class="container">
-      <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:94% !important; margin-top: 1px; margin-left: -40px;">
-        <tbody>
-          <tr>
-            <th class="info" style="text-align: center;" colspan="2">Post Operatorios Varios</th>
-          </tr>
-          <tr>
-            <td>P.O Cirugia Plastica</td>
-            <td style="text-align:center;"><%= cirugia_plastica %></td>
-          </tr>
-          <tr>
-            <td>P.O Cardiovasculares, Toracicas Y Abdominales</td>
-            <td style="text-align:center;"><%= cardiovasculares %></td>
-          </tr>
-          <tr>
-            <td>P.O Ortopedicos</td>
-            <td style="text-align:center;"><%= ortopedicos %></td>
-          </tr>
-          <tr>
-            <td>P.O Otorrino</td>
-            <td style="text-align:center;"><%= otorrino %></td>
-          </tr>
-          <tr>
-            <td>P.O Oftalmologico</td>
-            <td style="text-align:center;"><%= oftalmologico %></td>
-          </tr>
-          <tr>
-            <td>P.O Neurologico</td>
-            <td style="text-align:center;"><%= neurologico %></td>
-          </tr>
-          <tr>
-            <td>Otros Post Operatorios</td>
-            <td style="text-align:center;"><%= otros_post_operatorios %></td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-                                                                           <br/>
+</div>                                                                            <br/>
 <br/>                                                                             
 
 <%
@@ -810,7 +742,6 @@
   .where(:accidentes_especiales => "Ninguno").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
   rabico_mujeres = HistoriaClinica.where(:p_genero => "Femenino").where(:accidentes_especiales => "Rabico").where("date(created_at) >= ?", $varMensuales).where("date(created_at)  <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
-
 
   ofidico_mujeres = HistoriaClinica.where(:p_genero => "Femenino").where(:accidentes_especiales => "Ofidico").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
@@ -830,7 +761,7 @@
 
 %>
 
-<div class="container" style="width:330px; margin-left: 290px; margin-top: -385px;">
+<div class="container" style="width:330px; margin-left: 290px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >  
     <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:280%; margin-top:-1587px; margin-left:193px"> 
       <tbody>
@@ -859,12 +790,6 @@
           <td style="text-align: center;"><%= total_mordeduras %></td>
         </tr>
         <tr>
-          <th>Accidente Laboral</th>
-          <td style="text-align: center;"><%= accidente_laboral_hombres %></td>
-          <td style="text-align: center;"><%= accidente_laboral_mujeres %></td>
-          <td style="text-align: center;"><%= total_accidente_laboral %></td>
-        </tr>
-        <tr>
           <th>Ninguno</th>
           <td style="text-align: center;"><%= ninguno_hombres_accidentes %></td>
           <td style="text-align: center;"><%= ninguno_mujeres_accidentes %></td>
@@ -874,6 +799,9 @@
     </table>
   </div>
 </div>
+
+
+
 
 
 <%
@@ -979,7 +907,7 @@
 
 %>
 
-<div class="container" style="width:330px; margin-left: 310px; margin-top: -207px;">
+<div class="container" style="width:330px; margin-left: 310px; margin-top: -237px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >
     <table class="table table-striped table-bordered table-hover dataTable no-footer"
         style="width:280%; margin-top:-1160px; margin-left:172px">
@@ -1158,6 +1086,8 @@
   </div>
 </div>     
 
+
+
 <%
 
 # ACCIDENTES ESPECIALES HOMBRES
@@ -1167,7 +1097,6 @@
 
   accidentes_aereos_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:accidentes_especiales => "Accidentes Aereos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  
   contingencias_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:accidentes_especiales => "Contingencias").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
   salud_publica_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:accidentes_especiales => "Emergencia Salud Publica").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
@@ -1201,7 +1130,7 @@
 
 %>
 
-<div class="container" style="width:330px; margin-left: 0px; margin-top: 405px;">
+<div class="container" style="width:330px; margin-left: 0px; margin-top:410px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >
     <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:280%; margin-top:-938px; margin-left:482px">
       <tbody>
@@ -1242,6 +1171,8 @@
   </div>                                                                         
 </div> 
 
+
+
 <%
 
   vuelos_comerciales_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:tipo_de_vuelo => "Comercial").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
@@ -1255,7 +1186,7 @@
 
   ambulancia_mujeres = HistoriaClinica.where(:p_genero => "Femenino").where(:tipo_de_vuelo => "Ambulancia").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
- charter_mujeres = HistoriaClinica.where(:p_genero => "Femenino").where(:tipo_de_vuelo => "Charter").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
+  charter_mujeres = HistoriaClinica.where(:p_genero => "Femenino").where(:tipo_de_vuelo => "Charter").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
 
   total_vuelos_comerciales = vuelos_comerciales_hombres.to_i + vuelos_comerciales_mujeres.to_i
@@ -1278,26 +1209,27 @@
         </tr>
         <tr>
           <th>Comercial</th>
-          <td><%= vuelos_comerciales_hombres %></td>
-          <td><%= vuelos_comerciales_mujeres %></td>
-          <td><%= total_vuelos_comerciales %></td>
+          <td style="width:10%; text-align: center;"><%= vuelos_comerciales_hombres %></td>
+          <td style="width:10%; text-align: center;"><%= vuelos_comerciales_mujeres %></td>
+          <td style="width:10%; text-align: center;"><%= total_vuelos_comerciales %></td>
         </tr>
         <tr>
           <th>Ambulancía</th>
-          <td><%= ambulancia_hombres %></td>
-          <td><%= ambulancia_mujeres %></td>
-          <td><%= total_ambulancias %></td>
+          <td style="width:10%; text-align: center;"><%= ambulancia_hombres %></td>
+          <td style="width:10%; text-align: center;"><%= ambulancia_mujeres %></td>
+          <td style="width:10%; text-align: center;"><%= total_ambulancias %></td>
         </tr>
         <tr>
           <th>Charter</th>
-          <td><%= charter_hombres %></td>
-          <td><%= charter_mujeres %></td>
-          <td><%= total_charter %></td>
+          <td style="width:10%; text-align: center;"><%= charter_hombres %></td>
+          <td style="width:10%; text-align: center;"><%= charter_mujeres %></td>
+          <td style="width:10%; text-align: center;"><%= total_charter %></td>
         </tr>
       </tbody>
     </table>  
   </div> 
 </div> 
+
 
 <div class="container" style=" margin-left: 0px;">
   <div class="row col-md-12 col-md-offset-2 custyle">
@@ -1309,6 +1241,8 @@
 </div>
 
 
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -1384,7 +1318,7 @@ total_mayores_60_años = mayor_a_60_masculino.to_i + mayor_a_60_femenino.to_i
  total_edades = total_edades_masculinas.to_i + total_edades_femeninas.to_i
 
 %>                                                                                                                                                                  <br/>
-<div class="container" style="width:330px; margin-left: 0px; margin-top: 35px;">
+<div class="container" style="width:330px; margin-left: 0px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >
     <table class="table table-striped table-bordered table-hover dataTable no-footer"
         style="width: 840px; margin-left:480px; margin-top: -687px;">
@@ -1447,7 +1381,7 @@ total_mayores_60_años = mayor_a_60_masculino.to_i + mayor_a_60_femenino.to_i
     </table>
   </div>
 </div>
-
+                                                                                                                                                                             
 <style>
 
   .custab{

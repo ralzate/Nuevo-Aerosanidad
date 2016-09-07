@@ -1,4 +1,4 @@
-
+Otalgias
 <% 
 
 # CAUSAS EXTERNAS HOMBRES
@@ -621,7 +621,7 @@
 
   cefaleas = HistoriaClinica.where(:otras_patologias => "Cefalea").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  otalgias_barotrauma = HistoriaClinica.where(:otras_patologias => "Otalgias (Barotrauma)").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count  
+  otalgias_(barotrauma) = HistoriaClinica.where(:otras_patologias => "Otalgias (Barotrauma)").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
   psiquiatricas = HistoriaClinica.where(:otras_patologias => "Psiquiatricas").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
@@ -708,7 +708,7 @@
           </tr> 
           <tr>
             <td>Otalgias (Barotrauma)</td>
-            <td style="text-align:center;"><%= otalgias_barotrauma %></td>
+            <td style="text-align:center;"><%= otalgias_(barotrauma) %></td>
           </tr> 
           <tr>
             <td>Psiquiatricas</td>
@@ -830,7 +830,7 @@
 
 %>
 
-<div class="container" style="width:330px; margin-left: 290px; margin-top: -385px;">
+<div class="container" style="width:330px; margin-left: 290px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >  
     <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:280%; margin-top:-1587px; margin-left:193px"> 
       <tbody>
@@ -1167,7 +1167,6 @@
 
   accidentes_aereos_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:accidentes_especiales => "Accidentes Aereos").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
-  
   contingencias_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:accidentes_especiales => "Contingencias").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
 
   salud_publica_hombres = HistoriaClinica.where(:p_genero => "Masculino").where(:accidentes_especiales => "Emergencia Salud Publica").where("date(created_at) >= ?", $varMensuales).where("date(created_at) <= ?", $varMensuales2).where(:aeropuerto_id => $aeropuertoMensuales).count
@@ -1201,7 +1200,7 @@
 
 %>
 
-<div class="container" style="width:330px; margin-left: 0px; margin-top: 405px;">
+<div class="container" style="width:330px; margin-left: 0px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >
     <table class="table table-striped table-bordered table-hover dataTable no-footer" style="width:280%; margin-top:-938px; margin-left:482px">
       <tbody>
@@ -1384,7 +1383,7 @@ total_mayores_60_años = mayor_a_60_masculino.to_i + mayor_a_60_femenino.to_i
  total_edades = total_edades_masculinas.to_i + total_edades_femeninas.to_i
 
 %>                                                                                                                                                                  <br/>
-<div class="container" style="width:330px; margin-left: 0px; margin-top: 35px;">
+<div class="container" style="width:330px; margin-left: 0px;">
   <div class="row col-md-12 col-md-offset-2 custyle" >
     <table class="table table-striped table-bordered table-hover dataTable no-footer"
         style="width: 840px; margin-left:480px; margin-top: -687px;">

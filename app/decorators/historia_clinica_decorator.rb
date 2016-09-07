@@ -49,7 +49,7 @@ module HistoriaClinicaDecorator
       ['E. Aparato Genital', 'E. Aparato Genital'],
       ['E. Aparato Urinario', 'E. Aparato Urinario'],
       ['E. Endocr. Nutr Metab', 'E. Endocr. Nutr Metab'],
-      ['E. Fiel Y T.O.S', 'E. Fiel Y T.O.S'],
+      ['E. Piel Y T.O.S', 'E. Piel Y T.O.S'],
       ['E. Organos De Los Sentidos', 'E. Organos De Los Sentidos'],
       ['E. Parasit', 'E. Parasit'],
       ['E. Sangre Organ H', 'E. Sangre Organ H'],
@@ -72,20 +72,6 @@ module HistoriaClinicaDecorator
     ]
   end
 
-
-  def select_post_operatorios
-    [
-      ['Post Operatorios Cirugia Plastica', 'Post Operatorios Cirugia Plastica'],
-      ['Post Operatorios Cardiovasculares, Toracicas Y Abdominales', 'Post Operatorios Cardiovasculares, Toracicas Y Abdominales'],
-      ['Post Operatorios Ortopedicos', 'Post Operatorios Ortopedicos'],
-      ['Post Operatorio Otorrino', 'Post Operatorio Otorrino'],
-      ['Post Operatorio Oftalmologico', 'Post Operatorio Oftalmologico'],
-      ['Post Operatorio Neurologico', 'Post Operatorio Neurologico'],
-      ['Otros Post Operatorios', 'Otros Post Operatorios']
-    ]
-  end
-
-
   def select_otras_patologias
     [
       ['Accidente Cerebral', 'Accidente Cerebral'],
@@ -100,21 +86,52 @@ module HistoriaClinicaDecorator
       ['Hipertension Arterial', 'Hipertension Arterial'],
       ['Intoxicacion', 'Intoxicacion'],
       ['Neumonia', 'Neumonia'],
-      ['Otalgias Odontalgias', 'Otalgias Odontalgias'],
+      ['Neurologicas', 'Neurologicas'],
       ['Quemaduras', 'Quemaduras'],
       ['Recien Nacidos', 'Recien Nacidos'],
       ['Rinofaringitis', 'Rinofaringitis'],
-      ['Vertigo', 'Vertigo'],
+      ['Odontalgias (Barotrauma)', 'Odontalgias (Barotrauma)'],
+      ['Cefalea (Barotrauma)', 'Cefalea (Barotrauma)'],
+      ['Otalgias (Barotrauma)', 'Otalgias (Barotrauma)'],
+      ['Psiquiatricas', 'Psiquiatricas'],
       ['Ninguno', 'Ninguno'],
     ]
   end
 
+
+  def select_post_operatorios
+    [
+      ['Post Operatorios Cirugia Plastica', 'Post Operatorios Cirugia Plastica'],
+      ['Post Operatorios Cardiovasculares, Toracicas Y Abdominales', 'Post Operatorios Cardiovasculares, Toracicas Y Abdominales'],
+      ['Post Operatorios Ortopedicos', 'Post Operatorios Ortopedicos'],
+      ['Post Operatorio Otorrino', 'Post Operatorio Otorrino'],
+      ['Post Operatorio Oftalmologico', 'Post Operatorio Oftalmologico'],
+      ['Post Operatorio Neurologico', 'Post Operatorio Neurologico'],
+      ['Otros Post Operatorios', 'Otros Post Operatorios']
+    ]
+  end
+
+
+
+
   def select_accidentes_especiales
     [
-      ['Accidente Laboral', 'Accidente Laboral'],
-      ['Mordedura Otro Tipo', 'Mordedura Otro Tipo'],
-      ['Ofidico', 'Ofidico'],
-      ['Rabico', 'Rabico'],
+      ['Accidente Ofidico', 'Accidente Ofidico  '],
+      ['Rabia', 'Rabia'],
+      ['Chikungunya', 'Chikungunya'],
+      ['Colera', 'Colera'],
+      ['Denge', 'Denge'],
+      ['Ebola', 'Ebola'],
+      ['Esi - Ira Grave', 'Esi - Ira Grave'],
+      ['Eta', 'Eta'],
+      ['Malaria', 'Malaria'],
+      ['Sarampion', 'Sarampion'],
+      ['Rubeola', 'Rubeola'],
+      ['Varicela', 'Varicela'],
+      ['Zika', 'Zika'],
+      ['Tbc', 'Tbc'],
+      ['Intoxicaciones', 'Intoxicaciones'],
+      ['Evento Sin Establecer', 'Evento Sin Establecer'],
       ['Ninguno', 'Ninguno'],
       ['No Aplica', 'No Aplica'],
     ]

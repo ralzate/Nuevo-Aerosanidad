@@ -3,7 +3,7 @@ Rails Multistep Forms with Wizard
 
 This is the accompanying Rails application to [my blog post on Multistep forms in Rails](http://brains.rabid.co.nz/2014/09/29/rails-multistep-forms.html). If you haven't already read that post, it is suggested that you read it to have the context of this application.
 
-If you're just after having a play with this, there's a demo application hosted on Heroku, at: [https://jm-multistep-blog-demo.herokuapp.com](https://jm-multistep-blog-demo.herokuapp.com) to play with.
+If you are just after having a play with this, there's a demo application hosted on Heroku, at: [https://jm-multistep-blog-demo.herokuapp.com](https://jm-multistep-blog-demo.herokuapp.com) to play with.
 
 If you want to poke around the code, you can explore the project here on Github. Please open an issue if you have questions or trouble.
 
